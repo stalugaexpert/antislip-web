@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is Antislip site project bootstrapped with [`create-next-app`]. Page features include CRUD (blog), localization and multilanguage support and also contact form with automatic saving data to database and sending owner a notification mail using Nodemailer. You can check the demo of the page using this link: 
+
+https://antislip-site.vercel.app
 
 ## Getting Started
 
