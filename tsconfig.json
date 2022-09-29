@@ -16,13 +16,10 @@
     "incremental": true,
     "baseUrl": "./",
     "paths": {
-      "@components": ["components"],
-      "@contexts/*": ["contexts/*"],
-      "@types/*": ["types/*"],
-      "@lib/*": ["lib/*"],
-      "@styles/*": ["styles/*"],
+      "@components": ["src/components"],
+      "@styles/*": ["src/styles/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/create.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/create.js"],
   "exclude": ["node_modules"]
 }
