@@ -22,6 +22,7 @@ jobs:
           LINTER_RULES_PATH: /
           DEFAULT_BRANCH: main
           JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
+          CSS_FILE_NAME: .stylelintrc.json
           FILTER_REGEX_INCLUDE: .*src/.*
       
 
