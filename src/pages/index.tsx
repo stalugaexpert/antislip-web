@@ -8,7 +8,7 @@ const Home: NextPage = () => {
 
   return (
     <div className={styles.HomePage}>
-      <p>{t('test-namespace')}</p>
+      <p>{t('common:testNamespace')}</p>
     </div>
   )
 }
