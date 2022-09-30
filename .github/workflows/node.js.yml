@@ -18,7 +18,7 @@ jobs:
       - name: Super-Linter
         uses: github/super-linter@v4.9.6
         env: 
-          GITHUB-TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: main
           JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
           FILTER_REGEX_INCLUDE: .*src/.*
