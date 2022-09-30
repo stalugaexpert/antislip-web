@@ -1,11 +1,12 @@
 {
-  "extends": "stylelint-config-standard",
+  "extends": "stylelint-config-standard-scss",
   "plugins": [
     "stylelint-order",
     "stylelint-scss"
   ],
   "rules": {
     "unit-allowed-list": ["rem", "vh", "vw", "s", "deg", "%"],
+    "selector-class-pattern": null,
     "order/order": [
       "custom-properties",
       "declarations"
