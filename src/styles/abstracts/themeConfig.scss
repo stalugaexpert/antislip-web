@@ -1,0 +1,12 @@
+@use "./colors.scss" as *;
+
+$themes: (
+  light: (
+    background-primary: red,
+    text-primary: $neutral-900
+  ),
+  dark: (
+    background-primary: blue,
+    text-primary: $neutral-50
+  ),
+);

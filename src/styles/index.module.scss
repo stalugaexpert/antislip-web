@@ -1,12 +1,118 @@
-.HomePage {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100%;
-  font-size: 2rem;
+// @use "./abstracts/mixin.scss" as *;
+// @use "./abstracts/themeConfig.scss" as *;
+@use "./abstracts/test.scss" as *;
+
+.myClass {
+  font-size: 5rem;
+
+  @include themed {
+    background-color: t("bg");
+  }
 
   p {
-    color: green;
+    @include themed {
+      color: t("text");
+    }
   }
 }
+
+// .myClass {
+//   font-size: 5rem;
+
+//   div {
+//     @include themed {
+//       background-color: t("bg");
+//     }
+//   }
+
+//   p {
+//     @include themed {
+//       color: t("text");
+//     }
+//   }
+// }
+
+// @include themed {
+//   // color: t("text");
+//   // background: t("bg");
+
+//   div {
+//     @include themed {
+//       background-color: t("bg");
+//     }
+//   }
+
+//   p {
+//     @include themed {
+//       color: t("text");
+//     }
+//   }
+
+//   .testClass {
+//     font-size: 5rem;
+
+//     div {
+//       @include themed {
+//         background-color: t("bg");
+//       }
+//     }
+  
+//     p {
+//       @include themed {
+//         color: t("text");
+//       }
+//     }
+//   }
+// }
+
+// .myClass {
+//   font-size: 5rem;
+
+//   @include themed {
+//     color: t("text");
+//     background: t("bg");
+//   }
+
+//   .testClass {
+//     @include themed {
+//       background-color: t("bg");
+//     }
+//   }
+
+//     // @include themed {
+//     //   color: t("text");
+//     //   background: t("bg");
+//     // }
+
+//     // div {
+//     //   @include themed {
+//     //     background-color: t("bg");
+//     //   }
+//     // }
+
+//     // p {
+//     //   @include themed {
+//     //     color: t("text");
+//     //   }
+//     // }
+// }
+
+// .HomePage {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   height: 100vh;
+//   width: 100%;
+//   font-size: 2rem;
+
+//   // @include themed() {
+//   //   color: t('text');
+//   //   background: t('bg');
+//   // }
+
+//   // p {
+//   //   @include themed {
+//   //     color: t("text");
+//   //   }
+//   // }
+// }
