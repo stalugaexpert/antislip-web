@@ -27,6 +27,9 @@ module.exports = {
         teal600: 'var(--teal-600)',
         teal400: 'var(--teal-400)',
         teal50: 'var(--teal-50)',
+      },
+      boxShadow: {
+        'nav': '0px 4px 16px rgba(15, 23, 42, 0.04)'
       }
     },
   },
