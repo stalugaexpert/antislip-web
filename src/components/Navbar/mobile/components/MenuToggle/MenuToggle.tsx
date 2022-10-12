@@ -1,15 +1,15 @@
 import { motion } from "framer-motion"
 
-interface iPathProps {
+interface IPathProps {
   openPath: string
   closedPath: string
 }
 
-interface iMenuToggleProps {
+interface IMenuToggleProps {
   toggle(): void
 }
 
-const Path = ({ openPath, closedPath, ...rest }: iPathProps) => {
+const Path = ({ openPath, closedPath, ...rest }: IPathProps) => {
   return (
     <motion.path
       fill="currentColor"
@@ -25,7 +25,7 @@ const Path = ({ openPath, closedPath, ...rest }: iPathProps) => {
   )
 }
 
-export const MenuToggle = ({ toggle }: iMenuToggleProps) => {
+export const MenuToggle = ({ toggle }: IMenuToggleProps) => {
   return (
     <button
       className="border-0 outline-none z-50 text-neutral700 dark:text-neutral200 p-3"

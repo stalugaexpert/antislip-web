@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { ReactNode, useState } from "react"
 
-interface iMenuItemDropdownProps {
+interface IMenuItemDropdownProps {
   text: string
   children: ReactNode
 }
@@ -19,7 +19,7 @@ const MenuItemVariants = {
   },
 }
 
-export const MenuItemDropdown = ({ text, children }: iMenuItemDropdownProps) => {
+export const MenuItemDropdown = ({ text, children }: IMenuItemDropdownProps) => {
   const [isBeingHovered, setIsBeingHovered] = useState(false)
 
   return (

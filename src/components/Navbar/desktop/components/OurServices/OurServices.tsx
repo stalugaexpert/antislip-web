@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 
-interface iOurServicesProps {
+interface IOurServicesProps {
   text: string
   icon: string
   alt: string
@@ -19,7 +19,7 @@ const SubItemVariants = {
   },
 }
 
-export const OurServices = ({ text, icon, alt }: iOurServicesProps) => {
+export const OurServices = ({ text, icon, alt }: IOurServicesProps) => {
   return (
     <Link href="">
       <a>

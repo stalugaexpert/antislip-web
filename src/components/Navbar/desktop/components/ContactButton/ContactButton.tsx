@@ -1,10 +1,10 @@
 import Link from "next/link"
 
-interface iContactButtonProps {
+interface IContactButtonProps {
   text: string
 }
 
-export const ContactButton = ({ text }: iContactButtonProps) => {
+export const ContactButton = ({ text }: IContactButtonProps) => {
   return (
     <Link
       href="/contact"

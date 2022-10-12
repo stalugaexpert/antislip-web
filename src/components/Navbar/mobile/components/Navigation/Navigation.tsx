@@ -3,7 +3,7 @@ import { useTranslation } from "next-i18next"
 
 import { MenuItem } from "../MenuItem"
 
-interface iNavigation {
+interface INavigationProps {
   toggle(): void
 }
 
@@ -18,7 +18,7 @@ const navigationVariants = {
   },
 }
 
-export const Navigation = ({ toggle }: iNavigation) => {
+export const Navigation = ({ toggle }: INavigationProps) => {
   const { t } = useTranslation()
   const navigationProps = [
     { text: t('navbar:home'), link: "", highlightItem: true, bold: 'font-bold' },

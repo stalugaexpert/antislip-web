@@ -2,11 +2,11 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { useState } from "react"
 
-interface iMenuItemProps {
+interface IMenuItemProps {
   text: string
 }
 
-export const MenuItem = ({ text }: iMenuItemProps) => {
+export const MenuItem = ({ text }: IMenuItemProps) => {
   const [isBeingHovered, setIsBeingHovered] = useState(false)
 
   return (
