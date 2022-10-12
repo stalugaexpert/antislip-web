@@ -1,3 +1,5 @@
+/* stylelint-disable-next-line import-notation */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -22,4 +24,8 @@
   --teal-600: #0d9488;
   --teal-400: #2dd4bf;
   --teal-50: #f0fdfa;
+}
+
+* {
+  font-family: Inter, sans-serif;
 }
