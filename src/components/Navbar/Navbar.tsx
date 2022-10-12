@@ -6,7 +6,7 @@ import { NavbarMobile } from './mobile'
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Navbar = ({ t }: any) => {
   const [width, setWidth] = useState(0)
-  const breakpoint = 768
+  const breakpoint = 796
 
   useEffect(() => {
     setWidth(window.innerWidth)

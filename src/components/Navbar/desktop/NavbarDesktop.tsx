@@ -1,6 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
+import { useTheme } from "next-themes"
 
+import { ThemeButton } from "../components/ThemeButton"
 import { ContactButton } from "./components/ContactButton"
 import { MenuItem } from "./components/MenuItem"
 import { MenuItemDropdown } from "./components/MenuItemDropdown"
@@ -8,6 +10,9 @@ import { OurServices } from "./components/OurServices"
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const NavbarDesktop = ({ t }: any) => {
+  const { systemTheme, theme } = useTheme()
+  const currentTheme = theme === 'system' ? systemTheme : theme
+
   const servicesProps = [
     {
       text: t('navbar:servicesList.antislip'),
@@ -32,16 +37,25 @@ export const NavbarDesktop = ({ t }: any) => {
   ]
 
   return (
-    <header className="fixed w-full bg-white dark:bg-neutral900 px-14 shadow-nav">
+    <header className="fixed w-full bg-white dark:bg-neutral900 px-10 shadow-nav">
       <div className="flex items-center justify-between">
         <Link href="">
-          <a>
-            <Image
-              alt={t('navbar:logoAlt')}
-              height="37"
-              src="/logo.png"
-              width="81"
-            />
+          <a className="py-3 px-1">
+            { currentTheme === 'dark' ? (
+              <Image
+                alt={t('navbar:logoAlt')}
+                height="37"
+                src="/logo-dark.png"
+                width="81"
+              />
+            ) : (
+              <Image
+                alt={t('navbar:logoAlt')}
+                height="37"
+                src="/logo.png"
+                width="81"
+              />
+            )}
           </a>
         </Link>
         <div className="flex items-center justify-center gap-3">
@@ -58,6 +72,7 @@ export const NavbarDesktop = ({ t }: any) => {
           </MenuItemDropdown>
           <MenuItem text={t('navbar:knowledge')} />
           <ContactButton text={t('navbar:contact')}/>
+          <ThemeButton />
         </div>
       </div>
     </header>

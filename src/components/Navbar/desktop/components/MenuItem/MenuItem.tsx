@@ -9,7 +9,8 @@ export const MenuItem = ({ text }: {text: string}) => {
     <Link href="/test">
       <a>
         <motion.div
-          className={`relative py-7 px-4 text-base text-neutral700 dark:text-neutral100 duration-300 hover:text-neutral800 hover:font-bold before:content-['${text}'] before:font-bold before:overflow-hidden before:invisible before:h-0 before:block`}
+          className={`relative py-7 px-4 text-base text-neutral700 dark:text-neutral100 duration-300 hover:text-neutral800 hover:font-bold before:content-[attr(title)] before:font-bold before:overflow-hidden before:invisible before:h-0 before:block`}
+          title={text}
           onHoverEnd={() => setIsBeingHovered(false)}
           onHoverStart={() => setIsBeingHovered(true)}
         >

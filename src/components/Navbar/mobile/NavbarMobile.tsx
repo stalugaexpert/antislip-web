@@ -1,12 +1,16 @@
 import { motion, useCycle } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
+import { useTheme } from "next-themes"
 
+import { ThemeButton } from "../components/ThemeButton"
 import { MenuToggle } from "./components/MenuToggle"
 import { Navigation } from "./components/Navigation"
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const NavbarMobile = ({ t }: any) => {
+  const { systemTheme, theme } = useTheme()
+  const currentTheme = theme === 'system' ? systemTheme : theme
   const [isOpen, toggleOpen] = useCycle(false, true)
 
   const sideBarVariants = {
@@ -37,15 +41,27 @@ export const NavbarMobile = ({ t }: any) => {
       />
       <Link href="">
         <a className="p-3">
-          <Image
-            alt={t('navbar:logoAlt')}
-            height="37"
-            src="/logo.png"
-            width="81"
-          />
+          { currentTheme === 'dark' ? (
+            <Image
+              alt={t('navbar:logoAlt')}
+              height="37"
+              src="/logo-dark.png"
+              width="81"
+            />
+          ) : (
+            <Image
+              alt={t('navbar:logoAlt')}
+              height="37"
+              src="/logo.png"
+              width="81"
+            />
+          )}
         </a>
       </Link>
-      <MenuToggle toggle={() => toggleOpen()} />
+      <div className="flex items-center justify-center z-50">
+        <ThemeButton />
+        <MenuToggle toggle={() => toggleOpen()} />
+      </div>
       <Navigation
         t={t}
         toggle={() => toggleOpen()}

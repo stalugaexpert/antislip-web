@@ -24,9 +24,9 @@ export const MenuToggle = ({ toggle }: {toggle(): void}) => {
       onClick={toggle}
     >
       <svg
-        height="25"
+        height="32"
         viewBox="-2 -4 25 23"
-        width="25"
+        width="32"
       >
         <Path
           closedPath="M 2 2.5 L 20 2.5"
