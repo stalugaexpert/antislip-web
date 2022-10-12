@@ -6,7 +6,7 @@ import { SunIcon } from "../SunIcon"
 
 export const ThemeButton = () => {
   const { systemTheme, theme, setTheme } = useTheme()
-  const [currentTheme, setCurrentTheme] = useState<string>('light')
+  const [currentTheme, setCurrentTheme] = useState('light')
 
   useEffect(() => {
     if (theme && systemTheme) {

@@ -2,18 +2,24 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 
-export const OurServices = ({ text, icon, alt }: {text: string, icon: string, alt: string}) => {
-  const SubItemVariants = {
-    hidden: {
-      x: -20,
-      opacity: 0,
-    },
-    visible: {
-      x: 0,
-      opacity: 1,
-    },
-  }
+interface iOurServicesProps {
+  text: string
+  icon: string
+  alt: string
+}
 
+const SubItemVariants = {
+  hidden: {
+    x: -20,
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+  },
+}
+
+export const OurServices = ({ text, icon, alt }: iOurServicesProps) => {
   return (
     <Link href="">
       <a>

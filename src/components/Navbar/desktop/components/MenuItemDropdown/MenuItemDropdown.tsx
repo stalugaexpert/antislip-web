@@ -1,21 +1,26 @@
 import { motion } from "framer-motion"
 import { ReactNode, useState } from "react"
 
-export const MenuItemDropdown = ({ text, children }: { text: string, children: ReactNode }) => {
-  const [isBeingHovered, setIsBeingHovered] = useState(false)
+interface iMenuItemDropdownProps {
+  text: string
+  children: ReactNode
+}
 
-  const MenuItemVariants = {
-    hidden: {
-      opacity: 0,
+const MenuItemVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05,
     },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.05,
-      },
-    },
-  }
+  },
+}
+
+export const MenuItemDropdown = ({ text, children }: iMenuItemDropdownProps) => {
+  const [isBeingHovered, setIsBeingHovered] = useState(false)
 
   return (
     <motion.div
@@ -49,7 +54,6 @@ export const MenuItemDropdown = ({ text, children }: { text: string, children: R
               strokeLinejoin="round"
             />
           </svg>
-
         ) : (
           <svg
             className="w-4 h-4"
@@ -66,7 +70,6 @@ export const MenuItemDropdown = ({ text, children }: { text: string, children: R
             />
           </svg>
         )}
-
       </div>
       {isBeingHovered && (
         <motion.div

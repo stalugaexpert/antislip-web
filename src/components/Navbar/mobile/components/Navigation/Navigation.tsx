@@ -3,19 +3,23 @@ import { useTranslation } from "next-i18next"
 
 import { MenuItem } from "../MenuItem"
 
-export const Navigation = ({ toggle }: {toggle(): void}) => {
-  const { t } = useTranslation()
-  const navigationVariants = {
-    open: {
-      display: "flex",
-      transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-    },
-    closed: {
-      display: "none",
-      transition: { delay: 1, staggerChildren: 0.05, staggerDirection: -1 },
-    },
-  }
+interface iNavigation {
+  toggle(): void
+}
 
+const navigationVariants = {
+  open: {
+    display: "flex",
+    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+  },
+  closed: {
+    display: "none",
+    transition: { delay: 1, staggerChildren: 0.05, staggerDirection: -1 },
+  },
+}
+
+export const Navigation = ({ toggle }: iNavigation) => {
+  const { t } = useTranslation()
   const navigationProps = [
     { text: t('navbar:home'), link: "", highlightItem: true, bold: 'font-bold' },
     { text: t('navbar:servicesList.antislip'), link: "" },

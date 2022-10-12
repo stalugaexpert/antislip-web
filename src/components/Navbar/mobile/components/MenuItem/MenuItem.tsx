@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 
-interface MenuItemProps {
+interface iMenuItemProps {
   text: string
   link: string
   highlightItem?: boolean
@@ -9,26 +9,26 @@ interface MenuItemProps {
   toggle(): void
 }
 
-export const MenuItem = ({ text, link, highlightItem = false, bold = '', toggle }: MenuItemProps) => {
-  const menuItemVariants = {
-    open: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.4,
-        ease: [0.6, 0.05, -0.01, 0.9],
-      },
+const menuItemVariants = {
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      ease: [0.6, 0.05, -0.01, 0.9],
     },
-    closed: {
-      y: 50,
-      opacity: 0,
-      transition: {
-        duration: 0.4,
-        ease: [0.6, 0.05, -0.01, 0.9],
-      },
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+    transition: {
+      duration: 0.4,
+      ease: [0.6, 0.05, -0.01, 0.9],
     },
-  }
+  },
+}
 
+export const MenuItem = ({ text, link, highlightItem = false, bold = '', toggle }: iMenuItemProps) => {
   return (
     <Link href={link}>
       <a>
