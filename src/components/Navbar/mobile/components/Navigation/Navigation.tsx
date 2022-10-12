@@ -1,9 +1,10 @@
 import { motion } from "framer-motion"
+import { useTranslation } from "next-i18next"
 
 import { MenuItem } from "../MenuItem"
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const Navigation = ({ toggle, t }: {toggle(): void, t: any}) => {
+export const Navigation = ({ toggle }: {toggle(): void}) => {
+  const { t } = useTranslation()
   const navigationVariants = {
     open: {
       display: "flex",

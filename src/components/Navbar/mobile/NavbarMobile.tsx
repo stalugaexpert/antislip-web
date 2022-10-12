@@ -1,14 +1,15 @@
 import { motion, useCycle } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
+import { useTranslation } from 'next-i18next'
 import { useTheme } from "next-themes"
 
 import { ThemeButton } from "../components/ThemeButton"
 import { MenuToggle } from "./components/MenuToggle"
 import { Navigation } from "./components/Navigation"
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const NavbarMobile = ({ t }: any) => {
+export const NavbarMobile = () => {
+  const { t } = useTranslation()
   const { systemTheme, theme } = useTheme()
   const currentTheme = theme === 'system' ? systemTheme : theme
   const [isOpen, toggleOpen] = useCycle(false, true)
@@ -63,7 +64,6 @@ export const NavbarMobile = ({ t }: any) => {
         <MenuToggle toggle={() => toggleOpen()} />
       </div>
       <Navigation
-        t={t}
         toggle={() => toggleOpen()}
       />
     </motion.nav>

@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import { useTranslation } from 'next-i18next'
 import { useTheme } from "next-themes"
 
 import { ThemeButton } from "../components/ThemeButton"
@@ -8,8 +9,8 @@ import { MenuItem } from "./components/MenuItem"
 import { MenuItemDropdown } from "./components/MenuItemDropdown"
 import { OurServices } from "./components/OurServices"
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const NavbarDesktop = ({ t }: any) => {
+export const NavbarDesktop = () => {
+  const { t } = useTranslation()
   const { systemTheme, theme } = useTheme()
   const currentTheme = theme === 'system' ? systemTheme : theme
 

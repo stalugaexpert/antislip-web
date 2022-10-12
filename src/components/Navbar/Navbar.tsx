@@ -3,8 +3,7 @@ import { useEffect, useState } from 'react'
 import { NavbarDesktop } from './desktop'
 import { NavbarMobile } from './mobile'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const Navbar = ({ t }: any) => {
+export const Navbar = () => {
   const [width, setWidth] = useState(0)
   const breakpoint = 796
 
@@ -17,6 +16,6 @@ export const Navbar = ({ t }: any) => {
   }, [])
 
   return (
-    width >= breakpoint ? <NavbarDesktop t={t}/> : <NavbarMobile t={t}/>
+    width >= breakpoint ? <NavbarDesktop/> : <NavbarMobile/>
   )
 }
