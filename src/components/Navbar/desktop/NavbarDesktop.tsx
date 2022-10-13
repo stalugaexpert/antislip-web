@@ -38,7 +38,7 @@ export const NavbarDesktop = () => {
   ]
 
   return (
-    <header className="fixed w-full bg-white dark:bg-neutral900 px-10 shadow-nav">
+    <header className="fixed w-full bg-white dark:bg-neutral900 px-10 shadow-nav z-20">
       <div className="flex items-center justify-between">
         <Link href="">
           <a className="py-3 px-1">

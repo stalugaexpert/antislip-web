@@ -6,19 +6,21 @@ export const Footer = () => {
   const { t } = useTranslation()
 
   return (
-    <footer className="p-14 pb-10 bg-neutral800 dark:bg-neutral900 flex flex-col items-start">
-      <Image
-        alt={t('navbar:logoAlt')}
-        height="70"
-        src="/logo-dark.png"
-        width="152"
-      />
-      <div className="w-full flex items-start justify-between mt-12 gap-6">
-        <div className="flex flex-col w-3/12 gap-6">
+    <footer className="p-14 pb-10 footer-md:p-8 bg-neutral800 dark:bg-neutral900 flex flex-col items-start">
+      <div className="relative h-[4.375rem] w-[9.5rem] footer-md:h-[3rem] footer-md:w-[6.5625rem]">
+        <Image
+          alt={t('navbar:logoAlt')}
+          layout="fill"
+          objectFit='contain'
+          src="/logo-dark.png"
+        />
+      </div>
+      <div className="w-full mt-12 grid grid-cols-4 gap-6 footer-md:grid-cols-2 footer-md:gap-y-10 footer-sm:grid-cols-1 footer-sm:gap-y-12">
+        <div className="flex flex-col gap-6">
           <h5 className="text-sm text-neutral200 dark:text-neutral400 font-semibold">{t('footer:name')}</h5>
           <h2 className="text-base text-neutral50 dark:text-neutral200 font-normal">{t('footer:description')}</h2>
         </div>
-        <div className="w-3/12 flex flex-col gap-6">
+        <div className="flex flex-col gap-6 footer-md:order-3">
           <span className="text-sm text-neutral200 dark:text-neutral400 font-semibold uppercase">{t('footer:contact')}</span>
           <a
             className="text-base text-neutral50 dark:text-neutral200 font-normal duration-300 hover:text-neutral200 dark:hover:text-neutral400 hover:translate-x-1"
@@ -50,7 +52,7 @@ export const Footer = () => {
             </div>
           </a>
         </div>
-        <div className="w-3/12 flex flex-col gap-6">
+        <div className="flex flex-col gap-6">
           <span className="text-sm text-neutral200 dark:text-neutral400 font-semibold uppercase">{t('footer:menu')}</span>
           <Link href="">
             <a className="text-base text-neutral50 dark:text-neutral200 font-normal duration-300 hover:text-neutral200 dark:hover:text-neutral400 hover:translate-x-1">
@@ -68,7 +70,7 @@ export const Footer = () => {
             </a>
           </Link>
         </div>
-        <div className="w-3/12 flex flex-col gap-6">
+        <div className="flex flex-col gap-6">
           <span className="text-sm text-neutral200 dark:text-neutral400 font-semibold uppercase">{t('footer:services')}</span>
           <Link href="">
             <a className="text-base text-neutral50 dark:text-neutral200 font-normal duration-300 hover:text-neutral200 dark:hover:text-neutral400 hover:translate-x-1">
@@ -93,9 +95,9 @@ export const Footer = () => {
         </div>
       </div>
       <div className="bg-neutral50 dark:bg-neutral200 w-full h-px my-10" />
-      <div className="w-full flex items-center justify-between">
+      <div className="w-full grid grid-cols-2 items-center footer-md:grid-cols-1 footer-md:gap-y-3">
         <span className="text-xs font-normal text-neutral50 dark:text-neutral200">{t('footer:rights')}</span>
-        <div className="flex items-center justify-center gap-9">
+        <div className="flex items-center justify-end gap-9 footer-sm:justify-between">
           <span className="text-xs font-normal text-neutral50 dark:text-neutral200">{t('footer:stayInTouch')}</span>
           <div className="flex items-center justify-center gap-4">
             <a

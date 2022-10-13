@@ -30,6 +30,10 @@ module.exports = {
       },
       boxShadow: {
         'nav': '0px 4px 16px rgba(15, 23, 42, 0.04)'
+      },
+      screens: {
+        'footer-md': { 'max': '768px' },
+        'footer-sm': { 'max': '525px' }
       }
     },
   },
