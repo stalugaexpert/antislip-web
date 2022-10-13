@@ -46,14 +46,14 @@ export const NavbarMobile = () => {
             <Image
               alt={t('navbar:logoAlt')}
               height="37"
-              src="/logo-dark.png"
+              src="/icons/logo-dark.png"
               width="81"
             />
           ) : (
             <Image
               alt={t('navbar:logoAlt')}
               height="37"
-              src="/logo.png"
+              src="/icons/logo.png"
               width="81"
             />
           )}

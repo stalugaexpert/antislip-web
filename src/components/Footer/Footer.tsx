@@ -12,7 +12,7 @@ export const Footer = () => {
           alt={t('navbar:logoAlt')}
           layout="fill"
           objectFit='contain'
-          src="/logo-dark.png"
+          src="/icons/logo-dark.png"
         />
       </div>
       <div className="w-full mt-12 grid grid-cols-4 gap-6 footer-md:grid-cols-2 footer-md:gap-y-10 footer-sm:grid-cols-1 footer-sm:gap-y-12">
@@ -109,7 +109,7 @@ export const Footer = () => {
               <Image
                 alt={t('footer:facebookIcon')}
                 height="24"
-                src="/facebook-icon.svg"
+                src="/icons/facebook-icon.svg"
                 width="24"
               />
             </a>
@@ -122,7 +122,7 @@ export const Footer = () => {
               <Image
                 alt={t('footer:instagramIcon')}
                 height="24"
-                src="/instagram-icon.svg"
+                src="/icons/instagram-icon.svg"
                 width="24"
               />
             </a>
