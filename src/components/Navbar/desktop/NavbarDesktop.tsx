@@ -17,28 +17,28 @@ export const NavbarDesktop = () => {
   const servicesProps = [
     {
       text: t('navbar:servicesList.antislip'),
-      icon: "/slip.png",
+      icon: "/icons/slip.png",
       alt: "slip icon"
     },
     {
       text: t('navbar:servicesList.pendulum'),
-      icon: "/pendulum.png",
+      icon: "/icons/pendulum.png",
       alt: "pendulum icon"
     },
     {
       text: t('navbar:servicesList.sealers'),
-      icon: "/sealer.png",
+      icon: "/icons/sealer.png",
       alt: "sealer icon"
     },
     {
       text: t('navbar:servicesList.cleaning'),
-      icon: "/clean.png",
+      icon: "/icons/clean.png",
       alt: "cleaning icon"
     }
   ]
 
   return (
-    <header className="fixed w-full bg-white dark:bg-neutral900 px-10 shadow-nav">
+    <header className="fixed w-full bg-white dark:bg-neutral900 px-10 shadow-nav z-20">
       <div className="flex items-center justify-between">
         <Link href="">
           <a className="py-3 px-1">
@@ -46,14 +46,14 @@ export const NavbarDesktop = () => {
               <Image
                 alt={t('navbar:logoAlt')}
                 height="37"
-                src="/logo-dark.png"
+                src="/icons/logo-dark.png"
                 width="81"
               />
             ) : (
               <Image
                 alt={t('navbar:logoAlt')}
                 height="37"
-                src="/logo.png"
+                src="/icons/logo.png"
                 width="81"
               />
             )}

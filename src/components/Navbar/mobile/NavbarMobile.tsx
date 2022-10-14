@@ -33,7 +33,7 @@ export const NavbarMobile = () => {
   return (
     <motion.nav
       animate={isOpen ? "open" : "closed"}
-      className="fixed w-full flex items-center justify-between px-3 h-16 shadow-nav bg-white dark:bg-neutral900"
+      className="fixed w-full flex items-center justify-between px-3 h-16 shadow-nav bg-white dark:bg-neutral900 z-20"
       initial={false}
     >
       <motion.div
@@ -46,14 +46,14 @@ export const NavbarMobile = () => {
             <Image
               alt={t('navbar:logoAlt')}
               height="37"
-              src="/logo-dark.png"
+              src="/icons/logo-dark.png"
               width="81"
             />
           ) : (
             <Image
               alt={t('navbar:logoAlt')}
               height="37"
-              src="/logo.png"
+              src="/icons/logo.png"
               width="81"
             />
           )}
