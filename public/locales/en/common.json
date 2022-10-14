@@ -1,4 +1,5 @@
 {
   "testNamespace": "description in english",
-  "changeTheme": "change theme"
+  "changeTheme": "change theme",
+  "trustedBy": "Trusted by"
 }
