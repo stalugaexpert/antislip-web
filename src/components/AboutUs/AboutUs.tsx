@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { useTranslation } from "next-i18next"
 
-export const WhyUs = () => {
+export const AboutUs = () => {
   const { t } = useTranslation()
 
   const aboutProps = [
@@ -36,7 +36,7 @@ export const WhyUs = () => {
               </div>
             ))}
           </div>
-          <div className="relative h-[31.2rem] w-[23.5rem] about-md:mb-8 about-md:w-full about-md:max-h-[30vh] before:content-[''] before:absolute before:h-48 before:w-48 before:bg-amber400 before:z-10 before:top-full before:left-full before:-translate-x-2/4 before:-translate-y-2/4 before:blur-[100px] before:opacity-50 dark:before:opacity-30">
+          <div className="relative h-[31.2rem] w-[23.5rem] about-md:mb-8 about-md:w-full about-md:max-h-[30vh] before:content-[''] before:absolute before:h-48 before:w-48 before:bg-amber400 before:z-10 before:top-full before:left-full before:-translate-x-full before:-translate-y-2/4 before:blur-[100px] before:opacity-50 dark:before:opacity-30 about-md:before:hidden">
             <Image
               alt=""
               layout="fill"
