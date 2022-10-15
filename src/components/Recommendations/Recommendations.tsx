@@ -118,10 +118,7 @@ export const Recommendations = () => {
     }
   ]
   return (
-    <section
-      className="m-14 recommendations-sm:m-6 bg-amber400 dark:bg-neutral900 pl-24 recommendations-mx:pl-12 recommendations-md:pl-6 py-[4.5rem] max-w-[90.625rem] section-min:mx-auto recommendations-ds:py-6"
-      style={{ marginBottom: "40px" }}
-    >
+    <section className="m-14 recommendations-sm:m-6 bg-amber400 dark:bg-neutral900 pl-24 recommendations-mx:pl-12 recommendations-md:pl-6 py-[4.5rem] max-w-[90.625rem] section-min:mx-auto recommendations-ds:py-6" >
       <div className="flex items-end justify-between mb-12 recommendations-ds:mb-6">
         <div>
           <h5 className="text-3xl recommendations-xsm:text-xl font-semibold text-neutral900 dark:text-neutral50">{t('recommendations:aboutUs')}</h5>
