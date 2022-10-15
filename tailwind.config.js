@@ -39,7 +39,11 @@ module.exports = {
         'recommendations-md': { 'max': '1350px' },
         'recommendations-ds': { 'max': '1200px' },
         'recommendations-sm': { 'max': '992px' },
-        'recommendations-xsm': { 'max': '500px' }
+        'recommendations-xsm': { 'max': '500px' },
+        'about-md': { 'max': '856px' },
+        'about-sm': { 'max': '750px' },
+        'about-xsm': { 'max': '600px' },
+        'about-x2sm': { 'max': '465px' }
       }
     },
   },
