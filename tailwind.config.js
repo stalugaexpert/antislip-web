@@ -33,7 +33,13 @@ module.exports = {
       },
       screens: {
         'footer-md': { 'max': '768px' },
-        'footer-sm': { 'max': '525px' }
+        'footer-sm': { 'max': '525px' },
+        'section-min': { 'min': '1500px' },
+        'recommendations-mx': { 'max': '1400px' },
+        'recommendations-md': { 'max': '1350px' },
+        'recommendations-ds': { 'max': '1200px' },
+        'recommendations-sm': { 'max': '992px' },
+        'recommendations-xsm': { 'max': '500px' }
       }
     },
   },
