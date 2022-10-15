@@ -39,7 +39,7 @@ export const NavbarDesktop = () => {
 
   return (
     <header className="fixed w-full bg-white dark:bg-neutral900 px-10 shadow-nav z-20">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between max-w-screen-2xl mx-auto">
         <Link href="">
           <a className="py-3 px-1">
             { currentTheme === 'dark' ? (
