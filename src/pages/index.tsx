@@ -1,4 +1,4 @@
-import { PageLayout } from '@components'
+import { AboutUs, HeroSection, OurServices, PageLayout, Recommendations, TrustedBy } from '@components'
 import type { NextPage } from 'next'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -8,9 +8,11 @@ const Home: NextPage = () => {
 
   return (
     <PageLayout>
-      <div className='flex flex-col items-center justify-center h-screen bg-neutral50 dark:bg-neutral800'>
-        <p className='text-4xl mb-5 text-neutral900 dark:text-neutral50'>{t('common:testNamespace')}</p>
-      </div>
+      <HeroSection />
+      <OurServices />
+      <AboutUs />
+      <Recommendations />
+      <TrustedBy />
     </PageLayout>
   )
 }
@@ -18,7 +20,7 @@ const Home: NextPage = () => {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'navbar', 'footer', 'recommendations', 'about', 'services'])),
+      ...(await serverSideTranslations(locale, ['common', 'navbar', 'footer', 'recommendations', 'about', 'services', 'hero'])),
     },
   }
 }

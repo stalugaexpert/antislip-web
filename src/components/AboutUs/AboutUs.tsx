@@ -20,7 +20,7 @@ export const AboutUs = () => {
   ]
 
   return (
-    <section className="px-[11rem] recommendations-md:px-32 recommendations-ds:px-16 recommendations-sm:px-10 py-16 max-w-screen-2xl mx-auto">
+    <section className="px-[11rem] mb-20 services-xs:mb-12 recommendations-md:px-32 recommendations-ds:px-16 recommendations-sm:px-10 about-sm:px-6 max-w-screen-2xl mx-auto">
       <div>
         <h5 className="text-amber400 text-base font-semibold mb-6 about-xsm:text-sm">{t('about:aboutUs')}</h5>
         <h2 className="font-semibold text-3xl text-neutral800 dark:text-neutral50 mb-9 about-xsm:text-2xl">{t('about:leader')}</h2>

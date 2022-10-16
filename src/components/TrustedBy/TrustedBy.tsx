@@ -83,7 +83,7 @@ export const TrustedBy = () => {
   const { t } = useTranslation()
 
   return (
-    <section className="px-24 bg-neutral50 dark:bg-neutral800">
+    <section className="px-24 recommendations-sm:px-16 about-sm:px-10 mb-20 services-xs:mb-12 max-w-screen-2xl mx-auto">
       <h5 className="text-xl font-semibold text-neutral800 dark:text-neutral50 mb-9 text-center">{t('common:trustedBy')}</h5>
       <Slider {...settings}>
         {companiesLogoList.map((item, index) => (
