@@ -34,6 +34,7 @@ module.exports = {
       screens: {
         'footer-md': { 'max': '768px' },
         'footer-sm': { 'max': '525px' },
+        'navbar-md': { 'max': '796px' },
         'section-min': { 'min': '1500px' },
         'recommendations-mx': { 'max': '1400px' },
         'recommendations-md': { 'max': '1350px' },

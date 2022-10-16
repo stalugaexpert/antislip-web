@@ -49,14 +49,12 @@ const PreviousArrow = ({ onClick }: IArrowProps) => {
           strokeLinejoin="round"
         />
       </svg>
-
     </div>
   )
 }
 
 export const OurServices = () => {
   const { t } = useTranslation()
-
   const [width, setWidth] = useState(0)
 
   useEffect(() => {
@@ -128,7 +126,7 @@ export const OurServices = () => {
   ]
 
   return (
-    <section className="p-56 py-16 max-w-screen-2xl mx-auto services-md:px-36 services-sm:px-20 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+    <section className="px-56 max-w-screen-2xl mx-auto mb-20 services-xs:mb-12 services-md:px-36 services-sm:px-20 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
       <div className="flex items-center justify-between mb-9">
         <h5 className="font-semibold text-4xl text-neutral800 dark:text-neutral50 services-xs:text-3xl about-xsm:text-2xl">{t('services:ourServices')}</h5>
         <a

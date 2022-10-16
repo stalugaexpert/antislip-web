@@ -1,5 +1,6 @@
 export * from "./AboutUs"
 export * from "./Footer"
+export * from "./HeroSection"
 export * from "./Navbar"
 export * from "./OurServices"
 export * from "./PageLayout"
