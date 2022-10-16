@@ -14,7 +14,7 @@ export const HeroSection = () => {
       </div>
       <div className='relative h-[31.2rem] about-md:h-[30vh] w-full'>
         <Image
-          alt=""
+          alt={t('hero:imageAlt')}
           layout="fill"
           objectFit='cover'
           src="/images/hero-image.png"

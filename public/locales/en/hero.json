@@ -3,5 +3,6 @@
   "description": "Prevent slip",
   "descriptionBottom": "and fall accidents",
   "stats": "According to the GUS, falls account for 21% of all occupational accidents annually.",
-  "button": "More"
+  "button": "More",
+  "imageAlt": "man holding placard caution slippery floor"
 }

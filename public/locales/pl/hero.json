@@ -3,5 +3,6 @@
   "description": "Zapobiegnij wypadkom",
   "descriptionBottom": "na wskutek poślizgnięcia",
   "stats": "Według danych GUS rocznie upadki stanowią 21% wszystkich wypadków przy pracy.",
-  "button": "Więcej"
+  "button": "Więcej",
+  "imageAlt": "człowiek trzymający tabliczkę uwaga śliska podłoga"
 }

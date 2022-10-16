@@ -38,7 +38,7 @@ export const AboutUs = () => {
           </div>
           <div className="relative h-[31.2rem] w-[23.5rem] about-md:mb-8 about-md:w-full about-md:max-h-[30vh] before:content-[''] before:absolute before:h-48 before:w-48 before:bg-amber400 before:z-10 before:top-full before:left-full before:-translate-x-full before:-translate-y-2/4 before:blur-[100px] before:opacity-50 dark:before:opacity-30 about-md:before:hidden">
             <Image
-              alt=""
+              alt={t('about:imageAlt')}
               layout="fill"
               objectFit='cover'
               src="/images/about-image.png"
