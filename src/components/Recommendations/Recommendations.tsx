@@ -1,24 +1,10 @@
 import { useTranslation } from "next-i18next"
-import { CSSProperties, MouseEventHandler, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import Slider from "react-slick"
 
-interface IArrowProps {
-  className?: string
-  style?: CSSProperties
-  onClick?: MouseEventHandler<HTMLDivElement>
-}
+import { IArrowProps, SliderHideArrow } from "../SliderHideArrow/SliderHideArrow"
 
-const SamplePrevArrow = ({ className, style, onClick }: IArrowProps) => {
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "none" }}
-      onClick={onClick}
-    />
-  )
-}
-
-const SampleNextArrow = ({ onClick }: IArrowProps) => {
+const NextArrow = ({ onClick }: IArrowProps) => {
   return (
     <div
       className="absolute w-11 h-11 -bottom-[3.6rem] right-4 flex items-center cursor-pointer justify-center text-neutral800 dark:text-neutral200 dark:bg-neutral700 bg-neutral50 hover:translate-y-1 hover:opacity-80 duration-300 recommendations-sm:w-8 recommendations-sm:h-8 recommendations-sm:-top-[3rem]"
@@ -58,8 +44,8 @@ export const Recommendations = () => {
 
   const settings = {
     arrows: true,
-    prevArrow: <SamplePrevArrow />,
-    nextArrow: <SampleNextArrow />,
+    prevArrow: <SliderHideArrow />,
+    nextArrow: <NextArrow />,
     infinite: true,
     speed: 500,
     slidesToShow: 3,

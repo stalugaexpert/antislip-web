@@ -1,6 +1,7 @@
 export * from "./AboutUs"
 export * from "./Footer"
 export * from "./Navbar"
+export * from "./OurServices"
 export * from "./PageLayout"
 export * from "./Recommendations"
 export * from "./TrustedBy"
