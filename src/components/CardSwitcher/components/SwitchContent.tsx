@@ -47,7 +47,7 @@ export const SwitchContent = ({
           alt="switch-content-image"
           blurDataURL={contentImage}
           layout="fill"
-          objectFit="fill"
+          objectFit="cover"
           placeholder="blur"
           src={contentImage}
         />
