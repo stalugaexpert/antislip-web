@@ -7,5 +7,8 @@
   "contactAgreementMid": " oraz ",
   "contactPrivacy": "politykę prywatności",
   "contactAgreementBot": ".",
-  "send": "Wyślij"
+  "send": "Wyślij",
+  "name": "Imię",
+  "email": "Adres e-mail",
+  "phone": "Numer telefonu"
 }
