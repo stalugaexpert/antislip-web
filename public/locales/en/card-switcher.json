@@ -1,0 +1,14 @@
+{
+  "pendulumButton": "Pendulum Test\n(British Pendulum).",
+  "pendulumTitle": "Pendulum Test",
+  "pendulumContent": "SMARTFLOOR company performs professional tests of slip resistance - testing by the British pendulum method (PTV).\n\nWe conduct tests in accordance with the guidelines: Building Research Institute, Ministry of Development and Technology and PN-EN 13036-4.\n\nWe use a certified and regularly calibrated Matest A113 pendulum to measure the coefficient of friction.",
+  "testInfo1": "On the laid floor",
+  "testInfo2": "Under laboratory conditions, after submitting a sample",
+  "slipButton": "SlipAlert",
+  "slipTitle": "SlipAlert indicator measurement",
+  "slipContent": "SlipAlert is a new method for testing floors to British standards, adopted as the global standard for slip prevention.\n\nFaster than traditional slip testing, SlipAlert combines PTV (Pendulum Test Value) with Coefficient of Friction (CoF) to provide a guaranteed assessment of slip risk. This method can be used for testing in both wet and dry conditions.\n\nSlipAlert measurements are used when you want to quickly inspect a floor's slip-resistance properties without having to test according to the Building Research Institute's guidelines.",
+  "roughnessButton": "Roughness test",
+  "roughnessTitle": "Measuring floor roughness",
+  "roughnessContent": "The surface roughness test is another method that can be used in conjunction with the Pendulum Test and is particularly useful for monitoring changes in the condition of a floor resulting from its use.\n\nResearch has shown that measuring the Rz parameter can predict slipperiness for a range of common materials. Rz is a measure of total surface roughness, calculated as the average of several measurements.\n\nAccording to the UK Health and Safety Executive (HSE) guidelines, the minimum level of roughness (Rz) required to achieve satisfactory anti-slip levels in professional kitchens is 70 μm.\n\nWe use Taylor Hobson's certified Surtonic Duo II to measure roughness.",
+  "researchCarry": "We perform the tests:"
+}
