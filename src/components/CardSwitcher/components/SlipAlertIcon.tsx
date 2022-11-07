@@ -1,8 +1,10 @@
 export const SlipalertIcon = () => (
   <svg
     fill="currentColor"
+    height="100%"
     id="f62a51da-da07-40cc-a012-4522e1e3a57c"
     viewBox="0 0 520.36 187.5"
+    width="100%"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
