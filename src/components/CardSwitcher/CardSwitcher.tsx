@@ -1,8 +1,7 @@
 import { useTranslation } from 'next-i18next'
 import React, { useState } from 'react'
 
-import { SwitchButton, SwitchContent } from './components'
-import { PendulumIcon, RoughnessIcon, SlipalertIcon } from './components'
+import { PendulumIcon, RoughnessIcon, SlipalertIcon, SwitchButton, SwitchContent  } from './components'
 
 export const CardSwitcher = () => {
   const { t } = useTranslation('card-switcher')
