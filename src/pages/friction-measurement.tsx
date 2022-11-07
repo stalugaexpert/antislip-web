@@ -1,4 +1,4 @@
-import { Accordion, AccordionMeasurement, PageLayout, Recommendations } from '@components'
+import { AccordionMeasurement, CardSwitcher, PageLayout, Recommendations } from '@components'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -54,6 +54,22 @@ const Friction: NextPage = () => {
           />
         </div>
       </section>
+      <section className='px-24 max-w-screen-2xl mx-auto mb-10 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'>
+        <h3 className='font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-4'>{t('measurement:measurementHow')}</h3>
+        <div className='mb-6 w-3/4 text-justify mission-sm:w-full'>
+          <p className='text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-6'>{t('measurement:smartfloor')}</p>
+          <a
+            className='font-semibold text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75'
+            href="https://antyposlizg.pl/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            {t('measurement:smartfloorCompany')}
+          </a>
+          <p className='text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-6'>{t('measurement:smartfloorDescription')}</p>
+        </div>
+        <CardSwitcher />
+      </section>
       <section className='px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'>
         <div className='flex justify-between gap-32 relative about-md:flex-wrap about-md:gap-14'>
           <div className='w-[75%] about-md:w-full'>
@@ -97,11 +113,8 @@ const Friction: NextPage = () => {
               <p className='text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50'>{t('measurement:measurementWhoDescription')}</p>
             </section>
             <section className='mb-10 text-justify'>
-              <h3 className='font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-3'>{t('measurement:measurementHow')}</h3>
-            </section>
-            <section className='mb-10 text-justify'>
+              <h3 className='font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-3'>{t('measurement:measurementWhat')}</h3>
               <p className='text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-6'>{t('measurement:measurementPtv')}</p>
-              card switcher component
               <table className="w-full text-sm text-center text-gray-500 dark:text-gray-400 mb-6">
                 <thead className="text-xs font-semibold text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                   <tr>
@@ -289,7 +302,7 @@ const Friction: NextPage = () => {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['navbar', 'footer', 'measurement', 'recommendations'])),
+      ...(await serverSideTranslations(locale, ['navbar', 'footer', 'measurement', 'recommendations', 'card-switcher'])),
     },
   }
 }

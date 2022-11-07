@@ -1,12 +1,12 @@
 import cx from 'classnames'
-import Image from 'next/image'
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 interface ISwitchButtonProps {
   id: number
   setActive: (id: number) => void
   isActive: boolean
   buttonText: string
+  children: ReactNode
 }
 
 export const SwitchButton = ({
@@ -14,22 +14,22 @@ export const SwitchButton = ({
   setActive,
   isActive,
   buttonText,
+  children,
 }: ISwitchButtonProps) => {
   return (
     <button
       className={cx(
-        'border border-black px-24 py-8 flex flex-col items-center dark:bg-neutral-600 dark:border-transparent rounded-md flex-1',
+        'border w-1/3 p-4 border-neutral200 bg-neutral100 dark:bg-neutral-600 dark:border-neutral900 rounded-md',
         { 'bg-amber600 dark:bg-amber600 border-transparent': isActive }
       )}
       onClick={() => setActive(id)}
     >
-      <Image
-        alt="icon"
-        height={50}
-        src="/icons/clean.png"
-        width={50}
-      />
-      <span className="text-xl text-center">{buttonText}</span>
+      <div className='flex flex-col justify-center items-center gap-2 h-full'>
+        <div className='w-[100px] h-[100px] mission-sm:w-[50px] mission-sm:h-[50px] flex items-center justify-center'>
+          { children }
+        </div>
+        <span className="text-base text-neutral800 dark:text-neutral50 mission-sm:text-sm text-center inline-block overflow-hidden text-ellipsis w-[calc(100%)]">{buttonText}</span>
+      </div>
     </button>
   )
 }

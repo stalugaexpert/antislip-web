@@ -10,5 +10,7 @@
   "roughnessButton": "Roughness test",
   "roughnessTitle": "Measuring floor roughness",
   "roughnessContent": "The surface roughness test is another method that can be used in conjunction with the Pendulum Test and is particularly useful for monitoring changes in the condition of a floor resulting from its use.\n\nResearch has shown that measuring the Rz parameter can predict slipperiness for a range of common materials. Rz is a measure of total surface roughness, calculated as the average of several measurements.\n\nAccording to the UK Health and Safety Executive (HSE) guidelines, the minimum level of roughness (Rz) required to achieve satisfactory anti-slip levels in professional kitchens is 70 μm.\n\nWe use Taylor Hobson's certified Surtonic Duo II to measure roughness.",
-  "researchCarry": "We perform the tests:"
+  "researchCarry": "We perform the tests:",
+  "contactUs": "Contact us",
+  "roughnessTest": "Roughness Test"
 }

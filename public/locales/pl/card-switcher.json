@@ -10,5 +10,7 @@
   "roughnessButton": "Badanie chropowatości",
   "roughnessTitle": "Pomiar chropowatości podłogi",
   "roughnessContent": "Test chropowatości powierzchni to kolejna metoda, która może być stosowana w połączeniu z Testem Pendulum i jest szczególnie przydatna do kontroli zmian stanu technicznego posadzki, wynikających z jej eksploatacji.\n\nBadania wykazały, że pomiar parametru Rz pozwala przewidzieć śliskość dla szeregu popularnych materiałów. Rz jest miarą całkowitej chropowatości powierzchni, obliczoną jako średnia z kilku pomiarów.\n\nWedług wytycznych brytyjskiej Inspekcji Bezpieczeństwa i Higieny Pracy (HSE), minimalnym poziomem chropowatości (Rz) wymaganym do uzyskania zadowalających poziomów antypoślizgowych w kuchni profesjonalnej, jest 70 μm.\n\nDo pomiarów chropowatości stosujemy certyfikowane urządzenie Taylor Hobson - Surtonic Duo II.",
-  "researchCarry": "Badania wykonujemy:"
+  "researchCarry": "Badania wykonujemy:",
+  "contactUs": "Skontaktuj się",
+  "roughnessTest": "Badanie Chropowatości"
 }
