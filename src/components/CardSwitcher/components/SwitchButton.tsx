@@ -19,8 +19,9 @@ export const SwitchButton = ({
   return (
     <button
       className={cx(
-        'border w-1/3 p-4 border-neutral200 bg-neutral100 dark:bg-neutral-600 dark:border-neutral900 rounded-md',
-        { 'bg-amber600 dark:bg-amber600 border-transparent': isActive }
+        'border w-1/3 p-4 border-neutral200 dark:border-neutral900 rounded-md',
+        { 'bg-amber600 dark:bg-amber600': isActive },
+        { 'bg-neutral100 dark:bg-neutral-600': !isActive }
       )}
       onClick={() => setActive(id)}
     >
