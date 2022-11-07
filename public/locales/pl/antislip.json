@@ -1,0 +1,49 @@
+{
+  "ourServices": "NASZE USŁUGI",
+  "antislipDescription": "Zabezpieczenia antypoślizgowe",
+  "heroDescription": "Jeśli jesteś odpowiedzialny za przestrzeń publiczną, to także ponosisz odpowiedzialność za bolesne upadki, poślizgnięcia, urazy powstałe jako ich skutek. Uniknij wysokich roszczeń odszkodowawczych i zadbaj o bezpieczeństwo użytkowników. Sprawdź jak wdrożyć zabezpieczenie antypoślizgowe.",
+  "attributes": {
+    "first": {
+      "title": "Jeśli Twoja posadzka z upływem czasu stała się śliska...",
+      "description": "zastosujemy zabezpieczenie antypoślizgowe unikatowej i autorskiej firmy CTS Chemistry. Odzyszkasz równowagę i poczucie bezpieczeństwa - bez zmiany estetyki nawierzchni."
+    },
+    "second": {
+      "title": "Jeśli masz nową, piękną i śliską posadzkę...",
+      "description": "to warto ją zabezpieczyć antypoślizgowo, a następnie zaimpregnować. Efekt swieżości i nowości powierzchni zachowasz na dłużej i znacznie łatwiej utrzymasz czystość."
+    },
+    "third": {
+      "title": "Jeśli masz starą, zniszczoną posadzkę...",
+      "description": "doczyścimy ją, odplamimy i zabezpieczymy antypoślizgowo, aby była bezpieczna dla Ciebie, Twoich klientów, pracowników oraz bliskich. Następnie dokonamy impregnacji, przez co Twoja podłoga odzyska dawny blask i świeżość."
+    }
+    ,
+    "fourth": {
+      "title": "Jeśli jesteś odpowiedzialny za posadzki w przestrzeni użyteczności publicznej...",
+      "description": "wykonamy profesjonalny pomiar antyposlizgowości i wystawimy certyfikat zgodności posadzki z wytycznymi FSC i normą Pendulum."
+    }
+  },
+  "zapTechnology": "ROZWIĄZANIEM JEST ZAP®",
+  "zapDetails": "Jest to profesjonalna usługa oparta na autorskiej technologii firmy CTS Chemistry i preparatach najlepszej produkcji.",
+  "zapCheck": "SPRAWDŹ, CO WYRÓŻNIA TĄ METODĘ.",
+  "security": "ZABEZPIECZENIE",
+  "attributesTechnology": {
+    "first": "Zabezpiecza każdy rodzaj powierzchni z kamienia, ceramiki czy betonu.",
+    "second": "Pozwala na zabezpieczenie starych i nowych powierzchni.",
+    "third": "Stosuje się ją na zewnątrz i wewnątrz budynków.",
+    "fourth": "Jest bezpieczna dla materiału, nie trawi powierzchni, nie powoduje matowienia.",
+    "fifth": "Nie pozostawia plam i przebarwień.",
+    "sixth": "Jest bezpieczna dla ludzi i środowiska.",
+    "seventh": "Spełnia wymogi bezpieczeństwa według normy PN-EN 13036-4.",
+    "eighth": "Gwarantuje trwałość efektu antypoślizgowego."
+  },
+  "measurement": "POMIAR",
+  "measurementDescription": "Wykonamy pomiar antypoślizgowości i wystawimy Certyfikat Zgodności. Wszystko zgodnie z wytycznymi instytutu Techniki Budowlanej i Ministerstwa Rozwoju.",
+  "measurementHow": "Jak mierzymy odporność posadzki na poślizg?",
+  "measurementHowDescription": "Metodą weryfikacji odporności na poślizg jest badanie oporu poślizgu. Badanie to wykonujemy przy użyciu przyrządu zwanego wahadłem angielskim, stąd badanie w skrócie określane jest jako PTV (Pendulum Test Value). Metodę badania opisano szczegółowo w normie PN-EN 13036-4.",
+  "measurementLink": "Więcej o świadczonych przez nas pomiarach możesz przeczytać ",
+  "here": "tutaj.",
+  "antislipWhen": "Kiedy należy stosować profesjonalne zabezpieczenia antypoślizgowe?",
+  "antislipWhenDescription": "Niezależnie od wieku, kondycji fizycznej czy wykonywanego zawodu. Każdy z nas jest narażony na poślizgnięcia i bolesne upadki.",
+  "antislipWhenDescriptionBottom": "Niedostateczna odporność posadzki na poślizg niesie za sobą ryzyko poważnych urazów, których konsekwencją staje się długotrwałe i kosztowne leczenie oraz wysokie roszczenia odszkodowawcze. Dlatego warto poznać i skorzystać z wszelkich dostępnych środków technicznych i prawnych, by zagwarantować bezpieczeństwo użytkowników danej powierzchni od etapu projektu inwestycji budowlanej, przez odbiór techniczny, po okres użytkowania.",
+  "antislipWhenLink": "Więcej o wymaganiach dotyczących antypoślizgowości i przepisach prawnych znajdziesz klikając ",
+  "readMore": "Czytaj więcej na naszym blogu"
+}

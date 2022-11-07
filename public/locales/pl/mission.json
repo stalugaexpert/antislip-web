@@ -1,0 +1,33 @@
+{
+  "about": "Bezpieczeństwo i higiena w pracy zaczynają się od podłogi",
+  "aboutDescription": "Dbamy o bezpieczeństwo pracowników dążąc do ograniczenia ryzyka upadku i urazu. Najczęstsze przyczyny upadków w pracy to niestety poślizgnięcia.",
+  "ourMissionItems": {
+    "first": {
+      "title": "UŚWIADAMIAMY",
+      "descriptionTop": "Naszą misją jest ograniczenie liczby wypadków w zakładach pracy poprzez ",
+      "descriptionMiddle": "propagowanie kultury bezpieczeństwa ",
+      "descriptionBottom": "i uświadamianie zagrożeń związanych ze śliską lub mokrą posadzką.",
+      "descriptionAdd": "Nie lekceważ ryzyka!"
+    },
+    "second": {
+      "title": "PRZYPOMINAMY",
+      "descriptionTop": "1. Każda płytka w miarę upływu czasu oraz intensywności jej eksploatacji traci swoją fabryczną antypoślizgowość.",
+      "descriptionMiddle": "2. Deklarowana przez producenta klasa antypoślizgowa nie stanowi certyfikatu czy atestu.",
+      "descriptionBottom": "3. Płytka antypoślizgowa o wysokiej klasie antypoślizgu na sucho, może być znacznie bardziej śliska gdy powierzchnia jest mokra.",
+      "descriptionAdd": "Zamów pomiar odporności posadzki na poślizg."
+    },
+    "third": {
+      "title": "ELIMINUJEMY PRZYCZYNY POŚLIZGNIĘĆ",
+      "descriptionTop": "Zabezpieczamy nawierzchnie podłogwe tak, aby zapewnić pracownikom bezpieczne i higieniczne warunki pracy zgodnie z Kodeksem Pracy. ",
+      "descriptionMiddle": "Nasze zabezpieczenia są skuteczne nawet tam, gdzie z powodu prowadzonych procesów technologicznych zanieczyszczenia podłogi są nieuniknione. ",
+      "descriptionBottom": "Wśród najczęściej spotykanych zanieczyszczeń można wymienić: chemikalia, kwasy, oleje, smary, benzynę, odpady spożywcze, mydła, środki do czyszczenia oraz wodę. Chcesz wyeliminować przyczyny poślizgnięć?",
+      "descriptionAdd": "Zamów bezpłatną próbę zabezpieczenia antypoślizgowego!"
+    },
+    "fourth": {
+      "title": "ZMNIEJSZAMY KOSZTY",
+      "descriptionTop": "Jeśli jesteś odpowiedzialny za bezpieczeństwo pracowników, to także ponosisz odpowiedzialność za bolesne poślizgnięcia, upadki czy urazy powstałe jako skutek niezabezpieczonych powierzchni. ",
+      "descriptionMiddle": "Uniknij wysokich roszczeń i zadbaj o bezpieczeństwo użytkowników.",
+      "descriptionAdd": "Nie ponoś dodatkowych kosztów!"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "ourServices": "NASZE USŁUGI",
+  "measurementDescription": "Pomiar współczynnika tarcia dynamicznego",
+  "heroDescription": "Wykonamy pomiar antypoślizgowości Twojej powierzchni według wytycznych Instytutu Techniki Budowlanej. Następnie otrzymasz Certyfikat Zgodności przeprowadzonego badania.",
+  "readMore": "Czytaj więcej na naszym blogu",
+  "measurementWhy": "Dlaczego należy sprawdzać stan posadzki w zakresie antypoślizgowości?",
+  "measurementWhyDescription": "Każda płytka ceramiczna, w miarę upływu czasu oraz intensywności eksploatacji, traci swoją antypoślizgowość fabryczną. Dlatego antypoślizgowość posadzek należy okresowo kontrolować (nie rzadziej niż raz na 3 lata), w ramach przeglądów technicznych obiektów.",
+  "measurementWhyDescriptionBottom": "Więcej o powodach, dla których należy badać odporność powierzchni na poślizg znajdziesz klikając w poniższy przycisk.",
+  "responsibility": "Obowiązki i odpowiedzialność",
+  "readMoreButton": "Czytaj więcej",
+  "measurementWho": "Kto zleca nam pomiar odporności posadzek na poślizg?",
+  "measurementWhoDescription": "Projektanci, inspektorzy nadzoru budowlanego, inwestorzy, zarządcy, administratorzy obiektów użyteczności publicznej lub budynków mieszkalnych, chcąc mieć pewność, że ich posadzki są bezpieczne i zgodne z obowiązującymi przepisami prawa, wytycznymi i poradnikami, regularnie badają odporność na poślizg, nowych oraz eksploatowanych posadzek.",
+  "measurementHow": "W jaki sposób dokonujemy pomiaru odporności posadzki na poślizg?",
+  "measurementPtv": "Wartości oporu poślizgu PTV stanowią podstawę klasyfikacji posadzki w ujęciu ryzyka poślizgu. Klasyfikację tę przedstawiono w poniższej tabeli.",
+  "ptvResistance": "Opór poślizgu (PTV)",
+  "classification": "Klasyfikacja",
+  "ptvLevel": {
+    "low": "Niskie ryzyko poślizgnięcia",
+    "medium": "Średnie ryzyko poślizgnięcia",
+    "high": "Wysokie ryzyko poślizgnięcia"
+  },
+  "moreDescription": "Jeśli chcesz dowiedzieć się więcej o wymaganiach i wytycznych dotyczących antypoślizgu i bezpieczeństwa powierzchni, kliknij ",
+  "here": "tutaj.",
+  "measurementHowTo": "W jaki sposób działamy?",
+  "measurementHowToDescription": {
+    "first": "Pomiary wykonujemy zawsze zgodnie z wytycznymi zawartymi w normie oraz dedykowanymi do tych pomiarów ślizgaczami (stopkami), na suchym i mokrym.",
+    "second": "Po każdym badaniu przygotujemy raport odporności podłoża na poślizg.",
+    "third": "Rzetelne badanie jest podstawą do uznania zgodności parametrów badanego podłoża z wytycznymi opracowanymi przez Instytut Techniki Budowlanej w Warszawie w 2018 roku oraz Ministerstwo Inwestycji i Rozwoju w 2020 roku."
+  },
+  "measurementWhatToRemember": "O czym warto pamiętać przed podjęciem decyzji o profesjonalnym pomiarze odporności na poślizg?",
+  "measurementWhatToRememberHow": "Naciśnij na poniższe karty, aby dowiedzieć się ",
+  "more": "więcej.",
+  "measurementQuestionsAnswers": {
+    "first": {
+      "question": "Kiedy powierzchnia staje się śliska?",
+      "paragraphFirst": "Każda powierzchnia, w miarę upływu czasu oraz intensywności eksploatacji, traci swoją antypoślizgowość fabryczną i staje się niebezpieczna."
+    },
+    "second": {
+      "question": "Od czego zależy śliskość posadzki?",
+      "paragraphFirst": "Antypoślizgowość danej posadzki w warunkach rzeczywistych zależy m.in. od:",
+      "paragraphSecond": "• rodzaju posadzki np. gres szkliwiony, granit polerowany, marmur, żywica, PCV,",
+      "paragraphThird": "• rodzaju zelówki np. PU, TR, EVA, styrogum, tuniskór, skóra naturalna,",
+      "paragraphFourth": "• rodzaju lubrykantu np. woda, błoto, soki, olej, ketchup, musztarda, zupy, sosy,",
+      "paragraphFifth": "• siła nacisku czyli nasza waga."
+    },
+    "third": {
+      "question": "Od czego zależy sposób pomiaru antypoślizgowości?",
+      "paragraphFirst": "W zależności od miejsca, w którym znajduje się dana posadzka, sposobu jej eksploatacji czy charakterystyki zawodowej lub wiekowej osób z niej korzystających, każda podłoga wymaga profesjonalnego, indywidualnego podejścia przed wykonaniem pomiaru i usługi."
+    },
+    "fourth": {
+      "question": "Czy mokra posadzka jest bardziej niebezpieczna?",
+      "paragraphFirst": "Współczynnik antypoślizgu poasdzki mokrej i suchej różni się od siebie - dlatego należy zadbać o bezpieczeństwo osób poruszających się po niej, szczególnie kiedy jest mokra."
+    },
+    "fifth": {
+      "question": "Czy klasa antypoślizgu wszystkich płytek ceramicznych jest taka sama?",
+      "paragraphFirst": "Płytki ceramiczne potrafią znacznie różnić się w swojej klasie antypoślizgowości R lub A/B/C, wartościami PTV czy dynamicznego współczynnika tarcia µ."
+    }
+  },
+  "measurementWorthTo": "Warto pamiętać, aby zlecając usługę pomiaru poślizgu swojej podłogi, zawsze szukać doświadczonej firmy, z ugruntowaną pozycją na rynku.",
+  "measurementWorthToDescriptionTop": "Firma powinna dysponować odpowiednimi i skalibrowanymi ",
+  "measurementDevices": "urządzeniami pomiarowymi ",
+  "measurementWorthToDescriptionMid": "gwarantującymi wykonanie ",
+  "realiableMeasurement": "rzetelnego pomiaru",
+  "measurementWorthToDescriptionBottom": ", zgodnego z obowiązującymi normami.",
+  "measurementContactUsDescription": "Jeśli zależy Ci na profesjonalnie przeprowadzonej usłudze oraz doradztwie na najwyższym poziomie w sprawie bezpieczeństwa, antypoślizgu, impregnacji czy doczyszczania ",
+  "measurementContactUs": "skontaktuj się z nami.",
+  "measurementWorthRemember": "Pamiętaj, że obowiązek pomiaru współczynnika tarcia wymaga z określonych aktów prawnych. Przeczytasz o tym więcej tutaj:",
+  "regulation": "Ustawy i rozporządzenia"
+}

@@ -55,17 +55,17 @@ export const Footer = () => {
           </div>
           <div className="flex flex-col gap-6">
             <span className="text-sm text-neutral200 dark:text-neutral400 font-semibold uppercase">{t('footer:menu')}</span>
-            <Link href="">
+            <Link href="/">
               <a className="text-base text-neutral50 dark:text-neutral200 font-normal duration-300 hover:text-neutral200 dark:hover:text-neutral400 hover:translate-x-1">
                 {t('footer:home')}
               </a>
             </Link>
-            <Link href="">
+            <Link href="/knowledge">
               <a className="text-base text-neutral50 dark:text-neutral200 font-normal duration-300 hover:text-neutral200 dark:hover:text-neutral400 hover:translate-x-1">
                 {t('footer:knowledge')}
               </a>
             </Link>
-            <Link href="">
+            <Link href="/contact">
               <a className="text-base text-neutral50 dark:text-neutral200 font-normal duration-300 hover:text-neutral200 dark:hover:text-neutral400 hover:translate-x-1">
                 {t('footer:contact')}
               </a>
@@ -73,22 +73,22 @@ export const Footer = () => {
           </div>
           <div className="flex flex-col gap-6">
             <span className="text-sm text-neutral200 dark:text-neutral400 font-semibold uppercase">{t('footer:services')}</span>
-            <Link href="">
+            <Link href="/antislip">
               <a className="text-base text-neutral50 dark:text-neutral200 font-normal duration-300 hover:text-neutral200 dark:hover:text-neutral400 hover:translate-x-1">
                 {t('footer:antislip')}
               </a>
             </Link>
-            <Link href="">
+            <Link href="/friction-measurement">
               <a className="text-base text-neutral50 dark:text-neutral200 font-normal duration-300 hover:text-neutral200 dark:hover:text-neutral400 hover:translate-x-1">
                 {t('footer:pendulum')}
               </a>
             </Link>
-            <Link href="">
+            <Link href="/sealing">
               <a className="text-base text-neutral50 dark:text-neutral200 font-normal duration-300 hover:text-neutral200 dark:hover:text-neutral400 hover:translate-x-1">
                 {t('footer:sealers')}
               </a>
             </Link>
-            <Link href="">
+            <Link href="/cleaning">
               <a className="text-base text-neutral50 dark:text-neutral200 font-normal duration-300 hover:text-neutral200 dark:hover:text-neutral400 hover:translate-x-1">
                 {t('footer:cleaning')}
               </a>

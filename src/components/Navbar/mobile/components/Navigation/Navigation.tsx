@@ -21,13 +21,13 @@ const navigationVariants = {
 export const Navigation = ({ toggle }: INavigationProps) => {
   const { t } = useTranslation()
   const navigationProps = [
-    { text: t('navbar:home'), link: "", highlightItem: true, bold: 'font-bold' },
-    { text: t('navbar:servicesList.antislip'), link: "" },
-    { text: t('navbar:servicesList.pendulum'), link: "" },
-    { text: t('navbar:servicesList.sealers'), link: "" },
-    { text: t('navbar:servicesList.cleaning'), link: "" },
-    { text: t('navbar:knowledge'), link: "" },
-    { text: t('navbar:contact'), link: "" },
+    { text: t('navbar:home'), url: "/", highlightItem: true, bold: 'font-bold' },
+    { text: t('navbar:servicesList.antislip'), url: "/antislip" },
+    { text: t('navbar:servicesList.pendulum'), url: "/friction-measurement" },
+    { text: t('navbar:servicesList.sealers'), url: "/sealing" },
+    { text: t('navbar:servicesList.cleaning'), url: "/cleaning" },
+    { text: t('navbar:knowledge'), url: "/knowledge" },
+    { text: t('navbar:contact'), url: "/contact" },
   ]
 
   return (
@@ -40,9 +40,9 @@ export const Navigation = ({ toggle }: INavigationProps) => {
           bold={item.bold}
           highlightItem={item.highlightItem}
           key={item.text}
-          link={item.link}
           text={item.text}
           toggle={toggle}
+          url={item.url}
         />
       ))}
     </motion.ul>

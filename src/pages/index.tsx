@@ -1,4 +1,4 @@
-import { AboutUs, HeroSection, OurServices, PageLayout, Recommendations, TrustedBy } from '@components'
+import { AboutUs, HeroSection, OurMission, OurServices, PageLayout, Recommendations, TrustedBy } from '@components'
 import type { NextPage } from 'next'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -11,6 +11,7 @@ const Home: NextPage = () => {
       <HeroSection />
       <OurServices />
       <AboutUs />
+      <OurMission />
       <Recommendations />
       <TrustedBy />
     </PageLayout>
@@ -20,7 +21,7 @@ const Home: NextPage = () => {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'navbar', 'footer', 'recommendations', 'about', 'services', 'hero'])),
+      ...(await serverSideTranslations(locale, ['common', 'navbar', 'footer', 'recommendations', 'mission', 'about', 'services', 'hero'])),
     },
   }
 }

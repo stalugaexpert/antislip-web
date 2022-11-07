@@ -1,8 +1,10 @@
 import { motion, useCycle } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/router"
 import { useTranslation } from 'next-i18next'
 import { useTheme } from "next-themes"
+import { scrollToTopHome } from "src/utils/helpers/scrollToTop"
 
 import { ThemeButton } from "../components/ThemeButton"
 import { MenuToggle } from "./components/MenuToggle"
@@ -27,6 +29,7 @@ const sideBarVariants = {
 export const NavbarMobile = () => {
   const { t } = useTranslation()
   const { systemTheme, theme } = useTheme()
+  const { asPath } = useRouter()
   const currentTheme = theme === 'system' ? systemTheme : theme
   const [isOpen, toggleOpen] = useCycle(false, true)
 
@@ -40,8 +43,11 @@ export const NavbarMobile = () => {
         className="absolute top-0 right-0 bottom-0 w-screen h-screen bg-white dark:bg-neutral900"
         variants={sideBarVariants}
       />
-      <Link href="">
-        <a className="p-3">
+      <Link href="/">
+        <a
+          className="p-3"
+          onClick={() => scrollToTopHome(asPath)}
+        >
           { currentTheme === 'dark' ? (
             <Image
               alt={t('navbar:logoAlt')}

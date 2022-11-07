@@ -47,7 +47,12 @@ module.exports = {
         'about-md': { 'max': '856px' },
         'about-sm': { 'max': '750px' },
         'about-xsm': { 'max': '600px' },
-        'about-x2sm': { 'max': '465px' }
+        'about-x2sm': { 'max': '465px' },
+        'knowledge-md': { 'max': '900px' },
+        'knowledge-sm': { 'max': '540px' },
+        'knowledge-xsm': { 'max': '486px' },
+        'cardItems-md': { 'max': '1288px' },
+        'mission-sm': { 'max': '620px' }
       }
     },
   },

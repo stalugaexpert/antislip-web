@@ -3,14 +3,15 @@ import Link from "next/link"
 import { useState } from "react"
 
 interface IMenuItemProps {
-  text: string
+  text: string,
+  url: string
 }
 
-export const MenuItem = ({ text }: IMenuItemProps) => {
+export const MenuItem = ({ text, url }: IMenuItemProps) => {
   const [isBeingHovered, setIsBeingHovered] = useState(false)
 
   return (
-    <Link href="/test">
+    <Link href={url}>
       <a>
         <motion.div
           className={`relative py-7 px-4 text-base text-neutral700 dark:text-neutral100 duration-300 hover:text-neutral800 hover:font-bold before:content-[attr(title)] before:font-bold before:overflow-hidden before:invisible before:h-0 before:block`}
