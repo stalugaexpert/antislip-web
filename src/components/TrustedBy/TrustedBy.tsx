@@ -76,6 +76,10 @@ const companiesLogoList = [
   {
     image: "tubadzin-logo.png",
     alt: "tubadzin logo"
+  },
+  {
+    image: "waveresort-logo.png",
+    alt: "wave resort Międzyzdroje logo"
   }
 ]
 

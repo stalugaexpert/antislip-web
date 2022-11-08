@@ -52,7 +52,8 @@ module.exports = {
         'knowledge-sm': { 'max': '540px' },
         'knowledge-xsm': { 'max': '486px' },
         'cardItems-md': { 'max': '1288px' },
-        'mission-sm': { 'max': '620px' }
+        'mission-sm': { 'max': '620px' },
+        'contact-sm': { 'max': '560px' }
       }
     },
   },

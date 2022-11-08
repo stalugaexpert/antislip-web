@@ -10,5 +10,7 @@
   "send": "Wyślij",
   "name": "Imię",
   "email": "Adres e-mail",
-  "phone": "Numer telefonu"
+  "phone": "Numer telefonu",
+  "fieldRequired": "To pole jest wymagane.",
+  "fieldTooLong": "Podana wartość jest zbyt długa."
 }
