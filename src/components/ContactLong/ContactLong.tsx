@@ -5,20 +5,20 @@ import { useState } from "react"
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 import { SubmitHandler, useForm } from "react-hook-form"
 
-interface IShortFormValues {
+interface ILongFormValues {
   name: string
   email: string
-  phone: string
+  message: string
   agreement: boolean
 }
 
-export const ContactShort = () => {
+export const ContactLong = () => {
   const { t } = useTranslation()
   const { executeRecaptcha } = useGoogleReCaptcha()
-  const { register, handleSubmit, formState: { errors }} = useForm<IShortFormValues>()
+  const { register, handleSubmit, formState: { errors }} = useForm<ILongFormValues>()
   const [isLoading, setIsLoading] = useState(false)
 
-  const onSubmit: SubmitHandler<IShortFormValues> = data => {
+  const onSubmit: SubmitHandler<ILongFormValues> = data => {
     setIsLoading(true)
 
     if (!executeRecaptcha) {
@@ -26,7 +26,7 @@ export const ContactShort = () => {
       return
     }
     executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
-      fetch("/api/contactForm", {
+      fetch("/api/messageForm", {
         method: "POST",
         headers: {
           Accept: "application/json, text/plain, */*",
@@ -35,7 +35,7 @@ export const ContactShort = () => {
         body: JSON.stringify({
           gRecaptchaToken: gReCaptchaToken,
           name: data.name,
-          phone: data.phone,
+          message: data.message,
           email: data.email,
         }),
       })
@@ -51,18 +51,15 @@ export const ContactShort = () => {
   }
 
   return (
-    <section
-      className='px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 mission-sm:px-0 mission-sm:mb-0'
-      id="contact"
-    >
-      <div className="flex mission-sm:flex-wrap items-center gap-24 about-md:gap-16 mission-sm:gap-0 h-[75vh] mission-sm:h-full">
+    <section className='px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 mission-sm:px-0'>
+      <div className="flex mission-sm:flex-wrap items-center gap-24 about-md:gap-16 mission-sm:gap-0 h-[75vh]  mission-sm:h-full">
         <div className="w-2/4 mission-sm:w-full mission-sm:mb-8 mission-sm:px-6">
           <h5 className="text-3xl about-md:text-xl font-semibold text-neutral900 dark:text-neutral50 mb-3">{t('contact:contactTitle')}</h5>
           <h5 className="text-3xl about-md:text-xl font-semibold text-amber400 mb-4">{t('contact:contactTalk')}</h5>
           <div className='mb-8'>
             <p className='font-normal inline text-base about-md:text-sm text-neutral700 dark:text-neutral200'>{t('contact:contactDescription')}</p>
-            <Link href="/contact">
-              <a className='font-semibold inline text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75'>{t('contact:contactDescriptionMessage')}</a>
+            <Link href="/#contact">
+              <a className='font-semibold inline text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75'>{t('contact:contactDescriptionContact')}</a>
             </Link>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -122,17 +119,16 @@ export const ContactShort = () => {
               )}
             </div>
 
-            <div className="relative w-full max-w-[75%] recommendations-ds:max-w-full h-11 mb-8">
-              <input
-                {...register("phone", { required: true, maxLength: 30 })}
-                aria-invalid={errors.phone ? "true" : "false"}
-                className={cx('peer w-full h-full bg-neutral100 border-neutral100 dark:bg-neutral700 text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border border placeholder-shown:border-solid placeholder-shown:border-neutral200 dark:placeholder-shown:border-neutral600 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 border-t-transparent focus:border-t-transparent dark:focus:border-t-transparent text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-amber600 dark:focus:border-amber600', { '!border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 dark:!border-t-rose600 dark:focus:!border-t-transparent focus:!border-t-transparent animate-shake': errors.phone } )}
-                name="phone"
+            <div className="relative w-full max-w-[75%] recommendations-ds:max-w-full h-32 mb-8">
+              <textarea
+                {...register("message", { required: true, maxLength: 30 })}
+                aria-invalid={errors.message ? "true" : "false"}
+                className={cx('peer w-full h-full bg-neutral100 border-neutral100 dark:bg-neutral700 text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border border placeholder-shown:border-solid placeholder-shown:border-neutral200 dark:placeholder-shown:border-neutral600 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 border-t-transparent focus:border-t-transparent dark:focus:border-t-transparent text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-amber600 dark:focus:border-amber600', { '!border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 dark:!border-t-rose600 dark:focus:!border-t-transparent focus:!border-t-transparent animate-shake': errors.message } )}
+                name="message"
                 placeholder=" "
-                type="tel"
               />
-              <label className={cx('flex w-full h-full select-none pointer-events-none absolute left-0 font-normal peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[4.1] text-blue-gray-400 peer-focus:text-amber600 before:border-blue-gray-200 peer-focus:before:border-amber600 after:border-blue-gray-200 peer-focus:after:border-amber600', { 'peer-focus:after:border-rose600 peer-focus:before:border-rose600 after:border-rose600 peer-focus:text-neutral800 dark:peer-focus:text-neutral50': errors.phone } )}>{t('contact:phone')}</label>
-              {errors.phone?.type === 'required' && (
+              <label className={cx('flex w-full h-full select-none pointer-events-none absolute left-0 font-normal peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[4.1] text-blue-gray-400 peer-focus:text-amber600 before:border-blue-gray-200 peer-focus:before:border-amber600 after:border-blue-gray-200 peer-focus:after:border-amber600', { 'peer-focus:after:border-rose600 peer-focus:before:border-rose600 after:border-rose600 peer-focus:text-neutral800 dark:peer-focus:text-neutral50': errors.message } )}>{t('contact:message')}</label>
+              {errors.message?.type === 'required' && (
                 <p
                   className="font-normal mt-1 text-sm text-rose600"
                   role="alert"
@@ -140,7 +136,7 @@ export const ContactShort = () => {
                   {t('contact:fieldRequired')}
                 </p>
               )}
-              {errors.phone?.type === 'maxLength' && (
+              {errors.message?.type === 'maxLength' && (
                 <p
                   className="font-normal mt-1 text-sm text-rose600"
                   role="alert"

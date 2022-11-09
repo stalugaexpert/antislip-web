@@ -1,4 +1,4 @@
-import { Accordion, PageLayout } from '@components'
+import { Accordion, ContactShort, PageLayout } from '@components'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -99,7 +99,7 @@ const Knowledge: NextPage = () => {
           <h2 className='text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50'>{t('knowledge:description')}</h2>
           <h2 className='text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50'>{t('knowledge:descriptionBottom')}</h2>
         </div>
-        <div className='relative h-[31.2rem] about-md:h-[30vh] w-full'>
+        <div className="relative h-[31.2rem] about-md:h-[30vh] w-full before:content-[''] before:absolute before:h-48 before:w-48 before:bg-amber400 before:z-10 before:top-0 before:left-full before:-translate-x-full before:-translate-y-2/4 before:blur-[100px] before:opacity-50 dark:before:opacity-30">
           <Image
             alt=""
             layout="fill"
@@ -439,6 +439,7 @@ const Knowledge: NextPage = () => {
           ))}
         </div>
       </section>
+      <ContactShort />
     </PageLayout>
   )
 }
@@ -446,7 +447,7 @@ const Knowledge: NextPage = () => {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['navbar', 'footer', 'knowledge'])),
+      ...(await serverSideTranslations(locale, ['navbar', 'footer', 'knowledge', 'contact'])),
     },
   }
 }

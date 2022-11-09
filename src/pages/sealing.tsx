@@ -1,4 +1,4 @@
-import { PageLayout, Recommendations } from '@components'
+import { ContactShort, PageLayout, Recommendations } from '@components'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -46,7 +46,7 @@ const Sealing: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className='relative h-[31.2rem] about-md:h-[30vh] w-full'>
+        <div className="relative h-[31.2rem] about-md:h-[30vh] w-full before:content-[''] before:absolute before:h-48 before:w-48 before:bg-amber400 before:z-10 before:top-0 before:left-full before:-translate-x-full before:-translate-y-2/4 before:blur-[100px] before:opacity-50 dark:before:opacity-30">
           <Image
             alt=""
             layout="fill"
@@ -232,6 +232,7 @@ const Sealing: NextPage = () => {
         </div>
       </section>
       <Recommendations />
+      <ContactShort />
     </PageLayout>
   )
 }
@@ -239,7 +240,7 @@ const Sealing: NextPage = () => {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['navbar', 'footer', 'recommendations', 'sealing'])),
+      ...(await serverSideTranslations(locale, ['navbar', 'footer', 'recommendations', 'sealing', 'contact'])),
     },
   }
 }
