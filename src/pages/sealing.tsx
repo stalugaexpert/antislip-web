@@ -1,4 +1,4 @@
-import { PageLayout, Recommendations } from '@components'
+import { ContactShort, PageLayout, Recommendations } from '@components'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -232,6 +232,7 @@ const Sealing: NextPage = () => {
         </div>
       </section>
       <Recommendations />
+      <ContactShort />
     </PageLayout>
   )
 }
@@ -239,7 +240,7 @@ const Sealing: NextPage = () => {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['navbar', 'footer', 'recommendations', 'sealing'])),
+      ...(await serverSideTranslations(locale, ['navbar', 'footer', 'recommendations', 'sealing', 'contact'])),
     },
   }
 }

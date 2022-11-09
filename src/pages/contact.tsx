@@ -1,4 +1,4 @@
-import { PageLayout } from '@components'
+import { ContactLong, PageLayout } from '@components'
 import type { NextPage } from 'next'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -10,6 +10,7 @@ const Contact: NextPage = () => {
   return (
     <PageLayout>
       <section className='pt-32 navbar-md:pt-24'>
+        <ContactLong />
       </section>
       <ContactBottom />
     </PageLayout>

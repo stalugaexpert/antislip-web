@@ -1,4 +1,4 @@
-import { Accordion, PageLayout } from '@components'
+import { Accordion, ContactShort, PageLayout } from '@components'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -439,6 +439,7 @@ const Knowledge: NextPage = () => {
           ))}
         </div>
       </section>
+      <ContactShort />
     </PageLayout>
   )
 }
@@ -446,7 +447,7 @@ const Knowledge: NextPage = () => {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['navbar', 'footer', 'knowledge'])),
+      ...(await serverSideTranslations(locale, ['navbar', 'footer', 'knowledge', 'contact'])),
     },
   }
 }

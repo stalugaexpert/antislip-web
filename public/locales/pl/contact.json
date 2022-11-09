@@ -11,6 +11,7 @@
   "name": "Imię",
   "email": "Adres e-mail",
   "phone": "Numer telefonu",
+  "message": "Wiadomość",
   "fieldRequired": "To pole jest wymagane.",
   "fieldTooLong": "Podana wartość jest zbyt długa."
 }

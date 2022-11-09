@@ -1,4 +1,4 @@
-import { AccordionMeasurement, CardSwitcher, PageLayout, Recommendations } from '@components'
+import { AccordionMeasurement, CardSwitcher, ContactShort, PageLayout, Recommendations } from '@components'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -295,6 +295,7 @@ const Friction: NextPage = () => {
         </div>
       </section>
       <Recommendations />
+      <ContactShort />
     </PageLayout>
   )
 }
@@ -302,7 +303,7 @@ const Friction: NextPage = () => {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['navbar', 'footer', 'measurement', 'recommendations', 'card-switcher'])),
+      ...(await serverSideTranslations(locale, ['navbar', 'footer', 'measurement', 'recommendations', 'card-switcher', 'contact'])),
     },
   }
 }
