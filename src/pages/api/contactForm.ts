@@ -92,7 +92,6 @@ export default function handler (req: NextApiRequest,
             "Response from Google reCaptcha verification API"
           )
           if (reCaptchaRes?.score > 0.5) {
-            // send email with nodemailer
             transporter.sendMail(mailOptions, function (err, info) {
               if(err)
                 console.log(err)

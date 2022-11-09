@@ -3,9 +3,9 @@ import Link from "next/link"
 import { useTranslation } from "next-i18next"
 import { useState } from "react"
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
-import { useForm } from "react-hook-form"
+import { SubmitHandler, useForm } from "react-hook-form"
 
-interface IShortFormProps {
+interface IShortFormValues {
   name: string
   email: string
   phone: string
@@ -15,11 +15,10 @@ interface IShortFormProps {
 export const ContactShort = () => {
   const { t } = useTranslation()
   const { executeRecaptcha } = useGoogleReCaptcha()
-  const { register, handleSubmit, formState: { errors }} = useForm()
+  const { register, handleSubmit, formState: { errors }} = useForm<IShortFormValues>()
   const [isLoading, setIsLoading] = useState(false)
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const onSubmit = (data: any) => {
+  const onSubmit: SubmitHandler<IShortFormValues> = data => {
     setIsLoading(true)
 
     if (!executeRecaptcha) {
@@ -42,11 +41,9 @@ export const ContactShort = () => {
       })
         .then((res) => res.json())
         .then(async (res) => {
-          console.log(res, "response from backend")
           if (res.status === "success") {
             setIsLoading(false)
           } else {
-            console.log(res.message)
             setIsLoading(false)
           }
         })
