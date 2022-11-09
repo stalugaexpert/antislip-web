@@ -9,7 +9,7 @@ const Contact: NextPage = () => {
 
   return (
     <PageLayout>
-      <section className='pt-32 navbar-md:pt-24'>
+      <section className='pt-40 navbar-md:pt-24'>
         <ContactLong />
       </section>
       <ContactBottom />

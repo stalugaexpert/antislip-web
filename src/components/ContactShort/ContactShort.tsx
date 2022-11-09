@@ -55,7 +55,7 @@ export const ContactShort = () => {
       className='px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 mission-sm:px-0 mission-sm:mb-0'
       id="contact"
     >
-      <div className="flex mission-sm:flex-wrap items-center gap-24 about-md:gap-16 mission-sm:gap-0 h-[75vh]  mission-sm:h-full">
+      <div className="flex mission-sm:flex-wrap items-center gap-24 about-md:gap-16 mission-sm:gap-0 h-[75vh] mission-sm:h-full">
         <div className="w-2/4 mission-sm:w-full mission-sm:mb-8 mission-sm:px-6">
           <h5 className="text-3xl about-md:text-xl font-semibold text-neutral900 dark:text-neutral50 mb-3">{t('contact:contactTitle')}</h5>
           <h5 className="text-3xl about-md:text-xl font-semibold text-amber400 mb-4">{t('contact:contactTalk')}</h5>
