@@ -86,6 +86,11 @@ export const NavbarDesktop = () => {
             ))}
           </MenuItemDropdown>
           <MenuItem
+            text={t('navbar:shop')}
+            url="https://e-nubes.com"
+            isExternal
+          />
+          <MenuItem
             text={t('navbar:knowledge')}
             url="/knowledge"
           />

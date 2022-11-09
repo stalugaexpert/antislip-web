@@ -26,6 +26,7 @@ export const Navigation = ({ toggle }: INavigationProps) => {
     { text: t('navbar:servicesList.pendulum'), url: "/friction-measurement" },
     { text: t('navbar:servicesList.sealers'), url: "/sealing" },
     { text: t('navbar:servicesList.cleaning'), url: "/cleaning" },
+    { text: t('navbar:shop'), url: "https://e-nubes.com", isExternal: true },
     { text: t('navbar:knowledge'), url: "/knowledge" },
     { text: t('navbar:contact'), url: "/contact" },
   ]
@@ -39,6 +40,7 @@ export const Navigation = ({ toggle }: INavigationProps) => {
         <MenuItem
           bold={item.bold}
           highlightItem={item.highlightItem}
+          isExternal={item.isExternal}
           key={item.text}
           text={item.text}
           toggle={toggle}
