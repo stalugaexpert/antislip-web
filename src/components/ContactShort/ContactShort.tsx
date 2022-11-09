@@ -17,10 +17,10 @@ export const ContactShort = () => {
   const [isLoading, setIsLoading] = useState(false)
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const onSubmit = ((data: any) => {
+  const onSubmit = (data: any) => {
     console.log(data)
     // setIsLoading(true)
-  })
+  }
 
   return (
     <section className='px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 mission-sm:px-0 mission-sm:mb-0'>
@@ -34,7 +34,7 @@ export const ContactShort = () => {
               <input
                 {...register("name", { required: true, maxLength: 100 })}
                 aria-invalid={errors.name ? "true" : "false"}
-                className={cx('peer w-full h-full bg-neutral100 border-neutral100 dark:bg-neutral700 text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border border placeholder-shown:border-solid placeholder-shown:border-neutral200 dark:placeholder-shown:border-neutral600 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 border-t-transparent focus:border-t-transparent dark:focus:border-t-transparent text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-amber600 dark:focus:border-amber600', { '!border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 dark:!border-t-rose600 dark:focus:!border-t-transparent focus:!border-t-transparent': errors.name } )}
+                className={cx('peer w-full h-full bg-neutral100 border-neutral100 dark:bg-neutral700 text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border border placeholder-shown:border-solid placeholder-shown:border-neutral200 dark:placeholder-shown:border-neutral600 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 border-t-transparent focus:border-t-transparent dark:focus:border-t-transparent text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-amber600 dark:focus:border-amber600', { '!border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 dark:!border-t-rose600 dark:focus:!border-t-transparent focus:!border-t-transparent animate-shake': errors.name } )}
                 name="name"
                 placeholder=" "
                 type="text"
@@ -62,7 +62,7 @@ export const ContactShort = () => {
               <input
                 {...register("email", { required: true, maxLength: 100 })}
                 aria-invalid={errors.email ? "true" : "false"}
-                className={cx('peer w-full h-full bg-neutral100 border-neutral100 dark:bg-neutral700 text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border border placeholder-shown:border-solid placeholder-shown:border-neutral200 dark:placeholder-shown:border-neutral600 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 border-t-transparent focus:border-t-transparent dark:focus:border-t-transparent text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-amber600 dark:focus:border-amber600', { '!border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 dark:!border-t-rose600 dark:focus:!border-t-transparent focus:!border-t-transparent': errors.email } )}
+                className={cx('peer w-full h-full bg-neutral100 border-neutral100 dark:bg-neutral700 text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border border placeholder-shown:border-solid placeholder-shown:border-neutral200 dark:placeholder-shown:border-neutral600 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 border-t-transparent focus:border-t-transparent dark:focus:border-t-transparent text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-amber600 dark:focus:border-amber600', { '!border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 dark:!border-t-rose600 dark:focus:!border-t-transparent focus:!border-t-transparent animate-shake': errors.email } )}
                 name="email"
                 placeholder=" "
                 type="email"
@@ -90,7 +90,7 @@ export const ContactShort = () => {
               <input
                 {...register("phone", { required: true, maxLength: 30 })}
                 aria-invalid={errors.phone ? "true" : "false"}
-                className={cx('peer w-full h-full bg-neutral100 border-neutral100 dark:bg-neutral700 text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border border placeholder-shown:border-solid placeholder-shown:border-neutral200 dark:placeholder-shown:border-neutral600 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 border-t-transparent focus:border-t-transparent dark:focus:border-t-transparent text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-amber600 dark:focus:border-amber600', { '!border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 dark:!border-t-rose600 dark:focus:!border-t-transparent focus:!border-t-transparent': errors.phone } )}
+                className={cx('peer w-full h-full bg-neutral100 border-neutral100 dark:bg-neutral700 text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border border placeholder-shown:border-solid placeholder-shown:border-neutral200 dark:placeholder-shown:border-neutral600 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 border-t-transparent focus:border-t-transparent dark:focus:border-t-transparent text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-amber600 dark:focus:border-amber600', { '!border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 dark:!border-t-rose600 dark:focus:!border-t-transparent focus:!border-t-transparent animate-shake': errors.phone } )}
                 name="phone"
                 placeholder=" "
                 type="tel"
@@ -114,7 +114,7 @@ export const ContactShort = () => {
               )}
             </div>
 
-            <div className="flex relative items-center mb-6 pb-2">
+            <div className={cx('flex relative items-center mb-6 pb-2', { 'animate-shake': errors.agreement })}>
               <div className="mr-2">
                 <label
                   className="relative w-fit overflow-hidden flex items-center cursor-pointer p-3 rounded-full"

@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { useTranslation } from "next-i18next"
 import { useEffect, useState } from "react"
 import Slider from "react-slick"
@@ -103,25 +104,29 @@ export const OurServices = () => {
       title: t('services:antislip'),
       description: t('services:antislipDescription'),
       icon: "/icons/slip.png",
-      alt: "slip icon"
+      alt: "slip icon",
+      url: "/antislip"
     },
     {
       title: t('services:pendulum'),
       description: t('services:pendulumDescription'),
       icon: "/icons/pendulum.png",
-      alt: "pendulum icon"
+      alt: "pendulum icon",
+      url: "/friction-measurement"
     },
     {
       title: t('services:sealers'),
       description: t('services:pendulumDescription'),
       icon: "/icons/sealer.png",
-      alt: "sealer icon"
+      alt: "sealer icon",
+      url: "/sealing"
     },
     {
       title: t('services:cleaning'),
       description: t('services:pendulumDescription'),
       icon: "/icons/clean.png",
-      alt: "cleaning icon"
+      alt: "cleaning icon",
+      url: "/cleaning"
     }
   ]
 
@@ -155,21 +160,27 @@ export const OurServices = () => {
       </div>
       <Slider {...settings}>
         { servicesProps.map((item, index) => (
-          <div
-            className="!w-[17rem] h-[14rem] about-x2sm:!w-[15rem] about-x2sm:!h-[15rem] bg-neutral100 dark:bg-neutral700 p-6"
+          <Link
+            href={item.url}
             key={index}
           >
-            <div className="w-12 h-12 mb-4 flex items-center justify-center p-2 rounded-lg bg-white dark:bg-neutral100">
-              <Image
-                alt={item.alt}
-                height="24"
-                src={item.icon}
-                width="32"
-              />
-            </div>
-            <h2 className="text-sm font-semibold text-neutral700 dark:text-neutral200 mb-4">{item.title}</h2>
-            <h5 className="text-xs font-normal text-neutral700 dark:text-neutral200">{item.description}</h5>
-          </div>
+            <a>
+              <div
+                className="!w-[17rem] h-[14rem] about-x2sm:!w-[15rem] about-x2sm:!h-[15rem] bg-neutral100 dark:bg-neutral700 p-6"
+              >
+                <div className="w-12 h-12 mb-4 flex items-center justify-center p-2 rounded-lg bg-white dark:bg-neutral100">
+                  <Image
+                    alt={item.alt}
+                    height="24"
+                    src={item.icon}
+                    width="32"
+                  />
+                </div>
+                <h2 className="text-sm font-semibold text-neutral700 dark:text-neutral200 mb-4">{item.title}</h2>
+                <h5 className="text-xs font-normal text-neutral700 dark:text-neutral200">{item.description}</h5>
+              </div>
+            </a>
+          </Link>
         ))}
       </Slider>
     </section>
