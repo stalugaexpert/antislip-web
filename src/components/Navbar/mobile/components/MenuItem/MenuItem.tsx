@@ -1,11 +1,13 @@
+/* eslint-disable react/jsx-no-target-blank */
 import { motion } from "framer-motion"
 import Link from "next/link"
 
 interface IMenuItemProps {
   text: string
-  link: string
+  url: string
   highlightItem?: boolean
-  bold?: string
+  bold?: string,
+  isExternal?: boolean,
   toggle(): void
 }
 
@@ -28,10 +30,16 @@ const menuItemVariants = {
   },
 }
 
-export const MenuItem = ({ text, link, highlightItem = false, bold = '', toggle }: IMenuItemProps) => {
+export const MenuItem = ({ text, url, highlightItem = false, bold = '', isExternal = false, toggle }: IMenuItemProps) => {
   return (
-    <Link href={link}>
-      <a>
+    <Link
+      href={url}
+    >
+      <a
+        href={url}
+        rel={isExternal ? "noreferrer" : ""}
+        target={isExternal ? "_blank" : '_self'}
+      >
         <motion.li
           className="relative px-6 py-3"
           variants={menuItemVariants}

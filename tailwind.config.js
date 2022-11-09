@@ -7,6 +7,25 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      animation: {
+        'shake': 'shake 0.82s cubic-bezier(.36, .07, .19, .97) both',
+      },
+      keyframes: {
+        'shake': {
+          '10%, 90%': {
+            transform: 'translate3d(-1px, 0, 0)'
+          },
+          '20%, 80%': {
+            transform: 'translate3d(2px, 0, 0)'
+          },
+          '30%, 50%, 70%': {
+            transform: 'translate3d(-4px, 0, 0)'
+          },
+          '40%, 60%': {
+            transform: 'translate3d(4px, 0, 0)'
+          },
+        }
+      },
       colors: {
         neutral900: 'var(--neutral-900)',
         neutral800: 'var(--neutral-800)',
@@ -47,7 +66,13 @@ module.exports = {
         'about-md': { 'max': '856px' },
         'about-sm': { 'max': '750px' },
         'about-xsm': { 'max': '600px' },
-        'about-x2sm': { 'max': '465px' }
+        'about-x2sm': { 'max': '465px' },
+        'knowledge-md': { 'max': '900px' },
+        'knowledge-sm': { 'max': '540px' },
+        'knowledge-xsm': { 'max': '486px' },
+        'cardItems-md': { 'max': '1288px' },
+        'mission-sm': { 'max': '620px' },
+        'contact-sm': { 'max': '560px' }
       }
     },
   },

@@ -53,7 +53,7 @@ export const Recommendations = () => {
     centerPadding: centerPaddingRule,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     pauseOnHover: true,
     responsive: [
       {

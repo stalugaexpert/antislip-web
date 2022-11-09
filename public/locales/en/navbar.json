@@ -15,5 +15,6 @@
     "pendulum": "dynamic friction coefficient measurement",
     "sealers": "sealing",
     "cleaning": "cleaning"
-  }
+  },
+  "shop": "Shop"
 }

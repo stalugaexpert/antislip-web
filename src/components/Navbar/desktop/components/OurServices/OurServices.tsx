@@ -6,6 +6,7 @@ interface IOurServicesProps {
   text: string
   icon: string
   alt: string
+  url: string
 }
 
 const SubItemVariants = {
@@ -19,9 +20,9 @@ const SubItemVariants = {
   },
 }
 
-export const OurServices = ({ text, icon, alt }: IOurServicesProps) => {
+export const OurServices = ({ text, icon, alt, url }: IOurServicesProps) => {
   return (
-    <Link href="">
+    <Link href={url}>
       <a>
         <motion.div
           className="flex justify-left items-center gap-4 p-4 hover:bg-neutral200 dark:hover:bg-neutral800"

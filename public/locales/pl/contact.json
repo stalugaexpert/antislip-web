@@ -1,0 +1,16 @@
+{
+  "contactTitle": "Widzisz pole do współpracy?",
+  "contactTalk": "Porozmawiajmy!",
+  "contactDescription": "Zostam nam prośbę o kontakt, a my postaramy się odpowiedzieć w ciągu 24 godzin.",
+  "contactAgreement": "Przeczytałem i akceptuję ",
+  "contactRegulation": "regulamin",
+  "contactAgreementMid": " oraz ",
+  "contactPrivacy": "politykę prywatności",
+  "contactAgreementBot": ".",
+  "send": "Wyślij",
+  "name": "Imię",
+  "email": "Adres e-mail",
+  "phone": "Numer telefonu",
+  "fieldRequired": "To pole jest wymagane.",
+  "fieldTooLong": "Podana wartość jest zbyt długa."
+}
