@@ -169,12 +169,14 @@ export const OurServices = () => {
                 className="!w-[17rem] h-[14rem] about-x2sm:!w-[15rem] about-x2sm:!h-[15rem] bg-neutral100 dark:bg-neutral700 p-6"
               >
                 <div className="w-12 h-12 mb-4 flex items-center justify-center p-2 rounded-lg bg-white dark:bg-neutral100">
-                  <Image
-                    alt={item.alt}
-                    height="24"
-                    src={item.icon}
-                    width="32"
-                  />
+                  <div className="relative w-8 h-6">
+                    <Image
+                      alt={item.alt}
+                      layout="fill"
+                      objectFit='contain'
+                      src={item.icon}
+                    />
+                  </div>
                 </div>
                 <h2 className="text-sm font-semibold text-neutral700 dark:text-neutral200 mb-4">{item.title}</h2>
                 <h5 className="text-xs font-normal text-neutral700 dark:text-neutral200">{item.description}</h5>

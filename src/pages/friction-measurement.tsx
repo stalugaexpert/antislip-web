@@ -27,8 +27,8 @@ const Friction: NextPage = () => {
 
   return (
     <PageLayout>
-      <section className='px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-20 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'>
-        <div className='flex justify-between mb-12'>
+      <section className='px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'>
+        <div className='flex justify-between mb-8'>
           <div className='w-3/4 recommendations-ds:w-[85%]'>
             <h5 className='text-base about-md:text-sm font-semibold text-amber400 mb-4'>{t('measurement:ourServices')}</h5>
             <h2 className='text-4xl mb-6 about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50'>{t('measurement:measurementDescription')}</h2>
@@ -45,13 +45,25 @@ const Friction: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className="relative h-[31.2rem] about-md:h-[30vh] w-full before:content-[''] before:absolute before:h-48 before:w-48 before:bg-amber400 before:z-10 before:top-0 before:left-full before:-translate-x-full before:-translate-y-2/4 before:blur-[100px] before:opacity-50 dark:before:opacity-30">
-          <Image
-            alt=""
-            layout="fill"
-            objectFit='cover'
-            src="/images/measurement-hero.png"
-          />
+        <div className="h-[31.2rem] about-md:h-[30vh] w-full before:content-[''] before:absolute before:h-48 before:w-48 before:bg-amber400 before:z-10 before:top-0 before:left-full before:-translate-x-full before:-translate-y-2/4 before:blur-[100px] before:opacity-50 dark:before:opacity-30">
+          <div className='flex gap-8 mission-sm:gap-4'>
+            <div className='relative w-1/3 mission-sm:w-2/4 h-[31.2rem] about-md:h-[30vh]'>
+              <Image
+                alt=""
+                layout="fill"
+                objectFit='cover'
+                src="/images/measurement-hero-2.png"
+              />
+            </div>
+            <div className='relative w-2/3 mission-sm:w-2/4 h-[31.2rem] about-md:h-[30vh]'>
+              <Image
+                alt=""
+                layout="fill"
+                objectFit='cover'
+                src="/images/measurement-hero-1.png"
+              />
+            </div>
+          </div>
         </div>
       </section>
       <section className='px-24 max-w-screen-2xl mx-auto mb-10 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'>

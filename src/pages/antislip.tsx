@@ -46,8 +46,8 @@ const Antislip: NextPage = () => {
 
   return (
     <PageLayout>
-      <section className='px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-20 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'>
-        <div className='flex justify-between mb-12'>
+      <section className='px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'>
+        <div className='flex justify-between mb-8'>
           <div className='w-3/4 recommendations-ds:w-[85%]'>
             <h5 className='text-base about-md:text-sm font-semibold text-amber400 mb-4'>{t('antislip:ourServices')}</h5>
             <h2 className='text-4xl mb-6 about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50'>{t('antislip:antislipDescription')}</h2>
