@@ -69,7 +69,7 @@ const Antislip: NextPage = () => {
             alt=""
             layout="fill"
             objectFit='cover'
-            src="/images/antislip-hero.png"
+            src="/images/antislip-hero.jpg"
           />
         </div>
       </section>
@@ -128,7 +128,7 @@ const Antislip: NextPage = () => {
                 alt=""
                 layout="fill"
                 objectFit='cover'
-                src="/images/antislip-hero-2.png"
+                src="/images/antislip-hero-2.jpg"
               />
             </div>
             <section className='mb-10 text-justify'>

@@ -17,7 +17,7 @@ export const HeroSection = () => {
           alt={t('hero:imageAlt')}
           layout="fill"
           objectFit='cover'
-          src="/images/hero-image.png"
+          src="/images/hero-image.jpg"
         />
         <div className='absolute about-md:hidden p-10 bg-neutral50 dark:bg-neutral700 max-w-[25rem] -right-24 top-2/4 -translate-y-2/4'>
           <p className='text-sm font-normal text-neutral700 dark:text-neutral200 mb-4'>{t('hero:stats')}</p>

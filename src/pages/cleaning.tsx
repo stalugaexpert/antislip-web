@@ -50,7 +50,7 @@ const Cleaning: NextPage = () => {
             alt=""
             layout="fill"
             objectFit='cover'
-            src="/images/cleaning-hero.png"
+            src="/images/cleaning-hero.jpg"
           />
         </div>
       </section>
@@ -85,7 +85,7 @@ const Cleaning: NextPage = () => {
                   alt=""
                   layout="fill"
                   objectFit='cover'
-                  src="/images/cleaning-image-1.png"
+                  src="/images/cleaning-image-1.jpg"
                 />
               </div>
             </section>
