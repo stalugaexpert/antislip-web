@@ -51,7 +51,7 @@ const Sealing: NextPage = () => {
             alt=""
             layout="fill"
             objectFit='cover'
-            src="/images/sealing-hero.png"
+            src="/images/sealing-hero.jpg"
           />
         </div>
       </section>
@@ -102,7 +102,7 @@ const Sealing: NextPage = () => {
                   alt=""
                   layout="fill"
                   objectFit='cover'
-                  src="/images/sealing-image-1.png"
+                  src="/images/sealing-image-1.jpg"
                 />
               </div>
             </section>

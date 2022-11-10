@@ -41,7 +41,7 @@ export const AboutUs = () => {
               alt={t('about:imageAlt')}
               layout="fill"
               objectFit='cover'
-              src="/images/about-image.png"
+              src="/images/about-image.jpg"
             />
           </div>
         </div>

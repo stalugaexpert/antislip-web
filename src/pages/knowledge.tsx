@@ -91,9 +91,16 @@ const Knowledge: NextPage = () => {
     }
   ]
 
+  const testFunction = () => {
+    navigator.clipboard.writeText('test here')
+  }
+
   return (
     <PageLayout>
-      <section className='px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'>
+      <section
+        className='px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'
+        onClick={testFunction}
+      >
         <h5 className='text-base about-md:text-sm font-semibold text-amber400 mb-4'>{t('knowledge:knowledge')}</h5>
         <div className='mb-8'>
           <h2 className='text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50'>{t('knowledge:description')}</h2>
