@@ -48,21 +48,23 @@ export const NavbarMobile = () => {
           className="p-3"
           onClick={() => scrollToTopHome(asPath)}
         >
-          { currentTheme === 'dark' ? (
-            <Image
-              alt={t('navbar:logoAlt')}
-              height="37"
-              src="/icons/logo-dark.png"
-              width="81"
-            />
-          ) : (
-            <Image
-              alt={t('navbar:logoAlt')}
-              height="37"
-              src="/icons/logo.png"
-              width="81"
-            />
-          )}
+          <div className="relative h-10 w-48">
+            { currentTheme === 'dark' ? (
+              <Image
+                alt={t('navbar:logoAlt')}
+                layout="fill"
+                objectFit='contain'
+                src="/icons/logo-enubes-orange-white.png"
+              />
+            ) : (
+              <Image
+                alt={t('navbar:logoAlt')}
+                layout="fill"
+                objectFit='contain'
+                src="/icons/logo-enubes-orange.png"
+              />
+            )}
+          </div>
         </a>
       </Link>
       <div className="flex items-center justify-center z-50">

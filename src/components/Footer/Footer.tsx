@@ -8,12 +8,12 @@ export const Footer = () => {
   return (
     <footer className="p-14 pb-10 footer-md:p-8 bg-neutral800 dark:bg-neutral900">
       <div className="flex flex-col items-start max-w-screen-2xl mx-auto">
-        <div className="relative h-[4.375rem] w-[9.5rem] footer-md:h-[3rem] footer-md:w-[6.5625rem]">
+        <div className="relative h-16 w-72 footer-md:h-12 footer-md:w-56 footer-sm:w-full">
           <Image
             alt={t('navbar:logoAlt')}
             layout="fill"
             objectFit='contain'
-            src="/icons/logo-dark.png"
+            src="/icons/logo-enubes-orange-white.png"
           />
         </div>
         <div className="w-full mt-12 grid grid-cols-4 gap-6 footer-md:grid-cols-2 footer-md:gap-y-10 footer-sm:grid-cols-1 footer-sm:gap-y-12">

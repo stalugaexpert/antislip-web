@@ -5,7 +5,7 @@ import { NavbarMobile } from './mobile'
 
 export const Navbar = () => {
   const [width, setWidth] = useState(0)
-  const breakpoint = 886 // was 796
+  const breakpoint = 986 // was 796
 
   useEffect(() => {
     setWidth(window.innerWidth)
