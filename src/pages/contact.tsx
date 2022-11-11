@@ -1,15 +1,12 @@
 import { ContactLong, PageLayout } from '@components'
 import type { NextPage } from 'next'
-import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { ContactBottom } from 'src/components/ContactBottom'
 
 const Contact: NextPage = () => {
-  const { t } = useTranslation()
-
   return (
     <PageLayout>
-      <section className='pt-40 navbar-md:pt-24'>
+      <section className="pt-40 navbar-md:pt-24">
         <ContactLong />
       </section>
       <ContactBottom />
@@ -20,7 +17,12 @@ const Contact: NextPage = () => {
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['navbar', 'footer', 'contact', 'contact-page'])),
+      ...(await serverSideTranslations(locale, [
+        'navbar',
+        'footer',
+        'contact',
+        'contact-page',
+      ])),
     },
   }
 }

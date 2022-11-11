@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getPlaiceholder } from 'plaiceholder'
+import { PlaiceHolderProps } from 'src/utils/types/PlaiceHolderProps'
 
 import antiSlipPTV from '../../public/images/antislip-ptv.png'
 import knowledgeHero from '../../public/images/knowledge-hero.jpg'
@@ -279,7 +280,7 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   layout="fill"
                   objectFit="cover"
                   placeholder="blur"
-                  {...pendulumKnowledgeProps}
+                  {...(pendulumKnowledgeProps as PlaiceHolderProps)}
                 />
               </div>
               <p className="text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">

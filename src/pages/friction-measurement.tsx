@@ -11,6 +11,7 @@ import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getPlaiceholder } from 'plaiceholder'
+import { PlaiceHolderProps } from 'src/utils/types/PlaiceHolderProps'
 
 import measurementHero from '../../public/images/measurement-hero-1.png'
 import measurementHero2 from '../../public/images/measurement-hero-2.png'
@@ -277,7 +278,7 @@ const Friction: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   layout="fill"
                   objectFit="cover"
                   placeholder="blur"
-                  {...pendulumKnowledgeProps}
+                  {...(pendulumKnowledgeProps as PlaiceHolderProps)}
                 />
               </div>
             </section>
