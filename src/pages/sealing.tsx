@@ -1,46 +1,78 @@
 import { ContactShort, PageLayout, Recommendations } from '@components'
-import type { NextPage } from 'next'
+import type { InferGetStaticPropsType, NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { getPlaiceholder } from 'plaiceholder'
+import { PlaiceHolderProps } from 'src/utils/types/PlaiceHolderProps'
 
-const Sealing: NextPage = () => {
+import sealingHero from '../../public/images/sealing-hero.jpg'
+import sealingImage from '../../public/images/sealing-image-1.jpg'
+
+const Sealing: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  sealingGif,
+}) => {
   const { t } = useTranslation()
 
   const sampleBlogData = [
     {
-      title: "Dlaczego należy badać odporność na poślizg?",
-      image: "/images/test-blog-1.png",
-      alt: "sample alt",
-      url: "/test"
+      title: 'Dlaczego należy badać odporność na poślizg?',
+      image: '/images/test-blog-1.png',
+      alt: 'sample alt',
+      url: '/test',
     },
     {
-      title: "Czym jest współczynnik poślizgu PTV?",
-      image: "/images/test-blog-2.png",
-      alt: "sample alt",
-      url: "/test"
-    }
+      title: 'Czym jest współczynnik poślizgu PTV?',
+      image: '/images/test-blog-2.png',
+      alt: 'sample alt',
+      url: '/test',
+    },
   ]
 
-  const sealingPros = [t('sealing:sealingPros.first'), t('sealing:sealingPros.second'), t('sealing:sealingPros.third'), t('sealing:sealingPros.fourth'), t('sealing:sealingPros.fifth'), t('sealing:sealingPros.sixth'), t('sealing:sealingPros.seventh'), t('sealing:sealingPros.eighth'), t('sealing:sealingPros.ninth'), t('sealing:sealingPros.tenth')]
-  const productSelectItems = [t('sealing:productSelectItems.first'), t('sealing:productSelectItems.second'), t('sealing:productSelectItems.third'), t('sealing:productSelectItems.fourth'), t('sealing:productSelectItems.fifth'), t('sealing:productSelectItems.sixth'), t('sealing:productSelectItems.seventh')]
+  const sealingPros = [
+    t('sealing:sealingPros.first'),
+    t('sealing:sealingPros.second'),
+    t('sealing:sealingPros.third'),
+    t('sealing:sealingPros.fourth'),
+    t('sealing:sealingPros.fifth'),
+    t('sealing:sealingPros.sixth'),
+    t('sealing:sealingPros.seventh'),
+    t('sealing:sealingPros.eighth'),
+    t('sealing:sealingPros.ninth'),
+    t('sealing:sealingPros.tenth'),
+  ]
+  const productSelectItems = [
+    t('sealing:productSelectItems.first'),
+    t('sealing:productSelectItems.second'),
+    t('sealing:productSelectItems.third'),
+    t('sealing:productSelectItems.fourth'),
+    t('sealing:productSelectItems.fifth'),
+    t('sealing:productSelectItems.sixth'),
+    t('sealing:productSelectItems.seventh'),
+  ]
 
   return (
     <PageLayout>
-      <section className='px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'>
-        <div className='flex justify-between mb-8'>
-          <div className='w-3/4 recommendations-ds:w-[85%]'>
-            <h5 className='text-base about-md:text-sm font-semibold text-amber400 mb-4'>{t('sealing:ourServices')}</h5>
-            <h2 className='text-4xl mb-6 about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50'>{t('sealing:sealingDescription')}</h2>
-            <h2 className='text-lg about-xsm:text-base font-normal text-neutral800 dark:text-neutral100'>{t('sealing:heroDescription')}</h2>
+      <section className="px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+        <div className="flex justify-between mb-8">
+          <div className="w-3/4 recommendations-ds:w-[85%]">
+            <h5 className="text-base about-md:text-sm font-semibold text-amber400 mb-4">
+              {t('sealing:ourServices')}
+            </h5>
+            <h2 className="text-4xl mb-6 about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
+              {t('sealing:sealingDescription')}
+            </h2>
+            <h2 className="text-lg about-xsm:text-base font-normal text-neutral800 dark:text-neutral100">
+              {t('sealing:heroDescription')}
+            </h2>
           </div>
-          <div className='p-3 about-md:p-2 rounded-md bg-neutral50 dark:bg-neutral200 w-fit h-fit'>
+          <div className="p-3 about-md:p-2 rounded-md bg-neutral50 dark:bg-neutral200 w-fit h-fit">
             <div className="relative w-[38px] h-[38px] about-md:w-[24px] about-md:h-[24px]">
               <Image
                 alt=""
                 layout="fill"
-                objectFit='cover'
+                objectFit="cover"
                 src="/icons/sealer.png"
               />
             </div>
@@ -50,25 +82,34 @@ const Sealing: NextPage = () => {
           <Image
             alt=""
             layout="fill"
-            objectFit='cover'
-            src="/images/sealing-hero.jpg"
+            objectFit="cover"
+            placeholder="blur"
+            src={sealingHero}
           />
         </div>
       </section>
-      <section className='px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'>
-        <div className='flex justify-between gap-32 relative about-md:flex-wrap about-md:gap-14'>
-          <div className='w-[75%] about-md:w-full'>
-            <section className='mb-10'>
-              <div className='text-justify'>
-                <h3 className='font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-3'>{t('sealing:whichSurfaces')}</h3>
-                <p className='text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-2'>{t('sealing:whichSurfacesDescription')}</p>
-                <p className='text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50'>{t('sealing:whichSurfacesDescriptionBottom')}</p>
+      <section className="px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+        <div className="flex justify-between gap-32 relative about-md:flex-wrap about-md:gap-14">
+          <div className="w-[75%] about-md:w-full">
+            <section className="mb-10">
+              <div className="text-justify">
+                <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-3">
+                  {t('sealing:whichSurfaces')}
+                </h3>
+                <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-2">
+                  {t('sealing:whichSurfacesDescription')}
+                </p>
+                <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                  {t('sealing:whichSurfacesDescriptionBottom')}
+                </p>
               </div>
             </section>
-            <section className='mb-10'>
-              <div className='text-justify'>
-                <h3 className='font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-6'>{t('sealing:sealingProsDescription')}</h3>
-                <div className='flex flex-col gap-5 text-left'>
+            <section className="mb-10">
+              <div className="text-justify">
+                <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-6">
+                  {t('sealing:sealingProsDescription')}
+                </h3>
+                <div className="flex flex-col gap-5 text-left">
                   {sealingPros.map((item, index) => (
                     <div
                       className="flex items-center gap-6 text-left"
@@ -90,26 +131,31 @@ const Sealing: NextPage = () => {
                           />
                         </svg>
                       </div>
-                      <h5 className='text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50'>{item}</h5>
+                      <h5 className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                        {item}
+                      </h5>
                     </div>
                   ))}
                 </div>
               </div>
             </section>
-            <section className='mb-10'>
-              <div className='relative h-[50vh] knowledge-md:h-[30vh] w-full'>
+            <section className="mb-10">
+              <div className="relative h-[50vh] knowledge-md:h-[30vh] w-full">
                 <Image
                   alt=""
                   layout="fill"
-                  objectFit='cover'
-                  src="/images/sealing-image-1.jpg"
+                  objectFit="cover"
+                  placeholder="blur"
+                  src={sealingImage}
                 />
               </div>
             </section>
-            <section className='mb-10'>
-              <div className='text-justify mb-6'>
-                <h3 className='font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-6'>{t('sealing:productSelect')}</h3>
-                <div className='flex flex-col gap-5'>
+            <section className="mb-10">
+              <div className="text-justify mb-6">
+                <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-6">
+                  {t('sealing:productSelect')}
+                </h3>
+                <div className="flex flex-col gap-5">
                   {productSelectItems.map((item, index) => (
                     <div
                       className="flex items-center gap-6"
@@ -131,56 +177,75 @@ const Sealing: NextPage = () => {
                           />
                         </svg>
                       </div>
-                      <h5 className='text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50'>{item}</h5>
+                      <h5 className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                        {item}
+                      </h5>
                     </div>
                   ))}
                 </div>
               </div>
-              <p className='text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-2'>{t('sealing:sealingRecommendations')}</p>
-              <Link href='/contact'>
-                <a className='font-semibold text-left text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75'>
+              <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-2">
+                {t('sealing:sealingRecommendations')}
+              </p>
+              <Link href="/contact">
+                <a className="font-semibold text-left text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75">
                   {t('sealing:here')}
                 </a>
               </Link>
             </section>
-            <section className='mb-10'>
-              <div className='relative h-[50vh] knowledge-md:h-[30vh] w-full'>
+            <section className="mb-10">
+              <div className="relative h-[50vh] knowledge-md:h-[30vh] w-full">
                 <Image
                   alt=""
                   layout="fill"
-                  objectFit='cover'
-                  src="/images/sealing-image-2.gif"
+                  objectFit="cover"
+                  placeholder="blur"
+                  {...(sealingGif as PlaiceHolderProps)}
                 />
               </div>
             </section>
-            <section className='mb-6 text-justify'>
-              <h3 className='font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-4'>{t('sealing:whatToRecommend')}</h3>
-              <div className='mb-3'>
-                <p className='text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50'>{t('sealing:whatToRecommendDescriptionTop')}</p>
-                <span className='font-semibold text-base about-md:text-sm text-amber400'>
+            <section className="mb-6 text-justify">
+              <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-4">
+                {t('sealing:whatToRecommend')}
+              </h3>
+              <div className="mb-3">
+                <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                  {t('sealing:whatToRecommendDescriptionTop')}
+                </p>
+                <span className="font-semibold text-base about-md:text-sm text-amber400">
                   {t('sealing:new')}
                 </span>
-                <p className='text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50'>{t('sealing:whatToRecommendDescriptionMid')}</p>
-                <span className='font-semibold text-base about-md:text-sm text-amber400'>
+                <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                  {t('sealing:whatToRecommendDescriptionMid')}
+                </p>
+                <span className="font-semibold text-base about-md:text-sm text-amber400">
                   {t('sealing:old')}
                 </span>
-                <p className='text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50'>{t('sealing:whatToRecommendDescriptionMidBottom')}</p>
-                <span className='font-semibold text-base about-md:text-sm text-amber400'>
+                <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                  {t('sealing:whatToRecommendDescriptionMidBottom')}
+                </p>
+                <span className="font-semibold text-base about-md:text-sm text-amber400">
                   {t('sealing:inside')}
                 </span>
-                <p className='text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50'>{t('sealing:whatToRecommendDescriptionBottom')}</p>
-                <span className='font-semibold text-base about-md:text-sm text-amber400'>
+                <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                  {t('sealing:whatToRecommendDescriptionBottom')}
+                </p>
+                <span className="font-semibold text-base about-md:text-sm text-amber400">
                   {t('sealing:outside')}
                 </span>
-                <p className='text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50'>{t('sealing:whatToRecommendDescriptionBottomBottom')}</p>
+                <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                  {t('sealing:whatToRecommendDescriptionBottomBottom')}
+                </p>
               </div>
-              <p className='text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-3'>{t('sealing:recommendationsInfo')}</p>
-              <p className='text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50'>{t('sealing:recommendationsInfoUs')}</p>
+              <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-3">
+                {t('sealing:recommendationsInfo')}
+              </p>
+              <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                {t('sealing:recommendationsInfoUs')}
+              </p>
             </section>
             <section>
-              <Link
-                href="/contact"
-              >
+              <Link href="/contact">
                 <a>
                   <div className="flex uppercase w-fit justify-center items-center gap-3 bg-amber600 px-4 py-2.5 rounded-lg text-neutral50 duration-300 hover:opacity-80 hover:translate-y-1">
                     <svg
@@ -197,33 +262,37 @@ const Sealing: NextPage = () => {
                         strokeLinejoin="round"
                       />
                     </svg>
-                    <span className="text-base about-md:text-sm font-semibold">{t('sealing:order')}</span>
+                    <span className="text-base about-md:text-sm font-semibold">
+                      {t('sealing:order')}
+                    </span>
                   </div>
                 </a>
               </Link>
             </section>
           </div>
 
-          <div className='sticky h-fit w-fit about-md:static about-md:w-full top-[15%] flex flex-col gap-20 about-md:gap-8'>
-            <span className='hidden text-xl font-semibold about-md:block'>{t('sealing:readMore')}</span>
+          <div className="sticky h-fit w-fit about-md:static about-md:w-full top-[15%] flex flex-col gap-20 about-md:gap-8">
+            <span className="hidden text-xl font-semibold about-md:block">
+              {t('sealing:readMore')}
+            </span>
             {sampleBlogData.map((post, index) => (
               <Link
                 href={post.url}
                 key={index}
               >
                 <a>
-                  <div
-                    className="flex flex-col gap-4"
-                  >
-                    <div className='relative h-[153px] about-md:h-[20vh] w-full'>
+                  <div className="flex flex-col gap-4">
+                    <div className="relative h-[153px] about-md:h-[20vh] w-full">
                       <Image
                         alt={post.alt}
                         layout="fill"
-                        objectFit='cover'
+                        objectFit="cover"
                         src={post.image}
                       />
                     </div>
-                    <h5 className='text-sm font-semibold about-md:font-normal text-neutral800 dark:text-neutral50'>{post.title}</h5>
+                    <h5 className="text-sm font-semibold about-md:font-normal text-neutral800 dark:text-neutral50">
+                      {post.title}
+                    </h5>
                   </div>
                 </a>
               </Link>
@@ -238,9 +307,24 @@ const Sealing: NextPage = () => {
 }
 
 export async function getStaticProps({ locale }: { locale: string }) {
+  const {
+    base64,
+    img: { src },
+  } = await getPlaiceholder('/images/sealing-image-2.gif')
+
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['navbar', 'footer', 'recommendations', 'sealing', 'contact'])),
+      ...(await serverSideTranslations(locale, [
+        'navbar',
+        'footer',
+        'recommendations',
+        'sealing',
+        'contact',
+      ])),
+      sealingGif: {
+        blurDataURL: base64,
+        src,
+      },
     },
   }
 }

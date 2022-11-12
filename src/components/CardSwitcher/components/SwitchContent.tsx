@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import React from 'react'
@@ -8,7 +8,7 @@ import Checkmark from './Checkmark'
 interface ISwitchContentProps {
   contentTitle: string
   contentText: string
-  contentImage: string
+  contentImage: StaticImageData
   testInfo: string[]
 }
 
@@ -22,18 +22,22 @@ export const SwitchContent = ({
   return (
     <div className="flex flex-col-reverse w-full md:flex-row overflow-hidden rounded-2xl">
       <div className="bg-neutral100 dark:bg-neutral900 px-6 py-6 flex flex-col justify-between md:w-1/2">
-        <span className="text-2xl text-neutral800 dark:text-neutral50 mission-sm:text-base mb-3 text-left font-bold">{t(contentTitle)}</span>
+        <span className="text-2xl text-neutral800 dark:text-neutral50 mission-sm:text-base mb-3 text-left font-bold">
+          {t(contentTitle)}
+        </span>
         <span className="whitespace-pre-line text-neutral700 dark:text-neutral200 mb-3 mission-sm:text-sm">
           {t(contentText)}
         </span>
-        <span className='mb-3 mission-sm:text-sm text-neutral700 dark:text-neutral200'>{t('researchCarry')}</span>
-        <ul className='mb-3 mission-sm:text-sm'>
+        <span className="mb-3 mission-sm:text-sm text-neutral700 dark:text-neutral200">
+          {t('researchCarry')}
+        </span>
+        <ul className="mb-3 mission-sm:text-sm">
           {testInfo.map((item, index) => (
             <li
               className="flex mb-3 text-left text-neutral700 dark:text-neutral200"
               key={index}
             >
-              <div className='w-6 h-6 mr-4'>
+              <div className="w-6 h-6 mr-4">
                 <Checkmark
                   className="w-6 h-6"
                   fillColor="var(--amber-600)"
@@ -43,9 +47,7 @@ export const SwitchContent = ({
             </li>
           ))}
         </ul>
-        <Link
-          href="/contact"
-        >
+        <Link href="/contact">
           <a>
             <div className="flex justify-center items-center gap-3 bg-amber600 px-4 py-2.5 mission-sm:p-2 rounded-lg text-neutral50 duration-300 hover:opacity-80 hover:translate-y-1">
               <svg
@@ -62,7 +64,9 @@ export const SwitchContent = ({
                   strokeLinejoin="round"
                 />
               </svg>
-              <span className="text-base font-semibold mission-sm:text-sm">{t('contactUs')}</span>
+              <span className="text-base font-semibold mission-sm:text-sm">
+                {t('contactUs')}
+              </span>
             </div>
           </a>
         </Link>
@@ -70,7 +74,6 @@ export const SwitchContent = ({
       <div className="relative md:w-1/2 footer-md:h-[40vh]">
         <Image
           alt="switch-content-image"
-          blurDataURL={contentImage}
           layout="fill"
           objectFit="cover"
           placeholder="blur"

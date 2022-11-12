@@ -1,15 +1,25 @@
 import { Accordion, ContactShort, PageLayout } from '@components'
-import type { NextPage } from 'next'
+import type { InferGetStaticPropsType, NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { getPlaiceholder } from 'plaiceholder'
+import { PlaiceHolderProps } from 'src/utils/types/PlaiceHolderProps'
 
-const Knowledge: NextPage = () => {
+import antiSlipPTV from '../../public/images/antislip-ptv.png'
+import knowledgeHero from '../../public/images/knowledge-hero.jpg'
+import knowledgePlaces from '../../public/images/knowledge-places-1.jpg'
+import knowledgePlaces2 from '../../public/images/knowledge-places-2.jpg'
+
+const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  pendulumKnowledgeProps,
+}) => {
   const { t } = useTranslation()
 
   const knowledgeItems = [
-    { title: t('knowledge:knowledgeFeatures.first'),
+    {
+      title: t('knowledge:knowledgeFeatures.first'),
       description: t('knowledge:knowledgeFeatures.firstDescription'),
       icon: (
         <path
@@ -17,9 +27,10 @@ const Knowledge: NextPage = () => {
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-      )
+      ),
     },
-    { title: t('knowledge:knowledgeFeatures.second'),
+    {
+      title: t('knowledge:knowledgeFeatures.second'),
       description: t('knowledge:knowledgeFeatures.secondDescription'),
       icon: (
         <path
@@ -27,9 +38,10 @@ const Knowledge: NextPage = () => {
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-      )
+      ),
     },
-    { title: t('knowledge:knowledgeFeatures.third'),
+    {
+      title: t('knowledge:knowledgeFeatures.third'),
       description: t('knowledge:knowledgeFeatures.thirdDescription'),
       icon: (
         <path
@@ -37,9 +49,10 @@ const Knowledge: NextPage = () => {
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-      )
+      ),
     },
-    { title: t('knowledge:knowledgeFeatures.fourth'),
+    {
+      title: t('knowledge:knowledgeFeatures.fourth'),
       description: t('knowledge:knowledgeFeatures.fourthDescription'),
       icon: (
         <path
@@ -47,9 +60,10 @@ const Knowledge: NextPage = () => {
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-      )
+      ),
     },
-    { title: t('knowledge:knowledgeFeatures.fifth'),
+    {
+      title: t('knowledge:knowledgeFeatures.fifth'),
       description: t('knowledge:knowledgeFeatures.fifthDescription'),
       icon: (
         <path
@@ -57,9 +71,10 @@ const Knowledge: NextPage = () => {
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-      )
+      ),
     },
-    { title: t('knowledge:knowledgeFeatures.sixth'),
+    {
+      title: t('knowledge:knowledgeFeatures.sixth'),
       description: t('knowledge:knowledgeFeatures.sixthDescription'),
       icon: (
         <path
@@ -67,28 +82,44 @@ const Knowledge: NextPage = () => {
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-      )
-    }
+      ),
+    },
   ]
 
-  const placesItems = [t('knowledge:placesList.first'), t('knowledge:placesList.second'), t('knowledge:placesList.third'), t('knowledge:placesList.fourth'), t('knowledge:placesList.fifth'), t('knowledge:placesList.sixth'), t('knowledge:placesList.seventh')]
-  const typesItems = [t('knowledge:typesList.first'), t('knowledge:typesList.second'), t('knowledge:typesList.third'), t('knowledge:typesList.fourth'), t('knowledge:typesList.fifth'), t('knowledge:typesList.sixth'), t('knowledge:typesList.seventh')]
+  const placesItems = [
+    t('knowledge:placesList.first'),
+    t('knowledge:placesList.second'),
+    t('knowledge:placesList.third'),
+    t('knowledge:placesList.fourth'),
+    t('knowledge:placesList.fifth'),
+    t('knowledge:placesList.sixth'),
+    t('knowledge:placesList.seventh'),
+  ]
+  const typesItems = [
+    t('knowledge:typesList.first'),
+    t('knowledge:typesList.second'),
+    t('knowledge:typesList.third'),
+    t('knowledge:typesList.fourth'),
+    t('knowledge:typesList.fifth'),
+    t('knowledge:typesList.sixth'),
+    t('knowledge:typesList.seventh'),
+  ]
   const cardItems = [
     {
       title: t('knowledge:cardsList.first.title'),
       subtitle: t('knowledge:cardsList.first.subtitle'),
-      description: t('knowledge:cardsList.first.description')
+      description: t('knowledge:cardsList.first.description'),
     },
     {
       title: t('knowledge:cardsList.second.title'),
       subtitle: t('knowledge:cardsList.second.subtitle'),
-      description: t('knowledge:cardsList.second.description')
+      description: t('knowledge:cardsList.second.description'),
     },
     {
       title: t('knowledge:cardsList.third.title'),
       subtitle: t('knowledge:cardsList.third.subtitle'),
-      description: t('knowledge:cardsList.third.description')
-    }
+      description: t('knowledge:cardsList.third.description'),
+    },
   ]
 
   const testFunction = () => {
@@ -98,77 +129,103 @@ const Knowledge: NextPage = () => {
   return (
     <PageLayout>
       <section
-        className='px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'
+        className="px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6"
         onClick={testFunction}
       >
-        <h5 className='text-base about-md:text-sm font-semibold text-amber400 mb-4'>{t('knowledge:knowledge')}</h5>
-        <div className='mb-8'>
-          <h2 className='text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50'>{t('knowledge:description')}</h2>
-          <h2 className='text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50'>{t('knowledge:descriptionBottom')}</h2>
+        <h5 className="text-base about-md:text-sm font-semibold text-amber400 mb-4">
+          {t('knowledge:knowledge')}
+        </h5>
+        <div className="mb-8">
+          <h2 className="text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
+            {t('knowledge:description')}
+          </h2>
+          <h2 className="text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
+            {t('knowledge:descriptionBottom')}
+          </h2>
         </div>
         <div className="relative h-[31.2rem] about-md:h-[30vh] w-full before:content-[''] before:absolute before:h-48 before:w-48 before:bg-amber400 before:z-10 before:top-0 before:left-full before:-translate-x-full before:-translate-y-2/4 before:blur-[100px] before:opacity-50 dark:before:opacity-30">
           <Image
             alt=""
             layout="fill"
-            objectFit='cover'
-            src="/images/knowledge-hero.jpg"
+            objectFit="cover"
+            placeholder="blur"
+            src={knowledgeHero}
           />
         </div>
       </section>
-      <section className='px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'>
-        <h5 className='text-base about-md:text-sm font-semibold text-amber400 mb-4'>{t('knowledge:whatKnow')}</h5>
-        <h5 className='text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold mb-8 text-neutral800 dark:text-neutral50'>{t('knowledge:legalActs')}</h5>
-        <div className='flex justify-between gap-12 knowledge-md:flex-wrap knowledge-md:gap-8'>
-          <div className='w-[60%] knowledge-md:w-full knowledge-md:order-2'>
+      <section className="px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+        <h5 className="text-base about-md:text-sm font-semibold text-amber400 mb-4">
+          {t('knowledge:whatKnow')}
+        </h5>
+        <h5 className="text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold mb-8 text-neutral800 dark:text-neutral50">
+          {t('knowledge:legalActs')}
+        </h5>
+        <div className="flex justify-between gap-12 knowledge-md:flex-wrap knowledge-md:gap-8">
+          <div className="w-[60%] knowledge-md:w-full knowledge-md:order-2">
             <Accordion />
           </div>
-          <div className='relative w-[40%] knowledge-md:w-full knowledge-md:h-[30vh]'>
+          <div className="relative w-[40%] knowledge-md:w-full knowledge-md:h-[30vh]">
             <Image
               alt=""
               layout="fill"
-              objectFit='cover'
+              objectFit="cover"
               src="/images/knowledge-image-1.svg"
             />
           </div>
         </div>
       </section>
-      <section className='px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'>
+      <section className="px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
         <div>
-          <h5 className='text-base about-md:text-sm font-semibold text-amber400 mb-4'>{t('knowledge:ptv')}</h5>
-          <div className='mb-8'>
-            <h5 className='text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50'>{t('knowledge:ptvAbout')}</h5>
-            <h5 className='text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50'>{t('knowledge:ptvAboutBottom')}</h5>
+          <h5 className="text-base about-md:text-sm font-semibold text-amber400 mb-4">
+            {t('knowledge:ptv')}
+          </h5>
+          <div className="mb-8">
+            <h5 className="text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
+              {t('knowledge:ptvAbout')}
+            </h5>
+            <h5 className="text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
+              {t('knowledge:ptvAboutBottom')}
+            </h5>
           </div>
-          <div className='flex justify-between gap-12 knowledge-md:flex-wrap knowledge-md:gap-8'>
-            <div className='w-2/4 knowledge-md:w-full flex flex-col gap-4'>
-              <div className='relative h-[380px] knowledge-md:h-[30vh] w-full'>
+          <div className="flex justify-between gap-12 knowledge-md:flex-wrap knowledge-md:gap-8">
+            <div className="w-2/4 knowledge-md:w-full flex flex-col gap-4">
+              <div className="relative h-[380px] knowledge-md:h-[30vh] w-full">
                 <Image
                   alt=""
                   layout="fill"
-                  objectFit='contain'
-                  src="/images/antislip-ptv.png"
+                  objectFit="contain"
+                  placeholder="blur"
+                  src={antiSlipPTV}
                 />
               </div>
-              <p className='text-base text-neutral800 dark:text-neutral50'>{t('knowledge:ptvDescription.fourthParagraph')}</p>
+              <p className="text-base text-neutral800 dark:text-neutral50">
+                {t('knowledge:ptvDescription.fourthParagraph')}
+              </p>
             </div>
-            <div className='w-2/4 knowledge-md:w-full text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm'>
-              <p className='mb-2.5'>{t('knowledge:ptvDescription.firstParagraph')}</p>
-              <p className='mb-2.5'>{t('knowledge:ptvDescription.secondParagraph')}</p>
+            <div className="w-2/4 knowledge-md:w-full text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+              <p className="mb-2.5">
+                {t('knowledge:ptvDescription.firstParagraph')}
+              </p>
+              <p className="mb-2.5">
+                {t('knowledge:ptvDescription.secondParagraph')}
+              </p>
               <p>{t('knowledge:ptvDescription.thirdParagraph')}</p>
             </div>
           </div>
         </div>
       </section>
-      <section className='px-24 max-w-[87.5rem] mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 knowledge-sm:pl-6 knowledge-sm:pr-8'>
-        <div className='grid grid-cols-3 about-sm:grid-cols-2 knowledge-sm:grid-cols-1 gap-12 recommendations-ds:gap-10'>
+      <section className="px-24 max-w-[87.5rem] mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 knowledge-sm:pl-6 knowledge-sm:pr-8">
+        <div className="grid grid-cols-3 about-sm:grid-cols-2 knowledge-sm:grid-cols-1 gap-12 recommendations-ds:gap-10">
           {knowledgeItems.map((item, index) => (
             <div
-              className='relative flex flex-col justify-between items-center bg-neutral200 dark:bg-neutral700 p-6 rounded-md shadow-md'
+              className="relative flex flex-col justify-between items-center bg-neutral200 dark:bg-neutral700 p-6 rounded-md shadow-md"
               key={index}
             >
-              <div className='w-full flex items-center mb-4'>
-                <h5 className='text-xl knowledge-md:text-base font-semibold text-neutral800 dark:text-neutral50'>{item.title}</h5>
-                <div className='absolute top-0 left-full -translate-y-2/4 -translate-x-2/4 bg-neutral200 dark:bg-neutral700 p-2 rounded-full knowledge-sm:p-1'>
+              <div className="w-full flex items-center mb-4">
+                <h5 className="text-xl knowledge-md:text-base font-semibold text-neutral800 dark:text-neutral50">
+                  {item.title}
+                </h5>
+                <div className="absolute top-0 left-full -translate-y-2/4 -translate-x-2/4 bg-neutral200 dark:bg-neutral700 p-2 rounded-full knowledge-sm:p-1">
                   <svg
                     className="w-8 h-8 knowledge-sm:w-6 knowledge-sm:h-6"
                     fill="none"
@@ -181,42 +238,59 @@ const Knowledge: NextPage = () => {
                   </svg>
                 </div>
               </div>
-              <p className='text-base knowledge-md:text-sm text-neutral800 dark:text-neutral50 w-full'>{item.description}</p>
+              <p className="text-base knowledge-md:text-sm text-neutral800 dark:text-neutral50 w-full">
+                {item.description}
+              </p>
             </div>
           ))}
         </div>
       </section>
-      <section className='px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'>
+      <section className="px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
         <div>
-          <h5 className='text-base about-md:text-sm font-semibold text-amber400 mb-4'>{t('knowledge:pendulumSection.title')}</h5>
-          <h5 className='text-4xl mb-8 about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50'>{t('knowledge:pendulumSection.titleBottom')}</h5>
-          <div className='flex justify-between items-center gap-12 knowledge-md:flex-wrap knowledge-md:gap-6'>
-            <div className='w-2/4 knowledge-md:w-full text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm'>
-              <p className='mb-2.5'>{t('knowledge:pendulumSection.firstParagraph')}</p>
-              <p className='mb-2.5'>{t('knowledge:pendulumSection.secondParagraph')}</p>
-              <p className='mb-2.5 italic'>{t('knowledge:pendulumSection.thirdParagraph')}</p>
-              <p className='inline'>{t('knowledge:pendulumSection.fourthParagraph')}</p>
+          <h5 className="text-base about-md:text-sm font-semibold text-amber400 mb-4">
+            {t('knowledge:pendulumSection.title')}
+          </h5>
+          <h5 className="text-4xl mb-8 about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
+            {t('knowledge:pendulumSection.titleBottom')}
+          </h5>
+          <div className="flex justify-between items-center gap-12 knowledge-md:flex-wrap knowledge-md:gap-6">
+            <div className="w-2/4 knowledge-md:w-full text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+              <p className="mb-2.5">
+                {t('knowledge:pendulumSection.firstParagraph')}
+              </p>
+              <p className="mb-2.5">
+                {t('knowledge:pendulumSection.secondParagraph')}
+              </p>
+              <p className="mb-2.5 italic">
+                {t('knowledge:pendulumSection.thirdParagraph')}
+              </p>
+              <p className="inline">
+                {t('knowledge:pendulumSection.fourthParagraph')}
+              </p>
               <Link href="/friction-measurement">
-                <a className='font-semibold text-amber400 duration-300 hover:opacity-75'>
+                <a className="font-semibold text-amber400 duration-300 hover:opacity-75">
                   <span>{t('knowledge:pendulumSection.here')}</span>
                 </a>
               </Link>
             </div>
-            <div className='w-2/4 knowledge-md:w-full flex flex-col gap-6'>
-              <div className='relative h-[40vh] knowledge-md:h-[30vh] w-full'>
+            <div className="w-2/4 knowledge-md:w-full flex flex-col gap-6">
+              <div className="relative h-[40vh] knowledge-md:h-[30vh] w-full">
                 <Image
                   alt=""
                   layout="fill"
-                  objectFit='cover'
-                  src="/images/pendulum-knowledge.gif"
+                  objectFit="cover"
+                  placeholder="blur"
+                  {...(pendulumKnowledgeProps as PlaiceHolderProps)}
                 />
               </div>
-              <p className='text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm'>{t('knowledge:pendulumSection.description')}</p>
+              <p className="text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+                {t('knowledge:pendulumSection.description')}
+              </p>
             </div>
           </div>
         </div>
       </section>
-      <section className='px-24 max-w-screen-2xl mx-auto mb-20 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'>
+      <section className="px-24 max-w-screen-2xl mx-auto mb-20 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
         <div>
           <table className="text-sm knowledge-xsm:text-xs w-full text-center text-gray-500 dark:text-gray-400 border-collapse border dark:border-2 border-solid border-gray-700">
             <thead className="text-xs font-semibold text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -331,24 +405,32 @@ const Knowledge: NextPage = () => {
           </table>
         </div>
       </section>
-      <section className='px-24 max-w-screen-2xl mx-auto mb-12 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'>
+      <section className="px-24 max-w-screen-2xl mx-auto mb-12 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
         <div>
-          <h5 className='text-base about-md:text-sm font-semibold text-amber400 mb-4'>{t('knowledge:knowledge')}</h5>
-          <div className='mb-8'>
-            <h5 className='text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50'>{t('knowledge:surfaces')}</h5>
-            <h5 className='text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50'>{t('knowledge:surfacesBottom')}</h5>
+          <h5 className="text-base about-md:text-sm font-semibold text-amber400 mb-4">
+            {t('knowledge:knowledge')}
+          </h5>
+          <div className="mb-8">
+            <h5 className="text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
+              {t('knowledge:surfaces')}
+            </h5>
+            <h5 className="text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
+              {t('knowledge:surfacesBottom')}
+            </h5>
           </div>
-          <div className='flex justify-between items-center gap-12 knowledge-md:flex-wrap knowledge-md:gap-6'>
-            <div className='w-2/4 knowledge-md:w-full text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm'>
-              <p className='mb-2.5'>{t('knowledge:surfacesDescription')}</p>
-              <p className='mb-2.5'>{t('knowledge:surfacesDescriptionBotton')}</p>
-              <ul className='flex flex-col gap-2'>
+          <div className="flex justify-between items-center gap-12 knowledge-md:flex-wrap knowledge-md:gap-6">
+            <div className="w-2/4 knowledge-md:w-full text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+              <p className="mb-2.5">{t('knowledge:surfacesDescription')}</p>
+              <p className="mb-2.5">
+                {t('knowledge:surfacesDescriptionBotton')}
+              </p>
+              <ul className="flex flex-col gap-2">
                 {placesItems.map((item, index) => (
                   <div
-                    className='flex items-center gap-3'
+                    className="flex items-center gap-3"
                     key={index}
                   >
-                    <div className='w-6 h-6'>
+                    <div className="w-6 h-6">
                       <svg
                         className="w-6 h-6"
                         fill="none"
@@ -364,47 +446,53 @@ const Knowledge: NextPage = () => {
                         />
                       </svg>
                     </div>
-                    <li className="text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">{item}</li>
+                    <li className="text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+                      {item}
+                    </li>
                   </div>
                 ))}
               </ul>
             </div>
-            <div className='w-2/4 knowledge-md:w-full flex flex-col gap-6'>
-              <div className='relative h-[60vh] knowledge-md:h-[30vh] w-full'>
+            <div className="w-2/4 knowledge-md:w-full flex flex-col gap-6">
+              <div className="relative h-[60vh] knowledge-md:h-[30vh] w-full">
                 <Image
                   alt=""
                   layout="fill"
-                  objectFit='cover'
-                  src="/images/knowledge-places-1.jpg"
+                  objectFit="cover"
+                  placeholder="blur"
+                  src={knowledgePlaces}
                 />
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className='px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'>
-        <div className='flex justify-between items-center gap-12 knowledge-md:flex-wrap knowledge-md:gap-6'>
-          <div className='w-2/4 knowledge-md:w-full knowledge-md:order-2 flex flex-col gap-6'>
-            <div className='relative h-[60vh] knowledge-md:h-[30vh] w-full'>
+      <section className="px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+        <div className="flex justify-between items-center gap-12 knowledge-md:flex-wrap knowledge-md:gap-6">
+          <div className="w-2/4 knowledge-md:w-full knowledge-md:order-2 flex flex-col gap-6">
+            <div className="relative h-[60vh] knowledge-md:h-[30vh] w-full">
               <Image
                 alt=""
                 layout="fill"
-                objectFit='cover'
-                src="/images/knowledge-places-2.jpg"
+                objectFit="cover"
+                placeholder="blur"
+                src={knowledgePlaces2}
               />
             </div>
           </div>
-          <div className='w-2/4 knowledge-md:w-full text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm'>
-            <p className='mb-2.5'>{t('knowledge:surfacesSecond')}</p>
-            <p className='mb-2.5'>{t('knowledge:surfacesSecondDescription')}</p>
-            <p className='mb-2.5'>{t('knowledge:surfacesSecondDescriptionBottom')}</p>
-            <ul className='flex flex-col gap-2'>
+          <div className="w-2/4 knowledge-md:w-full text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+            <p className="mb-2.5">{t('knowledge:surfacesSecond')}</p>
+            <p className="mb-2.5">{t('knowledge:surfacesSecondDescription')}</p>
+            <p className="mb-2.5">
+              {t('knowledge:surfacesSecondDescriptionBottom')}
+            </p>
+            <ul className="flex flex-col gap-2">
               {typesItems.map((item, index) => (
                 <div
-                  className='flex items-center gap-3'
+                  className="flex items-center gap-3"
                   key={index}
                 >
-                  <div className='w-6 h-6'>
+                  <div className="w-6 h-6">
                     <svg
                       className="w-6 h-6"
                       fill="none"
@@ -420,27 +508,37 @@ const Knowledge: NextPage = () => {
                       />
                     </svg>
                   </div>
-                  <li className="text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">{item}</li>
+                  <li className="text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+                    {item}
+                  </li>
                 </div>
               ))}
             </ul>
           </div>
         </div>
       </section>
-      <section className='px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'>
-        <div className='flex about-md:flex-wrap items-stretch justify-center gap-12 about-md:gap-6'>
+      <section className="px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+        <div className="flex about-md:flex-wrap items-stretch justify-center gap-12 about-md:gap-6">
           {cardItems.map((item, index) => (
             <div
-              className='flex flex-col justify-between min-h-[270px] w-1/3 about-md:w-full '
+              className="flex flex-col justify-between min-h-[270px] w-1/3 about-md:w-full "
               key={index}
             >
-              <div className='relative h-2/4 p-8 about-md:p-4 flex flex-col items-center justify-center bg-neutral100 dark:bg-neutral900 text-center min-h-[148px]'>
-                <h5 className='text-base text-neutral800 dark:text-neutral50 mb-2'>{item.title}</h5>
-                <span className='text-base text-neutral800 dark:text-neutral50'>{item.subtitle}</span>
-                <span className='absolute w-full text-center text-5xl bottom-50% translate-y-[150%]'>§</span>
+              <div className="relative h-2/4 p-8 about-md:p-4 flex flex-col items-center justify-center bg-neutral100 dark:bg-neutral900 text-center min-h-[148px]">
+                <h5 className="text-base text-neutral800 dark:text-neutral50 mb-2">
+                  {item.title}
+                </h5>
+                <span className="text-base text-neutral800 dark:text-neutral50">
+                  {item.subtitle}
+                </span>
+                <span className="absolute w-full text-center text-5xl bottom-50% translate-y-[150%]">
+                  §
+                </span>
               </div>
-              <div className='p-8 about-md:p-4 flex h-2/4 flex-col items-center justify-around bg-neutral200 dark:bg-neutral700 text-center min-h-[128px]'>
-                <p className='text-sm text-neutral800 dark:text-neutral50'>{item.description}</p>
+              <div className="p-8 about-md:p-4 flex h-2/4 flex-col items-center justify-around bg-neutral200 dark:bg-neutral700 text-center min-h-[128px]">
+                <p className="text-sm text-neutral800 dark:text-neutral50">
+                  {item.description}
+                </p>
               </div>
             </div>
           ))}
@@ -452,9 +550,23 @@ const Knowledge: NextPage = () => {
 }
 
 export async function getStaticProps({ locale }: { locale: string }) {
+  const {
+    base64,
+    img: { src },
+  } = await getPlaiceholder('/images/pendulum-knowledge.gif')
+
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['navbar', 'footer', 'knowledge', 'contact'])),
+      ...(await serverSideTranslations(locale, [
+        'navbar',
+        'footer',
+        'knowledge',
+        'contact',
+      ])),
+      pendulumKnowledgeProps: {
+        blurDataURL: base64,
+        src,
+      },
     },
   }
 }
