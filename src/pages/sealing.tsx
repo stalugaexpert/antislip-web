@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getPlaiceholder } from 'plaiceholder'
+import { PlaiceHolderProps } from 'src/utils/types/PlaiceHolderProps'
 
 import sealingHero from '../../public/images/sealing-hero.jpg'
 import sealingImage from '../../public/images/sealing-image-1.jpg'
@@ -199,7 +200,7 @@ const Sealing: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   layout="fill"
                   objectFit="cover"
                   placeholder="blur"
-                  {...sealingGif}
+                  {...(sealingGif as PlaiceHolderProps)}
                 />
               </div>
             </section>
