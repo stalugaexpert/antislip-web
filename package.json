@@ -18,6 +18,8 @@
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "framer-motion": "^7.5.3",
     "handlebars": "^4.7.7",
+    "isomorphic-dompurify": "^0.24.0",
+    "moment": "^2.29.4",
     "next": "12.3.1",
     "next-i18next": "^12.1.0",
     "next-themes": "^0.2.1",
@@ -29,6 +31,7 @@
     "react-dom": "18.2.0",
     "react-google-recaptcha-v3": "^1.10.0",
     "react-hook-form": "^7.39.1",
+    "react-markdown": "^8.0.3",
     "react-slick": "^0.29.0",
     "sass": "^1.54.9",
     "sharp": "^0.31.2",
@@ -38,6 +41,7 @@
     "stylelint-scss": "^4.3.0"
   },
   "devDependencies": {
+    "@types/dompurify": "^2.4.0",
     "@types/node": "18.7.23",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",

@@ -1,0 +1,19 @@
+{
+  "contactTitle": "Do you see the way to collaboration?",
+  "contactTalk": "Let's talk!",
+  "contactDescription": "Leave us a contact request and we will try to respond within 24 hours or ",
+  "contactDescriptionMessage": "send us a message.",
+  "contactDescriptionContact": "send us a contact request.",
+  "contactAgreement": "I have read and accept ",
+  "contactRegulation": "regulations",
+  "contactAgreementMid": " and ",
+  "contactPrivacy": "privacy policy",
+  "contactAgreementBot": ".",
+  "send": "Send",
+  "name": "Name",
+  "email": "E-mail address",
+  "phone": "Phone number",
+  "message": "Message",
+  "fieldRequired": "This field is required.",
+  "fieldTooLong": "The specified value is too long."
+}

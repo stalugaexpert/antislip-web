@@ -72,7 +72,8 @@ module.exports = {
         'knowledge-xsm': { 'max': '486px' },
         'cardItems-md': { 'max': '1288px' },
         'mission-sm': { 'max': '620px' },
-        'contact-sm': { 'max': '560px' }
+        'contact-sm': { 'max': '560px' },
+        'blog-sm': { 'max': '510px' }
       }
     },
   },

@@ -116,14 +116,14 @@ export const OurServices = () => {
     },
     {
       title: t('services:sealers'),
-      description: t('services:pendulumDescription'),
+      description: t('services:sealersDescription'),
       icon: "/icons/sealer.png",
       alt: "sealer icon",
       url: "/sealing"
     },
     {
       title: t('services:cleaning'),
-      description: t('services:pendulumDescription'),
+      description: t('services:cleaningDescription'),
       icon: "/icons/clean.png",
       alt: "cleaning icon",
       url: "/cleaning"

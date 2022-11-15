@@ -7,12 +7,6 @@ module.exports = {
   swcMinify: true,
   i18n,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'icons8.com',
-        pathname: '/icon/**',
-      },
-    ],
+    domains: ['res.cloudinary.com'],
   },
 }
