@@ -1,0 +1,33 @@
+{
+  "about": "Health and safety at work starts from the floor",
+  "aboutDescription": "We take care of employee safety by aiming to reduce the risk of falls and injury. Unfortunately, the most common causes of falls at work are slips.",
+  "ourMissionItems": {
+    "first": {
+      "title": "MAKE AWARE",
+      "descriptionTop": "Our mission is to reduce workplace accidents by ",
+      "descriptionMiddle": "promoting a culture of safety ",
+      "descriptionBottom": "and raising awareness of the dangers of slippery or wet floors.",
+      "descriptionAdd": "Don't underestimate the risks!"
+    },
+    "second": {
+      "title": "RECALL",
+      "descriptionTop": "1. Each tile loses its factory anti-slip properties over time and intensity of use.",
+      "descriptionMiddle": "2. The anti-slip class declared by the manufacturer does not constitute a certificate or attestation.",
+      "descriptionBottom": "3. An anti-slip tile with a high dry anti-slip class may be much more slippery when the surface is wet.",
+      "descriptionAdd": "Request a measurement of the floor's slip resistance."
+    },
+    "third": {
+      "title": "ELIMINATE CAUSES OF SLIPS",
+      "descriptionTop": "We protect floor surfaces so as to provide employees with safe and hygienic working conditions in accordance with the Labor Code. ",
+      "descriptionMiddle": "Our protections are effective even where floor contamination is unavoidable due to ongoing technological processes. ",
+      "descriptionBottom": "Some of the most common contaminants include: chemicals, acids, oils, lubricants, gasoline, food waste, soaps, cleaners and water. Do you want to eliminate the causes of slips?",
+      "descriptionAdd": "Request a free trial of slip protection!"
+    },
+    "fourth": {
+      "title": "COSTS REDUCE",
+      "descriptionTop": "If you are responsible for the safety of your employees, you are also responsible for painful slips, falls or injuries that occur as a result of unprotected surfaces. ",
+      "descriptionMiddle": "Avoid high claims and keep your users safe.",
+      "descriptionAdd": "Don't incur additional costs!"
+    }
+  }
+}

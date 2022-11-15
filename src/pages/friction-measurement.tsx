@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   AccordionMeasurement,
   CardSwitcher,
@@ -11,30 +12,14 @@ import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getPlaiceholder } from 'plaiceholder'
+import { fetchAllBlogPosts } from 'src/utils/api/service'
 import { PlaiceHolderProps } from 'src/utils/types/PlaiceHolderProps'
 
 import measurementHero from '../../public/images/measurement-hero-1.png'
 import measurementHero2 from '../../public/images/measurement-hero-2.png'
 
-const Friction: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  pendulumKnowledgeProps,
-}) => {
+const Friction: NextPage = ({ pendulumKnowledgeProps, blogPosts }: any) => {
   const { t } = useTranslation()
-
-  const sampleBlogData = [
-    {
-      title: 'Dlaczego należy badać odporność na poślizg?',
-      image: '/images/test-blog-1.png',
-      alt: 'sample alt',
-      url: '/test',
-    },
-    {
-      title: 'Czym jest współczynnik poślizgu PTV?',
-      image: '/images/test-blog-2.png',
-      alt: 'sample alt',
-      url: '/test',
-    },
-  ]
 
   const howToItems = [
     t('measurement:measurementHowToDescription.first'),
@@ -363,27 +348,27 @@ const Friction: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             </section>
           </div>
 
-          <div className="sticky h-fit w-fit about-md:static about-md:w-full top-[15%] flex flex-col gap-20 about-md:gap-8">
+          <div className="sticky h-fit w-1/4 about-md:static about-md:w-full top-[15%] flex flex-col gap-20 about-md:gap-8">
             <span className="hidden text-xl font-semibold about-md:block">
               {t('measurement:readMore')}
             </span>
-            {sampleBlogData.map((post, index) => (
+            {blogPosts.data.slice(-2).map((post: any) => (
               <Link
-                href={post.url}
-                key={index}
+                href={`/blog/${post.attributes.slug}`}
+                key={post.id}
               >
                 <a>
-                  <div className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-4 duration-300 hover:opacity-70 hover:translate-y-[2px]">
                     <div className="relative h-[153px] about-md:h-[20vh] w-full">
                       <Image
-                        alt={post.alt}
+                        alt=""
                         layout="fill"
                         objectFit="cover"
-                        src={post.image}
+                        src={`${post.attributes.postImage.data.attributes.formats.small.url}`}
                       />
                     </div>
                     <h5 className="text-sm font-semibold about-md:font-normal text-neutral800 dark:text-neutral50">
-                      {post.title}
+                      {post.attributes.title}
                     </h5>
                   </div>
                 </a>
@@ -403,6 +388,8 @@ export async function getStaticProps({ locale }: { locale: string }) {
     base64,
     img: { src },
   } = await getPlaiceholder('/images/pendulum-knowledge.gif')
+  const localization = locale === 'pl' ? 'pl-PL' : 'en'
+  const res = await fetchAllBlogPosts(localization)
 
   return {
     props: {
@@ -418,6 +405,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
         blurDataURL: base64,
         src,
       },
+      blogPosts: await res.json()
     },
   }
 }

@@ -5,6 +5,8 @@ import { useTranslation } from 'next-i18next'
 import { useTheme } from "next-themes"
 import { scrollToTopHome } from "src/utils/helpers/scrollToTop"
 
+import logoLight from '../../../../public/icons/logo-enubes-orange.png'
+import logoDark from '../../../../public/icons/logo-enubes-orange-white.png'
 import { ThemeButton } from "../components/ThemeButton"
 import { ContactButton } from "./components/ContactButton"
 import { MenuItem } from "./components/MenuItem"
@@ -58,14 +60,16 @@ export const NavbarDesktop = () => {
                   alt={t('navbar:logoAlt')}
                   layout="fill"
                   objectFit='contain'
-                  src="/icons/logo-enubes-orange-white.png"
+                  placeholder="blur"
+                  src={logoDark}
                 />
               ) : (
                 <Image
                   alt={t('navbar:logoAlt')}
                   layout="fill"
                   objectFit='contain'
-                  src="/icons/logo-enubes-orange.png"
+                  placeholder="blur"
+                  src={logoLight}
                 />
               )}
             </div>

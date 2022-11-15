@@ -65,6 +65,19 @@ export const Footer = () => {
                 {t('footer:knowledge')}
               </a>
             </Link>
+            <a
+              className="text-base text-neutral50 dark:text-neutral200 font-normal duration-300 hover:text-neutral200 dark:hover:text-neutral400 hover:translate-x-1"
+              href="https://e-nubes.com"
+              rel="noreferrer"
+              target="_blank"
+            >
+              {t('footer:shop')}
+            </a>
+            <Link href="/blog">
+              <a className="text-base text-neutral50 dark:text-neutral200 font-normal duration-300 hover:text-neutral200 dark:hover:text-neutral400 hover:translate-x-1">
+                {t('footer:blog')}
+              </a>
+            </Link>
             <Link href="/contact">
               <a className="text-base text-neutral50 dark:text-neutral200 font-normal duration-300 hover:text-neutral200 dark:hover:text-neutral400 hover:translate-x-1">
                 {t('footer:contact')}
