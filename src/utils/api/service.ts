@@ -17,3 +17,12 @@ export const fetchSingleBlogPost = async (localization: string, slug: string) =>
     headers: { Authorization: `Bearer ${STRAPI_API_KEY}` }
   })
 }
+
+export const fetchSingleContentData = async (localization: string, endpoint: string) => {
+  if (STRAPI_URL?.includes('localhost')) {
+    return await fetch(`${STRAPI_URL}/api/${endpoint}?locale=${localization}`)
+  }
+  return await fetch(`${STRAPI_URL}/api/${endpoint}?locale=${localization}`, {
+    headers: { Authorization: `Bearer ${STRAPI_API_KEY}` }
+  })
+}

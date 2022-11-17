@@ -16,8 +16,8 @@ export const AboutUs = () => {
       description: t('about:descriptionSecond'),
     },
     {
-      title: t('about:titleSecond'),
-      description: t('about:descriptionSecond'),
+      title: t('about:titleThird'),
+      description: t('about:descriptionThird'),
     },
   ]
 
@@ -40,7 +40,7 @@ export const AboutUs = () => {
                 <h4 className="text-neutral800 dark:text-neutral50 text-xl font-semibold about-xsm:text-base">
                   {section.title}
                 </h4>
-                <p className="text-neutral600 dark:text-neutral200 text-sm font-normal about-xsm:text-xs">
+                <p className="text-neutral600 dark:text-neutral200 text-base font-normal about-xsm:text-sm">
                   {section.description}
                 </p>
               </div>

@@ -1,0 +1,73 @@
+{
+  "ourServices": "OUR SERVICES",
+  "measurementDescription": "Dynamic friction coefficient measurement",
+  "heroDescription": "We will measure the slip resistance of your surface according to the guidelines of the Institute of Building Technology. Then you will receive a Certificate of Conformity of the conducted test.",
+  "readMore": "Read more on our blog.",
+  "measurementWhy": "Why is it necessary to check the condition of flooring for slip resistance?",
+  "measurementWhyDescription": "Every ceramic tile, over time and with the intensity of use, loses its factory slip resistance. Therefore, the slip resistance of floors should be checked periodically (at least once every 3 years), as part of technical inspections of facilities.",
+  "measurementWhyDescriptionBottom": "For more on the reasons why you should test the slip resistance of surfaces, click on the button below.",
+  "responsibility": "Duties and Responsibilities",
+  "readMoreButton": "Read more",
+  "measurementWho": "Who contracts us to measure the slip resistance of floors?",
+  "measurementWhoDescription": "Designers, building inspectors, investors, managers, administrators of public facilities or residential buildings, wanting to ensure that their floors are safe and in compliance with applicable laws, guidelines and guides, regularly test the slip resistance, of new and in-service floors.",
+  "measurementHow": "How do we measure a floor's slip resistance?",
+  "measurementPtv": "PTV slip resistance values form the basis for classifying floors in terms of slip risk. This classification is shown in the table below.",
+  "ptvResistance": "Slip resistance (PTV)",
+  "classification": "classification",
+  "ptvLevel": {
+    "low": "Low slip risk",
+    "medium": "Medium slip risk",
+    "high": "High risk of slipping"
+  },
+  "moreDescription": "If you want to learn more about the requirements and guidelines for slip resistance and surface safety, click ",
+  "here": "here.",
+  "measurementHowTo": "How do we work?",
+  "measurementHowToDescription": {
+    "first": "We always perform measurements according to the guidelines in the standard and the dedicated slides (feet) for these measurements, on dry and wet.",
+    "second": "After each test, we will prepare a report on the skid resistance of the substrate.",
+    "third": "A reliable test is the basis for recognizing the compliance of the parameters of the tested substrate with the guidelines developed by the Building Research Institute in Warsaw in 2018 and the Ministry of Investment and Development in 2020."
+  },
+  "measurementWhatToRemember": "What is worth keeping in mind before deciding on a professional skid resistance measurement?",
+  "measurementWhatToRememberHow": "Tap on the tabs below to find out ",
+  "more": "more.",
+  "measurementQuestionsAnswers": {
+    "first": {
+      "question": "When does a surface become slippery?",
+      "paragraphFirst": "Any surface, over time and with the intensity of use, loses its factory slip resistance and becomes dangerous."
+    },
+    "second": {
+      "question": "What does the slipperiness of a floor depend on?",
+      "paragraphFirst": "The slip resistance of a given floor under actual conditions depends on, among other things:",
+      "paragraphSecond": "- the type of flooring, e.g. glazed porcelain stoneware, polished granite, marble, resin, PVC,",
+      "paragraphThird": "- type of sole e.g. PU, TR, EVA, styrogum, tuniscus, natural leather,",
+      "paragraphFourth": "- type of lube e.g. water, mud, juices, oil, ketchup, mustard, soups, sauces,",
+      "paragraphFifth": "- pressure force i.e. our weight."
+    },
+    "third": {
+      "question": "What does the method of measuring slip resistance depend on?",
+      "paragraphFirst": "Depending on where the floor is located, how it is used, or the occupational or age characteristics of the people using it, each floor requires a professional, individual approach before measurement and service."
+    },
+    "fourth": {
+      "question": "Is a wet floor more dangerous?",
+      "paragraphFirst": "The slip resistance coefficient of wet and dry flooring is different - so care should be taken to ensure the safety of people walking on it, especially when it is wet."
+    },
+    "fifth": {
+      "question": "Is the anti-slip class of all ceramic tiles the same?",
+      "paragraphFirst": "Ceramic tiles can vary significantly in their R or A/B/C slip resistance class, PTV or dynamic coefficient of friction µ values."
+    }
+  },
+  "measurementWorthTo": "It is worth remembering that when ordering a slip measurement service for your floor, always look for an experienced company with an established track record.",
+  "measurementWorthToDescriptionTop": "The company should have suitable and calibrated ",
+    "measurementDevices": "measurement devices ",
+  "measurementWorthToDescriptionMid": "guaranteeing ",
+  "realiableMeasurement": "reliable measurement",
+  "measurementWorthToDescriptionBottom": ", conforming to the applicable standards.",
+  "measurementContactUsDescription": "If you want a professionally conducted service and top-level advice on safety, anti-slip, waterproofing or cleaning ",
+  "measurementContactUs": "contact us.",
+  "measurementWorthRemember": "Remember that the obligation to measure the coefficient of friction requires from certain acts. You will read more about it here:",
+  "regulation": "Laws and regulations",
+  "measurementWhat": "What PTV slip resistance values are correct?",
+  "smartfloor": "Through cooperation with the company ",
+  "smartfloorCompany": "Smartfloor",
+  "smartfloorDescription": " we have access to the most modern and accurate measuring equipment. After testing, we provide a report and an anti-slip certificate confirming compliance with the guidelines of the Building Research Institute."
+}

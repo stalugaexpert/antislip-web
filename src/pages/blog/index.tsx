@@ -24,13 +24,7 @@ const Blog: NextPage = ({ blogPosts }: any) => {
               {t('blog:blogDescription')}
             </h2>
           </div>
-          <div className='bg-neutral200 dark:bg-neutral900 w-full flex items-center justify-between p-7'>
-            <input
-              className='blog-sm:w-full'
-              type="text"
-            />
-            <p className='blog-sm:hidden'>paginacja</p>
-          </div>
+          <div className='bg-neutral200 dark:bg-neutral900 w-full flex items-center justify-between p-7 rounded-xl' />
         </div>
         { blogPosts.data && (
           <section>
@@ -57,9 +51,6 @@ const Blog: NextPage = ({ blogPosts }: any) => {
                   </a>
                 </Link>
               ))}
-            </div>
-            <div>
-              <p className='hidden blog-sm:block'>paginacja</p>
             </div>
           </section>
         ) || <p>loading...</p>}

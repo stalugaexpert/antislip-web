@@ -11,8 +11,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import ReactMarkdown from 'react-markdown'
-import { STRAPI_URL } from 'src/config/config'
+import { STRAPI_API_KEY, STRAPI_URL } from 'src/config/config'
 import { fetchAllBlogPosts, fetchSingleBlogPost } from 'src/utils/api/service'
 import { getCorrectImageLargest, getCorrectImageSmallest } from 'src/utils/helpers/getCorrectImage'
 
@@ -109,12 +108,11 @@ const BlogPost: NextPage = ({ blogPost, blogPostsAll }: any) => {
           <span className='font-normal text-neutral600 dark:text-neutral300'>{moment(blogPost.data[0].attributes.publishedAt).format('D MMMM YYYY')}</span>
         </div>
       </section>
-      <section className="px-24 max-w-screen-2xl mx-auto mb-12 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
-        {/* <ReactMarkdown children={blogPost.data[0].attributes.content} /> */}
+      <section className="px-56 max-w-screen-2xl mx-auto mb-12 h-fit services-xs:mb-12 services-sm:px-36 about-sm:px-24 about-xsm:px-6">
         <div
           className='ck-content'
           dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blogPost.data[0].attributes.content) }}
-        ></div>
+        />
       </section>
       <section className="px-24 max-w-screen-2xl mx-auto mb-12 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
         {blogPost.data[0].attributes.isFromSmartFloor && (
@@ -212,7 +210,9 @@ export async function getStaticPaths({ locales }: { locales: string[] }) {
   const pathsPrototype = await Promise.all(locales.map( async (locale) => {
     const isDefault = locale === 'pl'
     try {
-      const res = await fetch(`${STRAPI_URL}/api/blogs${isDefault ? '' : `?locale=${locale}` }`)
+      const res = await fetch(`${STRAPI_URL}/api/blogs${isDefault ? '' : `?locale=${locale}` }`, {
+        headers: { Authorization: `Bearer ${STRAPI_API_KEY}` }
+      })
       const data = await res.json()
       return data.data.map((post: any) => {
         return { params: { slug: post.attributes.slug }, locale: locale }

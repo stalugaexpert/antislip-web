@@ -11,6 +11,7 @@ import { PlaiceHolderProps } from 'src/utils/types/PlaiceHolderProps'
 
 import sealingHero from '../../public/images/sealing-hero.jpg'
 import sealingImage from '../../public/images/sealing-image-1.jpg'
+import sealingImageBottom from '../../public/images/sealing-image-3.jpg'
 
 const Sealing: NextPage = ({ sealingGif, blogPosts }: any) => {
   const { t } = useTranslation()
@@ -186,6 +187,34 @@ const Sealing: NextPage = ({ sealingGif, blogPosts }: any) => {
                   objectFit="cover"
                   placeholder="blur"
                   {...(sealingGif as PlaiceHolderProps)}
+                />
+              </div>
+            </section>
+            <section className="mb-6 text-justify">
+              <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-4">
+                {t('sealing:sealingBetter')}
+              </h3>
+              <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-4">
+                {t('sealing:sealingBetterDescription')}
+              </p>
+              <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                {t('sealing:sealingBetterDescriptionMid')}
+              </p>
+              <span className="font-semibold text-base about-md:text-sm text-amber400">
+                {t('sealing:sealingBetterDescriptionHighlight')}
+              </span>
+              <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                {t('sealing:sealingBetterDescriptionBot')}
+              </p>
+            </section>
+            <section className="mb-10 text-justify">
+              <div className="relative h-[50vh] knowledge-md:h-[30vh] w-full">
+                <Image
+                  alt=""
+                  layout="fill"
+                  objectFit="cover"
+                  placeholder="blur"
+                  src={sealingImageBottom}
                 />
               </div>
             </section>

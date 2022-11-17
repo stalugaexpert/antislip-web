@@ -179,11 +179,11 @@ export const ContactLong = () => {
               </div>
               <div>
                 <span className='text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 inline'>{t('contact:contactAgreement')}</span>
-                <Link href="/regulation">
+                <Link href="/terms-of-service">
                   <a className='font-semibold inline text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75'>{t('contact:contactRegulation')}</a>
                 </Link>
                 <span className='text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 inline'>{t('contact:contactAgreementMid')}</span>
-                <Link href="/regulation">
+                <Link href="/privacy-policy">
                   <a className='font-semibold inline text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75'>{t('contact:contactPrivacy')}</a>
                 </Link>
                 <span className='text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 inline'>{t('contact:contactAgreementBot')}</span>
