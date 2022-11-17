@@ -1,0 +1,20 @@
+{
+  "home": "Home",
+  "services": "Our services",
+  "knowledge": "Knowledge",
+  "contact": "Contact us",
+  "logoAlt": "antislip site logo",
+  "servicesList": {
+    "antislip": "Anti-slip treatment",
+    "pendulum": "Dynamic friction coefficient measurement",
+    "sealers": "Sealing",
+    "cleaning": "Cleaning"
+  },
+  "images": {
+    "antislip": "anti-slip treatment",
+    "pendulum": "dynamic friction coefficient measurement",
+    "sealers": "sealing",
+    "cleaning": "cleaning"
+  },
+  "shop": "Shop"
+}

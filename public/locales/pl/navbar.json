@@ -1,0 +1,20 @@
+{
+  "home": "Home",
+  "services": "Nasze usługi",
+  "knowledge": "Wiedza",
+  "contact": "Skontaktuj się",
+  "logoAlt": "logo strony antislip",
+  "servicesList": {
+    "antislip": "Zabezpieczenie antypoślizgowe",
+    "pendulum": "Pomiar współczynnika tarcia dynamicznego",
+    "sealers": "Impregnacja",
+    "cleaning": "Doczyszczanie"
+  },
+  "images": {
+    "antislip": "zabezpieczenie antypośligowe",
+    "pendulum": "pomiar współczynnika tarcia dynamicznego",
+    "sealers": "impregnacja",
+    "cleaning": "doczyszczanie"
+  },
+  "shop": "Sklep"
+}

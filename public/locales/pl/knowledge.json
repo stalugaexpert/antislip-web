@@ -1,0 +1,129 @@
+{
+  "knowledge": "WIEDZA",
+  "description": "Dlaczego należy badać",
+  "descriptionBottom": "odporność na poślizg?",
+  "whatKnow": "Co powinieneś wiedzieć?",
+  "legalActs": "Akty prawne",
+  "actsFirst": {
+    "title": "Obwieszczenie Ministra Inwestycji I Rozwoju z dnia 8 kwietnia 2019r",
+    "firstParagraph": "...w sprawie ogłoszenia jednolitego tekstu rozporządzenia Ministra Infrastruktury w sprawie warunków technicznych, jakim powinny odpowiadać budynki i ich usytuowanie.",
+    "secondParagraph": "305. 1. Nawierzchnia dojść do budynków, schodów i pochylni zewnętrznych i wewnętrznych, ciągów komunikacyjnych w budynku oraz podłóg w pomieszczeniach przeznaczonych na pobyt ludzi, a także posadzki w garażu, powinna być wykonana z materiałów niepowodujących niebezpieczeństwa poślizgu.",
+    "thirdParagraph": "§ 78. 1. Ściany pomieszczenia higienicznosanitarnego powinny mieć do wysokości co najmniej 2 m powierzchnie zmywalne i odporne na działanie wilgoci.",
+    "fourthParagraph": "2. Posadzka pralni, łazienki, umywalni, kabiny natryskowej i ustępu powinna być zmywalna, nienasiąkliwa i nieśliska."
+  },
+  "actsSecond": {
+    "title": "Poradnik Ministerstwa Inwestycji i Rozwoju",
+    "firstParagraph": "5.3.11. PODSUMOWANIE",
+    "secondParagraph": "„Nawierzchnie powinny zapewnić możliwość swobodnego poruszania się, tzn. powinna być równa i mieć powierzchnię antypoślizgową, która spełnia swoje cechy również w trudnych warunkach atmosferycznych – w badaniu wg PN-EN 13036-4 lub PN-EN 14231 wartość poślizgu (PTV lub SRV) nawierzchni mokrej nie może być niższa niż 36 jednostek.”",
+    "thirdParagraph": "„Należy jednocześnie zapewnić stałość parametru w czasie. Wartość poślizgu w całym okresie użytkowania nawierzchni mokrej nie może być niższa niż 36 jednostek, co należy okresowo kontrolować (nie rzadziej niż raz na 3 lata) w ramach przeglądów technicznych obiektów.”",
+    "fourthParagraph": "Ponadto Instytut Techniki Budowlanej wyznaczył szczegółowe wytyczne dla obiektów użyteczności publicznej."
+  },
+  "actsThird": {
+    "title": "Rozporządzenie Ministra Infrastruktury",
+    "firstParagraph": "§305. 1. Nawierzchnia dojść do budynków, schodów i pochylni zewnętrznych i wewnętrznych, ciągów komunikacyjnych w budynku oraz podłóg w pomieszczeniach przeznaczonych na pobyt ludzi, a także posadzki w garażu, powinna być wykonana z materiałów niepowodujących niebezpieczeństwa poślizgu.",
+    "secondParagraph": "§320. Balkony, loggie i tarasy powinny mieć posadzki wykonane z materiałów nienasiąkliwych, mrozoodpornych i nieśliskich."
+  },
+  "actsFourth": {
+    "title": "Rozporządzenie Ministra Pracy i Polityki Socjalnej",
+    "firstParagraph": "§16. 1. W pomieszczeniach oraz na drogach znajdujących się w obiektach budowlanych podłogi powinny być stabilne, równe, nieśliskie, niepylące i odporne na ścieranie oraz nacisk, a także łatwe do utrzymania w czystości.",
+    "secondParagraph": "3.Jeżeli podłoga jest wykonana z materiału będącego dobrym przewodnikiem lub jeżeli przy wykonywaniu pracy występuje jej zamoczenie, w przejściach oraz miejscach do stania i siedzenia powinny znajdować się podesty izolujące od zimna lub wilgoci, albo powinny być stosowane inne środki izolujące. Podesty powinny być stabilne , wytrzymałe na obciążenie użytkowe, zabezpieczające przed poślizgiem i potknięciem oraz łatwe do utrzymania w czystości.",
+    "thirdParagraph": "§21. 2. Nawierzchnie schodów, pomostów i pochylni nie powinny być śliskie, a w miejscach, w których może występować zaleganie płynów- powinny być ażurowe."
+  },
+  "ptv": "Współczynnik PTV",
+  "ptvAbout": "Czym jest współczynnik",
+  "ptvAboutBottom": "wartości poślizgu PTV?",
+  "ptvDescription": {
+    "firstParagraph": "Dotychczas stosowana rampowa skala antypoślizgowości R9-R13 została zastąpiona nowym, bardziej miarodajnym i praktycznym standardem PTV (Pendulum Test Value).",
+    "secondParagraph": "Ryzyko poślizgu można określić za pomocą testu wahadłowego. Test ten (regulowany przez polską normę PN-EN 13036-4) imituje stopę pieszego uderzającą o badaną powierzchnię podłogi. Wartość tarcia między piętą a podłogą jest określana ilościowo i przypisywana jest wartość testu wahadła (PTV). Jest to test rekomendowany przez Instytut Techniki Budowlanej i Państwową Inspekcję Pracy podczas kontroli podłóg, w ramach okresowej kontroli obiektów lub w ramach dochodzenia po wypadku.",
+    "thirdParagraph": "Wartość 36 PTV jest przez Ministerstwo Inwestycji i Rozwoju uznawana za minimalny współczynnik tarcia dla wszystkich obiektów użyteczności publicznej, w których poruszają się osoby niepełnosprawne.",
+    "fourthParagraph": "Wartości testu wahadła wahają się od 19 (co przekłada się na bardzo wysokie ryzyko poślizgnięcia 1 na 2) do 36 – znacznie niższe ryzyko poślizgnięcia się 1 na milion)."
+  },
+  "knowledgeFeatures": {
+    "first": "Bezpieczeństwo",
+    "firstDescription": "Tylko specjalistyczne pomiary, certyfikowanym urządzeniem mogą odpowiedzieć na to pytanie.",
+    "second": "Spory sądowe",
+    "secondDescription": "Odpowiednie, zgodne z normą pomiary, pozwolą uniknąć tego typu nieprzyjemności.",
+    "third": "Ustawy i przepisy",
+    "thirdDescription": "Pomiary odporności posadzek na poślizg są wymagane przez Instutut Techniki Budowlanej i Ministerstwo Rozwoju.",
+    "fourth": "Zagrożenia",
+    "fourthDescription": "Możliwość podjęcia wczesnych działań, zanim dojdzie do groźnych sytuacji.",
+    "fifth": "Roszczenia",
+    "fifthDescription": "Raporty z pomiarów parametrów antypoślizgowych powstrzymają potencjalnych oszustów.",
+    "sixth": "BHP i wymagania",
+    "sixthDescription": "Wyjście naprzeciw wymaganiom kontrolerów."
+  },
+  "pendulumSection": {
+    "title": "Rekomendacje",
+    "titleBottom": "Wahadło brytyjskie",
+    "description": "Projektanci, inspektorzy nadzoru budowlanego, inwestorzy, zarządcy, administratorzy obiektów użyteczności publicznej lub budynków mieszkalnych, chcąc mieć pewność, że ich posadzki są bezpieczne i zgodne z obowiązującymi przepisami prawa, wytycznymi i poradnikami, regularnie badają odporność na poślizg, nowych oraz eksploatowanych posadzek.",
+    "firstParagraph": "Jedną z metod weryfikacji odporności posadzki na poślizg jest badanie oporu poślizgu. Badanie to wykonujemy przy użyciu przyrządu zwanego wahadłem angielskim, stąd badanie w skrócie określane jest jako PTV (Pendulum Test Value). Metodę badania opisano szczegółowo w normie PN-EN 13036-4:2011.",
+    "secondParagraph": "Test wahadłem brytyjskim jest również rekomendowany przez Państwową inspekcję pracy:",
+    "thirdParagraph": "Test ten bardzo dobrze odwzorowuje rzeczywistą dynamikę i imituje ruch obcasa podczas chodzenia. Pozwala na pomiar współczynnika tarcia w rzeczywistych warunkach, zarówno na suchej, jak i mokrej nawierzchni. Różne wymienne końcówki pozwalają na odwzorowanie poruszania się w obuwiu, jak i na boso. – Praktyczne sposoby zapobiegania potknięciom i poślizgnięciom. Test ten może być wykorzystany do oceny ryzyka poślizgu w rzeczywistych warunkach, a także przy badaniu okoliczności i przyczyn wypadków, odpowiada na kluczowe pytanie „jak śliska jest podłoga gdy ktoś po niej chodzi?”",
+    "fourthParagraph": "Więcej o metodach pomiaru i naszych usługach możesz przeczytać klikając ",
+    "here": "tutaj."
+  },
+  "surfaces": "W jakich obiektach należy",
+  "surfacesBottom": "badać odporność na poślizg?",
+  "surfacesDescription": "Badanie bezpieczeństwa podłóg pod kątem zabezpieczeń i parametrów antypoślizgowych jest bardzo ważne, a zachowanie prawidłowych właściwości antypoślizgowych powierzchni wpływa w znaczący sposób na podniesienie bezpieczeństwa ich użytkowania.",
+  "surfacesDescriptionBotton": "W jakich obiektach takie badanie jest obowiązkowe? Można wyróżnić dwa podstawowe odniesienia. Zgodnie z wytycznymi Instytutu Techniki Budowlanej, badanie odporności na poślizg należy badać raz na 5 lat w budynkach użyteczności publicznej. Są to między innymi budynki:",
+  "placesList": {
+    "first": "Biurowe",
+    "second": "Opieki zdrowotnej (np. szpitale, przychodnie)",
+    "third": "Handlowe (np. galerie handlowe, markety)",
+    "fourth": "Usługowe (np. dworce, lotniska, banki)",
+    "fifth": "Oświatowe (np. szkoły, uniwersytety)",
+    "sixth": "O funkcji kulturowej (np. kina)",
+    "seventh": "Hotelowe"
+  },
+  "surfacesSecond": "Drugim punktem odniesienia, określającym obszary w których należy badać odporność na poślizg jest Poradnik Ministerstwa Inwestycji i Rozwoju (ob. Rozwoju i Technologii) „Standardy projektowania budynków dla osób niepełnosprawnych” z 2018.",
+  "surfacesSecondDescription": "Określono w nim, że nawierzchnie w tego typu obiektach powinny mieć powierzchnię antypoślizgową, która zachowuje swoje parametry również w trudnych warunkach atmosferycznych – w badaniu wg PN EN 13036-4 lub PN-EN 14231 wartość poślizgu (PTV lub SRV) nawierzchni mokrej nie może być niższa niż 36 jednostek.",
+  "surfacesSecondDescriptionBottom": "Wynika z tego, że wszystkie obiekty, w których mogą poruszać się osoby niepełnosprawne, podlegają kontroli parametru PTV. Powinniśmy w szczególności zadbać o bezpieczeństwo powierzchni po której poruszają się między innymi:",
+  "typesList": {
+    "first": "osoby na wózkach inwalidzkich",
+    "second": "osoby niewidome i słabowidzące, niedosłyszące",
+    "third": "osoby z niepełnosprawnością intelektualną",
+    "fourth": "kobiety w ciąży, opiekunowie małych dzieci w wózkach",
+    "fifth": "osoby starsze",
+    "sixth": "osoby otyłe, niskie lub bardzo wysokie",
+    "seventh": "osoby z czasowymi ograniczeniami mobilności (np. osoby poruszające się przy pomocy kul)"
+  },
+  "cardsList": {
+    "first": {
+      "title": "USTAWA PRAWO BUDOWLANE",
+      "subtitle": "(art. 5 pkt 1 ppkt 1 lit.d.)",
+      "description": "„Obowiązek zapewnienia m. in. bezpieczeństwa użytkowania i dostępności obiektów.”"
+    },
+    "second": {
+      "title": "USTAWA PRAWO BUDOWLANE",
+      "subtitle": "(art. 62 pkt 1)",
+      "description": "„Obowiązek poddawania obiektów przez właściciela lub zarządcę okresowej kontroli, co najmniej raz na 5 lat.”"
+    },
+    "third": {
+      "title": "USTAWA O GOSPODARCE NIERUCHOMOŚCIAMI",
+      "subtitle": "(art. 148b)",
+      "description": "„Obowiązek zapewnienia bezpieczeństwa użytkowania i właściwej eksploatacji nieruchomości.”"
+    }
+  },
+  "ptvTable": {
+    "titles": {
+      "first": "Lokalizacja posadzki",
+      "second": "Wymagania",
+      "third": "Metoda weryfikacji"
+    },
+    "firstCol": {
+      "first": "Strefa wejścia (zewnętrzna i wewnętrzna)",
+      "second": "Ciągi komunikacyjne",
+      "third": "Pomieszczenia sanitarno-higieniczne",
+      "fourth": "Strefa handlowo-usługowa",
+      "fifth": "Tarasy, balkony",
+      "sixth": "Inne pomieszczenia, w których posadzka w trakcie użytkowania podlega narażeniu na działanie wody lub opadów atmosferycznych",
+      "seventh": "Inne pomieszczenia, w których posadzka w trakcie użytkowania nie podlega narażeniu na działanie wody lub opadów atmosferycznych",
+      "eighth": "Posadzki do uprawiania sportu"
+    },
+    "secondCol": {
+      "first": "opór poślizgu PTV ≥36 w warunkach suchych i w warunkach mokrych",
+      "second": "opór poślizgu PTV ≥36 w warunkach suchych",
+      "third": "opór poślizgu PTV 80÷ 110 w warunkach suchych"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "ourServices": "OUR SERVICES",
+  "antislipDescription": "Antislip Description",
+  "heroDescription": "If you are responsible for a public space, you are also responsible for painful falls, slips, and injuries that occur as a result. Avoid high compensation claims and ensure the safety of users. Find out how to implement anti-slip protection.",
+  "attributes": {
+    "first": {
+      "title": "If your floor has become slippery over time...",
+      "description": "we will apply an anti-slip treatment from the unique and proprietary CTS Chemistry. You will regain balance and a sense of security - without changing the aesthetics of the pavement."
+    },
+    "second": {
+      "title": "If you have a new, beautiful and slippery floor...",
+      "description": "then it is worth it to protect it with a non-slip treatment and then impregnate it. You will keep the effect of freshness and newness of the surface for a longer time and much easier to maintain cleanliness."
+    },
+    "third": {
+      "title": "If you have an old, damaged floor.",
+      "description": "we will clean it, stain it and protect it with non-slip treatment to make it safe for you, your customers, employees and loved ones. We will then perform waterproofing, making your floor regain its former shine and freshness."
+    }
+    ,
+    "fourth": {
+      "title": "If you are responsible for flooring in a public space...",
+      "description": "we will perform a professional anti-slip measurement and issue a certificate of compliance of the flooring with FSC guidelines and the Pendulum standard."
+    }
+  },
+  "zapTechnology": "THE SOLUTION IS ZAP®",
+  "zapDetails": "This is a professional service based on CTS Chemistry's proprietary technology and top production formulations.",
+  "zapCheck": "CHECK WHAT SETS THIS METHOD APART.",
+  "security": "SECURITY",
+  "attributesTechnology": {
+    "first": "Secures any type of stone, ceramic or concrete surface.",
+    "second": "Allows you to protect old and new surfaces.",
+    "third": "It is used both indoors and outdoors.",
+    "fourth": "It is safe for the material, does not etch the surface, and does not cause dulling.",
+    "fifth": "Does not leave stains or discoloration.",
+    "sixth": "It is safe for people and the environment.",
+    "seventh": "Meets safety requirements according to EN 13036-4.",
+    "eighth": "Guarantees the durability of the anti-slip effect."
+  },
+  "measurement": "MEASUREMENT",
+  "measurementDescription": "We will measure the anti-slip effect and issue a Certificate of Conformity. All in accordance with the guidelines of the Institute of Building Technology and the Ministry of Development.",
+  "measurementHow": "How do we measure a floor's slip resistance?",
+  "measurementHowDescription": "The method for verifying slip resistance is the slip resistance test. We perform this test using an instrument called an English pendulum, hence the test is referred to as PTV (Pendulum Test Value) for short. The test method is described in detail in EN 13036-4.",
+  "measurementLink": "You can read more about the measurements we provide ",
+  "here": "here.",
+  "antislipWhen": "When should professional antislip protection be used?",
+  "antislipWhenDescription": "Regardless of age, physical condition or occupation. Everyone is at risk of slips and painful falls.",
+  "antislipWhenDescriptionBottom": "Inadequate slip resistance of flooring carries the risk of serious injury, resulting in prolonged and costly treatment and high compensation claims. Therefore, it is worth knowing and taking advantage of all available technical and legal measures to guarantee the safety of users of the surface from the stage of the design of the construction project, through technical acceptance, to the period of use.",
+  "antislipWhenLink": "For more on anti-slip requirements and legislation, click ",
+  "readMore": "Read more on our blog."
+}
+

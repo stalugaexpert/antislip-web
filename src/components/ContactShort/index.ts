@@ -1,0 +1,1 @@
+export { ContactShort } from "./ContactShort"

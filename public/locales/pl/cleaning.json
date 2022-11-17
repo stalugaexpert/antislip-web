@@ -1,0 +1,28 @@
+{
+  "ourServices": "NASZE USŁUGI",
+  "cleaningDescription": "Doczyszczanie",
+  "heroDescription": "Usuwamy większość zanieczyszczeń powstałych z długoletniego użytkowania powierzchni takich jak: płytki ceramiczne, ceramika basenowa, kamień naturalny, beton czy klinkier.",
+  "readMore": "Czytaj więcej na naszym blogu",
+  "cleaningWhen": "Kiedy zdecydować się na specjalistyczną usługę doczyszczania?",
+  "cleaningWhenDescription": "W budynkach użyteczności publicznej, centrach medycznych, ośrodkach sportowych, w biurach a nawet prywatnych domach posadzki i chodniki są szczególnie narażone na różnego rodzaju zabrudzenia. Z czasem trwałe zabrudzenia stają się bardziej widoczne i trudne do usunięcia. W pomieszczeniach spędzamy znaczną część naszego dnia. Warto, więc odpowiednio zadbać o najbliższe otoczenie, aby nie tylko długo wyglądało czysto, ale również było bezpieczne dla naszego zdrowia.",
+  "cleaningWhenDescriptionBottom": "Usuwamy większość zanieczyszczeń powstałych z długoletniego użytkowania powierzchni takich jak: płytki ceramiczne, ceramika basenowa, kamień naturalny, beton i klinkier. Bez ryzyka uszkodzenia lub przebarwień czyszczonej powierzchni.",
+  "cleaningWhenDescTop": "Usługa głębokiego doczyszczenia posadzek sprawiają, że każda powierzchnia ",
+  "betterThan": "wygląda lepiej niż kiedykolwiek, łatwiej ",
+  "cleaningWhenDescMid": "podlega codziennemu czyszczeniu, a także ",
+  "cleaningSlower": "wolniej ",
+  "cleaningWhenDescBottom": "ulega eksploatacji i jest ",
+  "cleaningSecure": "bezpieczniejsza ",
+  "cleaningWhenDescBottomBottom": "dla użytkowników.",
+  "cleaningAbout": "Zamów specjalistyczną usługę doczyszczania, jeśli chcesz skutecznie usunąć z powierzchni:",
+  "cleaningAboutItems": {
+    "first": "wieloletnie osady kamienne,",
+    "second": "złogi i wykwity solne,",
+    "third": "wieloletnie tłuste zabrudzenia,",
+    "fourth": "polimerowe powłoki konserwacyjne,",
+    "fifth": "stare osady z mydła,",
+    "sixth": "wykwity pleśni i glonów,",
+    "seventh": "świeże i stare plamy olejowe"
+  },
+  "beforeService": "Przed realizacją zlecenia zawsze wykonujemy bezpłatną próbę. Będziesz mieć pewność, że planowane czyszczenie będzie skuteczne i bezpieczne dla Twojej powierzchni.",
+  "trustUs": "Zaufaj specjalistom."
+}

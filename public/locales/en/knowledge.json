@@ -1,0 +1,129 @@
+ { 
+  "knowledge": "KNOWLEDGE",
+  "description": "Why should we investigate",
+  "descriptionBottom": "skid resistance?",
+  "whatKnow": "What should you know?",
+  "legalActs": "Legal Acts",
+  "actsFirst": {
+    "title": "Announcement of the Minister of Investment and Development dated April 8, 2019",
+    "firstParagraph": "...on the announcement of the unified text of the Regulation of the Minister of Infrastructure on technical conditions to be met by buildings and their location.",
+    "secondParagraph": "305. 1. The surface of accesses to buildings, external and internal stairs and ramps, passageways in the building and floors in rooms intended for human habitation, as well as the floor in the garage, should be made of materials that do not cause a danger of slipping.",
+    "thirdParagraph": "§ 78. 1. The walls of the hygiene and sanitation room should have up to a height of at least 2 m washable and moisture-resistant surfaces.",
+    "fourthParagraph": "2. The floor of the laundry room, bathroom, washroom, shower room and toilet should be washable, non-absorbent and non-slippery."
+  },
+  "actsSecond": {
+    "title": "Guidebook of the Ministry of Investment and Development",
+    "firstParagraph": "5.3.11 SUMMARY",
+    "secondParagraph": "„Surfaces should ensure the possibility of free movement, i.e. it should be level and have an anti-slip surface that also meets its characteristics in severe weather conditions - in the test according to PN-EN 13036-4 or PN-EN 14231, the slip value (PTV or SRV) of the wet pavement must not be lower than 36 units.”",
+    "thirdParagraph": "„At the same time, the constancy of the parameter over time must be ensured. The slip value over the lifetime of the wet pavement must not be lower than 36 units, which must be periodically checked (at least once every 3 years) as part of the technical inspections of the facilities.”",
+    "fourthParagraph": "In addition, the Building Research Institute has set specific guidelines for public facilities."
+  },
+  "actsThird": {
+    "title": "Regulation of the Minister of Infrastructure",
+    "firstParagraph": "§305. 1. The surface of accesses to buildings, external and internal stairs and ramps, passageways in the building and floors in rooms intended for human habitation, as well as the floor in the garage, should be made of materials that do not cause a danger of slipping.",
+    "secondParagraph": "§320. Balconies, loggias and terraces should have floors made of non-absorbent, frost-resistant and non-slip materials."
+  },
+  "actsFourth": {
+    "title": "Regulation of the Minister of Labor and Social Policy.",
+    "firstParagraph": "§16. 1. In the rooms and on the roads in the construction facilities, the floors should be stable, even, non-slippery, non-dusty and resistant to abrasion and pressure, and easy to keep clean.",
+    "secondParagraph": "3.If the floor is made of a material that is a good conductor, or if there is wetness in the performance of the work, there should be platforms in the aisles and places for standing and sitting to insulate against cold or moisture, or there should be other means of insulation. The landings should be stable , resistant to imposed loads, safe from slipping and tripping, and easy to keep clean.",
+    "thirdParagraph": "§21. 2. The surfaces of stairs, platforms and ramps should not be slippery, and in areas where liquid deposits may occur - they should be openwork."
+  },
+  "ptv": "PTV factor",
+  "ptvAbout": "What is the coefficient",
+  "ptvAboutBottom": "PTV slip values?",
+  "ptvDescription": {
+    "firstParagraph": "The previously used R9-R13 ramp anti-slip scale has been replaced by a new, more authoritative and practical PTV (Pendulum Test Value) standard.",
+    "secondParagraph": "The risk of slipping can be determined using the pendulum test. This test (regulated by the Polish standard PN-EN 13036-4) imitates a pedestrian's foot striking the tested floor surface. The value of friction between the heel and the floor is quantified and assigned a Pendulum Test Value (PTV). This is a test recommended by the Building Research Institute and the State Labor Inspection Service when inspecting floors, as part of a periodic inspection of facilities or as part of an investigation after an accident.",
+    "thirdParagraph": "The value of 36 PTV is considered by the Ministry of Investment and Development as the minimum coefficient of friction for all public facilities where people with disabilities move.",
+    "fourthParagraph": "The values of the pendulum test range from 19 (which translates into a very high risk of slipping 1 in 2) to 36 - a much lower risk of slipping 1 in a million)."
+  },
+  "knowledgeFeatures": {
+    "first": "Safety",
+    "firstDescription": "Only specialized measurements, with certified equipment, can answer this question.",
+    "second": "Litigation",
+    "secondDescription": "Proper, compliant measurements will avoid this type of unpleasantness.",
+    "third": "Laws and regulations",
+    "thirdDescription": "Measurements of the slip resistance of floors are required by the Building Research Institute and the Ministry of Development.",
+    "fourth": "Hazards",
+    "fourthDescription": "The ability to take early action before dangerous situations occur.",
+    "fifth": "Claims",
+    "fifthDescription": "Anti-slip performance reports will deter potential fraudsters.",
+    "sixth": "Health, safety and requirements",
+    "sixthDescription": "Meeting the requirements of inspectors."
+  },
+  "pendulumSection": {
+    "title": "Recommendations",
+    "titleBottom": "British Pendulum",
+    "description": "Designers, building inspectors, investors, managers, administrators of public facilities or residential buildings, wanting to make sure that their floors are safe and in compliance with applicable laws, guidelines and guides, regularly test the slip resistance, of new and in-service floors.",
+    "firstParagraph": "One method of verifying a floor's slip resistance is slip resistance testing. This test is performed using an instrument called an English pendulum, hence the test is referred to as PTV (Pendulum Test Value) for short. The test method is described in detail in PN-EN 13036-4:2011.",
+    "secondParagraph": "The British Pendulum Test is also recommended by the State Labor Inspection:",
+    "thirdParagraph": "This test replicates the actual dynamics very well and mimics the movement of the heel while walking. It allows measuring the coefficient of friction in real conditions, both on dry and wet pavement. Various interchangeable tips allow you to mimic moving in shoes, as well as barefoot. - Practical ways to prevent tripping and slipping. This test can be used to assess the risk of slipping in real-life conditions, as well as to investigate the circumstances and causes of accidents, and answers the key question „how slippery is the floor when someone walks on it?”.",
+    "fourthParagraph": "You can read more about the measurement methods and our services by clicking ",
+    "here": "here."
+  },
+  "surfaces": "In which facilities should we",
+  "surfacesBottom": "test the slip resistance?",
+  "surfacesDescription": "Testing the safety of floors for safety features and anti-slip parameters is very important, and the maintenance of proper anti-slip properties of surfaces has a significant impact on increasing the safety of their use.",
+  "surfacesDescriptionBotton": "In which facilities is such testing mandatory? Two basic references can be distinguished. According to the guidelines of the Building Research Institute, slip resistance testing should be tested once every 5 years in public buildings. These include buildings:",
+  "placesList": {
+    "first": "Office",
+    "second": "Healthcare (e.g. hospitals, clinics)",
+    "third": "Commercial (e.g., shopping malls, markets)",
+    "fourth": "Services (e.g., train stations, airports, banks).",
+    "fifth": "Educational (e.g., schools, universities).",
+    "sixth": "Of cultural function (e.g., cinemas)",
+    "seventh": "Hotels"
+  },
+  "surfacesSecond": "The second reference that defines the areas in which slip resistance should be tested is the Ministry of Investment and Development (ob. Development and Technology) Guidebook „Standards for the Design of Buildings for Persons with Disabilities” of 2018.",
+  "surfacesSecondDescription": "It specifies that surfaces in this type of facilities should have an anti-slip surface that retains its parameters also in harsh weather conditions - in a test according to PN EN 13036-4 or PN-EN 14231, the slip value (PTV or SRV) of a wet surface must not be lower than 36 units.",
+  "surfacesSecondDescriptionBottom": "It follows that all facilities where people with disabilities can move are subject to control of the PTV parameter. In particular, we should take care of the safety of the surface on which they move, among other things:",
+  "typesList": {
+    "first": "wheelchair users",
+    "second": "blind and visually impaired, hearing impaired",
+    "third": "people with intellectual disabilities",
+    "fourth": "pregnant women, caregivers of young children in strollers",
+    "fifth": "elderly people",
+    "sixth": "obese, short or very tall people",
+    "seventh": "people with temporary mobility limitations (e.g., people who move with the help of crutches)"
+  },
+  "cardsList": {
+    "first": {
+      "title": "CONSTRUCTION LAW",
+      "subtitle": "(Article 5(1)(1)(d))",
+      "description": "„Obligation to ensure, among other things, the safety of use and accessibility of facilities.”"
+    },
+    "second": {
+      "title": "CONSTRUCTION LAW",
+      "subtitle": "(Article 62(1))",
+      "description": "„The obligation of the owner or manager to subject the facilities to periodic inspection, at least once every 5 years.”"
+    },
+    "third": {
+      "title": "REAL ESTATE MANAGEMENT LAW",
+      "subtitle": "(Article 148b)",
+      "description": "„Obligation to ensure safe use and proper operation of real estate.”"
+    }
+  },
+  "ptvTable": {
+    "titles": {
+      "first": "Floor Location",
+      "second": "Requirements",
+      "third": "Verification method"
+    },
+    "firstCol": {
+      "first": "Entry zone (external and internal)",
+      "second": "Communication strings",
+      "third": "Sanitary and hygienic rooms",
+      "fourth": "Commercial and service area",
+      "fifth": "Terraces, balconies",
+      "sixth": "Other areas where the floor is subject to exposure to water or precipitation during use",
+      "seventh": "Other rooms where the floor is not subject to exposure to water or precipitation during use.",
+      "eighth": "Floors for sports activities"
+    },
+    "secondCol": {
+      "first": "PTV slip resistance ≥36 in dry and wet conditions.",
+      "second": "slip resistance PTV ≥36 in dry conditions",
+      "third": "slip resistance PTV 80÷ 110 in dry conditions"
+    }
+  }
+}
