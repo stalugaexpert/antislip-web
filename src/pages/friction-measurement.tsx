@@ -5,20 +5,20 @@ import {
   ContactShort,
   PageLayout,
   Recommendations,
+  Seo,
 } from '@components'
-import type { InferGetStaticPropsType, NextPage } from 'next'
+import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getPlaiceholder } from 'plaiceholder'
 import { fetchAllBlogPosts } from 'src/utils/api/service'
-import { PlaiceHolderProps } from 'src/utils/types/PlaiceHolderProps'
 
 import measurementHero from '../../public/images/measurement-hero-1.png'
 import measurementHero2 from '../../public/images/measurement-hero-2.png'
 
-const Friction: NextPage = ({ pendulumKnowledgeProps, blogPosts }: any) => {
+const Friction: NextPage = ({ gifBlur, blogPosts }: any) => {
   const { t } = useTranslation()
 
   const howToItems = [
@@ -29,6 +29,10 @@ const Friction: NextPage = ({ pendulumKnowledgeProps, blogPosts }: any) => {
 
   return (
     <PageLayout>
+      <Seo
+        description={t('seo:measurement.metaDescription')}
+        title={t('seo:measurement.title')}
+      />
       <section className="px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
         <div className="flex justify-between mb-8">
           <div className="w-3/4 recommendations-ds:w-[85%]">
@@ -260,10 +264,11 @@ const Friction: NextPage = ({ pendulumKnowledgeProps, blogPosts }: any) => {
               <div className="relative h-[50vh] knowledge-md:h-[30vh] w-full">
                 <Image
                   alt=""
+                  blurDataURL={gifBlur}
                   layout="fill"
                   objectFit="cover"
                   placeholder="blur"
-                  {...(pendulumKnowledgeProps as PlaiceHolderProps)}
+                  src="/images/sealing-image-2.gif"
                 />
               </div>
             </section>
@@ -386,7 +391,6 @@ const Friction: NextPage = ({ pendulumKnowledgeProps, blogPosts }: any) => {
 export async function getStaticProps({ locale }: { locale: string }) {
   const {
     base64,
-    img: { src },
   } = await getPlaiceholder('/images/pendulum-knowledge.gif')
   const localization = locale === 'pl' ? 'pl-PL' : 'en'
   const res = await fetchAllBlogPosts(localization)
@@ -400,11 +404,9 @@ export async function getStaticProps({ locale }: { locale: string }) {
         'recommendations',
         'card-switcher',
         'contact',
+        'seo'
       ])),
-      pendulumKnowledgeProps: {
-        blurDataURL: base64,
-        src,
-      },
+      gifBlur: base64,
       blogPosts: await res.json()
     },
   }

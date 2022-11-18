@@ -1,0 +1,46 @@
+{
+  "home": {
+    "title": "Anti-slip technology, waterproofing (sealing), cleaning",
+    "metaDescription": "Experts providing specialized services in anti-slip protection and measurement, impregnation, thorough cleaning and descaling - order service today!"
+  },
+  "antislip": {
+    "title": "Professional anti-slip protection",
+    "metaDescription": "Ensure the safety of users and avoid high costs associated with improper surface properties. Find out how to implement anti-slip protection - order the service today!"
+  },
+  "measurement": {
+    "title": "Anti-Slip, friction coefficient and PTV measurement | Tests and certifications",
+    "metaDescription": "We perform slip resistance measurements of floors. Measurements of the PTV coefficient with the British Pendulum. Checking compliance with the requirements of the ITB. After the measurements, we issue a certificate of compliance."
+  },
+  "sealing": {
+    "title": "Impregnation and protection of any type of surface",
+    "metaDescription": "Impregnation effectively protects against the absorption of water, greasy stains, or other substances into the surface. Thanks to it, dirt can be easily removed and the material remains undamaged - discover the power of impregnation!"
+  },
+  "cleaning": {
+    "title": "Surface cleaning - deep cleaning, removal of efflorescence",
+    "metaDescription": "We remove most contaminants from long-term use of surfaces such as ceramic tiles, pool ceramics, natural stone, concrete or clinker - restore surfaces to their former glory!"
+  },
+  "knowledge": {
+    "title": "Knowledge - anti-slip measurements, duties and responsibilities",
+    "metaDescription": "Why should slip resistance be tested? What are the duties and responsibilities of the manager? Find out now!"
+  },
+  "contact": {
+    "title": "Contact",
+    "metaDescription": "We provide specialized services in anti-slip protection, thorough cleaning, descaling, waterproofing - contact us!"
+  },
+  "blog": {
+    "title": "Blog",
+    "metaDescription": "We share our knowledge of slip protection and the latest surface technologies - read more!"
+  },
+  "termsOfService": {
+    "title": "Terms of service",
+    "metaDescription": "Anti-slip terms of service."
+  },
+  "privacyPolicy": {
+    "title": "Privacy policy",
+    "metaDescription": "Privacy policy of anti-slip service."
+  },
+  "rodo": {
+    "title": "RODO information obligation",
+    "metaDescription": "Anti-slip service RODO information obligation."
+  }
+}

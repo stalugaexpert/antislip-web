@@ -1,11 +1,10 @@
-import { Accordion, ContactShort, PageLayout } from '@components'
+import { Accordion, ContactShort, PageLayout, Seo } from '@components'
 import type { InferGetStaticPropsType, NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getPlaiceholder } from 'plaiceholder'
-import { PlaiceHolderProps } from 'src/utils/types/PlaiceHolderProps'
 
 import antiSlipPTV from '../../public/images/antislip-ptv.png'
 import knowledgeHero from '../../public/images/knowledge-hero.jpg'
@@ -13,7 +12,7 @@ import knowledgePlaces from '../../public/images/knowledge-places-1.jpg'
 import knowledgePlaces2 from '../../public/images/knowledge-places-2.jpg'
 
 const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  pendulumKnowledgeProps,
+  gifBlur
 }) => {
   const { t } = useTranslation()
 
@@ -128,6 +127,10 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
   return (
     <PageLayout>
+      <Seo
+        description={t('seo:knowledge.metaDescription')}
+        title={t('seo:knowledge.title')}
+      />
       <section
         className="px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6"
         onClick={testFunction}
@@ -277,10 +280,11 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               <div className="relative h-[40vh] knowledge-md:h-[30vh] w-full">
                 <Image
                   alt=""
+                  blurDataURL={gifBlur}
                   layout="fill"
                   objectFit="cover"
                   placeholder="blur"
-                  {...(pendulumKnowledgeProps as PlaiceHolderProps)}
+                  src="/images/pendulum-knowledge.gif"
                 />
               </div>
               <p className="text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
@@ -552,7 +556,6 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 export async function getStaticProps({ locale }: { locale: string }) {
   const {
     base64,
-    img: { src },
   } = await getPlaiceholder('/images/pendulum-knowledge.gif')
 
   return {
@@ -562,11 +565,9 @@ export async function getStaticProps({ locale }: { locale: string }) {
         'footer',
         'knowledge',
         'contact',
+        'seo'
       ])),
-      pendulumKnowledgeProps: {
-        blurDataURL: base64,
-        src,
-      },
+      gifBlur: base64,
     },
   }
 }

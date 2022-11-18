@@ -264,6 +264,7 @@ export const ContactShort = () => {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2392.3876800768903!2d16.66101631600878!3d53.15708297993975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4703e335c2dd1da3%3A0x2d18af77d1cdf187!2se-nubes%20impregnaty!5e0!3m2!1spl!2spl!4v1667830314623!5m2!1spl!2spl"
+              title={t('contact:mapsTitle')}
               width="100%"
             ></iframe>
           </div>

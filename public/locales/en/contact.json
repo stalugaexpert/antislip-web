@@ -15,5 +15,6 @@
   "phone": "Phone number",
   "message": "Message",
   "fieldRequired": "This field is required.",
-  "fieldTooLong": "The specified value is too long."
+  "fieldTooLong": "The specified value is too long.",
+  "mapsTitle": "Google Maps iFrame with location"
 }
