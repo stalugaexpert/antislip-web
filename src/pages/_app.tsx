@@ -4,10 +4,12 @@ import "slick-carousel/slick/slick-theme.css"
 
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import Script from 'next/script'
 import { appWithTranslation } from 'next-i18next'
 import { ThemeProvider } from 'next-themes'
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3"
 
+import { TRACKING_ID } from '../config/config'
 import { SITE_KEY } from '../config/config'
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
@@ -22,6 +24,22 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
       }}
     >
       <ThemeProvider attribute="class">
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${TRACKING_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+        >
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', ${TRACKING_ID});
+        `}
+        </Script>
         <Head>
           <link
             href="/favicon/apple-touch-icon.png"
