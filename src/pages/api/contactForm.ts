@@ -15,13 +15,14 @@ export default function handler (req: NextApiRequest,
   res: NextApiResponse<Data>): void {
 
   const transporter = nodemailer.createTransport({
-    port: 587,
+    port: 465,
     host: "smtp.gmail.com",
     auth: {
       user: MAIL_ADDRESS,
       pass: MAIL_PASSWORD
     },
     secure: true,
+    service: 'gmail',
   })
 
   const handlebarOptions = {
