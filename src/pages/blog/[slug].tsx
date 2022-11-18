@@ -25,7 +25,6 @@ interface IStaticBlogPostProps {
 const BlogPost: NextPage = ({ blogPost, blogPostsAll }: any) => {
   const { t } = useTranslation()
   moment().localeData()
-  console.log(blogPost)
 
   return (
     <PageLayout>
@@ -219,7 +218,7 @@ export async function getStaticPaths({ locales }: { locales: string[] }) {
       })
     }
     catch(error: any) {
-      console.log(error)
+      throw new Error(error)
     }
   }))
   const paths = Array.prototype.concat.apply([], pathsPrototype)

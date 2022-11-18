@@ -35,6 +35,7 @@ export const OurServices = ({ text, icon, alt, url }: IOurServicesProps) => {
               height="20"
               src={icon}
               width="24"
+              priority
             />
           </div>
           <span className="text-base font-normal text-neutral700 dark:text-neutral200">{text}</span>

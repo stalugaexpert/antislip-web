@@ -22,6 +22,7 @@ export const ContactLong = () => {
     setIsLoading(true)
 
     if (!executeRecaptcha) {
+      // eslint-disable-next-line no-console
       console.log("Execute recaptcha not yet available")
       return
     }
@@ -56,7 +57,7 @@ export const ContactLong = () => {
         <div className="w-2/4 mission-sm:w-full mission-sm:mb-8 mission-sm:px-6">
           <h5 className="text-3xl about-md:text-xl font-semibold text-neutral900 dark:text-neutral50 mb-3">{t('contact:contactTitle')}</h5>
           <h5 className="text-3xl about-md:text-xl font-semibold text-amber400 mb-4">{t('contact:contactTalk')}</h5>
-          <div className='mb-8'>
+          <div className='mb-8 text-justfiy'>
             <p className='font-normal inline text-base about-md:text-sm text-neutral700 dark:text-neutral200'>{t('contact:contactDescription')}</p>
             <Link href="/#contact">
               <a className='font-semibold inline text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75'>{t('contact:contactDescriptionContact')}</a>
@@ -68,11 +69,17 @@ export const ContactLong = () => {
                 {...register("name", { required: true, maxLength: 100 })}
                 aria-invalid={errors.name ? "true" : "false"}
                 className={cx('peer w-full h-full bg-neutral100 border-neutral100 dark:bg-neutral700 text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border border placeholder-shown:border-solid placeholder-shown:border-neutral200 dark:placeholder-shown:border-neutral600 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 border-t-transparent focus:border-t-transparent dark:focus:border-t-transparent text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-amber600 dark:focus:border-amber600', { '!border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 dark:!border-t-rose600 dark:focus:!border-t-transparent focus:!border-t-transparent animate-shake': errors.name } )}
+                id="name"
                 name="name"
                 placeholder=" "
                 type="text"
               />
-              <label className={cx('flex w-full h-full select-none pointer-events-none absolute left-0 font-normal peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[4.1] text-blue-gray-400 peer-focus:text-amber600 before:border-blue-gray-200 peer-focus:before:border-amber600 after:border-blue-gray-200 peer-focus:after:border-amber600', { 'peer-focus:after:border-rose600 peer-focus:before:border-rose600 after:border-rose600 peer-focus:text-neutral800 dark:peer-focus:text-neutral50': errors.name } )}>{t('contact:name')}</label>
+              <label
+                className={cx('flex w-full h-full select-none pointer-events-none absolute left-0 font-normal peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[4.1] text-blue-gray-400 peer-focus:text-amber600 before:border-blue-gray-200 peer-focus:before:border-amber600 after:border-blue-gray-200 peer-focus:after:border-amber600', { 'peer-focus:after:border-rose600 peer-focus:before:border-rose600 after:border-rose600 peer-focus:text-neutral800 dark:peer-focus:text-neutral50': errors.name } )}
+                htmlFor="name"
+              >
+                {t('contact:name')}
+              </label>
               {errors.name?.type === 'required' && (
                 <p
                   className="font-normal mt-1 text-sm text-rose600"
@@ -96,11 +103,17 @@ export const ContactLong = () => {
                 {...register("email", { required: true, maxLength: 100 })}
                 aria-invalid={errors.email ? "true" : "false"}
                 className={cx('peer w-full h-full bg-neutral100 border-neutral100 dark:bg-neutral700 text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border border placeholder-shown:border-solid placeholder-shown:border-neutral200 dark:placeholder-shown:border-neutral600 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 border-t-transparent focus:border-t-transparent dark:focus:border-t-transparent text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-amber600 dark:focus:border-amber600', { '!border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 dark:!border-t-rose600 dark:focus:!border-t-transparent focus:!border-t-transparent animate-shake': errors.email } )}
+                id="email"
                 name="email"
                 placeholder=" "
                 type="email"
               />
-              <label className={cx('flex w-full h-full select-none pointer-events-none absolute left-0 font-normal peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[4.1] text-blue-gray-400 peer-focus:text-amber600 before:border-blue-gray-200 peer-focus:before:border-amber600 after:border-blue-gray-200 peer-focus:after:border-amber600', { 'peer-focus:after:border-rose600 peer-focus:before:border-rose600 after:border-rose600 peer-focus:text-neutral800 dark:peer-focus:text-neutral50': errors.email } )}>{t('contact:email')}</label>
+              <label
+                className={cx('flex w-full h-full select-none pointer-events-none absolute left-0 font-normal peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[4.1] text-blue-gray-400 peer-focus:text-amber600 before:border-blue-gray-200 peer-focus:before:border-amber600 after:border-blue-gray-200 peer-focus:after:border-amber600', { 'peer-focus:after:border-rose600 peer-focus:before:border-rose600 after:border-rose600 peer-focus:text-neutral800 dark:peer-focus:text-neutral50': errors.email } )}
+                htmlFor="email"
+              >
+                {t('contact:email')}
+              </label>
               {errors.email?.type === 'required' && (
                 <p
                   className="font-normal mt-1 text-sm text-rose600"
@@ -124,10 +137,16 @@ export const ContactLong = () => {
                 {...register("message", { required: true, maxLength: 30 })}
                 aria-invalid={errors.message ? "true" : "false"}
                 className={cx('peer w-full h-full bg-neutral100 border-neutral100 dark:bg-neutral700 text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border border placeholder-shown:border-solid placeholder-shown:border-neutral200 dark:placeholder-shown:border-neutral600 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 border-t-transparent focus:border-t-transparent dark:focus:border-t-transparent text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-amber600 dark:focus:border-amber600', { '!border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 dark:!border-t-rose600 dark:focus:!border-t-transparent focus:!border-t-transparent animate-shake': errors.message } )}
+                id="message"
                 name="message"
                 placeholder=" "
               />
-              <label className={cx('flex w-full h-full select-none pointer-events-none absolute left-0 font-normal peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[4.1] text-blue-gray-400 peer-focus:text-amber600 before:border-blue-gray-200 peer-focus:before:border-amber600 after:border-blue-gray-200 peer-focus:after:border-amber600', { 'peer-focus:after:border-rose600 peer-focus:before:border-rose600 after:border-rose600 peer-focus:text-neutral800 dark:peer-focus:text-neutral50': errors.message } )}>{t('contact:message')}</label>
+              <label
+                className={cx('flex w-full h-full select-none pointer-events-none absolute left-0 font-normal peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[4.1] text-blue-gray-400 peer-focus:text-amber600 before:border-blue-gray-200 peer-focus:before:border-amber600 after:border-blue-gray-200 peer-focus:after:border-amber600', { 'peer-focus:after:border-rose600 peer-focus:before:border-rose600 after:border-rose600 peer-focus:text-neutral800 dark:peer-focus:text-neutral50': errors.message } )}
+                htmlFor="message"
+              >
+                {t('contact:message')}
+              </label>
               {errors.message?.type === 'required' && (
                 <p
                   className="font-normal mt-1 text-sm text-rose600"
