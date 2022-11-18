@@ -1,13 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { PageLayout } from '@components'
+import { PageLayout, Seo } from '@components'
 import DOMPurify from 'isomorphic-dompurify'
 import type { NextPage } from 'next'
+import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { fetchSingleContentData } from 'src/utils/api/service'
 
 const Terms: NextPage = ({ content }: any) => {
+  const { t } = useTranslation()
+
   return (
     <PageLayout>
+      <Seo
+        description={t('seo:termsOfService.metaDescription')}
+        title={t('seo:termsOfService.title')}
+      />
       <section className="px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
         <div
           className='ck-content'
@@ -27,6 +34,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
       ...(await serverSideTranslations(locale, [
         'navbar',
         'footer',
+        'seo'
       ])),
       content: await res.json()
     },

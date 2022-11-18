@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ContactShort, PageLayout, Recommendations } from '@components'
+import { ContactShort, PageLayout, Recommendations, Seo } from '@components'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -45,6 +45,10 @@ const Antislip: NextPage = ({ blogPosts }: any) => {
 
   return (
     <PageLayout>
+      <Seo
+        description={t('seo:antislip.metaDescription')}
+        title={t('seo:antislip.title')}
+      />
       <section className="px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
         <div className="flex justify-between mb-8">
           <div className="w-3/4 recommendations-ds:w-[85%]">
@@ -248,6 +252,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
         'antislip',
         'recommendations',
         'contact',
+        'seo'
       ])),
       blogPosts: await res.json()
     },

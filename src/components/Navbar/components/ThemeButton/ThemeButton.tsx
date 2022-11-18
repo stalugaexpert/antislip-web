@@ -16,6 +16,7 @@ export const ThemeButton = () => {
 
   return (
     <button
+      aria-label="change theme"
       className="ml-2 p-3"
       onClick={() => setTheme(currentTheme === 'light' ? 'dark' : 'light')}
     >

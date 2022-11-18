@@ -1,0 +1,46 @@
+{
+  "home": {
+    "title": "Technika antypoślizgowa, impregnacja, doczyszczanie",
+    "metaDescription": "Eksperci świadczący specjalistyczne usługi z zakresu zabezpieczenia oraz pomiaru antypoślizgowego, impregnacji, gruntownego doczyszczania i odkamieniania - zamów usługę już dziś!"
+  },
+  "antislip": {
+    "title": "Profesjonalne zabezpieczenia antypoślizgowe",
+    "metaDescription": "Zadbaj o bezpieczeństwo użytkowników i uniknij wysokich kosztów związanych z nieprawidłowymi właściwościami powierzchni. Sprawdź jak wdrożyć zabezpieczenie antypoślizgowe - zamów usługę już dziś!"
+  },
+  "measurement": {
+    "title": "Pomiar antypoślizgowości, współczynnika tarcia i PTV | Testy i certyfikaty",
+    "metaDescription": "Wykonujemy pomiary odporności posadzek na poślizg. Pomiary współczynnika PTV Wahadłem Brytyjskim. Kontrola zgodności z wymaganiami ITB. Po pomiarach wystawiamy certyfikat zgodności."
+  },
+  "sealing": {
+    "title": "Impregnacja i zabezpieczenie każdego rodzaju powierzchni",
+    "metaDescription": "Impregnacja skutecznie chroni przed wchłanianiem wody, tłustych plam, czy innych substancji w powierzchnię. Dzięki niej brud można łatwo usunąć, a materiał pozostaje niezniszczony - odkryj moc impregnacji!"
+  },
+  "cleaning": {
+    "title": "Doczyszczanie powierzchni - głębokie czyszczenie, usuwanie wykwitów",
+    "metaDescription": "Usuwamy większość zanieczyszczeń powstałych z długoletniego użytkowania powierzchni takich jak: płytki ceramiczne, ceramika basenowa, kamień naturalny, beton czy klinkier - przywróć powierzchniom dawny blask!"
+  },
+  "knowledge": {
+    "title": "Wiedza - pomiary antypoślizgowości, obowiązki i odpowiedzialność",
+    "metaDescription": "Dlaczego należy badać odporność na poślizg? Jakie obowiązki i odpowiedzialność spoczywają na zarządcy? Dowiedz się teraz!"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "metaDescription": "Świadczymy specjalistyczne usługi z zakresu zabezpieczenia antypoślizgowego, gruntownego doczyszczania, odkamieniania, impregnacji - skontaktuj się z nami!"
+  },
+  "blog": {
+    "title": "Blog",
+    "metaDescription": "Dzielimy się wiedzą z zakresu zabezpieczeń antypoślizgowych i najnowszych technologii dotyczących powierzchni - czytaj więcej!"
+  },
+  "termsOfService": {
+    "title": "Regulamin serwisu",
+    "metaDescription": "Regulamin serwisu anti-slip."
+  },
+  "privacyPolicy": {
+    "title": "Polityka prywatności",
+    "metaDescription": "Polityka prywatności serwisu anti-slip."
+  },
+  "rodo": {
+    "title": "Obowiązek informacyjny RODO",
+    "metaDescription": "Obowiązek informacyjny RODO serwisu anti-slip."
+  }
+}

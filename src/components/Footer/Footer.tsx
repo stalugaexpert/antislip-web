@@ -46,12 +46,12 @@ export const Footer = () => {
                 <span>64-930 Dolaszewo</span>
               </div>
             </a>
-            <a className="text-base text-neutral50 dark:text-neutral200 font-normal">
+            <div className="text-base text-neutral50 dark:text-neutral200 font-normal">
               <div className="flex flex-col items-start">
                 <span>e-nubes Robert Chmura</span>
                 <span>NIP 764-197-46-91</span>
               </div>
-            </a>
+            </div>
           </div>
           <div className="flex flex-col gap-6">
             <span className="text-sm text-neutral200 dark:text-neutral400 font-semibold uppercase">{t('footer:menu')}</span>
