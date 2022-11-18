@@ -268,7 +268,8 @@ const Friction: NextPage = ({ gifBlur, blogPosts }: any) => {
                   layout="fill"
                   objectFit="cover"
                   placeholder="blur"
-                  src="/images/sealing-image-2.gif"
+                  src="/images/pendulum-knowledge.gif"
+                  unoptimized
                 />
               </div>
             </section>

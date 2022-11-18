@@ -201,11 +201,11 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   src={antiSlipPTV}
                 />
               </div>
-              <p className="text-base text-neutral800 dark:text-neutral50">
+              <p className="text-base text-justify text-neutral800 dark:text-neutral50">
                 {t('knowledge:ptvDescription.fourthParagraph')}
               </p>
             </div>
-            <div className="w-2/4 knowledge-md:w-full text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+            <div className="w-2/4 text-justify knowledge-md:w-full text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
               <p className="mb-2.5">
                 {t('knowledge:ptvDescription.firstParagraph')}
               </p>
@@ -257,7 +257,7 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             {t('knowledge:pendulumSection.titleBottom')}
           </h5>
           <div className="flex justify-between items-center gap-12 knowledge-md:flex-wrap knowledge-md:gap-6">
-            <div className="w-2/4 knowledge-md:w-full text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+            <div className="w-2/4 text-justify knowledge-md:w-full text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
               <p className="mb-2.5">
                 {t('knowledge:pendulumSection.firstParagraph')}
               </p>
@@ -285,9 +285,10 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   objectFit="cover"
                   placeholder="blur"
                   src="/images/pendulum-knowledge.gif"
+                  unoptimized
                 />
               </div>
-              <p className="text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+              <p className="text-base text-justify text-neutral800 dark:text-neutral50 about-xsm:text-sm">
                 {t('knowledge:pendulumSection.description')}
               </p>
             </div>
@@ -424,8 +425,8 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           </div>
           <div className="flex justify-between items-center gap-12 knowledge-md:flex-wrap knowledge-md:gap-6">
             <div className="w-2/4 knowledge-md:w-full text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
-              <p className="mb-2.5">{t('knowledge:surfacesDescription')}</p>
-              <p className="mb-2.5">
+              <p className="mb-2.5 text-justify">{t('knowledge:surfacesDescription')}</p>
+              <p className="mb-2.5 text-justify">
                 {t('knowledge:surfacesDescriptionBotton')}
               </p>
               <ul className="flex flex-col gap-2">
@@ -485,9 +486,9 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             </div>
           </div>
           <div className="w-2/4 knowledge-md:w-full text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
-            <p className="mb-2.5">{t('knowledge:surfacesSecond')}</p>
-            <p className="mb-2.5">{t('knowledge:surfacesSecondDescription')}</p>
-            <p className="mb-2.5">
+            <p className="mb-2.5 text-justify">{t('knowledge:surfacesSecond')}</p>
+            <p className="mb-2.5 text-justify">{t('knowledge:surfacesSecondDescription')}</p>
+            <p className="mb-2.5 text-justify">
               {t('knowledge:surfacesSecondDescriptionBottom')}
             </p>
             <ul className="flex flex-col gap-2">
@@ -557,7 +558,6 @@ export async function getStaticProps({ locale }: { locale: string }) {
   const {
     base64,
   } = await getPlaiceholder('/images/pendulum-knowledge.gif')
-
   return {
     props: {
       ...(await serverSideTranslations(locale, [

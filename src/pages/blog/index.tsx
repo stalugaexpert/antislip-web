@@ -10,7 +10,6 @@ import { getCorrectImageSmallest } from 'src/utils/helpers/getCorrectImage'
 
 const Blog: NextPage = ({ blogPosts }: any) => {
   const { t } = useTranslation()
-  console.log(blogPosts)
 
   return (
     <PageLayout>

@@ -513,7 +513,10 @@
   line-height: 1.75rem;
 }
 .ck-content p {
-  margin-bottom: 0.75rem;
+  margin-bottom: 2rem;
+}
+.ck-content p:last-child {
+  margin-bottom: 0;
 }
 @media print {
   /* ckeditor5-page-break/theme/pagebreak.css */

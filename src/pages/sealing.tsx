@@ -7,13 +7,12 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getPlaiceholder } from 'plaiceholder'
 import { fetchAllBlogPosts } from 'src/utils/api/service'
-import { PlaiceHolderProps } from 'src/utils/types/PlaiceHolderProps'
 
 import sealingHero from '../../public/images/sealing-hero.jpg'
 import sealingImage from '../../public/images/sealing-image-1.jpg'
 import sealingImageBottom from '../../public/images/sealing-image-3.jpg'
 
-const Sealing: NextPage = ({ sealingGif, blogPosts }: any) => {
+const Sealing: NextPage = ({ gifBlur, blogPosts }: any) => {
   const { t } = useTranslation()
 
   const sealingPros = [
@@ -187,10 +186,12 @@ const Sealing: NextPage = ({ sealingGif, blogPosts }: any) => {
               <div className="relative h-[50vh] knowledge-md:h-[30vh] w-full">
                 <Image
                   alt=""
+                  blurDataURL={gifBlur}
                   layout="fill"
                   objectFit="cover"
                   placeholder="blur"
-                  {...(sealingGif as PlaiceHolderProps)}
+                  src="/images/sealing-image-2.gif"
+                  unoptimized
                 />
               </div>
             </section>
@@ -342,10 +343,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
         'contact',
         'seo'
       ])),
-      sealingGif: {
-        blurDataURL: base64,
-        src,
-      },
+      gifBlur: base64,
       blogPosts: await res.json()
     },
   }
