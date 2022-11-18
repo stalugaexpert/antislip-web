@@ -9,8 +9,7 @@ import { appWithTranslation } from 'next-i18next'
 import { ThemeProvider } from 'next-themes'
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3"
 
-import { TRACKING_ID } from '../config/config'
-import { SITE_KEY } from '../config/config'
+import { GA_TRACKING_ID, SITE_KEY } from '../config/config'
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
@@ -25,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     >
       <ThemeProvider attribute="class">
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${TRACKING_ID}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${(GA_TRACKING_ID) as string}`}
           strategy="afterInteractive"
         />
         <Script
@@ -37,7 +36,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', ${TRACKING_ID});
+          gtag('config', '${GA_TRACKING_ID}' );
         `}
         </Script>
         <Head>
