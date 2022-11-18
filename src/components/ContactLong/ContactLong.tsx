@@ -15,7 +15,7 @@ interface ILongFormValues {
 export const ContactLong = () => {
   const { t } = useTranslation()
   const { executeRecaptcha } = useGoogleReCaptcha()
-  const { register, handleSubmit, formState: { errors }} = useForm<ILongFormValues>()
+  const { register, reset, handleSubmit, formState: { errors }} = useForm<ILongFormValues>()
   const [isLoading, setIsLoading] = useState(false)
 
   const onSubmit: SubmitHandler<ILongFormValues> = data => {
@@ -44,6 +44,7 @@ export const ContactLong = () => {
         .then(async (res) => {
           if (res.status === "success") {
             setIsLoading(false)
+            reset()
           } else {
             setIsLoading(false)
           }

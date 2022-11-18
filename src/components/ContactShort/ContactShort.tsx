@@ -15,7 +15,7 @@ interface IShortFormValues {
 export const ContactShort = () => {
   const { t } = useTranslation()
   const { executeRecaptcha } = useGoogleReCaptcha()
-  const { register, handleSubmit, formState: { errors }} = useForm<IShortFormValues>()
+  const { register, reset, handleSubmit, formState: { errors }} = useForm<IShortFormValues>()
   const [isLoading, setIsLoading] = useState(false)
 
   const onSubmit: SubmitHandler<IShortFormValues> = data => {
@@ -44,6 +44,7 @@ export const ContactShort = () => {
         .then(async (res) => {
           if (res.status === "success") {
             setIsLoading(false)
+            reset()
           } else {
             setIsLoading(false)
           }
