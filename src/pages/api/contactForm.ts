@@ -15,7 +15,7 @@ export default function handler (req: NextApiRequest,
   res: NextApiResponse<Data>): void {
 
   const transporter = nodemailer.createTransport({
-    port: 465,
+    port: 587,
     host: "smtp.gmail.com",
     auth: {
       user: MAIL_ADDRESS,
