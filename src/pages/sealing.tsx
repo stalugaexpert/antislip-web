@@ -328,7 +328,6 @@ const Sealing: NextPage = ({ gifBlur, blogPosts }: any) => {
 export async function getStaticProps({ locale }: { locale: string }) {
   const {
     base64,
-    img: { src },
   } = await getPlaiceholder('/images/sealing-image-2.gif')
   const localization = locale === 'pl' ? 'pl-PL' : 'en'
   const res = await fetchAllBlogPosts(localization)
