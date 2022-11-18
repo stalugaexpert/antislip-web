@@ -40,6 +40,10 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         `}
         </Script>
         <Head>
+          <meta
+            content="crMEVcBj01zmkWJcPT-8ytQqu3WitPnoJJ11FOKpecg"
+            name="google-site-verification"
+          />
           <link
             href="/favicon/apple-touch-icon.png"
             rel="apple-touch-icon"
