@@ -38,7 +38,7 @@ export const sendMail = async (endpoint: string, email: string, name: string, ph
         message: message
       }) })
   }
-  return await fetch(`${STRAPI_URL}/api/mail/${endpoint}}`, {
+  return await fetch(`${STRAPI_URL}/api/mail/${endpoint}`, {
     headers: { Authorization: `Bearer ${STRAPI_API_KEY}` },
     method: 'post',
     body: JSON.stringify({
