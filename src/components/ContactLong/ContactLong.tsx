@@ -4,6 +4,7 @@ import { useTranslation } from "next-i18next"
 import { useState } from "react"
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 import { SubmitHandler, useForm } from "react-hook-form"
+import { sendMail } from 'src/utils/api/service'
 
 interface ILongFormValues {
   name: string
@@ -19,37 +20,72 @@ export const ContactLong = () => {
   const [isLoading, setIsLoading] = useState(false)
 
   const onSubmit: SubmitHandler<ILongFormValues> = data => {
-    setIsLoading(true)
-
     if (!executeRecaptcha) {
       // eslint-disable-next-line no-console
       console.log("Execute recaptcha not yet available")
       return
     }
+
     executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
-      fetch("/api/messageForm", {
+      setIsLoading(true)
+
+      fetch("/api/contactForm", {
         method: "POST",
         headers: {
           Accept: "application/json, text/plain, */*",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          gRecaptchaToken: gReCaptchaToken,
-          name: data.name,
-          message: data.message,
-          email: data.email,
-        }),
-      })
-        .then((res) => res.json())
-        .then(async (res) => {
-          if (res.status === "success") {
-            setIsLoading(false)
-            reset()
-          } else {
-            setIsLoading(false)
-          }
+          gRecaptchaToken: gReCaptchaToken
         })
+      }).then((res) => res.json()).then(async (res) => {
+        if (res.status === "success") {
+          sendMail("message", data.email, data.name, "", data.message).then((res) => {
+            if (res.ok) {
+              setIsLoading(false)
+              reset()
+            } else {
+              reset()
+              setIsLoading(false)
+              // eslint-disable-next-line no-console
+              console.log('Problem when sending email occured')
+            }
+          })
+        }
+      })
     })
+
+    // setIsLoading(true)
+
+    // if (!executeRecaptcha) {
+    //   // eslint-disable-next-line no-console
+    //   console.log("Execute recaptcha not yet available")
+    //   return
+    // }
+    // executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
+    //   fetch("/api/messageForm", {
+    //     method: "POST",
+    //     headers: {
+    //       Accept: "application/json, text/plain, */*",
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       gRecaptchaToken: gReCaptchaToken,
+    //       name: data.name,
+    //       message: data.message,
+    //       email: data.email,
+    //     }),
+    //   })
+    //     .then((res) => res.json())
+    //     .then(async (res) => {
+    //       if (res.status === "success") {
+    //         setIsLoading(false)
+    //         reset()
+    //       } else {
+    //         setIsLoading(false)
+    //       }
+    //     })
+    // })
   }
 
   return (
@@ -135,7 +171,7 @@ export const ContactLong = () => {
 
             <div className="relative w-full max-w-[75%] recommendations-ds:max-w-full h-32 mb-8">
               <textarea
-                {...register("message", { required: true, maxLength: 30 })}
+                {...register("message", { required: true, maxLength: 1000 })}
                 aria-invalid={errors.message ? "true" : "false"}
                 className={cx('peer w-full h-full bg-neutral100 border-neutral100 dark:bg-neutral700 text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border border placeholder-shown:border-solid placeholder-shown:border-neutral200 dark:placeholder-shown:border-neutral600 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 border-t-transparent focus:border-t-transparent dark:focus:border-t-transparent text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-amber600 dark:focus:border-amber600', { '!border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 dark:!border-t-rose600 dark:focus:!border-t-transparent focus:!border-t-transparent animate-shake': errors.message } )}
                 id="message"

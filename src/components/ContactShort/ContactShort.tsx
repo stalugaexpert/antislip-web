@@ -4,6 +4,7 @@ import { useTranslation } from "next-i18next"
 import { useState } from "react"
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 import { SubmitHandler, useForm } from "react-hook-form"
+import { sendMail } from 'src/utils/api/service'
 
 interface IShortFormValues {
   name: string
@@ -18,25 +19,41 @@ export const ContactShort = () => {
   const { register, reset, handleSubmit, formState: { errors }} = useForm<IShortFormValues>()
   const [isLoading, setIsLoading] = useState(false)
 
-  const testSend = async () => {
-    const data = await fetch(`http://localhost:1337/api/mail/contact`, {
-      method: 'post',
-      body: JSON.stringify({
-        email: 'piotrusjestcudowny@email.com',
-        name: 'Piotrus2115',
-        phone: '123123123'
+  const onSubmit: SubmitHandler<IShortFormValues> = data => {
+    if (!executeRecaptcha) {
+      // eslint-disable-next-line no-console
+      console.log("Execute recaptcha not yet available")
+      return
+    }
+
+    executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
+      setIsLoading(true)
+
+      fetch("/api/contactForm", {
+        method: "POST",
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          gRecaptchaToken: gReCaptchaToken
+        })
+      }).then((res) => res.json()).then(async (res) => {
+        if (res.status === "success") {
+          sendMail("contact", data.email, data.name, data.phone, "").then((res) => {
+            if (res.ok) {
+              setIsLoading(false)
+              reset()
+            } else {
+              reset()
+              setIsLoading(false)
+              // eslint-disable-next-line no-console
+              console.log('Problem when sending email occured')
+            }
+          })
+        }
       })
     })
-    console.log(data)
-  }
-
-  const onSubmit: SubmitHandler<IShortFormValues> = data => {
-    testSend()
-    // if (!executeRecaptcha) {
-    //   // eslint-disable-next-line no-console
-    //   console.log("Execute recaptcha not yet available")
-    //   return
-    // }
 
     // executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
     //   fetch("/api/contactForm", {

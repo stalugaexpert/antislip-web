@@ -26,3 +26,26 @@ export const fetchSingleContentData = async (localization: string, endpoint: str
     headers: { Authorization: `Bearer ${STRAPI_API_KEY}` }
   })
 }
+
+export const sendMail = async (endpoint: string, email: string, name: string, phone: string, message: string) => {
+  if (STRAPI_URL?.includes('localhost')) {
+    return await fetch(`${STRAPI_URL}/api/mail/${endpoint}`, {
+      method: 'post',
+      body: JSON.stringify({
+        email: email,
+        name: name,
+        phone: phone,
+        message: message
+      }) })
+  }
+  return await fetch(`${STRAPI_URL}/api/mail/${endpoint}}`, {
+    headers: { Authorization: `Bearer ${STRAPI_API_KEY}` },
+    method: 'post',
+    body: JSON.stringify({
+      email: email,
+      name: name,
+      phone: phone && '',
+      message: message && ''
+    })
+  })
+}
