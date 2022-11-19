@@ -18,38 +18,83 @@ export const ContactShort = () => {
   const { register, reset, handleSubmit, formState: { errors }} = useForm<IShortFormValues>()
   const [isLoading, setIsLoading] = useState(false)
 
-  const onSubmit: SubmitHandler<IShortFormValues> = data => {
-    setIsLoading(true)
-
-    if (!executeRecaptcha) {
-      // eslint-disable-next-line no-console
-      console.log("Execute recaptcha not yet available")
-      return
-    }
-    executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
-      fetch("/api/contactForm", {
-        method: "POST",
-        headers: {
-          Accept: "application/json, text/plain, */*",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          gRecaptchaToken: gReCaptchaToken,
-          name: data.name,
-          phone: data.phone,
-          email: data.email,
-        }),
+  const testSend = async () => {
+    const data = await fetch(`http://localhost:1337/api/mail/contact`, {
+      method: 'post',
+      body: JSON.stringify({
+        email: 'piotrusjestcudowny@email.com',
+        name: 'Piotrus2115',
+        phone: '123123123'
       })
-        .then((res) => res.json())
-        .then(async (res) => {
-          if (res.status === "success") {
-            setIsLoading(false)
-            reset()
-          } else {
-            setIsLoading(false)
-          }
-        })
     })
+    console.log(data)
+  }
+
+  const onSubmit: SubmitHandler<IShortFormValues> = data => {
+    testSend()
+    // if (!executeRecaptcha) {
+    //   // eslint-disable-next-line no-console
+    //   console.log("Execute recaptcha not yet available")
+    //   return
+    // }
+
+    // executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
+    //   fetch("/api/contactForm", {
+    //     method: "POST",
+    //     headers: {
+    //       Accept: "application/json, text/plain, */*",
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       gRecaptchaToken: gReCaptchaToken,
+    //       name: data.name,
+    //       phone: data.phone,
+    //       email: data.email,
+    //     }),
+    //   })
+    //     .then((res) => res.json())
+    //     .then(async (res) => {
+    //       if (res.status === "success") {
+    //         setIsLoading(false)
+    //         reset()
+    //       } else {
+    //         setIsLoading(false)
+    //       }
+    //     })
+    // })
+
+    // locally working version using next.js api:
+    // setIsLoading(true)
+    // testSend()
+    // if (!executeRecaptcha) {
+    //   // eslint-disable-next-line no-console
+    //   console.log("Execute recaptcha not yet available")
+    //   return
+    // }
+    // executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
+    //   fetch("/api/contactForm", {
+    //     method: "POST",
+    //     headers: {
+    //       Accept: "application/json, text/plain, */*",
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       gRecaptchaToken: gReCaptchaToken,
+    //       name: data.name,
+    //       phone: data.phone,
+    //       email: data.email,
+    //     }),
+    //   })
+    //     .then((res) => res.json())
+    //     .then(async (res) => {
+    //       if (res.status === "success") {
+    //         setIsLoading(false)
+    //         reset()
+    //       } else {
+    //         setIsLoading(false)
+    //       }
+    //     })
+    // })
   }
 
   return (
