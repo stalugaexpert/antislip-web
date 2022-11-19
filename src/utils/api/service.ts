@@ -44,8 +44,8 @@ export const sendMail = async (endpoint: string, email: string, name: string, ph
     body: JSON.stringify({
       email: email,
       name: name,
-      phone: phone && '',
-      message: message && ''
+      phone: phone,
+      message: message
     })
   })
 }
