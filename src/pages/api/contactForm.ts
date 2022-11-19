@@ -94,13 +94,12 @@ export default function handler (req: NextApiRequest,
             "Response from Google reCaptcha verification API"
           )
           if (reCaptchaRes?.score > 0.5) {
-            transporter.sendMail(mailOptions, function (err, info) {
-              if(err)
-                console.log(err)
-              else
-                console.log(info, "everything ok")
-            })
-
+            // transporter.sendMail(mailOptions, function (err, info) {
+            //   if(err)
+            //     console.log(err)
+            //   else
+            //     console.log(info, "everything ok")
+            // })
             res.status(200).json({
               status: "success",
               message: "Google ReCaptcha Success",
