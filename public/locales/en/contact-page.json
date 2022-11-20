@@ -8,5 +8,8 @@
   "phoneDescription": "Mon - Fri 8:00am - 4:00pm",
   "phoneDescriptionBottom": "Saturday 9:00am - 2:00pm",
   "office": "Office",
-  "officeDescription": "Visit us at our headquarters."
+  "officeDescription": "Visit us at our headquarters.",
+  "mailDescriptionLink": "Email us at office@e-nubes.com",
+  "phoneDescriptionLink": "Contact us at +48882186624",
+  "officeDescriptionLink": "Visit us at our office at 22 Wierzbowa Street in Dolaszewo"
 }
