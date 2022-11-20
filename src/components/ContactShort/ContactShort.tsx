@@ -4,7 +4,7 @@ import { useTranslation } from "next-i18next"
 import { useState } from "react"
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 import { SubmitHandler, useForm } from "react-hook-form"
-import { sendMail } from 'src/utils/api/service'
+import { sendMail, verifyCaptcha } from 'src/utils/api/service'
 
 interface IShortFormValues {
   name: string
@@ -29,16 +29,7 @@ export const ContactShort = () => {
     executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
       setIsLoading(true)
 
-      fetch("/api/contactForm", {
-        method: "POST",
-        headers: {
-          Accept: "application/json, text/plain, */*",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          gRecaptchaToken: gReCaptchaToken
-        })
-      }).then((res) => res.json()).then(async (res) => {
+      verifyCaptcha(gReCaptchaToken).then((res) => res.json()).then(async (res) => {
         if (res.status === "success") {
           sendMail("contact", data.email, data.name, data.phone, "").then((res) => {
             if (res.ok) {
@@ -54,64 +45,6 @@ export const ContactShort = () => {
         }
       })
     })
-
-    // executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
-    //   fetch("/api/contactForm", {
-    //     method: "POST",
-    //     headers: {
-    //       Accept: "application/json, text/plain, */*",
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       gRecaptchaToken: gReCaptchaToken,
-    //       name: data.name,
-    //       phone: data.phone,
-    //       email: data.email,
-    //     }),
-    //   })
-    //     .then((res) => res.json())
-    //     .then(async (res) => {
-    //       if (res.status === "success") {
-    //         setIsLoading(false)
-    //         reset()
-    //       } else {
-    //         setIsLoading(false)
-    //       }
-    //     })
-    // })
-
-    // locally working version using next.js api:
-    // setIsLoading(true)
-    // testSend()
-    // if (!executeRecaptcha) {
-    //   // eslint-disable-next-line no-console
-    //   console.log("Execute recaptcha not yet available")
-    //   return
-    // }
-    // executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
-    //   fetch("/api/contactForm", {
-    //     method: "POST",
-    //     headers: {
-    //       Accept: "application/json, text/plain, */*",
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       gRecaptchaToken: gReCaptchaToken,
-    //       name: data.name,
-    //       phone: data.phone,
-    //       email: data.email,
-    //     }),
-    //   })
-    //     .then((res) => res.json())
-    //     .then(async (res) => {
-    //       if (res.status === "success") {
-    //         setIsLoading(false)
-    //         reset()
-    //       } else {
-    //         setIsLoading(false)
-    //       }
-    //     })
-    // })
   }
 
   return (
@@ -234,15 +167,12 @@ export const ContactShort = () => {
 
             <div className={cx('flex relative items-center mb-6 pb-2', { 'animate-shake': errors.agreement })}>
               <div className="mr-2">
-                <label
-                  className="relative w-fit overflow-hidden flex items-center cursor-pointer p-3 rounded-full"
-                  htmlFor="agreement"
-                >
+                <label className="relative w-fit overflow-hidden flex items-center cursor-pointer p-3 rounded-full" >
                   <input
                     {...register("agreement", { required: true })}
                     aria-invalid={errors.agreement ? "true" : "false"}
+                    aria-labelledby="agreement"
                     className={cx('peer relative appearance-none w-7 h-7 border rounded-md border-neutral700 dark:border-neutral300 cursor-pointer transition-all before:content[] before:block before:bg-blue-gray-500 before:w-12 before:h-12 before:rounded-full before:absolute before:top-2/4 before:left-2/4 before:-translate-y-2/4 before:-translate-x-2/4 before:opacity-0 hover:before:opacity-10 before:transition-opacity checked:bg-amber600 checked:border-amber600 checked:before:bg-amber600', { '!border-rose600': errors.agreement })}
-                    id="agreement"
                     name="agreement"
                     type="checkbox"
                   />
@@ -264,7 +194,7 @@ export const ContactShort = () => {
                   </div>
                 </label>
               </div>
-              <div>
+              <div id="agreement">
                 <span className='text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 inline'>{t('contact:contactAgreement')}</span>
                 <Link href="/terms-of-service">
                   <a className='font-semibold inline text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75'>{t('contact:contactRegulation')}</a>

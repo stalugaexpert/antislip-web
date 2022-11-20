@@ -86,9 +86,9 @@ const BlogPost: NextPage = ({ blogPost, blogPostsAll }: any) => {
             <h5 className="text-base uppercase about-md:text-sm font-semibold text-amber400 mb-4">
               {t('blog:blog')}
             </h5>
-            <h2 className="text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
+            <h1 className="text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
               {blogPost.data[0].attributes.title}
-            </h2>
+            </h1>
           </div>
         </div>
         <div className="relative mb-4 h-[31.2rem] about-md:h-[30vh] w-full before:content-[''] before:absolute before:h-48 before:w-48 before:bg-amber400 before:z-10 before:top-0 before:left-full before:-translate-x-full before:-translate-y-2/4 before:blur-[100px] before:opacity-50 dark:before:opacity-30">

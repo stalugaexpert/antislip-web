@@ -8,13 +8,43 @@ export const Footer = () => {
   return (
     <footer className="p-14 pb-10 footer-md:p-8 bg-neutral800 dark:bg-neutral900">
       <div className="flex flex-col items-start max-w-screen-2xl mx-auto">
-        <div className="relative h-16 w-72 footer-md:h-12 footer-md:w-56 footer-sm:w-full">
-          <Image
-            alt={t('navbar:logoAlt')}
-            layout="fill"
-            objectFit='contain'
-            src="/icons/logo-enubes-orange-white.png"
-          />
+        <div className="flex items-center justify-between w-full footer-sm:flex-wrap">
+          <div className="relative h-16 w-72 footer-md:h-12 footer-md:w-56 footer-sm:w-full footer-sm:mb-6">
+            <Image
+              alt={t('navbar:logoAlt')}
+              layout="fill"
+              objectFit='contain'
+              src="/icons/logo-enubes-orange-white.png"
+            />
+          </div>
+          <div className="flex items-center gap-8 footer-sm:w-full footer-sm:justify-center">
+            <Link
+              href=""
+              locale="pl"
+            >
+              <div className="relative w-[36px] h-[36px] cursor-pointer duration-300 hover:opacity-70 hover:translate-y-[2px]">
+                <Image
+                  alt=""
+                  layout="fill"
+                  objectFit="cover"
+                  src="/icons/poland-flag.png"
+                />
+              </div>
+            </Link>
+            <Link
+              href=""
+              locale="en"
+            >
+              <div className="relative w-[36px] h-[36px] cursor-pointer duration-300 hover:opacity-70 hover:translate-y-[2px]">
+                <Image
+                  alt=""
+                  layout="fill"
+                  objectFit="cover"
+                  src="/icons/england-flag.png"
+                />
+              </div>
+            </Link>
+          </div>
         </div>
         <div className="w-full mt-12 grid grid-cols-4 gap-6 footer-md:grid-cols-2 footer-md:gap-y-10 footer-sm:grid-cols-1 footer-sm:gap-y-12">
           <div className="flex flex-col gap-6">

@@ -27,6 +27,19 @@ export const fetchSingleContentData = async (localization: string, endpoint: str
   })
 }
 
+export const verifyCaptcha = async (gReCaptchaToken: string) => {
+  return await fetch("/api/verifyCaptcha", {
+    method: "POST",
+    headers: {
+      Accept: "application/json, text/plain, */*",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      gRecaptchaToken: gReCaptchaToken
+    })
+  })
+}
+
 export const sendMail = async (endpoint: string, email: string, name: string, phone: string, message: string) => {
   if (STRAPI_URL?.includes('localhost')) {
     return await fetch(`${STRAPI_URL}/api/mail/${endpoint}`, {

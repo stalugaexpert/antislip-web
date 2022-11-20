@@ -56,7 +56,6 @@ export const NavbarMobile = () => {
                 alt={t('navbar:logoAlt')}
                 layout="fill"
                 objectFit='contain'
-                placeholder="blur"
                 src={logoDark}
               />
             ) : (
@@ -64,7 +63,6 @@ export const NavbarMobile = () => {
                 alt={t('navbar:logoAlt')}
                 layout="fill"
                 objectFit='contain'
-                placeholder="blur"
                 src={logoLight}
               />
             )}

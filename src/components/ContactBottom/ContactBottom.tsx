@@ -13,7 +13,10 @@ export const ContactBottom = () => {
         </div>
         <div className="flex contact-sm:flex-wrap items-center justify-around gap-12">
           <div className="max-w-[280px] flex flex-col items-center gap-4 w-1/3 contact-sm:w-full min-h-[220px] justify-between contact-sm:min-h-0">
-            <a href="mailto:office@e-nubes.com">
+            <a
+              aria-label={t('contact-page:mailDescriptionLink')}
+              href="mailto:office@e-nubes.com"
+            >
               <div className="p-3 relative w-fit h-fit rounded-full bg-amber600 duration-300 hover:opacity-75 hover:translate-y-[2px]">
                 <svg
                   className="w-8 h-8 text-neutral50"
@@ -42,7 +45,10 @@ export const ContactBottom = () => {
           </div>
 
           <div className="max-w-[280px] flex flex-col items-center gap-4 w-1/3 contact-sm:w-full min-h-[220px] justify-between contact-sm:min-h-0">
-            <a href="tel:+48882186624">
+            <a
+              aria-label={t('contact-page:phoneDescriptionLink')}
+              href="tel:+48882186624"
+            >
               <div className="p-3.5 relative w-fit h-fit rounded-full bg-amber600 duration-300 hover:opacity-75 hover:translate-y-[2px]">
                 <svg
                   className="w-7 h-7 text-neutral50"
@@ -73,6 +79,7 @@ export const ContactBottom = () => {
 
           <div className="max-w-[280px] flex flex-col gap-4 items-center w-1/3 contact-sm:w-full min-h-[220px] justify-between contact-sm:min-h-0">
             <a
+              aria-label={t('contact-page:officeDescriptionLink')}
               href="https://g.page/impregnaty-bc?share"
               rel="noreferrer"
               target="_blank"
