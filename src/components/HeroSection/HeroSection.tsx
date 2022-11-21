@@ -32,7 +32,7 @@ export const HeroSection = () => {
           <p className="text-sm font-normal text-neutral700 dark:text-neutral200 mb-4">
             {t('hero:stats')}
           </p>
-          <Link href="">
+          <Link href="/blog">
             <a>
               <div className="flex items-center gap-2 text-neutral700 dark:text-neutral100 duration-300 hover:opacity-70 hover:translate-x-1">
                 <svg
@@ -61,7 +61,7 @@ export const HeroSection = () => {
         <p className="text-sm font-normal text-neutral700 dark:text-neutral200 mb-4">
           {t('hero:stats')}
         </p>
-        <Link href="">
+        <Link href="/blog">
           <a>
             <div className="flex items-center gap-2 text-neutral700 dark:text-neutral100 duration-300 hover:opacity-70 hover:translate-x-1">
               <svg
