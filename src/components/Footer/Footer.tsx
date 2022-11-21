@@ -79,7 +79,7 @@ export const Footer = () => {
             <div className="text-base text-neutral50 dark:text-neutral200 font-normal">
               <div className="flex flex-col items-start">
                 <span>e-nubes Robert Chmura</span>
-                <span>NIP 764-197-46-91</span>
+                <span>PL7641974691</span>
               </div>
             </div>
           </div>
