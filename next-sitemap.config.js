@@ -36,9 +36,13 @@ module.exports = {
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
       alternateRefs: [
         {
+          href: 'https://anti-slip.io',
+          hreflang: 'pl',
+        },
+        {
           href: 'https://anti-slip.io/en',
           hreflang: 'en',
-        },
+        }
       ],
     }
   },
