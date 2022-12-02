@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://anti-slip.io
+
+# Sitemaps
+Sitemap: https://anti-slip.io/sitemap.xml
