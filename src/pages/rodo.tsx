@@ -34,7 +34,8 @@ export async function getStaticProps({ locale }: { locale: string }) {
       ...(await serverSideTranslations(locale, [
         'navbar',
         'footer',
-        'seo'
+        'seo',
+        'cookies'
       ])),
       content: await res.json()
     },

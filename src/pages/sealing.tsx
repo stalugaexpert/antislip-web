@@ -340,7 +340,8 @@ export async function getStaticProps({ locale }: { locale: string }) {
         'recommendations',
         'sealing',
         'contact',
-        'seo'
+        'seo',
+        'cookies'
       ])),
       gifBlur: base64,
       blogPosts: await res.json()

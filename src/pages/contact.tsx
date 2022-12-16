@@ -28,7 +28,8 @@ export async function getStaticProps({ locale }: { locale: string }) {
         'footer',
         'contact',
         'contact-page',
-        'seo'
+        'seo',
+        'cookies'
       ])),
     },
   }

@@ -20,6 +20,6 @@
       "@styles/*": ["src/styles/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/create.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/create.js", "src/components/CookiesConsent/CookiesConsent.jsx"],
   "exclude": ["node_modules"]
 }
