@@ -1,0 +1,10 @@
+{
+  "title": "Our site uses cookies",
+  "descriptionTop": "Anti-slip.io uses cookies and other technologies to keep our sites reliable and secure, and to measure their effectiveness and provide a better personalized experience. For these purposes, we collect data about users, their behaviors and devices.",
+  "descriptionBottom": "You can learn more about how we use cookies in our ",
+  "privacyPolicy": "privacy policy.",
+  "button": {
+    "accept": "Accept",
+    "decline": "Reject"
+  }
+}

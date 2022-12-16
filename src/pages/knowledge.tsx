@@ -565,7 +565,8 @@ export async function getStaticProps({ locale }: { locale: string }) {
         'footer',
         'knowledge',
         'contact',
-        'seo'
+        'seo',
+        'cookies'
       ])),
       gifBlur: base64,
     },

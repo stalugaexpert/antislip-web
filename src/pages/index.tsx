@@ -48,7 +48,8 @@ export async function getStaticProps({ locale }: { locale: string }) {
         'services',
         'hero',
         'contact',
-        'seo'
+        'seo',
+        'cookies'
       ])),
     },
   }

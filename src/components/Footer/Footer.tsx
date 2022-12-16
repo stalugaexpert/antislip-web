@@ -140,8 +140,7 @@ export const Footer = () => {
         </div>
         <div className="bg-neutral50 dark:bg-neutral200 w-full h-px my-10" />
         <div className="w-full grid grid-cols-2 items-center footer-md:grid-cols-1 footer-md:gap-y-3">
-          <span className="text-xs font-normal text-neutral50 dark:text-neutral200">{t('footer:rights')}</span>
-          <div className="flex items-center justify-end gap-9 footer-sm:justify-between">
+          <div className="flex items-center gap-9 footer-sm:justify-between">
             <span className="text-xs font-normal text-neutral50 dark:text-neutral200">{t('footer:stayInTouch')}</span>
             <div className="flex items-center justify-center gap-4">
               <a
@@ -170,8 +169,22 @@ export const Footer = () => {
                   width="24"
                 />
               </a>
+              <a
+                className="p-1.5 duration-300 hover:translate-y-0.5 hover:opacity-80"
+                href="https://www.linkedin.com/company/antislip-e-nubes"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <Image
+                  alt={t('footer:linkedinIcon')}
+                  height="24"
+                  src="/icons/linkedin-icon.svg"
+                  width="24"
+                />
+              </a>
             </div>
           </div>
+          <span className="text-xs flex font-normal justify-end footer-sm:justify-center text-neutral50 dark:text-neutral200">{t('footer:rights')}</span>
         </div>
       </div>
     </footer>

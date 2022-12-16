@@ -2,6 +2,7 @@ import '@styles/globals.css'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
+import { getCookie } from 'cookies-next'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import Script from 'next/script'
@@ -9,9 +10,11 @@ import { appWithTranslation } from 'next-i18next'
 import { ThemeProvider } from 'next-themes'
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3"
 
-import { GA_TRACKING_ID, SITE_KEY } from '../config/config'
+import { G_TAG_KEY, SITE_KEY } from '../config/config'
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+  const consent = getCookie('localConsent')
+
   return (
     <GoogleReCaptchaProvider
       reCaptchaKey={SITE_KEY as string}
@@ -24,21 +27,38 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     >
       <ThemeProvider attribute="class">
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${(GA_TRACKING_ID) as string}`}
-          strategy="afterInteractive"
-        />
-        <Script
-          id="google-analytics"
+          id="gtag"
           strategy="afterInteractive"
         >
           {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+                        
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'analytics_storage': 'denied'
+            });
 
-          gtag('config', '${GA_TRACKING_ID}' );
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','${G_TAG_KEY}');
         `}
         </Script>
+        { consent === true && (
+          <Script
+            id="consupd"
+            strategy="afterInteractive"
+          >
+            {`
+              gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'analytics_storage': 'granted'
+              });
+          `}
+          </Script>
+        )}
         <Head>
           <meta
             content="crMEVcBj01zmkWJcPT-8ytQqu3WitPnoJJ11FOKpecg"

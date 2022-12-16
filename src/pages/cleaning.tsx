@@ -203,7 +203,8 @@ export async function getStaticProps({ locale }: { locale: string }) {
         'recommendations',
         'cleaning',
         'contact',
-        'seo'
+        'seo',
+        'cookies'
       ])),
       blogPosts: await res.json()
     },
