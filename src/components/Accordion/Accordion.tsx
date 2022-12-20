@@ -59,7 +59,7 @@ const AccordionBase = ({ i, expanded, setExpanded, children, title }: IAccordion
             key="content"
             transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
             variants={{
-              open: { opacity: 1, height: "auto" },
+              open: { opacity: 1, height: "fit-content" },
               collapsed: { opacity: 0, height: 0 }
             }}
           >

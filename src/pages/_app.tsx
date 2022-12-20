@@ -31,32 +31,32 @@ import { G_TAG_KEY, SITE_KEY } from '../config/config'
 //   }
 // }
 
-const variants = {
-  inactive: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: 'easeInOut'
-    },
-  },
-  out: {
-    opacity: 0,
-    y: -100,
-    transition: {
-      duration: 0.5,
-      ease: 'easeInOut'
-    }
-  },
-  in: {
-    y: 100,
-    opacity: 0,
-    transition: {
-      duration: 0.5,
-      ease: 'easeInOut'
-    }
-  },
-}
+// const variants = {
+//   inactive: {
+//     opacity: 1,
+//     y: 0,
+//     transition: {
+//       duration: 0.5,
+//       ease: 'easeInOut'
+//     },
+//   },
+//   out: {
+//     opacity: 0,
+//     y: -100,
+//     transition: {
+//       duration: 0.5,
+//       ease: 'easeInOut'
+//     }
+//   },
+//   in: {
+//     y: 100,
+//     opacity: 0,
+//     transition: {
+//       duration: 0.5,
+//       ease: 'easeInOut'
+//     }
+//   },
+// }
 
 function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
   const consent = getCookie('localConsent')
@@ -75,12 +75,13 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
         initial={false}
         mode="wait"
       >
-        <motion.div
-          animate="inactive"
-          exit="out"
-          initial="in"
-          key={router.route}
-          variants={variants}
+        <div
+          className='test-animate'
+          // animate="inactive"
+          // exit="out"
+          // initial="in"
+          // key={router.route}
+          // variants={variants}
         >
           <ThemeProvider attribute="class">
             <Script
@@ -170,7 +171,7 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
             </Head>
             <Component {...pageProps} />
           </ThemeProvider>
-        </motion.div>
+        </div>
       </AnimatePresence>
     </GoogleReCaptchaProvider>
   )}
