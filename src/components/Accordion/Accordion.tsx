@@ -13,8 +13,8 @@ interface IAccordionBaseProps {
 
 const AccordionBase = ({ i, expanded, setExpanded, children, title }: IAccordionBaseProps) => {
   const isOpen = i === expanded
-  const { systemTheme, theme } = useTheme()
-  const [currentTheme, setCurrentTheme] = useState('light')
+  // const { systemTheme, theme } = useTheme()
+  // const [currentTheme, setCurrentTheme] = useState('light')
 
   // useEffect(() => {
   //   if (theme && systemTheme) {
@@ -25,7 +25,7 @@ const AccordionBase = ({ i, expanded, setExpanded, children, title }: IAccordion
   return (
     <>
       <motion.header
-        animate={{ backgroundColor: isOpen && currentTheme === 'dark' ? "#374151" : !isOpen && currentTheme === 'dark' ? "#111827" : isOpen && currentTheme !== 'dark' ? "#cbd5e1" : "#f3f4f6" }}
+        animate={{ backgroundColor: "#cbd5e1" }}
         className="w-full p-4 mb-4 cursor-pointer last:mb-0"
         initial={false}
         onClick={() => setExpanded(isOpen ? false : i)}
