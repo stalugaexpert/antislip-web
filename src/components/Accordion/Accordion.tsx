@@ -9,9 +9,10 @@ interface IAccordionBaseProps {
   setExpanded: Dispatch<SetStateAction<number | false>>
   children: ReactI18NextChild | Iterable<ReactI18NextChild>
   title: string
+  key: number
 }
 
-const AccordionBase = ({ i, expanded, setExpanded, children, title }: IAccordionBaseProps) => {
+const AccordionBase = ({ i, expanded, setExpanded, children, title, key }: IAccordionBaseProps) => {
   const isOpen = i === expanded
   const { systemTheme, theme } = useTheme()
   const [currentTheme, setCurrentTheme] = useState('light')
@@ -58,10 +59,10 @@ const AccordionBase = ({ i, expanded, setExpanded, children, title }: IAccordion
             animate="open"
             exit="collapsed"
             initial="collapsed"
-            key="content"
+            key={key}
             transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
             variants={{
-              open: { opacity: 1, height: "auto" },
+              open: { opacity: 1, height: "fit-content" },
               collapsed: { opacity: 0, height: 0 }
             }}
           >
