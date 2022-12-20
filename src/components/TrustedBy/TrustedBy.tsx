@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from 'framer-motion'
 import Image from "next/image"
 import { useTranslation } from "next-i18next"
 import Slider from "react-slick"
@@ -87,23 +88,31 @@ export const TrustedBy = () => {
   const { t } = useTranslation()
 
   return (
-    <section className="px-24 recommendations-sm:px-16 about-sm:px-10 services-xs:mb-12 max-w-screen-2xl mx-auto mb-36">
-      <h5 className="text-xl font-semibold text-neutral800 dark:text-neutral50 mb-9 text-center">{t('common:trustedBy')}</h5>
-      <Slider {...settings}>
-        {companiesLogoList.map((item, index) => (
-          <div
-            className="relative h-[4.5rem]"
-            key={index}
-          >
-            <Image
-              alt={item.alt}
-              layout="fill"
-              objectFit='contain'
-              src={`/companiesIcons/${item.image}`}
-            />
-          </div>
-        ))}
-      </Slider>
-    </section>
+    <AnimatePresence>
+      <motion.section
+        className="px-24 recommendations-sm:px-16 about-sm:px-10 services-xs:mb-12 max-w-screen-2xl mx-auto mb-36"
+        initial={{ opacity: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true, amount: 0.7 }}
+        whileInView={{ opacity: 1 }}
+      >
+        <h5 className="text-xl font-semibold text-neutral800 dark:text-neutral50 mb-9 text-center">{t('common:trustedBy')}</h5>
+        <Slider {...settings}>
+          {companiesLogoList.map((item, index) => (
+            <div
+              className="relative h-[4.5rem]"
+              key={index}
+            >
+              <Image
+                alt={item.alt}
+                layout="fill"
+                objectFit='contain'
+                src={`/companiesIcons/${item.image}`}
+              />
+            </div>
+          ))}
+        </Slider>
+      </motion.section>
+    </AnimatePresence>
   )
 }

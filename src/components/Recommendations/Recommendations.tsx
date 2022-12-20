@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from 'framer-motion'
 import { useTranslation } from "next-i18next"
 import { useEffect, useState } from "react"
 import Slider from "react-slick"
@@ -104,28 +105,36 @@ export const Recommendations = () => {
     }
   ]
   return (
-    <section className="px-16 recommendations-sm:px-10 about-sm:px-6 mb-20 services-xs:mb-12">
-      <div className="bg-amber400 dark:bg-neutral900 pl-24 recommendations-mx:pl-12 recommendations-md:pl-6 py-[4.5rem] max-w-[90.625rem] section-min:mx-auto recommendations-ds:py-6">
-        <div className="flex items-end justify-between mb-12 recommendations-ds:mb-6">
-          <div>
-            <h5 className="text-3xl recommendations-xsm:text-xl font-semibold text-neutral900 dark:text-neutral50">{t('recommendations:aboutUs')}</h5>
-            <h5 className="text-3xl recommendations-xsm:text-xl font-semibold text-neutral900 dark:text-neutral50">{t('recommendations:clients')}</h5>
-          </div>
-          <h5 className="text-sm font-normal pr-24 text-neutral900 dark:text-neutral200 recommendations-ds:hidden">{t('recommendations:aboutNumbers')}</h5>
-        </div>
-        <Slider {...settings}>
-          {recommendationsList.map((item, index) => (
-            <div
-              className="!flex items-center justify-center flex-col p-6 bg-neutral50 dark:bg-neutral700 !w-80 recommendations-xsm:!w-60"
-              key={index}
-            >
-              <p className="font-base font-normal italic mb-6 text-neutral800 dark:text-neutral200 recommendations-xsm:text-sm">{item.description}</p>
-              <span className="font-semibold font-base text-neutral800 dark:text-neutral400 recommendations-xsm:text-sm">{item.name}</span>
+    <AnimatePresence>
+      <motion.section
+        className="px-16 recommendations-sm:px-10 about-sm:px-6 mb-20 services-xs:mb-12"
+        initial={{ opacity: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true, amount: 0.5 }}
+        whileInView={{ opacity: 1 }}
+      >
+        <div className="bg-amber400 dark:bg-neutral900 pl-24 recommendations-mx:pl-12 recommendations-md:pl-6 py-[4.5rem] max-w-[90.625rem] section-min:mx-auto recommendations-ds:py-6">
+          <div className="flex items-end justify-between mb-12 recommendations-ds:mb-6">
+            <div>
+              <h5 className="text-3xl recommendations-xsm:text-xl font-semibold text-neutral900 dark:text-neutral50">{t('recommendations:aboutUs')}</h5>
+              <h5 className="text-3xl recommendations-xsm:text-xl font-semibold text-neutral900 dark:text-neutral50">{t('recommendations:clients')}</h5>
             </div>
-          ))}
-        </Slider>
-        <h5 className="text-sm recommendations-xsm:text-xs hidden mt-6 font-normal pr-24 text-neutral900 dark:text-neutral200 recommendations-ds:block recommendations-ds:pr-6">{t('recommendations:aboutNumbers')}</h5>
-      </div>
-    </section>
+            <h5 className="text-sm font-normal pr-24 text-neutral900 dark:text-neutral200 recommendations-ds:hidden">{t('recommendations:aboutNumbers')}</h5>
+          </div>
+          <Slider {...settings}>
+            {recommendationsList.map((item, index) => (
+              <div
+                className="!flex items-center justify-center flex-col p-6 bg-neutral50 dark:bg-neutral700 !w-80 recommendations-xsm:!w-60"
+                key={index}
+              >
+                <p className="font-base font-normal italic mb-6 text-neutral800 dark:text-neutral200 recommendations-xsm:text-sm">{item.description}</p>
+                <span className="font-semibold font-base text-neutral800 dark:text-neutral400 recommendations-xsm:text-sm">{item.name}</span>
+              </div>
+            ))}
+          </Slider>
+          <h5 className="text-sm recommendations-xsm:text-xs hidden mt-6 font-normal pr-24 text-neutral900 dark:text-neutral200 recommendations-ds:block recommendations-ds:pr-6">{t('recommendations:aboutNumbers')}</h5>
+        </div>
+      </motion.section>
+    </AnimatePresence>
   )
 }

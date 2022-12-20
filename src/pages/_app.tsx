@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
 import { getCookie } from 'cookies-next'
+import { AnimatePresence, motion } from 'framer-motion'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import Script from 'next/script'
@@ -12,7 +13,52 @@ import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3"
 
 import { G_TAG_KEY, SITE_KEY } from '../config/config'
 
-function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+// const variants = {
+//   out: {
+//     opacity: 0,
+//     y: 40,
+//     transition: {
+//       duration: 0.1
+//     }
+//   },
+//   in: {
+//     opacity: 1,
+//     y: 0,
+//     transition: {
+//       duration: 0.35,
+//       delay: 0.0
+//     }
+//   }
+// }
+
+const variants = {
+  inactive: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: 'easeInOut'
+    },
+  },
+  out: {
+    opacity: 0,
+    y: -100,
+    transition: {
+      duration: 0.5,
+      ease: 'easeInOut'
+    }
+  },
+  in: {
+    y: 100,
+    opacity: 0,
+    transition: {
+      duration: 0.5,
+      ease: 'easeInOut'
+    }
+  },
+}
+
+function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
   const consent = getCookie('localConsent')
 
   return (
@@ -25,12 +71,23 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         nonce: undefined,
       }}
     >
-      <ThemeProvider attribute="class">
-        <Script
-          id="gtag"
-          strategy="afterInteractive"
+      <AnimatePresence
+        initial={false}
+        mode="wait"
+      >
+        <motion.div
+          animate="inactive"
+          exit="out"
+          initial="in"
+          key={router.route}
+          variants={variants}
         >
-          {`
+          <ThemeProvider attribute="class">
+            <Script
+              id="gtag"
+              strategy="afterInteractive"
+            >
+              {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
                         
@@ -45,74 +102,76 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','${G_TAG_KEY}');
         `}
-        </Script>
-        { consent === true && (
-          <Script
-            id="consupd"
-            strategy="afterInteractive"
-          >
-            {`
+            </Script>
+            { consent === true && (
+              <Script
+                id="consupd"
+                strategy="afterInteractive"
+              >
+                {`
               gtag('consent', 'update', {
                 'ad_storage': 'granted',
                 'analytics_storage': 'granted'
               });
           `}
-          </Script>
-        )}
-        <Head>
-          <meta
-            content="crMEVcBj01zmkWJcPT-8ytQqu3WitPnoJJ11FOKpecg"
-            name="google-site-verification"
-          />
-          <meta
-            content="width=device-width, initial-scale=1.0"
-            name="viewport"
-          />
-          <link
-            href="/favicon/apple-touch-icon.png"
-            rel="apple-touch-icon"
-            sizes="180x180"
-          />
-          <link
-            href="/favicon/favicon-32x32.png"
-            rel="icon"
-            sizes="32x32"
-            type="image/png"
-          />
-          <link
-            href="/favicon/favicon-16x16.png"
-            rel="icon"
-            sizes="16x16"
-            type="image/png"
-          />
-          <link
-            href="/favicon/site.webmanifest"
-            rel="manifest"
-          />
-          <link
-            color="#d97706"
-            href="/favicon/safari-pinned-tab.svg"
-            rel="mask-icon"
-          />
-          <link
-            href="/favicon/favicon.ico"
-            rel="shortcut icon"
-          />
-          <meta
-            content="#da532c"
-            name="msapplication-TileColor"
-          />
-          <meta
-            content="/favicon/browserconfig.xml"
-            name="msapplication-config"
-          />
-          <meta
-            content="#ffffff"
-            name="theme-color"
-          />
-        </Head>
-        <Component {...pageProps} />
-      </ThemeProvider>
+              </Script>
+            )}
+            <Head>
+              <meta
+                content="crMEVcBj01zmkWJcPT-8ytQqu3WitPnoJJ11FOKpecg"
+                name="google-site-verification"
+              />
+              <meta
+                content="width=device-width, initial-scale=1.0"
+                name="viewport"
+              />
+              <link
+                href="/favicon/apple-touch-icon.png"
+                rel="apple-touch-icon"
+                sizes="180x180"
+              />
+              <link
+                href="/favicon/favicon-32x32.png"
+                rel="icon"
+                sizes="32x32"
+                type="image/png"
+              />
+              <link
+                href="/favicon/favicon-16x16.png"
+                rel="icon"
+                sizes="16x16"
+                type="image/png"
+              />
+              <link
+                href="/favicon/site.webmanifest"
+                rel="manifest"
+              />
+              <link
+                color="#d97706"
+                href="/favicon/safari-pinned-tab.svg"
+                rel="mask-icon"
+              />
+              <link
+                href="/favicon/favicon.ico"
+                rel="shortcut icon"
+              />
+              <meta
+                content="#da532c"
+                name="msapplication-TileColor"
+              />
+              <meta
+                content="/favicon/browserconfig.xml"
+                name="msapplication-config"
+              />
+              <meta
+                content="#ffffff"
+                name="theme-color"
+              />
+            </Head>
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </motion.div>
+      </AnimatePresence>
     </GoogleReCaptchaProvider>
   )}
 
