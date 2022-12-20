@@ -16,11 +16,11 @@ const AccordionBase = ({ i, expanded, setExpanded, children, title }: IAccordion
   const { systemTheme, theme } = useTheme()
   const [currentTheme, setCurrentTheme] = useState('light')
 
-  useEffect(() => {
-    if (theme && systemTheme) {
-      setCurrentTheme(theme === 'system' ? systemTheme : theme)
-    }
-  }, [theme, systemTheme])
+  // useEffect(() => {
+  //   if (theme && systemTheme) {
+  //     setCurrentTheme(theme === 'system' ? systemTheme : theme)
+  //   }
+  // }, [theme, systemTheme])
 
   return (
     <>
