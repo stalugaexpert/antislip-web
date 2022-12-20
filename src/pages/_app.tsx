@@ -42,14 +42,14 @@ const variants = {
   },
   out: {
     opacity: 0,
-    y: -100,
+    // y: -100,
     transition: {
       duration: 0.5,
       ease: 'easeInOut'
     }
   },
   in: {
-    y: 100,
+    // y: 100,
     opacity: 0,
     transition: {
       duration: 0.5,
