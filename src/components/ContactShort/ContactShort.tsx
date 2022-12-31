@@ -175,7 +175,7 @@ export const ContactShort = () => {
 
               <div className={cx('flex relative items-center mb-6 pb-2', { 'animate-shake': errors.agreement })}>
                 <div className="mr-2">
-                  <label className="relative w-fit overflow-hidden flex items-center cursor-pointer p-3 rounded-full" >
+                  <label className="relative w-fit overflow-hidden flex items-center cursor-pointer p-3 rounded-full">
                     <input
                       {...register("agreement", { required: true })}
                       aria-invalid={errors.agreement ? "true" : "false"}
@@ -244,7 +244,7 @@ export const ContactShort = () => {
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <g >
+                      <g>
                         <g
                           fill="#212121"
                           fillRule="nonzero"

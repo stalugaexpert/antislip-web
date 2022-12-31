@@ -100,7 +100,7 @@ export const NavbarDesktop = () => {
             text={t('navbar:knowledge')}
             url="/knowledge"
           />
-          <ContactButton text={t('navbar:contact')}/>
+          <ContactButton text={t('navbar:contact')} />
           <ThemeButton />
         </div>
       </div>

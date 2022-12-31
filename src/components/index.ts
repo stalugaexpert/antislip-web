@@ -1,6 +1,7 @@
 export * from "./AboutUs"
 export * from "./Accordion"
 export * from "./AccordionMeasurement"
+export * from "./BlogSection"
 export * from "./CardSwitcher"
 export * from "./ContactLong"
 export * from "./ContactShort"

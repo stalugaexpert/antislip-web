@@ -16,6 +16,6 @@ export const Navbar = () => {
   }, [])
 
   return (
-    width >= breakpoint ? <NavbarDesktop/> : <NavbarMobile/>
+    width >= breakpoint ? <NavbarDesktop /> : <NavbarMobile />
   )
 }

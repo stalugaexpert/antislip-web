@@ -25,6 +25,12 @@
     "no-multiple-empty-lines": ["error", { "max": 1, "maxBOF": 0, "maxEOF": 0 }],
     "react/jsx-closing-bracket-location": [2, "tag-aligned"],
     "no-trailing-spaces": "error",
+    "react/jsx-tag-spacing": ["error", { 
+      "closingSlash": "never",
+      "beforeSelfClosing": "proportional-always",
+      "afterOpening": "never",
+      "beforeClosing": "proportional-always"
+    }],
     "react/jsx-wrap-multilines": ["error", {
       "declaration": "parens-new-line",
        "assignment": "parens-new-line",
