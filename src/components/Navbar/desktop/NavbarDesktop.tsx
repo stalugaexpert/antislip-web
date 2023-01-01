@@ -1,17 +1,17 @@
-import Image from "next/image"
-import Link from "next/link"
-import { useRouter } from "next/router"
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
-import { useTheme } from "next-themes"
-import { scrollToTopHome } from "src/utils/helpers/scrollToTop"
+import { useTheme } from 'next-themes'
+import { scrollToTopHome } from 'src/utils/helpers/scrollToTop'
 
 import logoLight from '../../../../public/icons/logo-enubes-orange.png'
 import logoDark from '../../../../public/icons/logo-enubes-orange-white.png'
-import { ThemeButton } from "../components/ThemeButton"
-import { ContactButton } from "./components/ContactButton"
-import { MenuItem } from "./components/MenuItem"
-import { MenuItemDropdown } from "./components/MenuItemDropdown"
-import { OurServices } from "./components/OurServices"
+import { ThemeButton } from '../components/ThemeButton'
+import { ContactButton } from './components/ContactButton'
+import { MenuItem } from './components/MenuItem'
+import { MenuItemDropdown } from './components/MenuItemDropdown'
+import { OurServices } from './components/OurServices'
 
 export const NavbarDesktop = () => {
   const { t } = useTranslation()
@@ -22,27 +22,27 @@ export const NavbarDesktop = () => {
   const servicesProps = [
     {
       text: t('navbar:servicesList.antislip'),
-      icon: "/icons/slip.png",
-      alt: "slip icon",
-      url: "/antislip"
+      icon: '/icons/slip.png',
+      alt: 'slip icon',
+      url: '/antislip'
     },
     {
       text: t('navbar:servicesList.pendulum'),
-      icon: "/icons/pendulum.png",
-      alt: "pendulum icon",
-      url: "/friction-measurement"
+      icon: '/icons/pendulum.png',
+      alt: 'pendulum icon',
+      url: '/friction-measurement'
     },
     {
       text: t('navbar:servicesList.sealers'),
-      icon: "/icons/sealer.png",
-      alt: "sealer icon",
-      url: "/sealing"
+      icon: '/icons/sealer.png',
+      alt: 'sealer icon',
+      url: '/sealing'
     },
     {
       text: t('navbar:servicesList.cleaning'),
-      icon: "/icons/clean.png",
-      alt: "cleaning icon",
-      url: "/cleaning"
+      icon: '/icons/clean.png',
+      alt: 'cleaning icon',
+      url: '/cleaning'
     }
   ]
 
@@ -59,7 +59,7 @@ export const NavbarDesktop = () => {
                 <Image
                   alt={t('navbar:logoAlt')}
                   layout="fill"
-                  objectFit='contain'
+                  objectFit="contain"
                   placeholder="blur"
                   src={logoDark}
                 />
@@ -67,7 +67,7 @@ export const NavbarDesktop = () => {
                 <Image
                   alt={t('navbar:logoAlt')}
                   layout="fill"
-                  objectFit='contain'
+                  objectFit="contain"
                   placeholder="blur"
                   src={logoLight}
                 />

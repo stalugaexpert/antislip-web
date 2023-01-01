@@ -1,1 +1,1 @@
-export { AccordionMeasurement } from "./AccordionMeasurement"
+export { AccordionMeasurement } from './AccordionMeasurement'

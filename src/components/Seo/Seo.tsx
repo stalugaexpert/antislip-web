@@ -1,15 +1,15 @@
-import Head from "next/head"
+import Head from 'next/head'
 
 // const DOMAIN = "https://www.anti-slip.io"
 // const DEFAULT_OG_IMAGE = ""
 
 export const Seo = ({
-  title = "Technika antypoślizgowa, impregnacja, doczyszczanie",
+  title = 'Technika antypoślizgowa, impregnacja, doczyszczanie',
   description = "Jim Raptis works on the intersection between user interface design and frontend development. He's passionate about design, coding, SaaS, and indie hacking.",
-  siteName = "Anti-slip",
+  siteName = 'Anti-slip',
   // canonical = DOMAIN,
   // ogImage = DEFAULT_OG_IMAGE,
-  ogType = "website",
+  ogType = 'website',
   // twitterHandle = "@sample_username",
 }) => {
   return (

@@ -1,7 +1,7 @@
-import { motion } from "framer-motion"
+import { motion } from 'framer-motion'
 
 const transition = {
-  type: "spring",
+  type: 'spring',
   stiffness: 200,
   damping: 10
 }

@@ -25,8 +25,8 @@ export const SwitchButton = ({
       )}
       onClick={() => setActive(id)}
     >
-      <div className='flex flex-col justify-center items-center gap-2 h-full'>
-        <div className='w-[100px] h-[100px] mission-sm:w-[50px] mission-sm:h-[50px] flex items-center justify-center'>
+      <div className="flex flex-col justify-center items-center gap-2 h-full">
+        <div className="w-[100px] h-[100px] mission-sm:w-[50px] mission-sm:h-[50px] flex items-center justify-center">
           { children }
         </div>
         <span className="text-base text-neutral800 dark:text-neutral50 mission-sm:text-sm text-center inline-block overflow-hidden text-ellipsis w-[calc(100%)]">{buttonText}</span>

@@ -17,7 +17,7 @@ const PrivacyPolicy: NextPage = ({ content }: any) => {
       />
       <section className="px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
         <div
-          className='ck-content'
+          className="ck-content"
           dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content.data.attributes.content) }}
         />
       </section>

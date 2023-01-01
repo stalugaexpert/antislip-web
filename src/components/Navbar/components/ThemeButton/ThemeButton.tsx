@@ -1,8 +1,8 @@
-import { useTheme } from "next-themes"
-import { useEffect, useState } from "react"
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
-import { MoonIcon } from "../MoonIcon"
-import { SunIcon } from "../SunIcon"
+import { MoonIcon } from '../MoonIcon'
+import { SunIcon } from '../SunIcon'
 
 export const ThemeButton = () => {
   const { systemTheme, theme, setTheme } = useTheme()

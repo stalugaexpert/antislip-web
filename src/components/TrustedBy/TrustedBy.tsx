@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import Image from "next/image"
-import { useTranslation } from "next-i18next"
-import Slider from "react-slick"
+import Image from 'next/image'
+import { useTranslation } from 'next-i18next'
+import Slider from 'react-slick'
 
 const settings = {
   arrows: false,
@@ -39,48 +39,48 @@ const settings = {
 
 const companiesLogoList = [
   {
-    image: "halfprice-logo.png",
-    alt: "halfprice logo"
+    image: 'halfprice-logo.png',
+    alt: 'halfprice logo'
   },
   {
-    image: "ikea-logo.png",
-    alt: "ikea logo"
+    image: 'ikea-logo.png',
+    alt: 'ikea logo'
   },
   {
-    image: "katowice-logo.png",
-    alt: "katowice airport logo"
+    image: 'katowice-logo.png',
+    alt: 'katowice airport logo'
   },
   {
-    image: "leroy-logo.png",
-    alt: "leroy merlin logo"
+    image: 'leroy-logo.png',
+    alt: 'leroy merlin logo'
   },
   {
-    image: "modlin-logo.png",
-    alt: "modlin airport logo"
+    image: 'modlin-logo.png',
+    alt: 'modlin airport logo'
   },
   {
-    image: "logo-arlamow.png",
-    alt: "arlamow hotel logo"
+    image: 'logo-arlamow.png',
+    alt: 'arlamow hotel logo'
   },
   {
-    image: "lot-logo.png",
-    alt: "lot airlines logo"
+    image: 'lot-logo.png',
+    alt: 'lot airlines logo'
   },
   {
-    image: "obi-logo.png",
-    alt: "obi logo"
+    image: 'obi-logo.png',
+    alt: 'obi logo'
   },
   {
-    image: "polin-logo.png",
-    alt: "polin museum logo"
+    image: 'polin-logo.png',
+    alt: 'polin museum logo'
   },
   {
-    image: "tubadzin-logo.png",
-    alt: "tubadzin logo"
+    image: 'tubadzin-logo.png',
+    alt: 'tubadzin logo'
   },
   {
-    image: "waveresort-logo.png",
-    alt: "wave resort Międzyzdroje logo"
+    image: 'waveresort-logo.png',
+    alt: 'wave resort Międzyzdroje logo'
   }
 ]
 
@@ -106,7 +106,7 @@ export const TrustedBy = () => {
               <Image
                 alt={item.alt}
                 layout="fill"
-                objectFit='contain'
+                objectFit="contain"
                 src={`/companiesIcons/${item.image}`}
               />
             </div>

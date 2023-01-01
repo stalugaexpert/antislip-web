@@ -59,8 +59,8 @@ const BlogPost: NextPage = ({ blogPost, blogPostsAll }: any) => {
       <section className="px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
         <Link href="/blog">
           <a>
-            <div className='flex items-center gap-4 mb-8 about-xsm:mb-6 duration-300 hover:opacity-70 hover:-translate-x-[2px]'>
-              <div className='p-2 bg-neutral100 dark:bg-neutral900'>
+            <div className="flex items-center gap-4 mb-8 about-xsm:mb-6 duration-300 hover:opacity-70 hover:-translate-x-[2px]">
+              <div className="p-2 bg-neutral100 dark:bg-neutral900">
                 <svg
                   className="w-6 h-6 about-xsm:w-4 about-xsm:h-4"
                   fill="none"
@@ -76,8 +76,8 @@ const BlogPost: NextPage = ({ blogPost, blogPostsAll }: any) => {
                   />
                 </svg>
               </div>
-              <span className='text-sm text-neutral800 dark:text-neutral300 about-xsm:hidden'>{t('blog:previousPage')}</span>
-              <span className='hidden text-sm text-neutral800 dark:text-neutral300 about-xsm:block'>{t('blog:back')}</span>
+              <span className="text-sm text-neutral800 dark:text-neutral300 about-xsm:hidden">{t('blog:previousPage')}</span>
+              <span className="hidden text-sm text-neutral800 dark:text-neutral300 about-xsm:block">{t('blog:back')}</span>
             </div>
           </a>
         </Link>
@@ -99,17 +99,17 @@ const BlogPost: NextPage = ({ blogPost, blogPostsAll }: any) => {
             src={getCorrectImageLargest(blogPost.data[0].attributes.postImage.data.attributes.formats)}
           />
         </div>
-        <div className='flex items-center justify-between about-xsm:text-sm'>
+        <div className="flex items-center justify-between about-xsm:text-sm">
           <div>
-            <span className='inline font-normal text-neutral600 dark:text-neutral300'>{t('blog:author')}</span>
-            <span className='inline italic font-normal text-neutral600 dark:text-neutral300'>{blogPost.data[0].attributes.author}</span>
+            <span className="inline font-normal text-neutral600 dark:text-neutral300">{t('blog:author')}</span>
+            <span className="inline italic font-normal text-neutral600 dark:text-neutral300">{blogPost.data[0].attributes.author}</span>
           </div>
-          <span className='font-normal text-neutral600 dark:text-neutral300'>{moment(blogPost.data[0].attributes.publishedAt).format('D MMMM YYYY')}</span>
+          <span className="font-normal text-neutral600 dark:text-neutral300">{moment(blogPost.data[0].attributes.publishedAt).format('D MMMM YYYY')}</span>
         </div>
       </section>
       <section className="px-56 max-w-screen-2xl mx-auto mb-12 h-fit services-xs:mb-12 services-sm:px-36 about-sm:px-24 about-xsm:px-6">
         <div
-          className='ck-content'
+          className="ck-content"
           dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blogPost.data[0].attributes.content) }}
         />
       </section>
@@ -124,12 +124,12 @@ const BlogPost: NextPage = ({ blogPost, blogPostsAll }: any) => {
               rel="noreferrer"
               target="_blank"
             >
-              <div className='p-2 w-fit pl-3 bg-neutral500 dark:bg-transparent'>
+              <div className="p-2 w-fit pl-3 bg-neutral500 dark:bg-transparent">
                 <div className="relative h-16 w-72 footer-md:h-12 footer-md:w-56">
                   <Image
                     alt={t('blog:authorSmartfloor')}
                     layout="fill"
-                    objectFit='contain'
+                    objectFit="contain"
                     src="/companiesIcons/smartfloor-logo.png"
                   />
                 </div>
@@ -145,7 +145,7 @@ const BlogPost: NextPage = ({ blogPost, blogPostsAll }: any) => {
         <h3 className="font-semibold text-left text-xl about-md:text-base text-amber600 mb-8">
           {t('blog:checkBlog')}
         </h3>
-        <div className='grid grid-cols-3 knowledge-md:grid-cols-2 blog-sm:grid-cols-1 gap-12 blog-sm:gap-6'>
+        <div className="grid grid-cols-3 knowledge-md:grid-cols-2 blog-sm:grid-cols-1 gap-12 blog-sm:gap-6">
           {blogPostsAll.data.filter((item: any) => item.id !== blogPost.data[0].id).slice(-2).map((post: any) => (
             <Link
               href={`/blog/${post.attributes.slug}`}

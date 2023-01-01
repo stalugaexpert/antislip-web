@@ -18,7 +18,7 @@ const Blog: NextPage = ({ blogPosts }: any) => {
         title={t('seo:blog.title')}
       />
       <section className="px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
-        <div className='mb-12'>
+        <div className="mb-12">
           <div className="w-3/4 recommendations-ds:w-[85%] mb-12">
             <h5 className="text-base uppercase about-md:text-sm font-semibold text-amber400 mb-4">
               {t('blog:blog')}
@@ -27,18 +27,18 @@ const Blog: NextPage = ({ blogPosts }: any) => {
               {t('blog:blogDescription')}
             </h2>
           </div>
-          <div className='bg-neutral200 dark:bg-neutral900 w-full flex items-center justify-between p-7 rounded-xl' />
+          <div className="bg-neutral200 dark:bg-neutral900 w-full flex items-center justify-between p-7 rounded-xl" />
         </div>
         { blogPosts.data && (
           <section>
-            <div className='grid grid-cols-3 knowledge-md:grid-cols-2 blog-sm:grid-cols-1 gap-12 blog-sm:gap-6 blog-sm:mb-8'>
+            <div className="grid grid-cols-3 knowledge-md:grid-cols-2 blog-sm:grid-cols-1 gap-12 blog-sm:gap-6 blog-sm:mb-8">
               {blogPosts.data.map((post: any) => (
                 <Link
                   href={`/blog/${post.attributes.slug}`}
                   key={post.id}
                 >
                   <a>
-                    <div className='duration-300 hover:opacity-70 hover:translate-y-[2px]'>
+                    <div className="duration-300 hover:opacity-70 hover:translate-y-[2px]">
                       <div className="relative h-[185px] about-md:h-[20vh] blog-sm:h-[25vh] w-full mb-4 rounded-lg overflow-hidden">
                         <Image
                           alt=""
@@ -47,7 +47,7 @@ const Blog: NextPage = ({ blogPosts }: any) => {
                           src={getCorrectImageSmallest(post.attributes.postImage.data.attributes.formats)}
                         />
                       </div>
-                      <h3 className='text-sm font-semibold text-neutral800 dark:text-neutral100'>
+                      <h3 className="text-sm font-semibold text-neutral800 dark:text-neutral100">
                         {post.attributes.title}
                       </h3>
                     </div>

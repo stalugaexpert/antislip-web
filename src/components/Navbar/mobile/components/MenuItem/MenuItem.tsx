@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
-import { motion } from "framer-motion"
-import Link from "next/link"
+import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 interface IMenuItemProps {
   text: string
@@ -37,8 +37,8 @@ export const MenuItem = ({ text, url, highlightItem = false, bold = '', isExtern
     >
       <a
         href={url}
-        rel={isExternal ? "noreferrer" : ""}
-        target={isExternal ? "_blank" : '_self'}
+        rel={isExternal ? 'noreferrer' : ''}
+        target={isExternal ? '_blank' : '_self'}
       >
         <motion.li
           className="relative px-6 py-3"

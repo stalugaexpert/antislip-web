@@ -1,5 +1,5 @@
-import { motion } from "framer-motion"
-import { ReactNode, useState } from "react"
+import { motion } from 'framer-motion'
+import { ReactNode, useState } from 'react'
 
 interface IMenuItemDropdownProps {
   text: string
@@ -24,7 +24,7 @@ export const MenuItemDropdown = ({ text, children }: IMenuItemDropdownProps) => 
 
   return (
     <motion.div
-      className={`relative py-7 px-4 text-base text-neutral700 dark:text-neutral100 duration-300 hover:text-neutral800 hover:font-bold w-40`}
+      className={'relative py-7 px-4 text-base text-neutral700 dark:text-neutral100 duration-300 hover:text-neutral800 hover:font-bold w-40'}
       onHoverEnd={() => setIsBeingHovered(false)}
       onHoverStart={() => setIsBeingHovered(true)}
     >

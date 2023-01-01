@@ -75,7 +75,7 @@ export const CookiesConsent = () => {
                 {t('cookies:descriptionBottom')}
               </p>
               <Link href="/privacy-policy">
-                <a className='font-semibold inline text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75'>{t('cookies:privacyPolicy')}</a>
+                <a className="font-semibold inline text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75">{t('cookies:privacyPolicy')}</a>
               </Link>
             </div>
           </div>

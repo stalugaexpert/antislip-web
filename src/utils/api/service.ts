@@ -1,4 +1,4 @@
-import { STRAPI_API_KEY, STRAPI_URL } from "src/config/config"
+import { STRAPI_API_KEY, STRAPI_URL } from 'src/config/config'
 
 export const fetchAllBlogPosts = async (localization: string) => {
   if (STRAPI_URL?.includes('localhost')) {
@@ -28,11 +28,11 @@ export const fetchSingleContentData = async (localization: string, endpoint: str
 }
 
 export const verifyCaptcha = async (gReCaptchaToken: string) => {
-  return await fetch("/api/verifyCaptcha", {
-    method: "POST",
+  return await fetch('/api/verifyCaptcha', {
+    method: 'POST',
     headers: {
-      Accept: "application/json, text/plain, */*",
-      "Content-Type": "application/json",
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       gRecaptchaToken: gReCaptchaToken
