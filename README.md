@@ -1,6 +1,6 @@
 This is Antislip site project bootstrapped with [`create-next-app`]. Page features include CRUD (blog), localization and multilanguage support and also contact form with automatic saving data to database and sending owner a notification mail using Nodemailer. You can check the demo of the page using this link: 
 
-https://antislip-site.vercel.app
+https://anti-slip.io/
 
 ## Getting Started
 
