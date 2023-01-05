@@ -1,1 +1,1 @@
-export { SliderHideArrow } from "./SliderHideArrow"
+export { SliderHideArrow } from './SliderHideArrow'

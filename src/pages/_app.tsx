@@ -1,6 +1,6 @@
 import '@styles/globals.css'
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 import { getCookie } from 'cookies-next'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -9,7 +9,7 @@ import Head from 'next/head'
 import Script from 'next/script'
 import { appWithTranslation } from 'next-i18next'
 import { ThemeProvider } from 'next-themes'
-import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3"
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3'
 
 import { G_TAG_KEY, SITE_KEY } from '../config/config'
 
@@ -67,7 +67,7 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
       scriptProps={{
         async: false,
         defer: false,
-        appendTo: "head",
+        appendTo: 'head',
         nonce: undefined,
       }}
     >
@@ -76,7 +76,7 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
         mode="wait"
       >
         <div
-          className='test-animate'
+          className="test-animate"
           // animate="inactive"
           // exit="out"
           // initial="in"

@@ -3,6 +3,7 @@ import {
   AccordionMeasurement,
   CardSwitcher,
   ContactShort,
+  HeroPages,
   PageLayout,
   Recommendations,
   Seo,
@@ -33,53 +34,14 @@ const Friction: NextPage = ({ gifBlur, blogPosts }: any) => {
         description={t('seo:measurement.metaDescription')}
         title={t('seo:measurement.title')}
       />
-      <section className="px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
-        <div className="flex justify-between mb-8">
-          <div className="w-3/4 recommendations-ds:w-[85%]">
-            <h5 className="text-base about-md:text-sm font-semibold text-amber400 mb-4">
-              {t('measurement:ourServices')}
-            </h5>
-            <h2 className="text-4xl mb-6 about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
-              {t('measurement:measurementDescription')}
-            </h2>
-            <h2 className="text-lg about-xsm:text-base font-normal text-neutral800 dark:text-neutral100">
-              {t('measurement:heroDescription')}
-            </h2>
-          </div>
-          <div className="p-3 about-md:p-2 rounded-md bg-neutral50 dark:bg-neutral200 w-fit h-fit">
-            <div className="relative w-[42px] h-[32px] about-md:w-[23px] about-md:h-[17px]">
-              <Image
-                alt=""
-                layout="fill"
-                objectFit="cover"
-                src="/icons/pendulum.png"
-              />
-            </div>
-          </div>
-        </div>
-        <div className="h-[31.2rem] about-md:h-[30vh] w-full">
-          <div className="flex gap-8 mission-sm:gap-4">
-            <div className="relative w-1/3 mission-sm:w-2/4 h-[31.2rem] about-md:h-[30vh]">
-              <Image
-                alt=""
-                layout="fill"
-                objectFit="cover"
-                placeholder="blur"
-                src={measurementHero2}
-              />
-            </div>
-            <div className="relative w-2/3 mission-sm:w-2/4 h-[31.2rem] about-md:h-[30vh] before:content-[''] before:absolute before:h-48 before:w-48 before:bg-amber400 before:z-10 before:top-0 before:left-full before:-translate-x-full before:-translate-y-2/4 before:blur-[100px] before:opacity-50 dark:before:opacity-30">
-              <Image
-                alt=""
-                layout="fill"
-                objectFit="cover"
-                placeholder="blur"
-                src={measurementHero}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroPages
+        description={t('measurement:heroDescription')}
+        image={measurementHero2}
+        imageSecond={measurementHero}
+        section={t('measurement:ourServices')}
+        title={t('measurement:measurementDescription')}
+        titleIcon="/icons/pendulum.png"
+      />
       <section className="px-24 max-w-screen-2xl mx-auto mb-10 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
         <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-4">
           {t('measurement:measurementHow')}
@@ -358,7 +320,7 @@ const Friction: NextPage = ({ gifBlur, blogPosts }: any) => {
             <span className="hidden text-xl font-semibold about-md:block">
               {t('measurement:readMore')}
             </span>
-            {blogPosts.data.slice(-2).map((post: any) => (
+            {blogPosts.data?.slice(-2).map((post: any) => (
               <Link
                 href={`/blog/${post.attributes.slug}`}
                 key={post.id}

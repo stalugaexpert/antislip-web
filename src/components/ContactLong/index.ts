@@ -1,1 +1,1 @@
-export { ContactLong } from "./ContactLong"
+export { ContactLong } from './ContactLong'

@@ -1,5 +1,5 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from 'next/image'
+import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 
 export const Footer = () => {
@@ -13,7 +13,7 @@ export const Footer = () => {
             <Image
               alt={t('navbar:logoAlt')}
               layout="fill"
-              objectFit='contain'
+              objectFit="contain"
               src="/icons/logo-enubes-orange-white.png"
             />
           </div>
@@ -158,7 +158,7 @@ export const Footer = () => {
               </a>
               <a
                 className="p-1.5 duration-300 hover:translate-y-0.5 hover:opacity-80"
-                href="https://www.instagram.com/impregnatyenubes/"
+                href="https://www.instagram.com/antislipenubes/"
                 rel="noreferrer"
                 target="_blank"
               >

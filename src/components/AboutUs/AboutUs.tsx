@@ -40,7 +40,7 @@ export const AboutUs = () => {
             </h2>
           </motion.div>
         </AnimatePresence>
-        <div className="flex justify-between about-md:flex-wrap" >
+        <div className="flex justify-between about-md:flex-wrap">
           <div className="flex flex-col gap-9 w-2/4 about-md:w-full about-md:order-2 about-md:gap-6">
             {aboutProps.map((section, index) => (
               <AnimatePresence key={index}>

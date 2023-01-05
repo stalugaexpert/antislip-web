@@ -1,1 +1,1 @@
-export { NavbarDesktop } from "./NavbarDesktop"
+export { NavbarDesktop } from './NavbarDesktop'

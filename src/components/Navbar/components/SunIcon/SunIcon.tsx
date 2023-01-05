@@ -1,7 +1,7 @@
-import { motion } from "framer-motion"
+import { motion } from 'framer-motion'
 
 const transition = {
-  type: "spring",
+  type: 'spring',
   stiffness: 200,
   damping: 10
 }
@@ -24,7 +24,7 @@ export const SunIcon = () => {
       fill="none"
       height="2em"
       key="sun"
-      style={{ originX: "50%", originY: "50%" }}
+      style={{ originX: '50%', originY: '50%' }}
       viewBox="0 0 24 24"
       whileTap={whileTap}
       width="2em"

@@ -1,7 +1,7 @@
-import { AnimatePresence, motion } from "framer-motion"
-import { useTheme } from "next-themes"
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react"
-import { ReactI18NextChild, useTranslation } from "react-i18next"
+import { AnimatePresence, motion } from 'framer-motion'
+import { useTheme } from 'next-themes'
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import { ReactI18NextChild, useTranslation } from 'react-i18next'
 
 interface IAccordionBaseProps {
   i: number
@@ -25,7 +25,7 @@ const AccordionBase = ({ i, expanded, setExpanded, children, title }: IAccordion
   return (
     <>
       <motion.header
-        animate={{ backgroundColor: isOpen && currentTheme === 'dark' ? "#374151" : !isOpen && currentTheme === 'dark' ? "#111827" : isOpen && currentTheme !== 'dark' ? "#cbd5e1" : "#f3f4f6" }}
+        animate={{ backgroundColor: isOpen && currentTheme === 'dark' ? '#374151' : !isOpen && currentTheme === 'dark' ? '#111827' : isOpen && currentTheme !== 'dark' ? '#cbd5e1' : '#f3f4f6' }}
         className="w-full p-4 mb-4 cursor-pointer last:mb-0"
         initial={false}
         onClick={() => setExpanded(isOpen ? false : i)}
@@ -59,7 +59,7 @@ const AccordionBase = ({ i, expanded, setExpanded, children, title }: IAccordion
             key="content"
             transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
             variants={{
-              open: { opacity: 1, height: "fit-content" },
+              open: { opacity: 1, height: 'fit-content' },
               collapsed: { opacity: 0, height: 0 }
             }}
           >

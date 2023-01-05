@@ -1,1 +1,1 @@
-export { ContactShort } from "./ContactShort"
+export { ContactShort } from './ContactShort'

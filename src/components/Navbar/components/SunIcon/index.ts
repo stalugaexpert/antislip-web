@@ -1,1 +1,1 @@
-export { SunIcon } from "./SunIcon"
+export { SunIcon } from './SunIcon'

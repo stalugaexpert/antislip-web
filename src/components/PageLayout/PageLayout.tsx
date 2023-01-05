@@ -1,5 +1,5 @@
-import { CookiesConsent, Footer, Navbar } from "@components"
-import { PropsWithChildren } from "react"
+import { CookiesConsent, Footer, Navbar } from '@components'
+import { PropsWithChildren } from 'react'
 
 export const PageLayout = ({ children }: PropsWithChildren) => {
   return (

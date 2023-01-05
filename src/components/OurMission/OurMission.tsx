@@ -21,7 +21,7 @@ export const OurMission = () => {
           </p>
         </motion.div>
       </AnimatePresence>
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col gap-20 mission-sm:gap-10">
         <AnimatePresence>
           <motion.div
             className="flex items-center justify-between gap-12"

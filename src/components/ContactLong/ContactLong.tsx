@@ -1,9 +1,9 @@
 import cx from 'classnames'
-import Link from "next/link"
-import { useTranslation } from "next-i18next"
-import { useState } from "react"
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
-import { SubmitHandler, useForm } from "react-hook-form"
+import Link from 'next/link'
+import { useTranslation } from 'next-i18next'
+import { useState } from 'react'
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import { sendMail, verifyCaptcha } from 'src/utils/api/service'
 
 interface ILongFormValues {
@@ -22,16 +22,16 @@ export const ContactLong = () => {
   const onSubmit: SubmitHandler<ILongFormValues> = data => {
     if (!executeRecaptcha) {
       // eslint-disable-next-line no-console
-      console.log("Execute recaptcha not yet available")
+      console.log('Execute recaptcha not yet available')
       return
     }
 
-    executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
+    executeRecaptcha('enquiryFormSubmit').then((gReCaptchaToken) => {
       setIsLoading(true)
 
       verifyCaptcha(gReCaptchaToken).then((res) => res.json()).then(async (res) => {
-        if (res.status === "success") {
-          sendMail("message", data.email, data.name, "", data.message).then((res) => {
+        if (res.status === 'success') {
+          sendMail('message', data.email, data.name, '', data.message).then((res) => {
             if (res.ok) {
               setIsLoading(false)
               reset()
@@ -48,22 +48,22 @@ export const ContactLong = () => {
   }
 
   return (
-    <section className='px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 mission-sm:px-0'>
+    <section className="px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 mission-sm:px-0">
       <div className="flex mission-sm:flex-wrap items-center gap-24 about-md:gap-16 mission-sm:gap-0 h-[75vh]  mission-sm:h-full">
         <div className="w-2/4 mission-sm:w-full mission-sm:mb-8 mission-sm:px-6">
           <h5 className="text-3xl about-md:text-xl font-semibold text-neutral900 dark:text-neutral50 mb-3">{t('contact:contactTitle')}</h5>
           <h5 className="text-3xl about-md:text-xl font-semibold text-amber400 mb-4">{t('contact:contactTalk')}</h5>
-          <div className='mb-8 text-justfiy'>
-            <p className='font-normal inline text-base about-md:text-sm text-neutral700 dark:text-neutral200'>{t('contact:contactDescription')}</p>
+          <div className="mb-8 text-justfiy">
+            <p className="font-normal inline text-base about-md:text-sm text-neutral700 dark:text-neutral200">{t('contact:contactDescription')}</p>
             <Link href="/#contact">
-              <a className='font-semibold inline text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75'>{t('contact:contactDescriptionContact')}</a>
+              <a className="font-semibold inline text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75">{t('contact:contactDescriptionContact')}</a>
             </Link>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="relative w-full max-w-[75%] recommendations-ds:max-w-full h-11 mb-8">
               <input
-                {...register("name", { required: true, maxLength: 100 })}
-                aria-invalid={errors.name ? "true" : "false"}
+                {...register('name', { required: true, maxLength: 100 })}
+                aria-invalid={errors.name ? 'true' : 'false'}
                 className={cx('peer w-full h-full bg-neutral100 border-neutral100 dark:bg-neutral700 text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border border placeholder-shown:border-solid placeholder-shown:border-neutral200 dark:placeholder-shown:border-neutral600 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 border-t-transparent focus:border-t-transparent dark:focus:border-t-transparent text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-amber600 dark:focus:border-amber600', { '!border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 dark:!border-t-rose600 dark:focus:!border-t-transparent focus:!border-t-transparent animate-shake': errors.name } )}
                 id="name"
                 name="name"
@@ -96,8 +96,8 @@ export const ContactLong = () => {
 
             <div className="relative w-full max-w-[75%] recommendations-ds:max-w-full h-11 mb-8">
               <input
-                {...register("email", { required: true, maxLength: 100 })}
-                aria-invalid={errors.email ? "true" : "false"}
+                {...register('email', { required: true, maxLength: 100 })}
+                aria-invalid={errors.email ? 'true' : 'false'}
                 className={cx('peer w-full h-full bg-neutral100 border-neutral100 dark:bg-neutral700 text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border border placeholder-shown:border-solid placeholder-shown:border-neutral200 dark:placeholder-shown:border-neutral600 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 border-t-transparent focus:border-t-transparent dark:focus:border-t-transparent text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-amber600 dark:focus:border-amber600', { '!border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 dark:!border-t-rose600 dark:focus:!border-t-transparent focus:!border-t-transparent animate-shake': errors.email } )}
                 id="email"
                 name="email"
@@ -130,8 +130,8 @@ export const ContactLong = () => {
 
             <div className="relative w-full max-w-[75%] recommendations-ds:max-w-full h-32 mb-8">
               <textarea
-                {...register("message", { required: true, maxLength: 1000 })}
-                aria-invalid={errors.message ? "true" : "false"}
+                {...register('message', { required: true, maxLength: 1000 })}
+                aria-invalid={errors.message ? 'true' : 'false'}
                 className={cx('peer w-full h-full bg-neutral100 border-neutral100 dark:bg-neutral700 text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border border placeholder-shown:border-solid placeholder-shown:border-neutral200 dark:placeholder-shown:border-neutral600 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 border-t-transparent focus:border-t-transparent dark:focus:border-t-transparent text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-amber600 dark:focus:border-amber600', { '!border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 dark:!border-t-rose600 dark:focus:!border-t-transparent focus:!border-t-transparent animate-shake': errors.message } )}
                 id="message"
                 name="message"
@@ -163,10 +163,10 @@ export const ContactLong = () => {
 
             <div className={cx('flex relative items-center mb-6 pb-2', { 'animate-shake': errors.agreement })}>
               <div className="mr-2">
-                <label className="relative w-fit overflow-hidden flex items-center cursor-pointer p-3 rounded-full" >
+                <label className="relative w-fit overflow-hidden flex items-center cursor-pointer p-3 rounded-full">
                   <input
-                    {...register("agreement", { required: true })}
-                    aria-invalid={errors.agreement ? "true" : "false"}
+                    {...register('agreement', { required: true })}
+                    aria-invalid={errors.agreement ? 'true' : 'false'}
                     aria-labelledby="agreement"
                     className={cx('peer relative appearance-none w-7 h-7 border rounded-md border-neutral700 dark:border-neutral300 cursor-pointer transition-all before:content[] before:block before:bg-blue-gray-500 before:w-12 before:h-12 before:rounded-full before:absolute before:top-2/4 before:left-2/4 before:-translate-y-2/4 before:-translate-x-2/4 before:opacity-0 hover:before:opacity-10 before:transition-opacity checked:bg-amber600 checked:border-amber600 checked:before:bg-amber600', { '!border-rose600': errors.agreement })}
                     name="agreement"
@@ -191,15 +191,15 @@ export const ContactLong = () => {
                 </label>
               </div>
               <div id="agreement">
-                <span className='text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 inline'>{t('contact:contactAgreement')}</span>
+                <span className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 inline">{t('contact:contactAgreement')}</span>
                 <Link href="/terms-of-service">
-                  <a className='font-semibold inline text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75'>{t('contact:contactRegulation')}</a>
+                  <a className="font-semibold inline text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75">{t('contact:contactRegulation')}</a>
                 </Link>
-                <span className='text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 inline'>{t('contact:contactAgreementMid')}</span>
+                <span className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 inline">{t('contact:contactAgreementMid')}</span>
                 <Link href="/privacy-policy">
-                  <a className='font-semibold inline text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75'>{t('contact:contactPrivacy')}</a>
+                  <a className="font-semibold inline text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75">{t('contact:contactPrivacy')}</a>
                 </Link>
-                <span className='text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 inline'>{t('contact:contactAgreementBot')}</span>
+                <span className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 inline">{t('contact:contactAgreementBot')}</span>
               </div>
               {errors.agreement?.type === 'required' && (
                 <p
@@ -232,7 +232,7 @@ export const ContactLong = () => {
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <g >
+                    <g>
                       <g
                         fill="#212121"
                         fillRule="nonzero"

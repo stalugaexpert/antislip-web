@@ -1,11 +1,11 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import Image from "next/image"
-import Link from "next/link"
-import { useTranslation } from "next-i18next"
-import { useEffect, useState } from "react"
-import Slider from "react-slick"
+import Image from 'next/image'
+import Link from 'next/link'
+import { useTranslation } from 'next-i18next'
+import { useEffect, useState } from 'react'
+import Slider from 'react-slick'
 
-import { IArrowProps, SliderHideArrow } from "../SliderHideArrow/SliderHideArrow"
+import { IArrowProps, SliderHideArrow } from '../SliderHideArrow/SliderHideArrow'
 
 const NextArrow = ({ onClick }: IArrowProps) => {
   return (
@@ -62,12 +62,12 @@ export const OurServices = () => {
   useEffect(() => {
     setWidth(window.innerWidth)
     const handleWindowResize = () => setWidth(window.innerWidth)
-    window.addEventListener("resize", handleWindowResize)
+    window.addEventListener('resize', handleWindowResize)
 
-    return () => window.removeEventListener("resize", handleWindowResize)
+    return () => window.removeEventListener('resize', handleWindowResize)
   }, [])
 
-  const centerPaddingRule = width > 968 ? "10px" : width > 775 ? "50px" : width > 710 ? "20px" : width > 630 ? "135px" : width > 590 ? "120px" : width > 528 ? "95px" : width > 488 ? "70px" : width > 418 ? "60px" : width > 386 ? "40px" : "20px"
+  const centerPaddingRule = width > 968 ? '10px' : width > 775 ? '50px' : width > 710 ? '20px' : width > 630 ? '135px' : width > 590 ? '120px' : width > 528 ? '95px' : width > 488 ? '70px' : width > 418 ? '60px' : width > 386 ? '40px' : '20px'
 
   const settings = {
     arrows: true,
@@ -104,30 +104,30 @@ export const OurServices = () => {
     {
       title: t('services:antislip'),
       description: t('services:antislipDescription'),
-      icon: "/icons/slip.png",
-      alt: "slip icon",
-      url: "/antislip"
+      icon: '/icons/slip.png',
+      alt: 'slip icon',
+      url: '/antislip'
     },
     {
       title: t('services:pendulum'),
       description: t('services:pendulumDescription'),
-      icon: "/icons/pendulum.png",
-      alt: "pendulum icon",
-      url: "/friction-measurement"
+      icon: '/icons/pendulum.png',
+      alt: 'pendulum icon',
+      url: '/friction-measurement'
     },
     {
       title: t('services:sealers'),
       description: t('services:sealersDescription'),
-      icon: "/icons/sealer.png",
-      alt: "sealer icon",
-      url: "/sealing"
+      icon: '/icons/sealer.png',
+      alt: 'sealer icon',
+      url: '/sealing'
     },
     {
       title: t('services:cleaning'),
       description: t('services:cleaningDescription'),
-      icon: "/icons/clean.png",
-      alt: "cleaning icon",
-      url: "/cleaning"
+      icon: '/icons/clean.png',
+      alt: 'cleaning icon',
+      url: '/cleaning'
     }
   ]
 
@@ -184,7 +184,7 @@ export const OurServices = () => {
                       <Image
                         alt={item.alt}
                         layout="fill"
-                        objectFit='contain'
+                        objectFit="contain"
                         src={item.icon}
                       />
                     </div>

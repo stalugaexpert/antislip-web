@@ -1,15 +1,15 @@
-import { useTranslation } from "next-i18next"
+import { useTranslation } from 'next-i18next'
 
 export const ContactBottom = () => {
   const { t } = useTranslation()
 
   return (
-    <section className='px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6'>
+    <section className="px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
       <div>
         <div className="flex items-center justify-center flex-col gap-4 mb-12">
-          <h5 className='text-base text-center about-md:text-sm font-semibold text-amber600'>{t('contact-page:contactUs')}</h5>
-          <h2 className='text-4xl text-center about-md:text-3xl about-xsm:text-xl font-semibold text-neutral800 dark:text-neutral50'>{t('contact-page:contactTitle')}</h2>
-          <h2 className='text-lg text-center about-xsm:text-base font-normal text-neutral700 dark:text-neutral200'>{t('contact-page:contactDescription')}</h2>
+          <h5 className="text-base text-center about-md:text-sm font-semibold text-amber600">{t('contact-page:contactUs')}</h5>
+          <h2 className="text-4xl text-center about-md:text-3xl about-xsm:text-xl font-semibold text-neutral800 dark:text-neutral50">{t('contact-page:contactTitle')}</h2>
+          <h2 className="text-lg text-center about-xsm:text-base font-normal text-neutral700 dark:text-neutral200">{t('contact-page:contactDescription')}</h2>
         </div>
         <div className="flex contact-sm:flex-wrap items-center justify-around gap-12">
           <div className="max-w-[280px] flex flex-col items-center gap-4 w-1/3 contact-sm:w-full min-h-[220px] justify-between contact-sm:min-h-0">
@@ -34,7 +34,7 @@ export const ContactBottom = () => {
                 </svg>
               </div>
             </a>
-            <h5 className='text-lg text-center about-xsm:text-base font-semibold text-neutral800 dark:text-neutral50'>{t('contact-page:email')}</h5>
+            <h5 className="text-lg text-center about-xsm:text-base font-semibold text-neutral800 dark:text-neutral50">{t('contact-page:email')}</h5>
             <p className="text-base text-center about-xsm:text-sm font-normal text-neutral700 dark:text-neutral200">{t('contact-page:emailDescription')}</p>
             <a
               className="text-base text-center about-xsm:text-sm font-normal text-amber600 duration-300 hover:opacity-75 hover:translate-y-[1px]"
@@ -66,7 +66,7 @@ export const ContactBottom = () => {
                 </svg>
               </div>
             </a>
-            <h5 className='text-lg text-center about-xsm:text-base font-semibold text-neutral800 dark:text-neutral50'>{t('contact-page:phone')}</h5>
+            <h5 className="text-lg text-center about-xsm:text-base font-semibold text-neutral800 dark:text-neutral50">{t('contact-page:phone')}</h5>
             <p className="text-base text-center about-xsm:text-sm font-normal text-neutral700 dark:text-neutral200">{t('contact-page:phoneDescription')}</p>
             <p className="text-base text-center about-xsm:text-sm font-normal text-neutral700 dark:text-neutral200">{t('contact-page:phoneDescriptionBottom')}</p>
             <a
@@ -106,7 +106,7 @@ export const ContactBottom = () => {
                 </svg>
               </div>
             </a>
-            <h5 className='text-lg text-center about-xsm:text-base font-semibold text-neutral800 dark:text-neutral50'>{t('contact-page:office')}</h5>
+            <h5 className="text-lg text-center about-xsm:text-base font-semibold text-neutral800 dark:text-neutral50">{t('contact-page:office')}</h5>
             <p className="text-base text-center about-xsm:text-sm font-normal text-neutral700 dark:text-neutral200">{t('contact-page:officeDescription')}</p>
             <a
               className="text-base text-center about-xsm:text-sm font-normal text-amber600 duration-300 hover:opacity-75 hover:translate-y-[1px]"

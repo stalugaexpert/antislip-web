@@ -1,9 +1,9 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useTranslation } from "next-i18next"
-import { useEffect, useState } from "react"
-import Slider from "react-slick"
+import { useTranslation } from 'next-i18next'
+import { useEffect, useState } from 'react'
+import Slider from 'react-slick'
 
-import { IArrowProps, SliderHideArrow } from "../SliderHideArrow/SliderHideArrow"
+import { IArrowProps, SliderHideArrow } from '../SliderHideArrow/SliderHideArrow'
 
 const NextArrow = ({ onClick }: IArrowProps) => {
   return (
@@ -36,12 +36,12 @@ export const Recommendations = () => {
   useEffect(() => {
     setWidth(window.innerWidth)
     const handleWindowResize = () => setWidth(window.innerWidth)
-    window.addEventListener("resize", handleWindowResize)
+    window.addEventListener('resize', handleWindowResize)
 
-    return () => window.removeEventListener("resize", handleWindowResize)
+    return () => window.removeEventListener('resize', handleWindowResize)
   }, [])
 
-  const centerPaddingRule = width > 1320 ? "100px" : width > 1100 ? "150px" : width > 992 ? "100px" : width > 890 ? "50px" : width > 815 ? "200px" : width > 745 ? "170px" :  width > 660 ? "130px" : width > 600 ? "100px" : width > 500 ? "50px" : width  > 460 ? "70px" : width > 418 ? "50px" : width > 358 ? "20px" : "8px"
+  const centerPaddingRule = width > 1320 ? '100px' : width > 1100 ? '150px' : width > 992 ? '100px' : width > 890 ? '50px' : width > 815 ? '200px' : width > 745 ? '170px' :  width > 660 ? '130px' : width > 600 ? '100px' : width > 500 ? '50px' : width  > 460 ? '70px' : width > 418 ? '50px' : width > 358 ? '20px' : '8px'
 
   const settings = {
     arrows: true,
@@ -77,31 +77,31 @@ export const Recommendations = () => {
   const recommendationsList = [
     {
       description: t('recommendations:recommendations.test1'),
-      name: "Company name"
+      name: 'Company name'
     },
     {
       description: t('recommendations:recommendations.test2'),
-      name: "Company name"
+      name: 'Company name'
     },
     {
       description: t('recommendations:recommendations.test3'),
-      name: "Company name"
+      name: 'Company name'
     },
     {
       description: t('recommendations:recommendations.test4'),
-      name: "Company name"
+      name: 'Company name'
     },
     {
       description: t('recommendations:recommendations.test5'),
-      name: "Company name"
+      name: 'Company name'
     },
     {
       description: t('recommendations:recommendations.test6'),
-      name: "Company name"
+      name: 'Company name'
     },
     {
       description: t('recommendations:recommendations.test1'),
-      name: "Company name"
+      name: 'Company name'
     }
   ]
   return (

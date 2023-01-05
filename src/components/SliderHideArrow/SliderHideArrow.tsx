@@ -1,4 +1,4 @@
-import { CSSProperties, MouseEventHandler } from "react"
+import { CSSProperties, MouseEventHandler } from 'react'
 
 export interface IArrowProps {
   className?: string
@@ -10,7 +10,7 @@ export const SliderHideArrow = ({ className, style, onClick }: IArrowProps) => {
   return (
     <div
       className={className}
-      style={{ ...style, display: "none" }}
+      style={{ ...style, display: 'none' }}
       onClick={onClick}
     />
   )
