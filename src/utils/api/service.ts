@@ -18,6 +18,15 @@ export const fetchSingleBlogPost = async (localization: string, slug: string) =>
   })
 }
 
+export const fetchAllRealizations = async (localization: string) => {
+  if (STRAPI_URL?.includes('localhost')) {
+    return await fetch(`${STRAPI_URL}/api/our-realizations?locale=${localization}&populate=*`)
+  }
+  return await fetch(`${STRAPI_URL}/api/our-realizations?locale=${localization}&populate=*`, {
+    headers: { Authorization: `Bearer ${STRAPI_API_KEY}` }
+  })
+}
+
 export const fetchSingleContentData = async (localization: string, endpoint: string) => {
   if (STRAPI_URL?.includes('localhost')) {
     return await fetch(`${STRAPI_URL}/api/${endpoint}?locale=${localization}`)

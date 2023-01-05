@@ -1,0 +1,1 @@
+export { HeroPages } from './HeroPages'

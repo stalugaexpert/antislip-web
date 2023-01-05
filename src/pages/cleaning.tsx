@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ContactShort, PageLayout, Recommendations, Seo } from '@components'
+import { ContactShort, HeroPages, PageLayout, Recommendations, Seo } from '@components'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -29,40 +29,13 @@ const Cleaning: NextPage = ({ blogPosts }: any) => {
         description={t('seo:cleaning.metaDescription')}
         title={t('seo:cleaning.title')}
       />
-      <section className="px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
-        <div className="flex justify-between mb-8">
-          <div className="w-3/4 recommendations-ds:w-[85%]">
-            <h5 className="text-base about-md:text-sm font-semibold text-amber400 mb-4">
-              {t('cleaning:ourServices')}
-            </h5>
-            <h2 className="text-4xl mb-6 about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
-              {t('cleaning:cleaningDescription')}
-            </h2>
-            <h2 className="text-lg about-xsm:text-base font-normal text-neutral800 dark:text-neutral100">
-              {t('cleaning:heroDescription')}
-            </h2>
-          </div>
-          <div className="p-3 about-md:p-2 rounded-md bg-neutral50 dark:bg-neutral200 w-fit h-fit">
-            <div className="relative w-[40px] h-[30px] about-md:w-[24px] about-md:h-[18px]">
-              <Image
-                alt=""
-                layout="fill"
-                objectFit="cover"
-                src="/icons/clean.png"
-              />
-            </div>
-          </div>
-        </div>
-        <div className="relative h-[31.2rem] about-md:h-[30vh] w-full before:content-[''] before:absolute before:h-48 before:w-48 before:bg-amber400 before:z-10 before:top-0 before:left-full before:-translate-x-full before:-translate-y-2/4 before:blur-[100px] before:opacity-50 dark:before:opacity-30">
-          <Image
-            alt=""
-            layout="fill"
-            objectFit="cover"
-            placeholder="blur"
-            src={cleaningHero}
-          />
-        </div>
-      </section>
+      <HeroPages
+        description={t('cleaning:heroDescription')}
+        image={cleaningHero}
+        section={t('cleaning:ourServices')}
+        title={t('cleaning:cleaningDescription')}
+        titleIcon="/icons/clean.png"
+      />
       <section className="px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
         <div className="flex justify-between gap-32 relative about-md:flex-wrap about-md:gap-14">
           <div className="w-[75%] about-md:w-full">
@@ -160,7 +133,7 @@ const Cleaning: NextPage = ({ blogPosts }: any) => {
             <span className="hidden text-xl font-semibold about-md:block">
               {t('cleaning:readMore')}
             </span>
-            {blogPosts.data.slice(-2).map((post: any) => (
+            {blogPosts.data?.slice(-2).map((post: any) => (
               <Link
                 href={`/blog/${post.attributes.slug}`}
                 key={post.id}

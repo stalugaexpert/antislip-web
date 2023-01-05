@@ -158,7 +158,7 @@ export const Footer = () => {
               </a>
               <a
                 className="p-1.5 duration-300 hover:translate-y-0.5 hover:opacity-80"
-                href="https://www.instagram.com/impregnatyenubes/"
+                href="https://www.instagram.com/antislipenubes/"
                 rel="noreferrer"
                 target="_blank"
               >
