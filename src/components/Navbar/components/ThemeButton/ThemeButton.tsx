@@ -5,14 +5,18 @@ import { MoonIcon } from '../MoonIcon'
 import { SunIcon } from '../SunIcon'
 
 export const ThemeButton = () => {
+  const [mounted, setMounted] = useState(false)
   const { systemTheme, theme, setTheme } = useTheme()
-  const [currentTheme, setCurrentTheme] = useState('light')
 
   useEffect(() => {
-    if (theme && systemTheme) {
-      setCurrentTheme(theme === 'system' ? systemTheme : theme)
-    }
-  }, [theme, systemTheme])
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
+
+  const currentTheme = theme === 'system' ? systemTheme : theme
 
   return (
     <button
@@ -20,7 +24,7 @@ export const ThemeButton = () => {
       className="ml-2 p-3"
       onClick={() => setTheme(currentTheme === 'light' ? 'dark' : 'light')}
     >
-      { currentTheme === 'dark' ? <MoonIcon /> : <SunIcon />}
+      {currentTheme === 'dark' ? <MoonIcon /> : <SunIcon />}
     </button>
   )
 }

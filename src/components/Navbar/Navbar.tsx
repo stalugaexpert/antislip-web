@@ -4,10 +4,12 @@ import { NavbarDesktop } from './desktop'
 import { NavbarMobile } from './mobile'
 
 export const Navbar = () => {
+  const [mounted, setMounted] = useState(false)
   const [width, setWidth] = useState(0)
-  const breakpoint = 986 // was 796
+  const breakpoint = 986
 
   useEffect(() => {
+    setMounted(true)
     setWidth(window.innerWidth)
     const handleWindowResize = () => setWidth(window.innerWidth)
     window.addEventListener('resize', handleWindowResize)
@@ -15,7 +17,9 @@ export const Navbar = () => {
     return () => window.removeEventListener('resize', handleWindowResize)
   }, [])
 
-  return (
-    width >= breakpoint ? <NavbarDesktop /> : <NavbarMobile />
-  )
+  if (!mounted) {
+    return null
+  }
+
+  return width >= breakpoint ? <NavbarDesktop /> : <NavbarMobile />
 }
