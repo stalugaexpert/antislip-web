@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
-import { useTheme } from 'next-themes'
 import { scrollToTopHome } from 'src/utils/helpers/scrollToTop'
 
 import logoLight from '../../../../public/icons/logo-enubes-orange.png'
@@ -15,47 +14,45 @@ import { OurServices } from './components/OurServices'
 
 export const NavbarDesktop = () => {
   const { t } = useTranslation()
-  const { systemTheme, theme } = useTheme()
   const { asPath } = useRouter()
-  const currentTheme = theme === 'system' ? systemTheme : theme
 
   const servicesProps = [
     {
       text: t('navbar:servicesList.antislip'),
       icon: '/icons/slip.png',
       alt: 'slip icon',
-      url: '/antislip'
+      url: '/antislip',
     },
     {
       text: t('navbar:servicesList.pendulum'),
       icon: '/icons/pendulum.png',
       alt: 'pendulum icon',
-      url: '/friction-measurement'
+      url: '/friction-measurement',
     },
     {
       text: t('navbar:servicesList.sealers'),
       icon: '/icons/sealer.png',
       alt: 'sealer icon',
-      url: '/sealing'
+      url: '/sealing',
     },
     {
       text: t('navbar:servicesList.cleaning'),
       icon: '/icons/clean.png',
       alt: 'cleaning icon',
-      url: '/cleaning'
-    }
+      url: '/cleaning',
+    },
   ]
 
   return (
-    <header className="fixed w-full bg-white dark:bg-neutral900 px-10 shadow-nav z-20">
-      <div className="flex items-center justify-between max-w-screen-2xl mx-auto">
+    <header className="fixed z-20 w-full bg-white px-10 shadow-nav dark:bg-neutral900 recommendations-sm:hidden">
+      <div className="mx-auto flex max-w-screen-2xl items-center justify-between">
         <Link href="/">
           <a
             className="py-3 px-1"
             onClick={() => scrollToTopHome(asPath)}
           >
             <div className="relative h-12 w-48">
-              { currentTheme === 'dark' ? (
+              <div className="hidden dark:block">
                 <Image
                   alt={t('navbar:logoAlt')}
                   layout="fill"
@@ -63,7 +60,8 @@ export const NavbarDesktop = () => {
                   placeholder="blur"
                   src={logoDark}
                 />
-              ) : (
+              </div>
+              <div className="block dark:hidden">
                 <Image
                   alt={t('navbar:logoAlt')}
                   layout="fill"
@@ -71,7 +69,7 @@ export const NavbarDesktop = () => {
                   placeholder="blur"
                   src={logoLight}
                 />
-              )}
+              </div>
             </div>
           </a>
         </Link>

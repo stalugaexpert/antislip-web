@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 
@@ -19,12 +20,14 @@ export const ThemeButton = () => {
   const currentTheme = theme === 'system' ? systemTheme : theme
 
   return (
-    <button
-      aria-label="change theme"
-      className="ml-2 p-3"
-      onClick={() => setTheme(currentTheme === 'light' ? 'dark' : 'light')}
-    >
-      {currentTheme === 'dark' ? <MoonIcon /> : <SunIcon />}
-    </button>
+    <AnimatePresence>
+      <button
+        aria-label="change theme"
+        className="ml-2 p-3"
+        onClick={() => setTheme(currentTheme === 'light' ? 'dark' : 'light')}
+      >
+        {currentTheme === 'dark' ? <MoonIcon /> : <SunIcon />}
+      </button>
+    </AnimatePresence>
   )
 }
