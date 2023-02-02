@@ -17,10 +17,15 @@ interface IShortFormValues {
 export const ContactShort = () => {
   const { t } = useTranslation()
   const { executeRecaptcha } = useGoogleReCaptcha()
-  const { register, reset, handleSubmit, formState: { errors }} = useForm<IShortFormValues>()
+  const {
+    register,
+    reset,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IShortFormValues>()
   const [isLoading, setIsLoading] = useState(false)
 
-  const onSubmit: SubmitHandler<IShortFormValues> = data => {
+  const onSubmit: SubmitHandler<IShortFormValues> = (data) => {
     if (!executeRecaptcha) {
       // eslint-disable-next-line no-console
       console.log('Execute recaptcha not yet available')
@@ -30,66 +35,90 @@ export const ContactShort = () => {
     executeRecaptcha('enquiryFormSubmit').then((gReCaptchaToken) => {
       setIsLoading(true)
 
-      verifyCaptcha(gReCaptchaToken).then((res) => res.json()).then(async (res) => {
-        if (res.status === 'success') {
-          sendMail('contact', data.email, data.name, data.phone, '').then((res) => {
-            if (res.ok) {
-              setIsLoading(false)
-              reset()
-            } else {
-              reset()
-              setIsLoading(false)
-              // eslint-disable-next-line no-console
-              console.log('Problem when sending email occurred')
-            }
-          })
-        }
-      })
+      verifyCaptcha(gReCaptchaToken)
+        .then((res) => res.json())
+        .then(async (res) => {
+          if (res.status === 'success') {
+            sendMail('contact', data.email, data.name, data.phone, '').then(
+              (res) => {
+                if (res.ok) {
+                  setIsLoading(false)
+                  reset()
+                } else {
+                  reset()
+                  setIsLoading(false)
+                  // eslint-disable-next-line no-console
+                  console.log('Problem when sending email occurred')
+                }
+              }
+            )
+          }
+        })
     })
   }
 
   return (
     <section
-      className="px-24 overflow-hidden max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 mission-sm:px-0 mission-sm:mb-0"
+      className="mx-auto mb-20 h-fit max-w-screen-2xl overflow-hidden px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 mission-sm:mb-0 mission-sm:px-0"
       id="contact"
     >
-      <div className="flex mission-sm:flex-wrap items-center gap-24 about-md:gap-16 mission-sm:gap-0 h-[75vh] mission-sm:h-full">
+      <div className="flex h-[75vh] items-center gap-24 about-md:gap-16 mission-sm:h-full mission-sm:flex-wrap mission-sm:gap-0">
         <AnimatePresence>
           <motion.div
-            className="w-2/4 mission-sm:w-full mission-sm:mb-8 mission-sm:px-6"
+            className="w-2/4 mission-sm:mb-8 mission-sm:w-full mission-sm:px-6"
             initial={{ opacity: 0, x: -200 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true, amount: 0.4 }}
             whileInView={{ opacity: 1, x: 0 }}
           >
-            <h5 className="text-3xl about-md:text-xl font-semibold text-neutral900 dark:text-neutral50 mb-3">{t('contact:contactTitle')}</h5>
-            <h5 className="text-3xl about-md:text-xl font-semibold text-amber400 mb-4">{t('contact:contactTalk')}</h5>
+            <h5 className="mb-3 text-3xl font-semibold text-neutral900 dark:text-neutral50 about-md:text-xl">
+              {t('contact:contactTitle')}
+            </h5>
+            <h5 className="mb-4 text-3xl font-semibold text-amber400 about-md:text-xl">
+              {t('contact:contactTalk')}
+            </h5>
             <div className="mb-8 text-justify">
-              <p className="font-normal inline text-base about-md:text-sm text-neutral700 dark:text-neutral200">{t('contact:contactDescription')}</p>
+              <p className="inline text-base font-normal text-neutral700 dark:text-neutral200 about-md:text-sm">
+                {t('contact:contactDescription')}
+              </p>
               <Link href="/contact">
-                <a className="font-semibold inline text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75">{t('contact:contactDescriptionMessage')}</a>
+                <a className="inline text-base font-semibold text-amber400 duration-300 hover:opacity-75 about-md:text-sm">
+                  {t('contact:contactDescriptionMessage')}
+                </a>
               </Link>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="relative w-full max-w-[75%] recommendations-ds:max-w-full h-11 mb-8">
+              <div className="relative mb-8 h-11 w-full max-w-[75%] recommendations-ds:max-w-full">
                 <input
                   {...register('name', { required: true, maxLength: 100 })}
                   aria-invalid={errors.name ? 'true' : 'false'}
-                  className={cx('peer w-full h-full bg-neutral100 border-neutral100 dark:bg-neutral700 text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border border placeholder-shown:border-solid placeholder-shown:border-neutral200 dark:placeholder-shown:border-neutral600 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 border-t-transparent focus:border-t-transparent dark:focus:border-t-transparent text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-amber600 dark:focus:border-amber600', { '!border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 dark:!border-t-rose600 dark:focus:!border-t-transparent focus:!border-t-transparent animate-shake': errors.name } )}
+                  className={cx(
+                    'text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-md border border-neutral100 border-t-transparent bg-neutral100 px-3 py-3 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-solid placeholder-shown:border-neutral200 focus:border-2 focus:border-amber600 focus:border-t-transparent focus:outline-0 disabled:border-0 dark:bg-neutral700 dark:placeholder-shown:border-neutral600 dark:focus:border-amber600 dark:focus:border-t-transparent',
+                    {
+                      'animate-shake !border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 focus:!border-t-transparent dark:!border-t-rose600 dark:focus:!border-t-transparent':
+                        errors.name,
+                    }
+                  )}
                   id="name"
                   name="name"
                   placeholder=" "
                   type="text"
                 />
                 <label
-                  className={cx('flex w-full h-full select-none pointer-events-none absolute left-0 font-normal peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[4.1] text-blue-gray-400 peer-focus:text-amber600 before:border-blue-gray-200 peer-focus:before:border-amber600 after:border-blue-gray-200 peer-focus:after:border-amber600', { 'peer-focus:after:border-rose600 peer-focus:before:border-rose600 after:border-rose600 peer-focus:text-neutral800 dark:peer-focus:text-neutral50': errors.name } )}
+                  className={cx(
+                    'peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 before:content[] after:content[] text-blue-gray-400 before:border-blue-gray-200 after:border-blue-gray-200 pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:transition-all peer-placeholder-shown:text-base peer-placeholder-shown:leading-[3.5] peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[12px] peer-focus:leading-tight peer-focus:text-amber600 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-amber600 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-amber600 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent',
+                    {
+                      'after:border-rose600 peer-focus:text-neutral800 peer-focus:before:border-rose600 peer-focus:after:border-rose600 dark:peer-focus:text-neutral50':
+                        errors.name,
+                    }
+                  )}
                   htmlFor="name"
                 >
                   {t('contact:name')}
                 </label>
                 {errors.name?.type === 'required' && (
                   <p
-                    className="font-normal mt-1 text-sm text-rose600"
+                    className="mt-1 text-sm font-normal text-rose600"
                     role="alert"
                   >
                     {t('contact:fieldRequired')}
@@ -97,7 +126,7 @@ export const ContactShort = () => {
                 )}
                 {errors.name?.type === 'maxLength' && (
                   <p
-                    className="font-normal mt-1 text-sm text-rose600"
+                    className="mt-1 text-sm font-normal text-rose600"
                     role="alert"
                   >
                     {t('contact:fieldTooLong')}
@@ -105,25 +134,37 @@ export const ContactShort = () => {
                 )}
               </div>
 
-              <div className="relative w-full max-w-[75%] recommendations-ds:max-w-full h-11 mb-8">
+              <div className="relative mb-8 h-11 w-full max-w-[75%] recommendations-ds:max-w-full">
                 <input
                   {...register('email', { required: true, maxLength: 100 })}
                   aria-invalid={errors.email ? 'true' : 'false'}
-                  className={cx('peer w-full h-full bg-neutral100 border-neutral100 dark:bg-neutral700 text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border border placeholder-shown:border-solid placeholder-shown:border-neutral200 dark:placeholder-shown:border-neutral600 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 border-t-transparent focus:border-t-transparent dark:focus:border-t-transparent text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-amber600 dark:focus:border-amber600', { '!border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 dark:!border-t-rose600 dark:focus:!border-t-transparent focus:!border-t-transparent animate-shake': errors.email } )}
+                  className={cx(
+                    'text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-md border border-neutral100 border-t-transparent bg-neutral100 px-3 py-3 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-solid placeholder-shown:border-neutral200 focus:border-2 focus:border-amber600 focus:border-t-transparent focus:outline-0 disabled:border-0 dark:bg-neutral700 dark:placeholder-shown:border-neutral600 dark:focus:border-amber600 dark:focus:border-t-transparent',
+                    {
+                      'animate-shake !border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 focus:!border-t-transparent dark:!border-t-rose600 dark:focus:!border-t-transparent':
+                        errors.email,
+                    }
+                  )}
                   id="email"
                   name="email"
                   placeholder=" "
                   type="email"
                 />
                 <label
-                  className={cx('flex w-full h-full select-none pointer-events-none absolute left-0 font-normal peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[4.1] text-blue-gray-400 peer-focus:text-amber600 before:border-blue-gray-200 peer-focus:before:border-amber600 after:border-blue-gray-200 peer-focus:after:border-amber600', { 'peer-focus:after:border-rose600 peer-focus:before:border-rose600 after:border-rose600 peer-focus:text-neutral800 dark:peer-focus:text-neutral50': errors.email } )}
+                  className={cx(
+                    'peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 before:content[] after:content[] text-blue-gray-400 before:border-blue-gray-200 after:border-blue-gray-200 pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:transition-all peer-placeholder-shown:text-base peer-placeholder-shown:leading-[3.5] peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[12px] peer-focus:leading-tight peer-focus:text-amber600 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-amber600 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-amber600 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent',
+                    {
+                      'after:border-rose600 peer-focus:text-neutral800 peer-focus:before:border-rose600 peer-focus:after:border-rose600 dark:peer-focus:text-neutral50':
+                        errors.email,
+                    }
+                  )}
                   htmlFor="email"
                 >
                   {t('contact:email')}
                 </label>
                 {errors.email?.type === 'required' && (
                   <p
-                    className="font-normal mt-1 text-sm text-rose600"
+                    className="mt-1 text-sm font-normal text-rose600"
                     role="alert"
                   >
                     {t('contact:fieldRequired')}
@@ -131,7 +172,7 @@ export const ContactShort = () => {
                 )}
                 {errors.email?.type === 'maxLength' && (
                   <p
-                    className="font-normal mt-1 text-sm text-rose600"
+                    className="mt-1 text-sm font-normal text-rose600"
                     role="alert"
                   >
                     {t('contact:fieldTooLong')}
@@ -139,25 +180,37 @@ export const ContactShort = () => {
                 )}
               </div>
 
-              <div className="relative w-full max-w-[75%] recommendations-ds:max-w-full h-11 mb-8">
+              <div className="relative mb-8 h-11 w-full max-w-[75%] recommendations-ds:max-w-full">
                 <input
                   {...register('phone', { required: true, maxLength: 30 })}
                   aria-invalid={errors.phone ? 'true' : 'false'}
-                  className={cx('peer w-full h-full bg-neutral100 border-neutral100 dark:bg-neutral700 text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border border placeholder-shown:border-solid placeholder-shown:border-neutral200 dark:placeholder-shown:border-neutral600 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 border-t-transparent focus:border-t-transparent dark:focus:border-t-transparent text-sm px-3 py-3 rounded-md border-blue-gray-200 focus:border-amber600 dark:focus:border-amber600', { '!border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 dark:!border-t-rose600 dark:focus:!border-t-transparent focus:!border-t-transparent animate-shake': errors.phone } )}
+                  className={cx(
+                    'text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-md border border-neutral100 border-t-transparent bg-neutral100 px-3 py-3 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-solid placeholder-shown:border-neutral200 focus:border-2 focus:border-amber600 focus:border-t-transparent focus:outline-0 disabled:border-0 dark:bg-neutral700 dark:placeholder-shown:border-neutral600 dark:focus:border-amber600 dark:focus:border-t-transparent',
+                    {
+                      'animate-shake !border-l-rose600 !border-r-rose600 !border-b-rose600 !border-t-rose600 focus:!border-t-transparent dark:!border-t-rose600 dark:focus:!border-t-transparent':
+                        errors.phone,
+                    }
+                  )}
                   id="phone"
                   name="phone"
                   placeholder=" "
                   type="tel"
                 />
                 <label
-                  className={cx('flex w-full h-full select-none pointer-events-none absolute left-0 font-normal peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[4.1] text-blue-gray-400 peer-focus:text-amber600 before:border-blue-gray-200 peer-focus:before:border-amber600 after:border-blue-gray-200 peer-focus:after:border-amber600', { 'peer-focus:after:border-rose600 peer-focus:before:border-rose600 after:border-rose600 peer-focus:text-neutral800 dark:peer-focus:text-neutral50': errors.phone } )}
+                  className={cx(
+                    'peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 before:content[] after:content[] text-blue-gray-400 before:border-blue-gray-200 after:border-blue-gray-200 pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:transition-all peer-placeholder-shown:text-base peer-placeholder-shown:leading-[3.5] peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[12px] peer-focus:leading-tight peer-focus:text-amber600 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-amber600 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-amber600 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent',
+                    {
+                      'after:border-rose600 peer-focus:text-neutral800 peer-focus:before:border-rose600 peer-focus:after:border-rose600 dark:peer-focus:text-neutral50':
+                        errors.phone,
+                    }
+                  )}
                   htmlFor="phone"
                 >
                   {t('contact:phone')}
                 </label>
                 {errors.phone?.type === 'required' && (
                   <p
-                    className="font-normal mt-1 text-sm text-rose600"
+                    className="mt-1 text-sm font-normal text-rose600"
                     role="alert"
                   >
                     {t('contact:fieldRequired')}
@@ -165,7 +218,7 @@ export const ContactShort = () => {
                 )}
                 {errors.phone?.type === 'maxLength' && (
                   <p
-                    className="font-normal mt-1 text-sm text-rose600"
+                    className="mt-1 text-sm font-normal text-rose600"
                     role="alert"
                   >
                     {t('contact:fieldTooLong')}
@@ -173,18 +226,25 @@ export const ContactShort = () => {
                 )}
               </div>
 
-              <div className={cx('flex relative items-center mb-6 pb-2', { 'animate-shake': errors.agreement })}>
+              <div
+                className={cx('relative mb-6 flex items-center pb-2', {
+                  'animate-shake': errors.agreement,
+                })}
+              >
                 <div className="mr-2">
-                  <label className="relative w-fit overflow-hidden flex items-center cursor-pointer p-3 rounded-full">
+                  <label className="relative flex w-fit cursor-pointer items-center overflow-hidden rounded-full p-3">
                     <input
                       {...register('agreement', { required: true })}
                       aria-invalid={errors.agreement ? 'true' : 'false'}
                       aria-labelledby="agreement"
-                      className={cx('peer relative appearance-none w-7 h-7 border rounded-md border-neutral700 dark:border-neutral300 cursor-pointer transition-all before:content[] before:block before:bg-blue-gray-500 before:w-12 before:h-12 before:rounded-full before:absolute before:top-2/4 before:left-2/4 before:-translate-y-2/4 before:-translate-x-2/4 before:opacity-0 hover:before:opacity-10 before:transition-opacity checked:bg-amber600 checked:border-amber600 checked:before:bg-amber600', { '!border-rose600': errors.agreement })}
+                      className={cx(
+                        'before:content[] before:bg-blue-gray-500 peer relative h-7 w-7 cursor-pointer appearance-none rounded-md border border-neutral700 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-amber600 checked:bg-amber600 checked:before:bg-amber600 hover:before:opacity-10 dark:border-neutral300',
+                        { '!border-rose600': errors.agreement }
+                      )}
                       name="agreement"
                       type="checkbox"
                     />
-                    <div className="text-white absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity">
+                    <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
                       <svg
                         className="h-5 w-5"
                         fill="currentColor"
@@ -203,19 +263,29 @@ export const ContactShort = () => {
                   </label>
                 </div>
                 <div id="agreement">
-                  <span className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 inline">{t('contact:contactAgreement')}</span>
+                  <span className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
+                    {t('contact:contactAgreement')}
+                  </span>
                   <Link href="/terms-of-service">
-                    <a className="font-semibold inline text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75">{t('contact:contactRegulation')}</a>
+                    <a className="inline text-base font-semibold text-amber400 duration-300 hover:opacity-75 about-md:text-sm">
+                      {t('contact:contactRegulation')}
+                    </a>
                   </Link>
-                  <span className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 inline">{t('contact:contactAgreementMid')}</span>
+                  <span className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
+                    {t('contact:contactAgreementMid')}
+                  </span>
                   <Link href="/privacy-policy">
-                    <a className="font-semibold inline text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75">{t('contact:contactPrivacy')}</a>
+                    <a className="inline text-base font-semibold text-amber400 duration-300 hover:opacity-75 about-md:text-sm">
+                      {t('contact:contactPrivacy')}
+                    </a>
                   </Link>
-                  <span className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 inline">{t('contact:contactAgreementBot')}</span>
+                  <span className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
+                    {t('contact:contactAgreementBot')}
+                  </span>
                 </div>
                 {errors.agreement?.type === 'required' && (
                   <p
-                    className="absolute font-normal -bottom-[12px] left-[12px] text-sm text-rose600"
+                    className="absolute -bottom-[12px] left-[12px] text-sm font-normal text-rose600"
                     role="alert"
                   >
                     {t('contact:fieldRequired')}
@@ -232,12 +302,12 @@ export const ContactShort = () => {
                   value=""
                 />
                 <button
-                  className="flex w-full cursor-pointer justify-center items-center gap-3 bg-amber600 px-4 py-2.5 mission-sm:p-2 rounded-lg text-neutral50 duration-300 hover:opacity-80 hover:translate-y-1 disabled:hover:opacity-100 disabled:hover:translate-y-0 disabled:cursor-not-allowed"
+                  className="flex w-full cursor-pointer items-center justify-center gap-3 rounded-lg bg-amber600 px-4 py-2.5 text-neutral50 duration-300 hover:translate-y-1 hover:opacity-80 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:opacity-100 mission-sm:p-2"
                   disabled={isLoading}
                 >
-                  { isLoading ? (
+                  {isLoading ? (
                     <svg
-                      className="w-5 h-5 animate-spin disabled"
+                      className="disabled h-5 w-5 animate-spin"
                       stroke="currentColor"
                       strokeWidth={1.5}
                       version="1.1"
@@ -250,15 +320,13 @@ export const ContactShort = () => {
                           fillRule="nonzero"
                           id="ic_fluent_spinner_ios_20_regular"
                         >
-                          <path
-                            d="M10,3 C6.13401,3 3,6.13401 3,10 C3,10.2761 2.77614,10.5 2.5,10.5 C2.22386,10.5 2,10.2761 2,10 C2,5.58172 5.58172,2 10,2 C14.4183,2 18,5.58172 18,10 C18,14.4183 14.4183,18 10,18 C9.72386,18 9.5,17.7761 9.5,17.5 C9.5,17.2239 9.72386,17 10,17 C13.866,17 17,13.866 17,10 C17,6.13401 13.866,3 10,3 Z"
-                          ></path>
+                          <path d="M10,3 C6.13401,3 3,6.13401 3,10 C3,10.2761 2.77614,10.5 2.5,10.5 C2.22386,10.5 2,10.2761 2,10 C2,5.58172 5.58172,2 10,2 C14.4183,2 18,5.58172 18,10 C18,14.4183 14.4183,18 10,18 C9.72386,18 9.5,17.7761 9.5,17.5 C9.5,17.2239 9.72386,17 10,17 C13.866,17 17,13.866 17,10 C17,6.13401 13.866,3 10,3 Z"></path>
                         </g>
                       </g>
                     </svg>
                   ) : (
                     <svg
-                      className="w-6 h-6"
+                      className="h-6 w-6"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth={1.5}
@@ -272,7 +340,9 @@ export const ContactShort = () => {
                       />
                     </svg>
                   )}
-                  <span className="text-base font-semibold mission-sm:text-sm">{t('contact:send')}</span>
+                  <span className="text-base font-semibold mission-sm:text-sm">
+                    {t('contact:send')}
+                  </span>
                 </button>
               </div>
             </form>
@@ -280,13 +350,13 @@ export const ContactShort = () => {
         </AnimatePresence>
         <AnimatePresence>
           <motion.div
-            className="w-2/4 mission-sm:w-full h-full mission-sm:h-[30vh] overflow-hidden rounded-lg mission-sm:rounded-none"
+            className="h-full w-2/4 overflow-hidden rounded-lg mission-sm:h-[30vh] mission-sm:w-full mission-sm:rounded-none"
             initial={{ opacity: 0, x: 200 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true, amount: 0.4 }}
             whileInView={{ opacity: 1, x: 0 }}
           >
-            <div className="w-full h-full">
+            <div className="h-full w-full">
               <iframe
                 allowFullScreen={true}
                 height="100%"

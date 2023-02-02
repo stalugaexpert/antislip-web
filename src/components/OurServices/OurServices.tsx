@@ -2,19 +2,18 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
-import { useEffect, useState } from 'react'
 import Slider from 'react-slick'
 
-import { IArrowProps, SliderHideArrow } from '../SliderHideArrow/SliderHideArrow'
+import { IArrowProps } from '../SliderHideArrow/SliderHideArrow'
 
 const NextArrow = ({ onClick }: IArrowProps) => {
   return (
     <div
-      className="absolute w-11 h-11 services-xs:w-8 services-xs:h-8 top-2/4 -translate-y-1/2 -right-14 services-xs:-right-0 services-xs:-top-[3.5rem] flex items-center cursor-pointer justify-center text-neutral800 dark:text-neutral200 dark:bg-neutral700 bg-neutral50 hover:translate-x-1 hover:opacity-80 duration-300"
+      className="absolute top-2/4 -right-14 flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center bg-neutral50 text-neutral800 duration-300 hover:translate-x-1 hover:opacity-80 dark:bg-neutral700 dark:text-neutral200 services-xs:-right-0 services-xs:-top-[3.5rem] services-xs:h-8 services-xs:w-8"
       onClick={onClick}
     >
       <svg
-        className="w-8 h-8"
+        className="h-8 w-8"
         fill="none"
         stroke="currentColor"
         strokeWidth={1.5}
@@ -34,11 +33,11 @@ const NextArrow = ({ onClick }: IArrowProps) => {
 const PreviousArrow = ({ onClick }: IArrowProps) => {
   return (
     <div
-      className="absolute w-11 h-11 services-xs:w-8 services-xs:h-8 top-2/4 -translate-y-1/2 -right-14 services-xs:right-[3rem] services-xs:-top-[3.5rem] flex items-center cursor-pointer justify-center text-neutral800 dark:text-neutral200 dark:bg-neutral700 bg-neutral50 hover:-translate-x-1 hover:opacity-80 duration-300"
+      className="absolute top-2/4 -right-14 hidden h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center bg-neutral50 text-neutral800 duration-300 hover:-translate-x-1 hover:opacity-80 dark:bg-neutral700 dark:text-neutral200 recommendations-sm:flex services-xs:right-[3rem] services-xs:-top-[3.5rem] services-xs:h-8 services-xs:w-8"
       onClick={onClick}
     >
       <svg
-        className="w-8 h-8"
+        className="h-8 w-8"
         fill="none"
         stroke="currentColor"
         strokeWidth={1.5}
@@ -55,50 +54,39 @@ const PreviousArrow = ({ onClick }: IArrowProps) => {
   )
 }
 
+const settings = {
+  arrows: true,
+  prevArrow: <PreviousArrow />,
+  nextArrow: <NextArrow />,
+  infinite: true,
+  speed: 500,
+  centerMode: true,
+  centerPadding: '40px',
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: false,
+  autoplaySpeed: 2000,
+  pauseOnHover: true,
+  responsive: [
+    {
+      breakpoint: 968,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+}
+
 export const OurServices = () => {
   const { t } = useTranslation()
-  const [width, setWidth] = useState(0)
-
-  useEffect(() => {
-    setWidth(window.innerWidth)
-    const handleWindowResize = () => setWidth(window.innerWidth)
-    window.addEventListener('resize', handleWindowResize)
-
-    return () => window.removeEventListener('resize', handleWindowResize)
-  }, [])
-
-  const centerPaddingRule = width > 968 ? '10px' : width > 775 ? '50px' : width > 710 ? '20px' : width > 630 ? '135px' : width > 590 ? '120px' : width > 528 ? '95px' : width > 488 ? '70px' : width > 418 ? '60px' : width > 386 ? '40px' : '20px'
-
-  const settings = {
-    arrows: true,
-    prevArrow: width > 996 ? <SliderHideArrow /> : <PreviousArrow />,
-    nextArrow: <NextArrow />,
-    infinite: true,
-    speed: 500,
-    centerMode: width > 996 ? false : true,
-    centerPadding: centerPaddingRule,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 2000,
-    pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 968,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 710,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  }
 
   const servicesProps = [
     {
@@ -106,35 +94,35 @@ export const OurServices = () => {
       description: t('services:antislipDescription'),
       icon: '/icons/slip.png',
       alt: 'slip icon',
-      url: '/antislip'
+      url: '/antislip',
     },
     {
       title: t('services:pendulum'),
       description: t('services:pendulumDescription'),
       icon: '/icons/pendulum.png',
       alt: 'pendulum icon',
-      url: '/friction-measurement'
+      url: '/friction-measurement',
     },
     {
       title: t('services:sealers'),
       description: t('services:sealersDescription'),
       icon: '/icons/sealer.png',
       alt: 'sealer icon',
-      url: '/sealing'
+      url: '/sealing',
     },
     {
       title: t('services:cleaning'),
       description: t('services:cleaningDescription'),
       icon: '/icons/clean.png',
       alt: 'cleaning icon',
-      url: '/cleaning'
-    }
+      url: '/cleaning',
+    },
   ]
 
   return (
     <AnimatePresence>
       <motion.section
-        className="px-56 max-w-screen-2xl mx-auto mb-20 services-xs:mb-12 services-md:px-36 services-sm:px-20 services-xs:px-14 about-sm:px-10 about-xsm:px-6"
+        className="mx-auto mb-20 max-w-screen-2xl px-56 services-md:px-36 services-sm:px-20 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6"
         exit={{
           opacity: 0,
         }}
@@ -143,16 +131,20 @@ export const OurServices = () => {
         viewport={{ once: true, amount: 0.6 }}
         whileInView={{ opacity: 1 }}
       >
-        <div className="flex items-center justify-between mb-9">
-          <h5 className="font-semibold text-4xl text-neutral800 dark:text-neutral50 services-xs:text-3xl about-xsm:text-2xl">{t('services:ourServices')}</h5>
+        <div className="mb-9 flex items-center justify-between">
+          <h5 className="text-4xl font-semibold text-neutral800 dark:text-neutral50 services-xs:text-3xl about-xsm:text-2xl">
+            {t('services:ourServices')}
+          </h5>
           <a
             className="services-xs:hidden"
             href="tel:+48882186624"
           >
-            <span className="text-sm font-normal text-neutral600 dark:text-neutral200">{t('services:questions')}</span>
-            <div className="flex items-center gap-2 mt-1">
+            <span className="text-sm font-normal text-neutral600 dark:text-neutral200">
+              {t('services:questions')}
+            </span>
+            <div className="mt-1 flex items-center gap-2">
               <svg
-                className="w-4 h-4"
+                className="h-4 w-4"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={1.5}
@@ -165,22 +157,23 @@ export const OurServices = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-              <span className="text-sm font-semibold text-neutral600 dark:text-neutral300">+48 882 186 624</span>
+              <span className="text-sm font-semibold text-neutral600 dark:text-neutral300">
+                +48 882 186 624
+              </span>
             </div>
           </a>
         </div>
         <Slider {...settings}>
-          { servicesProps.map((item, index) => (
+          {servicesProps.map((item, index) => (
             <Link
+              className="h-full"
               href={item.url}
               key={index}
             >
               <a>
-                <div
-                  className="!w-[17rem] h-[14rem] about-x2sm:!w-[15rem] about-x2sm:!h-[15rem] bg-neutral100 dark:bg-neutral700 p-6"
-                >
-                  <div className="w-12 h-12 mb-4 flex items-center justify-center p-2 rounded-lg bg-white dark:bg-neutral100">
-                    <div className="relative w-8 h-6">
+                <div className="mx-4 bg-neutral100 p-6 dark:bg-neutral700">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white p-2 dark:bg-neutral100">
+                    <div className="relative h-6 w-8">
                       <Image
                         alt={item.alt}
                         layout="fill"
@@ -189,8 +182,12 @@ export const OurServices = () => {
                       />
                     </div>
                   </div>
-                  <h2 className="text-sm font-semibold text-neutral700 dark:text-neutral200 mb-4">{item.title}</h2>
-                  <h5 className="text-xs font-normal text-neutral700 dark:text-neutral200">{item.description}</h5>
+                  <h2 className="mb-4 h-10 text-sm font-semibold text-neutral700 dark:text-neutral200">
+                    {item.title}
+                  </h2>
+                  <h5 className="text-xs font-normal text-neutral700 line-clamp-3 dark:text-neutral200">
+                    {item.description}
+                  </h5>
                 </div>
               </a>
             </Link>

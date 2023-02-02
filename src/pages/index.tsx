@@ -30,15 +30,17 @@ const Home: NextPage = ({ blogPostsAll, ourRealizationsAll }: any) => {
         <HeroSection />
         <OurServices />
         <AboutUs />
-        { ourRealizationsAll.data && <OurRealizationsHero ourRealizationsAll={ourRealizationsAll} /> }
+        {ourRealizationsAll.data && (
+          <OurRealizationsHero ourRealizationsAll={ourRealizationsAll} />
+        )}
         <OurMission />
-        { blogPostsAll.data && (
+        {blogPostsAll.data && (
           <BlogSection
             blogPostsAll={blogPostsAll}
             subtitle={t('blog:checkOurBlog')}
             title={t('blog:wantMore')}
           />
-        ) }
+        )}
         <Recommendations />
         <TrustedBy />
         <ContactShort />
@@ -67,9 +69,9 @@ export async function getStaticProps({ locale }: { locale: string }) {
         'realizations',
         'blog',
         'seo',
-        'cookies'
+        'cookies',
       ])),
-      blogPostsAll : await resBlogPostsAll.json(),
+      blogPostsAll: await resBlogPostsAll.json(),
       ourRealizationsAll: await resOurRealizationsAll.json(),
     },
   }

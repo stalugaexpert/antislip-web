@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
-import { useTheme } from 'next-themes'
 import { scrollToTopHome } from 'src/utils/helpers/scrollToTop'
 
 import logoLight from '../../../../public/icons/logo-enubes-orange.png'
@@ -30,19 +29,17 @@ const sideBarVariants = {
 
 export const NavbarMobile = () => {
   const { t } = useTranslation()
-  const { systemTheme, theme } = useTheme()
   const { asPath } = useRouter()
-  const currentTheme = theme === 'system' ? systemTheme : theme
   const [isOpen, toggleOpen] = useCycle(false, true)
 
   return (
     <motion.nav
       animate={isOpen ? 'open' : 'closed'}
-      className="fixed w-full flex items-center justify-between px-3 h-16 shadow-nav bg-white dark:bg-neutral900 z-20"
+      className="fixed z-20 hidden h-16 w-full items-center justify-between bg-white px-3 shadow-nav dark:bg-neutral900 recommendations-sm:flex"
       initial={false}
     >
       <motion.div
-        className="absolute top-0 right-0 bottom-0 w-screen h-screen bg-white dark:bg-neutral900"
+        className="absolute top-0 right-0 bottom-0 h-screen w-screen bg-white dark:bg-neutral900"
         variants={sideBarVariants}
       />
       <Link href="/">
@@ -51,31 +48,32 @@ export const NavbarMobile = () => {
           onClick={() => scrollToTopHome(asPath)}
         >
           <div className="relative h-10 w-48">
-            { currentTheme === 'dark' ? (
+            <div className="hidden dark:block">
               <Image
                 alt={t('navbar:logoAlt')}
                 layout="fill"
                 objectFit="contain"
+                placeholder="blur"
                 src={logoDark}
               />
-            ) : (
+            </div>
+            <div className="block dark:hidden">
               <Image
                 alt={t('navbar:logoAlt')}
                 layout="fill"
                 objectFit="contain"
+                placeholder="blur"
                 src={logoLight}
               />
-            )}
+            </div>
           </div>
         </a>
       </Link>
-      <div className="flex items-center justify-center z-50">
+      <div className="z-50 flex items-center justify-center">
         <ThemeButton />
         <MenuToggle toggle={toggleOpen} />
       </div>
-      <Navigation
-        toggle={toggleOpen}
-      />
+      <Navigation toggle={toggleOpen} />
     </motion.nav>
   )
 }

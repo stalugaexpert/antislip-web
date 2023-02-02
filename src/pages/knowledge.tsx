@@ -1,4 +1,10 @@
-import { Accordion, ContactShort, HeroPages, PageLayout, Seo } from '@components'
+import {
+  Accordion,
+  ContactShort,
+  HeroPages,
+  PageLayout,
+  Seo,
+} from '@components'
 import type { InferGetStaticPropsType, NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -12,7 +18,7 @@ import knowledgePlaces from '../../public/images/knowledge-places-1.jpg'
 import knowledgePlaces2 from '../../public/images/knowledge-places-2.jpg'
 
 const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  gifBlur
+  gifBlur,
 }) => {
   const { t } = useTranslation()
 
@@ -133,18 +139,18 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         title={t('knowledge:description')}
         titleBottom={t('knowledge:descriptionBottom')}
       />
-      <section className="px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
-        <h5 className="text-base about-md:text-sm font-semibold text-amber400 mb-4">
+      <section className="mx-auto mb-20 h-fit max-w-screen-2xl px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+        <h5 className="mb-4 text-base font-semibold text-amber400 about-md:text-sm">
           {t('knowledge:whatKnow')}
         </h5>
-        <h5 className="text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold mb-8 text-neutral800 dark:text-neutral50">
+        <h5 className="mb-8 text-4xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-3xl about-xsm:text-2xl">
           {t('knowledge:legalActs')}
         </h5>
         <div className="flex justify-between gap-12 knowledge-md:flex-wrap knowledge-md:gap-8">
-          <div className="w-[60%] knowledge-md:w-full knowledge-md:order-2">
+          <div className="w-[60%] knowledge-md:order-2 knowledge-md:w-full">
             <Accordion />
           </div>
-          <div className="relative w-[40%] knowledge-md:w-full knowledge-md:h-[30vh]">
+          <div className="relative w-[40%] knowledge-md:h-[30vh] knowledge-md:w-full">
             <Image
               alt=""
               layout="fill"
@@ -154,22 +160,22 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           </div>
         </div>
       </section>
-      <section className="px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+      <section className="mx-auto mb-20 h-fit max-w-screen-2xl px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
         <div>
-          <h5 className="text-base about-md:text-sm font-semibold text-amber400 mb-4">
+          <h5 className="mb-4 text-base font-semibold text-amber400 about-md:text-sm">
             {t('knowledge:ptv')}
           </h5>
           <div className="mb-8">
-            <h5 className="text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
+            <h5 className="text-4xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-3xl about-xsm:text-2xl">
               {t('knowledge:ptvAbout')}
             </h5>
-            <h5 className="text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
+            <h5 className="text-4xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-3xl about-xsm:text-2xl">
               {t('knowledge:ptvAboutBottom')}
             </h5>
           </div>
           <div className="flex justify-between gap-12 knowledge-md:flex-wrap knowledge-md:gap-8">
-            <div className="w-2/4 knowledge-md:w-full flex flex-col gap-4">
-              <div className="relative h-[380px] knowledge-md:h-[30vh] w-full">
+            <div className="flex w-2/4 flex-col gap-4 knowledge-md:w-full">
+              <div className="relative h-[380px] w-full knowledge-md:h-[30vh]">
                 <Image
                   alt=""
                   layout="fill"
@@ -178,11 +184,11 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   src={antiSlipPTV}
                 />
               </div>
-              <p className="text-base text-justify text-neutral800 dark:text-neutral50">
+              <p className="text-justify text-base text-neutral800 dark:text-neutral50">
                 {t('knowledge:ptvDescription.fourthParagraph')}
               </p>
             </div>
-            <div className="w-2/4 text-justify knowledge-md:w-full text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+            <div className="w-2/4 text-justify text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm knowledge-md:w-full">
               <p className="mb-2.5">
                 {t('knowledge:ptvDescription.firstParagraph')}
               </p>
@@ -194,20 +200,20 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           </div>
         </div>
       </section>
-      <section className="px-24 max-w-[87.5rem] mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 knowledge-sm:pl-6 knowledge-sm:pr-8">
-        <div className="grid grid-cols-3 about-sm:grid-cols-2 knowledge-sm:grid-cols-1 gap-12 recommendations-ds:gap-10">
+      <section className="mx-auto mb-20 h-fit max-w-[87.5rem] px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 knowledge-sm:pl-6 knowledge-sm:pr-8">
+        <div className="grid grid-cols-3 gap-12 recommendations-ds:gap-10 about-sm:grid-cols-2 knowledge-sm:grid-cols-1">
           {knowledgeItems.map((item, index) => (
             <div
-              className="relative flex flex-col justify-between items-center bg-neutral200 dark:bg-neutral700 p-6 rounded-md shadow-md"
+              className="relative flex flex-col items-center justify-between rounded-md bg-neutral200 p-6 shadow-md dark:bg-neutral700"
               key={index}
             >
-              <div className="w-full flex items-center mb-4">
-                <h5 className="text-xl knowledge-md:text-base font-semibold text-neutral800 dark:text-neutral50">
+              <div className="mb-4 flex w-full items-center">
+                <h5 className="text-xl font-semibold text-neutral800 dark:text-neutral50 knowledge-md:text-base">
                   {item.title}
                 </h5>
-                <div className="absolute top-0 left-full -translate-y-2/4 -translate-x-2/4 bg-neutral200 dark:bg-neutral700 p-2 rounded-full knowledge-sm:p-1">
+                <div className="absolute top-0 left-full -translate-y-2/4 -translate-x-2/4 rounded-full bg-neutral200 p-2 dark:bg-neutral700 knowledge-sm:p-1">
                   <svg
-                    className="w-8 h-8 knowledge-sm:w-6 knowledge-sm:h-6"
+                    className="h-8 w-8 knowledge-sm:h-6 knowledge-sm:w-6"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth={1.5}
@@ -218,23 +224,23 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   </svg>
                 </div>
               </div>
-              <p className="text-base knowledge-md:text-sm text-neutral800 dark:text-neutral50 w-full">
+              <p className="w-full text-base text-neutral800 dark:text-neutral50 knowledge-md:text-sm">
                 {item.description}
               </p>
             </div>
           ))}
         </div>
       </section>
-      <section className="px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+      <section className="mx-auto mb-20 h-fit max-w-screen-2xl px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
         <div>
-          <h5 className="text-base about-md:text-sm font-semibold text-amber400 mb-4">
+          <h5 className="mb-4 text-base font-semibold text-amber400 about-md:text-sm">
             {t('knowledge:pendulumSection.title')}
           </h5>
-          <h5 className="text-4xl mb-8 about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
+          <h5 className="mb-8 text-4xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-3xl about-xsm:text-2xl">
             {t('knowledge:pendulumSection.titleBottom')}
           </h5>
-          <div className="flex justify-between items-center gap-12 knowledge-md:flex-wrap knowledge-md:gap-6">
-            <div className="w-2/4 text-justify knowledge-md:w-full text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+          <div className="flex items-center justify-between gap-12 knowledge-md:flex-wrap knowledge-md:gap-6">
+            <div className="w-2/4 text-justify text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm knowledge-md:w-full">
               <p className="mb-2.5">
                 {t('knowledge:pendulumSection.firstParagraph')}
               </p>
@@ -253,8 +259,8 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                 </a>
               </Link>
             </div>
-            <div className="w-2/4 knowledge-md:w-full flex flex-col gap-6">
-              <div className="relative h-[40vh] knowledge-md:h-[30vh] w-full">
+            <div className="flex w-2/4 flex-col gap-6 knowledge-md:w-full">
+              <div className="relative h-[40vh] w-full knowledge-md:h-[30vh]">
                 <Image
                   alt=""
                   blurDataURL={gifBlur}
@@ -265,32 +271,32 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   unoptimized
                 />
               </div>
-              <p className="text-base text-justify text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+              <p className="text-justify text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
                 {t('knowledge:pendulumSection.description')}
               </p>
             </div>
           </div>
         </div>
       </section>
-      <section className="px-24 max-w-screen-2xl mx-auto mb-20 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+      <section className="mx-auto mb-20 max-w-screen-2xl px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
         <div>
-          <table className="text-sm knowledge-xsm:text-xs w-full text-center text-gray-500 dark:text-gray-400 border-collapse border dark:border-2 border-solid border-gray-700">
-            <thead className="text-xs font-semibold text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <table className="w-full border-collapse border border-solid border-gray-700 text-center text-sm text-gray-500 dark:border-2 dark:text-gray-400 knowledge-xsm:text-xs">
+            <thead className="bg-gray-50 text-xs font-semibold uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th
-                  className="py-3 px-6 knowledge-xsm:px-2 border dark:border-2 border-solid border-gray-700"
+                  className="border border-solid border-gray-700 py-3 px-6 dark:border-2 knowledge-xsm:px-2"
                   scope="col"
                 >
                   {t('knowledge:ptvTable.titles.first')}
                 </th>
                 <th
-                  className="py-3 px-6 knowledge-xsm:px-2 border dark:border-2 border-solid border-gray-700"
+                  className="border border-solid border-gray-700 py-3 px-6 dark:border-2 knowledge-xsm:px-2"
                   scope="col"
                 >
                   {t('knowledge:ptvTable.titles.second')}
                 </th>
                 <th
-                  className="py-3 px-6 knowledge-xsm:px-2 border dark:border-2 border-solid border-gray-700"
+                  className="border border-solid border-gray-700 py-3 px-6 dark:border-2 knowledge-xsm:px-2"
                   scope="col"
                 >
                   {t('knowledge:ptvTable.titles.third')}
@@ -298,29 +304,29 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               </tr>
             </thead>
             <tbody>
-              <tr className="bg-white dark:bg-gray-800 dark:border-gray-700">
+              <tr className="bg-white dark:border-gray-700 dark:bg-gray-800">
                 <td
-                  className="py-4 px-6 knowledge-xsm:px-2 font-medium text-gray-900 dark:text-white border dark:border-2 border-solid border-gray-700"
+                  className="border border-solid border-gray-700 py-4 px-6 font-medium text-gray-900 dark:border-2 dark:text-white knowledge-xsm:px-2"
                   scope="row"
                 >
                   {t('knowledge:ptvTable.firstCol.first')}
                 </td>
                 <td
-                  className="py-4 px-6 knowledge-xsm:px-2 border dark:border-2 border-solid border-gray-700"
+                  className="border border-solid border-gray-700 py-4 px-6 dark:border-2 knowledge-xsm:px-2"
                   rowSpan={6}
                 >
                   {t('knowledge:ptvTable.secondCol.first')}
                 </td>
                 <td
-                  className="py-4 px-6 knowledge-xsm:px-2 border dark:border-2 border-solid border-gray-700"
+                  className="border border-solid border-gray-700 py-4 px-6 dark:border-2 knowledge-xsm:px-2"
                   rowSpan={7}
                 >
                   PN-EN 13036-4²
                 </td>
               </tr>
-              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <tr className="border-b bg-white dark:border-gray-700 dark:bg-gray-800">
                 <th
-                  className="py-4 px-6 knowledge-xsm:px-2 font-medium text-gray-900 dark:text-white border dark:border-2 border-solid border-gray-700"
+                  className="border border-solid border-gray-700 py-4 px-6 font-medium text-gray-900 dark:border-2 dark:text-white knowledge-xsm:px-2"
                   scope="row"
                 >
                   {t('knowledge:ptvTable.firstCol.second')}
@@ -328,7 +334,7 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               </tr>
               <tr className="bg-white dark:bg-gray-800">
                 <th
-                  className="py-4 px-6 knowledge-xsm:px-2 font-medium text-gray-900 dark:text-white border dark:border-2 border-solid border-gray-700"
+                  className="border border-solid border-gray-700 py-4 px-6 font-medium text-gray-900 dark:border-2 dark:text-white knowledge-xsm:px-2"
                   scope="row"
                 >
                   {t('knowledge:ptvTable.firstCol.third')}
@@ -336,7 +342,7 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               </tr>
               <tr className="bg-white dark:bg-gray-800">
                 <th
-                  className="py-4 px-6 knowledge-xsm:px-2 font-medium text-gray-900 dark:text-white border dark:border-2 border-solid border-gray-700"
+                  className="border border-solid border-gray-700 py-4 px-6 font-medium text-gray-900 dark:border-2 dark:text-white knowledge-xsm:px-2"
                   scope="row"
                 >
                   {t('knowledge:ptvTable.firstCol.fourth')}
@@ -344,7 +350,7 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               </tr>
               <tr className="bg-white dark:bg-gray-800">
                 <th
-                  className="py-4 px-6 knowledge-xsm:px-2 font-medium text-gray-900 dark:text-white border dark:border-2 border-solid border-gray-700"
+                  className="border border-solid border-gray-700 py-4 px-6 font-medium text-gray-900 dark:border-2 dark:text-white knowledge-xsm:px-2"
                   scope="row"
                 >
                   {t('knowledge:ptvTable.firstCol.fifth')}
@@ -352,7 +358,7 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               </tr>
               <tr className="bg-white dark:bg-gray-800">
                 <th
-                  className="py-4 px-6 knowledge-xsm:px-2 font-medium text-gray-900 dark:text-white border dark:border-2 border-solid border-gray-700"
+                  className="border border-solid border-gray-700 py-4 px-6 font-medium text-gray-900 dark:border-2 dark:text-white knowledge-xsm:px-2"
                   scope="row"
                 >
                   {t('knowledge:ptvTable.firstCol.sixth')}
@@ -360,26 +366,26 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               </tr>
               <tr className="bg-white dark:bg-gray-800">
                 <th
-                  className="py-4 px-6 knowledge-xsm:px-2 font-medium text-gray-900 dark:text-white border dark:border-2 border-solid border-gray-700"
+                  className="border border-solid border-gray-700 py-4 px-6 font-medium text-gray-900 dark:border-2 dark:text-white knowledge-xsm:px-2"
                   scope="row"
                 >
                   {t('knowledge:ptvTable.firstCol.seventh')}
                 </th>
-                <td className="py-4 px-6 knowledge-xsm:px-2 border dark:border-2 border-solid border-gray-700">
+                <td className="border border-solid border-gray-700 py-4 px-6 dark:border-2 knowledge-xsm:px-2">
                   {t('knowledge:ptvTable.secondCol.second')}
                 </td>
               </tr>
               <tr className="bg-white dark:bg-gray-800">
                 <th
-                  className="py-4 px-6 knowledge-xsm:px-2 font-medium text-gray-900 dark:text-white border dark:border-2 border-solid border-gray-700"
+                  className="border border-solid border-gray-700 py-4 px-6 font-medium text-gray-900 dark:border-2 dark:text-white knowledge-xsm:px-2"
                   scope="row"
                 >
                   {t('knowledge:ptvTable.firstCol.eighth')}
                 </th>
-                <td className="py-4 px-6 knowledge-xsm:px-2 border dark:border-2 border-solid border-gray-700">
+                <td className="border border-solid border-gray-700 py-4 px-6 dark:border-2 knowledge-xsm:px-2">
                   {t('knowledge:ptvTable.secondCol.third')}
                 </td>
-                <td className="py-4 px-6 knowledge-xsm:px-2 border dark:border-2 border-solid border-gray-700">
+                <td className="border border-solid border-gray-700 py-4 px-6 dark:border-2 knowledge-xsm:px-2">
                   PN-EN 13036-4
                 </td>
               </tr>
@@ -387,22 +393,24 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           </table>
         </div>
       </section>
-      <section className="px-24 max-w-screen-2xl mx-auto mb-12 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+      <section className="mx-auto mb-12 h-fit max-w-screen-2xl px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
         <div>
-          <h5 className="text-base about-md:text-sm font-semibold text-amber400 mb-4">
+          <h5 className="mb-4 text-base font-semibold text-amber400 about-md:text-sm">
             {t('knowledge:knowledge')}
           </h5>
           <div className="mb-8">
-            <h5 className="text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
+            <h5 className="text-4xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-3xl about-xsm:text-2xl">
               {t('knowledge:surfaces')}
             </h5>
-            <h5 className="text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
+            <h5 className="text-4xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-3xl about-xsm:text-2xl">
               {t('knowledge:surfacesBottom')}
             </h5>
           </div>
-          <div className="flex justify-between items-center gap-12 knowledge-md:flex-wrap knowledge-md:gap-6">
-            <div className="w-2/4 knowledge-md:w-full text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
-              <p className="mb-2.5 text-justify">{t('knowledge:surfacesDescription')}</p>
+          <div className="flex items-center justify-between gap-12 knowledge-md:flex-wrap knowledge-md:gap-6">
+            <div className="w-2/4 text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm knowledge-md:w-full">
+              <p className="mb-2.5 text-justify">
+                {t('knowledge:surfacesDescription')}
+              </p>
               <p className="mb-2.5 text-justify">
                 {t('knowledge:surfacesDescriptionBotton')}
               </p>
@@ -412,9 +420,9 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                     className="flex items-center gap-3"
                     key={index}
                   >
-                    <div className="w-6 h-6">
+                    <div className="h-6 w-6">
                       <svg
-                        className="w-6 h-6"
+                        className="h-6 w-6"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth={1.5}
@@ -435,8 +443,8 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                 ))}
               </ul>
             </div>
-            <div className="w-2/4 knowledge-md:w-full flex flex-col gap-6">
-              <div className="relative h-[60vh] knowledge-md:h-[30vh] w-full">
+            <div className="flex w-2/4 flex-col gap-6 knowledge-md:w-full">
+              <div className="relative h-[60vh] w-full knowledge-md:h-[30vh]">
                 <Image
                   alt=""
                   layout="fill"
@@ -449,10 +457,10 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           </div>
         </div>
       </section>
-      <section className="px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
-        <div className="flex justify-between items-center gap-12 knowledge-md:flex-wrap knowledge-md:gap-6">
-          <div className="w-2/4 knowledge-md:w-full knowledge-md:order-2 flex flex-col gap-6">
-            <div className="relative h-[60vh] knowledge-md:h-[30vh] w-full">
+      <section className="mx-auto mb-20 h-fit max-w-screen-2xl px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+        <div className="flex items-center justify-between gap-12 knowledge-md:flex-wrap knowledge-md:gap-6">
+          <div className="flex w-2/4 flex-col gap-6 knowledge-md:order-2 knowledge-md:w-full">
+            <div className="relative h-[60vh] w-full knowledge-md:h-[30vh]">
               <Image
                 alt=""
                 layout="fill"
@@ -462,9 +470,13 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               />
             </div>
           </div>
-          <div className="w-2/4 knowledge-md:w-full text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
-            <p className="mb-2.5 text-justify">{t('knowledge:surfacesSecond')}</p>
-            <p className="mb-2.5 text-justify">{t('knowledge:surfacesSecondDescription')}</p>
+          <div className="w-2/4 text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm knowledge-md:w-full">
+            <p className="mb-2.5 text-justify">
+              {t('knowledge:surfacesSecond')}
+            </p>
+            <p className="mb-2.5 text-justify">
+              {t('knowledge:surfacesSecondDescription')}
+            </p>
             <p className="mb-2.5 text-justify">
               {t('knowledge:surfacesSecondDescriptionBottom')}
             </p>
@@ -474,9 +486,9 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   className="flex items-center gap-3"
                   key={index}
                 >
-                  <div className="w-6 h-6">
+                  <div className="h-6 w-6">
                     <svg
-                      className="w-6 h-6"
+                      className="h-6 w-6"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth={1.5}
@@ -499,25 +511,25 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           </div>
         </div>
       </section>
-      <section className="px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
-        <div className="flex about-md:flex-wrap items-stretch justify-center gap-12 about-md:gap-6">
+      <section className="mx-auto mb-20 h-fit max-w-screen-2xl px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+        <div className="flex items-stretch justify-center gap-12 about-md:flex-wrap about-md:gap-6">
           {cardItems.map((item, index) => (
             <div
-              className="flex flex-col justify-between min-h-[270px] w-1/3 about-md:w-full "
+              className="flex min-h-[270px] w-1/3 flex-col justify-between about-md:w-full "
               key={index}
             >
-              <div className="relative h-2/4 p-8 about-md:p-4 flex flex-col items-center justify-center bg-neutral100 dark:bg-neutral900 text-center min-h-[148px]">
-                <h5 className="text-base text-neutral800 dark:text-neutral50 mb-2">
+              <div className="relative flex h-2/4 min-h-[148px] flex-col items-center justify-center bg-neutral100 p-8 text-center dark:bg-neutral900 about-md:p-4">
+                <h5 className="mb-2 text-base text-neutral800 dark:text-neutral50">
                   {item.title}
                 </h5>
                 <span className="text-base text-neutral800 dark:text-neutral50">
                   {item.subtitle}
                 </span>
-                <span className="absolute w-full text-center text-5xl bottom-50% translate-y-[150%]">
+                <span className="bottom-50% absolute w-full translate-y-[150%] text-center text-5xl">
                   §
                 </span>
               </div>
-              <div className="p-8 about-md:p-4 flex h-2/4 flex-col items-center justify-around bg-neutral200 dark:bg-neutral700 text-center min-h-[128px]">
+              <div className="flex h-2/4 min-h-[128px] flex-col items-center justify-around bg-neutral200 p-8 text-center dark:bg-neutral700 about-md:p-4">
                 <p className="text-sm text-neutral800 dark:text-neutral50">
                   {item.description}
                 </p>
@@ -532,9 +544,7 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }
 
 export async function getStaticProps({ locale }: { locale: string }) {
-  const {
-    base64,
-  } = await getPlaiceholder('/images/pendulum-knowledge.gif')
+  const { base64 } = await getPlaiceholder('/images/pendulum-knowledge.gif')
   return {
     props: {
       ...(await serverSideTranslations(locale, [
@@ -543,7 +553,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
         'knowledge',
         'contact',
         'seo',
-        'cookies'
+        'cookies',
       ])),
       gifBlur: base64,
     },
