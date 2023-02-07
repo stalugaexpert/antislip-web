@@ -4,22 +4,28 @@ export const ContactBottom = () => {
   const { t } = useTranslation()
 
   return (
-    <section className="px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+    <section className="mx-auto mb-20 h-fit max-w-screen-2xl px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
       <div>
-        <div className="flex items-center justify-center flex-col gap-4 mb-12">
-          <h5 className="text-base text-center about-md:text-sm font-semibold text-amber600">{t('contact-page:contactUs')}</h5>
-          <h2 className="text-4xl text-center about-md:text-3xl about-xsm:text-xl font-semibold text-neutral800 dark:text-neutral50">{t('contact-page:contactTitle')}</h2>
-          <h2 className="text-lg text-center about-xsm:text-base font-normal text-neutral700 dark:text-neutral200">{t('contact-page:contactDescription')}</h2>
+        <div className="mb-12 flex flex-col items-center justify-center gap-4">
+          <h5 className="text-center text-base font-semibold text-amber600 about-md:text-sm">
+            {t('contact-page:contactUs')}
+          </h5>
+          <h2 className="text-center text-4xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-3xl about-xsm:text-xl">
+            {t('contact-page:contactTitle')}
+          </h2>
+          <h2 className="text-center text-lg font-normal text-neutral700 dark:text-neutral200 about-xsm:text-base">
+            {t('contact-page:contactDescription')}
+          </h2>
         </div>
-        <div className="flex contact-sm:flex-wrap items-center justify-around gap-12">
-          <div className="max-w-[280px] flex flex-col items-center gap-4 w-1/3 contact-sm:w-full min-h-[220px] justify-between contact-sm:min-h-0">
+        <div className="flex items-center justify-around gap-12 contact-sm:flex-wrap">
+          <div className="flex min-h-[220px] w-1/3 max-w-[280px] flex-col items-center justify-between gap-4 contact-sm:min-h-0 contact-sm:w-full">
             <a
               aria-label={t('contact-page:mailDescriptionLink')}
-              href="mailto:office@e-nubes.com"
+              href="mailto:service@anti-slip.io"
             >
-              <div className="p-3 relative w-fit h-fit rounded-full bg-amber600 duration-300 hover:opacity-75 hover:translate-y-[2px]">
+              <div className="relative h-fit w-fit rounded-full bg-amber600 p-3 duration-300 hover:translate-y-[2px] hover:opacity-75">
                 <svg
-                  className="w-8 h-8 text-neutral50"
+                  className="h-8 w-8 text-neutral50"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth={1.5}
@@ -34,24 +40,28 @@ export const ContactBottom = () => {
                 </svg>
               </div>
             </a>
-            <h5 className="text-lg text-center about-xsm:text-base font-semibold text-neutral800 dark:text-neutral50">{t('contact-page:email')}</h5>
-            <p className="text-base text-center about-xsm:text-sm font-normal text-neutral700 dark:text-neutral200">{t('contact-page:emailDescription')}</p>
+            <h5 className="text-center text-lg font-semibold text-neutral800 dark:text-neutral50 about-xsm:text-base">
+              {t('contact-page:email')}
+            </h5>
+            <p className="text-center text-base font-normal text-neutral700 dark:text-neutral200 about-xsm:text-sm">
+              {t('contact-page:emailDescription')}
+            </p>
             <a
-              className="text-base text-center about-xsm:text-sm font-normal text-amber600 duration-300 hover:opacity-75 hover:translate-y-[1px]"
-              href="mailto:office@e-nubes.com"
+              className="text-center text-base font-normal text-amber600 duration-300 hover:translate-y-[1px] hover:opacity-75 about-xsm:text-sm"
+              href="mailto:service@anti-slip.io"
             >
-              office@e-nubes.com
+              service@anti-slip.io
             </a>
           </div>
 
-          <div className="max-w-[280px] flex flex-col items-center gap-4 w-1/3 contact-sm:w-full min-h-[220px] justify-between contact-sm:min-h-0">
+          <div className="flex min-h-[220px] w-1/3 max-w-[280px] flex-col items-center justify-between gap-4 contact-sm:min-h-0 contact-sm:w-full">
             <a
               aria-label={t('contact-page:phoneDescriptionLink')}
               href="tel:+48882186624"
             >
-              <div className="p-3.5 relative w-fit h-fit rounded-full bg-amber600 duration-300 hover:opacity-75 hover:translate-y-[2px]">
+              <div className="relative h-fit w-fit rounded-full bg-amber600 p-3.5 duration-300 hover:translate-y-[2px] hover:opacity-75">
                 <svg
-                  className="w-7 h-7 text-neutral50"
+                  className="h-7 w-7 text-neutral50"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth={1.5}
@@ -66,27 +76,33 @@ export const ContactBottom = () => {
                 </svg>
               </div>
             </a>
-            <h5 className="text-lg text-center about-xsm:text-base font-semibold text-neutral800 dark:text-neutral50">{t('contact-page:phone')}</h5>
-            <p className="text-base text-center about-xsm:text-sm font-normal text-neutral700 dark:text-neutral200">{t('contact-page:phoneDescription')}</p>
-            <p className="text-base text-center about-xsm:text-sm font-normal text-neutral700 dark:text-neutral200">{t('contact-page:phoneDescriptionBottom')}</p>
+            <h5 className="text-center text-lg font-semibold text-neutral800 dark:text-neutral50 about-xsm:text-base">
+              {t('contact-page:phone')}
+            </h5>
+            <p className="text-center text-base font-normal text-neutral700 dark:text-neutral200 about-xsm:text-sm">
+              {t('contact-page:phoneDescription')}
+            </p>
+            <p className="text-center text-base font-normal text-neutral700 dark:text-neutral200 about-xsm:text-sm">
+              {t('contact-page:phoneDescriptionBottom')}
+            </p>
             <a
-              className="text-base text-center about-xsm:text-sm font-normal text-amber600 duration-300 hover:opacity-75 hover:translate-y-[1px]"
+              className="text-center text-base font-normal text-amber600 duration-300 hover:translate-y-[1px] hover:opacity-75 about-xsm:text-sm"
               href="tel:+48882186624"
             >
               +48 882 186 624
             </a>
           </div>
 
-          <div className="max-w-[280px] flex flex-col gap-4 items-center w-1/3 contact-sm:w-full min-h-[220px] justify-between contact-sm:min-h-0">
+          <div className="flex min-h-[220px] w-1/3 max-w-[280px] flex-col items-center justify-between gap-4 contact-sm:min-h-0 contact-sm:w-full">
             <a
               aria-label={t('contact-page:officeDescriptionLink')}
               href="https://g.page/impregnaty-bc?share"
               rel="noreferrer"
               target="_blank"
             >
-              <div className="p-3 relative w-fit h-fit rounded-full bg-amber600 duration-300 hover:opacity-75 hover:translate-y-[2px]">
+              <div className="relative h-fit w-fit rounded-full bg-amber600 p-3 duration-300 hover:translate-y-[2px] hover:opacity-75">
                 <svg
-                  className="w-8 h-8 text-neutral50"
+                  className="h-8 w-8 text-neutral50"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth={1.5}
@@ -106,10 +122,14 @@ export const ContactBottom = () => {
                 </svg>
               </div>
             </a>
-            <h5 className="text-lg text-center about-xsm:text-base font-semibold text-neutral800 dark:text-neutral50">{t('contact-page:office')}</h5>
-            <p className="text-base text-center about-xsm:text-sm font-normal text-neutral700 dark:text-neutral200">{t('contact-page:officeDescription')}</p>
+            <h5 className="text-center text-lg font-semibold text-neutral800 dark:text-neutral50 about-xsm:text-base">
+              {t('contact-page:office')}
+            </h5>
+            <p className="text-center text-base font-normal text-neutral700 dark:text-neutral200 about-xsm:text-sm">
+              {t('contact-page:officeDescription')}
+            </p>
             <a
-              className="text-base text-center about-xsm:text-sm font-normal text-amber600 duration-300 hover:opacity-75 hover:translate-y-[1px]"
+              className="text-center text-base font-normal text-amber600 duration-300 hover:translate-y-[1px] hover:opacity-75 about-xsm:text-sm"
               href="https://g.page/impregnaty-bc?share"
               rel="noreferrer"
               target="_blank"
