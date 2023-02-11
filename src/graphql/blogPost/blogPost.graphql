@@ -1,0 +1,26 @@
+query BlogPost($locale: I18NLocaleCode!, $slug: String!) {
+  blogs(filters: { slug: { eq: $slug } }, locale: $locale) {
+    data {
+      id
+      attributes {
+        title
+        content
+        author
+        slug
+        isFromSmartFloor
+        publishedAt
+        postImage {
+          data {
+            attributes {
+              formats
+            }
+          }
+        }
+        SEO {
+          metaTitle
+          metaDescription
+        }
+      }
+    }
+  }
+}

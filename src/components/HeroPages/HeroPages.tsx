@@ -1,46 +1,51 @@
 import cx from 'classnames'
-import { AnimatePresence, motion } from 'framer-motion'
 import Image, { StaticImageData } from 'next/image'
 
 interface IHeroPagesProps {
-  section: string,
-  title: string,
-  titleIcon?: string,
-  titleBottom?: string,
-  description?: string,
-  image: string | StaticImageData,
+  section: string
+  title: string
+  titleIcon?: string
+  titleBottom?: string
+  description?: string
+  image: string | StaticImageData
   imageSecond?: string | StaticImageData
 }
 
-export const HeroPages = ({ section, title, titleIcon = '', titleBottom = '', description = '', image, imageSecond = '' }: IHeroPagesProps) => {
+export const HeroPages = ({
+  section,
+  title,
+  titleIcon = '',
+  titleBottom = '',
+  description = '',
+  image,
+  imageSecond = '',
+}: IHeroPagesProps) => {
   return (
-    <section
-      className="px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6"
-    >
-      <div className="flex justify-between mb-8">
+    <section className="mx-auto mb-12 max-w-screen-2xl px-24 pt-32 navbar-md:pt-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+      <div className="mb-8 flex justify-between">
         <div className="w-3/4 recommendations-ds:w-[85%]">
-          <h5 className="text-base about-md:text-sm font-semibold text-amber400 mb-4">
+          <h5 className="mb-4 text-base font-semibold text-amber400 about-md:text-sm">
             {section}
           </h5>
           <div>
-            <h2 className="text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
+            <h2 className="text-4xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-3xl about-xsm:text-2xl">
               {title}
             </h2>
             {titleBottom && (
-              <h2 className="text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
+              <h2 className="text-4xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-3xl about-xsm:text-2xl">
                 {titleBottom}
               </h2>
             )}
             {description && (
-              <h2 className="text-lg mt-6 about-xsm:text-base font-normal text-neutral800 dark:text-neutral100">
+              <h2 className="mt-6 text-lg font-normal text-neutral800 dark:text-neutral100 about-xsm:text-base">
                 {description}
               </h2>
             )}
           </div>
         </div>
         {titleIcon && (
-          <div className="p-3 w-[60px] h-[60px] about-md:w-[40px] about-md:h-[40px] about-md:p-2 rounded-md bg-neutral50 dark:bg-neutral200">
-            <div className="relative w-full h-full">
+          <div className="h-[60px] w-[60px] rounded-md bg-neutral50 p-3 dark:bg-neutral200 about-md:h-[40px] about-md:w-[40px] about-md:p-2">
+            <div className="relative h-full w-full">
               <Image
                 alt=""
                 layout="fill"
@@ -51,9 +56,14 @@ export const HeroPages = ({ section, title, titleIcon = '', titleBottom = '', de
           </div>
         )}
       </div>
-      <div className="relative h-[31.2rem] about-md:h-[30vh] w-full before:content-[''] before:absolute before:h-48 before:w-48 before:bg-amber400 before:z-10 before:top-0 before:left-full before:-translate-x-full before:-translate-y-2/4 before:blur-[100px] before:opacity-50 dark:before:opacity-30">
+      <div className="relative h-[31.2rem] w-full before:absolute before:top-0 before:left-full before:z-10 before:h-48 before:w-48 before:-translate-x-full before:-translate-y-2/4 before:bg-amber400 before:opacity-50 before:blur-[100px] before:content-[''] dark:before:opacity-30 about-md:h-[30vh]">
         <div className="flex gap-8 mission-sm:gap-4">
-          <div className={cx('', { 'relative w-1/3 mission-sm:w-2/4 h-[31.2rem] about-md:h-[30vh]': imageSecond })}>
+          <div
+            className={cx('', {
+              'relative h-[31.2rem] w-1/3 about-md:h-[30vh] mission-sm:w-2/4':
+                imageSecond,
+            })}
+          >
             <Image
               alt=""
               layout="fill"
@@ -63,7 +73,7 @@ export const HeroPages = ({ section, title, titleIcon = '', titleBottom = '', de
             />
           </div>
           {imageSecond && (
-            <div className="relative w-2/3 mission-sm:w-2/4 h-[31.2rem] about-md:h-[30vh] before:content-[''] before:absolute before:h-48 before:w-48 before:bg-amber400 before:z-10 before:top-0 before:left-full before:-translate-x-full before:-translate-y-2/4 before:blur-[100px] before:opacity-50 dark:before:opacity-30">
+            <div className="relative h-[31.2rem] w-2/3 before:absolute before:top-0 before:left-full before:z-10 before:h-48 before:w-48 before:-translate-x-full before:-translate-y-2/4 before:bg-amber400 before:opacity-50 before:blur-[100px] before:content-[''] dark:before:opacity-30 about-md:h-[30vh] mission-sm:w-2/4">
               <Image
                 alt=""
                 layout="fill"

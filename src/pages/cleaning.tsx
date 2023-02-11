@@ -1,16 +1,26 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { ContactShort, HeroPages, PageLayout, Recommendations, Seo } from '@components'
+import {
+  BlogPostsSticky,
+  ContactShort,
+  HeroPages,
+  PageLayout,
+  Recommendations,
+  Seo,
+} from '@components'
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { fetchAllBlogPosts } from 'src/utils/api/service'
+import { BlogPostsQuery } from 'src/graphql/generated/graphql'
+import { getAllBlogPosts } from 'src/utils/requests/requests'
 
 import cleaningHero from '../../public/images/cleaning-hero.jpg'
 import cleaningImage from '../../public/images/cleaning-image-1.jpg'
 
-const Cleaning: NextPage = ({ blogPosts }: any) => {
+interface ICleaningPageProps {
+  blogPostsAll: BlogPostsQuery
+}
+
+const Cleaning: NextPage<ICleaningPageProps> = ({ blogPostsAll }) => {
   const { t } = useTranslation()
 
   const cleaningAboutItems = [
@@ -36,47 +46,47 @@ const Cleaning: NextPage = ({ blogPosts }: any) => {
         title={t('cleaning:cleaningDescription')}
         titleIcon="/icons/clean.png"
       />
-      <section className="px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
-        <div className="flex justify-between gap-32 relative about-md:flex-wrap about-md:gap-14">
+      <section className="mx-auto mb-20 h-fit max-w-screen-2xl px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+        <div className="relative flex justify-between gap-32 about-md:flex-wrap about-md:gap-14">
           <div className="w-[75%] about-md:w-full">
             <section className="mb-10">
               <div className="text-justify">
-                <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-3">
+                <h3 className="mb-3 text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                   {t('cleaning:cleaningWhen')}
                 </h3>
-                <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-2">
+                <p className="mb-2 text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('cleaning:cleaningWhenDescription')}
                 </p>
-                <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-4">
+                <p className="mb-4 text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('cleaning:cleaningWhenDescriptionBottom')}
                 </p>
                 <div className="mb-3">
-                  <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                  <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                     {t('cleaning:cleaningWhenDescTop')}
                   </p>
-                  <span className="font-semibold text-base about-md:text-sm text-amber400">
+                  <span className="text-base font-semibold text-amber400 about-md:text-sm">
                     {t('cleaning:betterThan')}
                   </span>
-                  <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                  <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                     {t('cleaning:cleaningWhenDescMid')}
                   </p>
-                  <span className="font-semibold text-base about-md:text-sm text-amber400">
+                  <span className="text-base font-semibold text-amber400 about-md:text-sm">
                     {t('cleaning:cleaningSlower')}
                   </span>
-                  <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                  <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                     {t('cleaning:cleaningWhenDescBottom')}
                   </p>
-                  <span className="font-semibold text-base about-md:text-sm text-amber400">
+                  <span className="text-base font-semibold text-amber400 about-md:text-sm">
                     {t('cleaning:cleaningSecure')}
                   </span>
-                  <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                  <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                     {t('cleaning:cleaningWhenDescBottomBottom')}
                   </p>
                 </div>
               </div>
             </section>
             <section className="mb-10">
-              <div className="relative h-[50vh] knowledge-md:h-[30vh] w-full">
+              <div className="relative h-[50vh] w-full knowledge-md:h-[30vh]">
                 <Image
                   alt=""
                   layout="fill"
@@ -87,7 +97,7 @@ const Cleaning: NextPage = ({ blogPosts }: any) => {
               </div>
             </section>
             <section className="mb-10">
-              <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-4">
+              <h3 className="mb-4 text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                 {t('cleaning:cleaningAbout')}
               </h3>
               <div className="flex flex-col gap-5">
@@ -96,9 +106,9 @@ const Cleaning: NextPage = ({ blogPosts }: any) => {
                     className="flex items-center gap-6 text-left"
                     key={index}
                   >
-                    <div className="w-6 h-6">
+                    <div className="h-6 w-6">
                       <svg
-                        className="w-6 h-6"
+                        className="h-6 w-6"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth={1.5}
@@ -112,7 +122,7 @@ const Cleaning: NextPage = ({ blogPosts }: any) => {
                         />
                       </svg>
                     </div>
-                    <h5 className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                    <h5 className="text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                       {item}
                     </h5>
                   </div>
@@ -120,42 +130,15 @@ const Cleaning: NextPage = ({ blogPosts }: any) => {
               </div>
             </section>
             <section>
-              <h3 className="font-semibold text-left text-xl about-md:text-base text-amber600 mb-4">
+              <h3 className="mb-4 text-left text-xl font-semibold text-amber600 about-md:text-base">
                 {t('cleaning:trustUs')}
               </h3>
-              <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+              <p className="text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                 {t('cleaning:beforeService')}
               </p>
             </section>
           </div>
-
-          <div className="sticky h-fit w-1/4 about-md:static about-md:w-full top-[15%] flex flex-col gap-20 about-md:gap-8">
-            <span className="hidden text-xl font-semibold about-md:block">
-              {t('cleaning:readMore')}
-            </span>
-            {blogPosts.data?.slice(-2).map((post: any) => (
-              <Link
-                href={`/blog/${post.attributes.slug}`}
-                key={post.id}
-              >
-                <a>
-                  <div className="flex flex-col gap-4 duration-300 hover:opacity-70 hover:translate-y-[2px]">
-                    <div className="relative h-[153px] about-md:h-[20vh] w-full">
-                      <Image
-                        alt=""
-                        layout="fill"
-                        objectFit="cover"
-                        src={`${post.attributes.postImage.data.attributes.formats.small.url}`}
-                      />
-                    </div>
-                    <h5 className="text-sm font-semibold about-md:font-normal text-neutral800 dark:text-neutral50">
-                      {post.attributes.title}
-                    </h5>
-                  </div>
-                </a>
-              </Link>
-            ))}
-          </div>
+          <BlogPostsSticky blogPosts={blogPostsAll} />
         </div>
       </section>
       <Recommendations />
@@ -166,20 +149,22 @@ const Cleaning: NextPage = ({ blogPosts }: any) => {
 
 export async function getStaticProps({ locale }: { locale: string }) {
   const localization = locale === 'pl' ? 'pl-PL' : 'en'
-  const res = await fetchAllBlogPosts(localization)
+
+  const blogPostsAll = await getAllBlogPosts(localization)
 
   return {
     props: {
       ...(await serverSideTranslations(locale, [
         'navbar',
         'footer',
+        'common',
         'recommendations',
         'cleaning',
         'contact',
         'seo',
-        'cookies'
+        'cookies',
       ])),
-      blogPosts: await res.json()
+      blogPostsAll,
     },
   }
 }

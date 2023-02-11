@@ -25,20 +25,21 @@ export const OurServices = ({ text, icon, alt, url }: IOurServicesProps) => {
     <Link href={url}>
       <a>
         <motion.div
-          className="flex justify-left items-center gap-4 p-4 hover:bg-neutral200 dark:hover:bg-neutral800"
+          className="justify-left flex items-center gap-4 p-4 hover:bg-neutral200 dark:hover:bg-neutral800"
           variants={SubItemVariants}
           layout
         >
-          <div className="flex items-center justify-center p-1.5 rounded-lg bg-white dark:bg-neutral200">
+          <div className="flex items-center justify-center rounded-lg bg-white p-1.5 dark:bg-neutral200">
             <Image
               alt={alt}
               height="20"
               src={icon}
               width="24"
-              priority
             />
           </div>
-          <span className="text-base font-normal text-neutral700 dark:text-neutral200">{text}</span>
+          <span className="text-base font-normal text-neutral700 dark:text-neutral200">
+            {text}
+          </span>
         </motion.div>
       </a>
     </Link>

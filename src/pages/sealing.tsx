@@ -1,18 +1,30 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { ContactShort, HeroPages, PageLayout, Recommendations, Seo } from '@components'
+import {
+  BlogPostsSticky,
+  ContactShort,
+  HeroPages,
+  PageLayout,
+  Recommendations,
+  Seo,
+} from '@components'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getPlaiceholder } from 'plaiceholder'
-import { fetchAllBlogPosts } from 'src/utils/api/service'
+import { BlogPostsQuery } from 'src/graphql/generated/graphql'
+import { getAllBlogPosts } from 'src/utils/requests/requests'
 
 import sealingHero from '../../public/images/sealing-hero.jpg'
 import sealingImage from '../../public/images/sealing-image-1.jpg'
 import sealingImageBottom from '../../public/images/sealing-image-3.jpg'
 
-const Sealing: NextPage = ({ gifBlur, blogPosts }: any) => {
+interface ISealingPageProps {
+  blogPostsAll: BlogPostsQuery
+  gifBlur: string
+}
+
+const Sealing: NextPage<ISealingPageProps> = ({ gifBlur, blogPostsAll }) => {
   const { t } = useTranslation()
 
   const sealingPros = [
@@ -50,25 +62,25 @@ const Sealing: NextPage = ({ gifBlur, blogPosts }: any) => {
         title={t('sealing:sealingDescription')}
         titleIcon="/icons/sealer.png"
       />
-      <section className="px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
-        <div className="flex justify-between gap-32 relative about-md:flex-wrap about-md:gap-14">
+      <section className="mx-auto mb-20 h-fit max-w-screen-2xl px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+        <div className="relative flex justify-between gap-32 about-md:flex-wrap about-md:gap-14">
           <div className="w-[75%] about-md:w-full">
             <section className="mb-10">
               <div className="text-justify">
-                <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-3">
+                <h3 className="mb-3 text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                   {t('sealing:whichSurfaces')}
                 </h3>
-                <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-2">
+                <p className="mb-2 text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('sealing:whichSurfacesDescription')}
                 </p>
-                <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                <p className="text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('sealing:whichSurfacesDescriptionBottom')}
                 </p>
               </div>
             </section>
             <section className="mb-10">
               <div className="text-justify">
-                <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-6">
+                <h3 className="mb-6 text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                   {t('sealing:sealingProsDescription')}
                 </h3>
                 <div className="flex flex-col gap-5 text-left">
@@ -77,9 +89,9 @@ const Sealing: NextPage = ({ gifBlur, blogPosts }: any) => {
                       className="flex items-center gap-6 text-left"
                       key={index}
                     >
-                      <div className="w-6 h-6">
+                      <div className="h-6 w-6">
                         <svg
-                          className="w-6 h-6"
+                          className="h-6 w-6"
                           fill="none"
                           stroke="currentColor"
                           strokeWidth={1.5}
@@ -93,7 +105,7 @@ const Sealing: NextPage = ({ gifBlur, blogPosts }: any) => {
                           />
                         </svg>
                       </div>
-                      <h5 className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                      <h5 className="text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                         {item}
                       </h5>
                     </div>
@@ -102,7 +114,7 @@ const Sealing: NextPage = ({ gifBlur, blogPosts }: any) => {
               </div>
             </section>
             <section className="mb-10">
-              <div className="relative h-[50vh] knowledge-md:h-[30vh] w-full">
+              <div className="relative h-[50vh] w-full knowledge-md:h-[30vh]">
                 <Image
                   alt=""
                   layout="fill"
@@ -113,8 +125,8 @@ const Sealing: NextPage = ({ gifBlur, blogPosts }: any) => {
               </div>
             </section>
             <section className="mb-10">
-              <div className="text-justify mb-6">
-                <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-6">
+              <div className="mb-6 text-justify">
+                <h3 className="mb-6 text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                   {t('sealing:productSelect')}
                 </h3>
                 <div className="flex flex-col gap-5">
@@ -123,9 +135,9 @@ const Sealing: NextPage = ({ gifBlur, blogPosts }: any) => {
                       className="flex items-center gap-6"
                       key={index}
                     >
-                      <div className="w-6 h-6">
+                      <div className="h-6 w-6">
                         <svg
-                          className="w-6 h-6"
+                          className="h-6 w-6"
                           fill="none"
                           stroke="currentColor"
                           strokeWidth={1.5}
@@ -139,24 +151,24 @@ const Sealing: NextPage = ({ gifBlur, blogPosts }: any) => {
                           />
                         </svg>
                       </div>
-                      <h5 className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                      <h5 className="text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                         {item}
                       </h5>
                     </div>
                   ))}
                 </div>
               </div>
-              <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-2">
+              <p className="mb-2 inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                 {t('sealing:sealingRecommendations')}
               </p>
               <Link href="/contact">
-                <a className="font-semibold text-left text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75">
+                <a className="text-left text-base font-semibold text-amber400 duration-300 hover:opacity-75 about-md:text-sm">
                   {t('sealing:here')}
                 </a>
               </Link>
             </section>
             <section className="mb-10">
-              <div className="relative h-[50vh] knowledge-md:h-[30vh] w-full">
+              <div className="relative h-[50vh] w-full knowledge-md:h-[30vh]">
                 <Image
                   alt=""
                   blurDataURL={gifBlur}
@@ -169,24 +181,24 @@ const Sealing: NextPage = ({ gifBlur, blogPosts }: any) => {
               </div>
             </section>
             <section className="mb-6 text-justify">
-              <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-4">
+              <h3 className="mb-4 text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                 {t('sealing:sealingBetter')}
               </h3>
-              <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-4">
+              <p className="mb-4 text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                 {t('sealing:sealingBetterDescription')}
               </p>
-              <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+              <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                 {t('sealing:sealingBetterDescriptionMid')}
               </p>
-              <span className="font-semibold text-base about-md:text-sm text-amber400">
+              <span className="text-base font-semibold text-amber400 about-md:text-sm">
                 {t('sealing:sealingBetterDescriptionHighlight')}
               </span>
-              <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+              <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                 {t('sealing:sealingBetterDescriptionBot')}
               </p>
             </section>
             <section className="mb-10 text-justify">
-              <div className="relative h-[50vh] knowledge-md:h-[30vh] w-full">
+              <div className="relative h-[50vh] w-full knowledge-md:h-[30vh]">
                 <Image
                   alt=""
                   layout="fill"
@@ -197,51 +209,51 @@ const Sealing: NextPage = ({ gifBlur, blogPosts }: any) => {
               </div>
             </section>
             <section className="mb-6 text-justify">
-              <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-4">
+              <h3 className="mb-4 text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                 {t('sealing:whatToRecommend')}
               </h3>
               <div className="mb-3">
-                <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('sealing:whatToRecommendDescriptionTop')}
                 </p>
-                <span className="font-semibold text-base about-md:text-sm text-amber400">
+                <span className="text-base font-semibold text-amber400 about-md:text-sm">
                   {t('sealing:new')}
                 </span>
-                <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('sealing:whatToRecommendDescriptionMid')}
                 </p>
-                <span className="font-semibold text-base about-md:text-sm text-amber400">
+                <span className="text-base font-semibold text-amber400 about-md:text-sm">
                   {t('sealing:old')}
                 </span>
-                <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('sealing:whatToRecommendDescriptionMidBottom')}
                 </p>
-                <span className="font-semibold text-base about-md:text-sm text-amber400">
+                <span className="text-base font-semibold text-amber400 about-md:text-sm">
                   {t('sealing:inside')}
                 </span>
-                <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('sealing:whatToRecommendDescriptionBottom')}
                 </p>
-                <span className="font-semibold text-base about-md:text-sm text-amber400">
+                <span className="text-base font-semibold text-amber400 about-md:text-sm">
                   {t('sealing:outside')}
                 </span>
-                <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('sealing:whatToRecommendDescriptionBottomBottom')}
                 </p>
               </div>
-              <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-3">
+              <p className="mb-3 text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                 {t('sealing:recommendationsInfo')}
               </p>
-              <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+              <p className="text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                 {t('sealing:recommendationsInfoUs')}
               </p>
             </section>
             <section>
               <Link href="/contact">
                 <a>
-                  <div className="flex uppercase w-fit justify-center items-center gap-3 bg-amber600 px-4 py-2.5 rounded-lg text-neutral50 duration-300 hover:opacity-80 hover:translate-y-1">
+                  <div className="flex w-fit items-center justify-center gap-3 rounded-lg bg-amber600 px-4 py-2.5 uppercase text-neutral50 duration-300 hover:translate-y-1 hover:opacity-80">
                     <svg
-                      className="w-5 h-5 about-md:w-4 about-md:h-4"
+                      className="h-5 w-5 about-md:h-4 about-md:w-4"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth={1.5}
@@ -254,7 +266,7 @@ const Sealing: NextPage = ({ gifBlur, blogPosts }: any) => {
                         strokeLinejoin="round"
                       />
                     </svg>
-                    <span className="text-base about-md:text-sm font-semibold">
+                    <span className="text-base font-semibold about-md:text-sm">
                       {t('sealing:order')}
                     </span>
                   </div>
@@ -262,34 +274,7 @@ const Sealing: NextPage = ({ gifBlur, blogPosts }: any) => {
               </Link>
             </section>
           </div>
-
-          <div className="sticky h-fit w-1/4 about-md:static about-md:w-full top-[15%] flex flex-col gap-20 about-md:gap-8">
-            <span className="hidden text-xl font-semibold about-md:block">
-              {t('sealing:readMore')}
-            </span>
-            {blogPosts.data?.slice(-2).map((post: any) => (
-              <Link
-                href={`/blog/${post.attributes.slug}`}
-                key={post.id}
-              >
-                <a>
-                  <div className="flex flex-col gap-4 duration-300 hover:opacity-70 hover:translate-y-[2px]">
-                    <div className="relative h-[153px] about-md:h-[20vh] w-full">
-                      <Image
-                        alt=""
-                        layout="fill"
-                        objectFit="cover"
-                        src={`${post.attributes.postImage.data.attributes.formats.small.url}`}
-                      />
-                    </div>
-                    <h5 className="text-sm font-semibold about-md:font-normal text-neutral800 dark:text-neutral50">
-                      {post.attributes.title}
-                    </h5>
-                  </div>
-                </a>
-              </Link>
-            ))}
-          </div>
+          <BlogPostsSticky blogPosts={blogPostsAll} />
         </div>
       </section>
       <Recommendations />
@@ -299,25 +284,25 @@ const Sealing: NextPage = ({ gifBlur, blogPosts }: any) => {
 }
 
 export async function getStaticProps({ locale }: { locale: string }) {
-  const {
-    base64,
-  } = await getPlaiceholder('/images/sealing-image-2.gif')
+  const { base64 } = await getPlaiceholder('/images/sealing-image-2.gif')
   const localization = locale === 'pl' ? 'pl-PL' : 'en'
-  const res = await fetchAllBlogPosts(localization)
+
+  const blogPostsAll = await getAllBlogPosts(localization)
 
   return {
     props: {
       ...(await serverSideTranslations(locale, [
         'navbar',
         'footer',
+        'common',
         'recommendations',
         'sealing',
         'contact',
         'seo',
-        'cookies'
+        'cookies',
       ])),
       gifBlur: base64,
-      blogPosts: await res.json()
+      blogPostsAll,
     },
   }
 }

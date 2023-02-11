@@ -1,0 +1,18 @@
+query BlogPosts($locale: I18NLocaleCode!) {
+  blogs(locale: $locale) {
+    data {
+      id
+      attributes {
+        title
+        slug
+        postImage {
+          data {
+            attributes {
+              formats
+            }
+          }
+        }
+      }
+    }
+  }
+}

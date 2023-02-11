@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   AccordionMeasurement,
+  BlogPostsSticky,
   CardSwitcher,
   ContactShort,
   HeroPages,
@@ -14,12 +14,18 @@ import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getPlaiceholder } from 'plaiceholder'
-import { fetchAllBlogPosts } from 'src/utils/api/service'
+import { BlogPostsQuery } from 'src/graphql/generated/graphql'
+import { getAllBlogPosts } from 'src/utils/requests/requests'
 
 import measurementHero from '../../public/images/measurement-hero-1.png'
 import measurementHero2 from '../../public/images/measurement-hero-2.png'
 
-const Friction: NextPage = ({ gifBlur, blogPosts }: any) => {
+interface IFrictionPageProps {
+  blogPostsAll: BlogPostsQuery
+  gifBlur: string
+}
+
+const Friction: NextPage<IFrictionPageProps> = ({ gifBlur, blogPostsAll }) => {
   const { t } = useTranslation()
 
   const howToItems = [
@@ -42,49 +48,49 @@ const Friction: NextPage = ({ gifBlur, blogPosts }: any) => {
         title={t('measurement:measurementDescription')}
         titleIcon="/icons/pendulum.png"
       />
-      <section className="px-24 max-w-screen-2xl mx-auto mb-10 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
-        <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-4">
+      <section className="mx-auto mb-10 h-fit max-w-screen-2xl px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+        <h3 className="mb-4 text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
           {t('measurement:measurementHow')}
         </h3>
         <div className="mb-6 w-3/4 text-justify mission-sm:w-full">
-          <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-6">
+          <p className="mb-6 inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
             {t('measurement:smartfloor')}
           </p>
           <a
-            className="font-semibold text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75"
+            className="text-base font-semibold text-amber400 duration-300 hover:opacity-75 about-md:text-sm"
             href="https://antyposlizg.pl/"
             rel="noreferrer"
             target="_blank"
           >
             {t('measurement:smartfloorCompany')}
           </a>
-          <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-6">
+          <p className="mb-6 inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
             {t('measurement:smartfloorDescription')}
           </p>
         </div>
         <CardSwitcher />
       </section>
-      <section className="px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
-        <div className="flex justify-between gap-32 relative about-md:flex-wrap about-md:gap-14">
+      <section className="mx-auto mb-20 h-fit max-w-screen-2xl px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+        <div className="relative flex justify-between gap-32 about-md:flex-wrap about-md:gap-14">
           <div className="w-[75%] about-md:w-full">
             <section className="mb-10">
               <div className="text-justify">
-                <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-3">
+                <h3 className="mb-3 text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                   {t('measurement:measurementWhy')}
                 </h3>
                 <div>
-                  <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-2">
+                  <p className="mb-2 text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                     {t('measurement:measurementWhyDescription')}
                   </p>
-                  <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-6">
+                  <p className="mb-6 text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                     {t('measurement:measurementWhyDescriptionBottom')}
                   </p>
                   <Link href="/knowledge">
                     <a>
-                      <div className="flex items-center gap-6 duration-300 hover:opacity-75 hover:translate-x-2">
-                        <div className="p-3 about-md:p-2 bg-amber600 rounded-full text-neutral50">
+                      <div className="flex items-center gap-6 duration-300 hover:translate-x-2 hover:opacity-75">
+                        <div className="rounded-full bg-amber600 p-3 text-neutral50 about-md:p-2">
                           <svg
-                            className="w-8 h-8 about-md:w-6 about-md:h-6"
+                            className="h-8 w-8 about-md:h-6 about-md:w-6"
                             fill="none"
                             stroke="currentColor"
                             strokeWidth={3}
@@ -99,10 +105,10 @@ const Friction: NextPage = ({ gifBlur, blogPosts }: any) => {
                           </svg>
                         </div>
                         <div className="flex flex-col gap-2">
-                          <span className="text-base font-semibold about-md:text-sm text-neutral800 dark:text-neutral50">
+                          <span className="text-base font-semibold text-neutral800 dark:text-neutral50 about-md:text-sm">
                             {t('measurement:responsibility')}
                           </span>
-                          <span className="text-base about-md:text-sm font-normal text-amber600">
+                          <span className="text-base font-normal text-amber600 about-md:text-sm">
                             {t('measurement:readMoreButton')}
                           </span>
                         </div>
@@ -113,22 +119,22 @@ const Friction: NextPage = ({ gifBlur, blogPosts }: any) => {
               </div>
             </section>
             <section className="mb-10 text-justify">
-              <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-3">
+              <h3 className="mb-3 text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                 {t('measurement:measurementWho')}
               </h3>
-              <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+              <p className="text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                 {t('measurement:measurementWhoDescription')}
               </p>
             </section>
             <section className="mb-10 text-justify">
-              <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-3">
+              <h3 className="mb-3 text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                 {t('measurement:measurementWhat')}
               </h3>
-              <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-6">
+              <p className="mb-6 text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                 {t('measurement:measurementPtv')}
               </p>
-              <table className="w-full text-sm text-center text-gray-500 dark:text-gray-400 mb-6">
-                <thead className="text-xs font-semibold text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+              <table className="mb-6 w-full text-center text-sm text-gray-500 dark:text-gray-400">
+                <thead className="bg-gray-50 text-xs font-semibold uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
                   <tr>
                     <th
                       className="py-3 px-6"
@@ -145,9 +151,9 @@ const Friction: NextPage = ({ gifBlur, blogPosts }: any) => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                  <tr className="border-b bg-white dark:border-gray-700 dark:bg-gray-800">
                     <th
-                      className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                      className="whitespace-nowrap py-4 px-6 font-medium text-gray-900 dark:text-white"
                       scope="row"
                     >
                       0 – 24
@@ -156,9 +162,9 @@ const Friction: NextPage = ({ gifBlur, blogPosts }: any) => {
                       {t('measurement:ptvLevel.high')}
                     </td>
                   </tr>
-                  <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                  <tr className="border-b bg-white dark:border-gray-700 dark:bg-gray-800">
                     <th
-                      className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                      className="whitespace-nowrap py-4 px-6 font-medium text-gray-900 dark:text-white"
                       scope="row"
                     >
                       25 - 35
@@ -169,7 +175,7 @@ const Friction: NextPage = ({ gifBlur, blogPosts }: any) => {
                   </tr>
                   <tr className="bg-white dark:bg-gray-800">
                     <th
-                      className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                      className="whitespace-nowrap py-4 px-6 font-medium text-gray-900 dark:text-white"
                       scope="row"
                     >
                       ≥ 36
@@ -180,17 +186,17 @@ const Friction: NextPage = ({ gifBlur, blogPosts }: any) => {
                   </tr>
                 </tbody>
               </table>
-              <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 inline">
+              <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                 {t('measurement:moreDescription')}
               </p>
               <Link href="/knowledge">
-                <a className="font-semibold text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75">
+                <a className="text-base font-semibold text-amber400 duration-300 hover:opacity-75 about-md:text-sm">
                   {t('measurement:here')}
                 </a>
               </Link>
             </section>
             <section className="mb-10 text-justify">
-              <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-6">
+              <h3 className="mb-6 text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                 {t('measurement:measurementHowTo')}
               </h3>
               <div className="flex flex-col gap-6">
@@ -199,9 +205,9 @@ const Friction: NextPage = ({ gifBlur, blogPosts }: any) => {
                     className="flex items-center gap-6"
                     key={index}
                   >
-                    <div className="w-8 h-8">
+                    <div className="h-8 w-8">
                       <svg
-                        className="w-8 h-8"
+                        className="h-8 w-8"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth={1.5}
@@ -215,7 +221,7 @@ const Friction: NextPage = ({ gifBlur, blogPosts }: any) => {
                         />
                       </svg>
                     </div>
-                    <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                    <p className="text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                       {item}
                     </p>
                   </div>
@@ -223,7 +229,7 @@ const Friction: NextPage = ({ gifBlur, blogPosts }: any) => {
               </div>
             </section>
             <section className="mb-10">
-              <div className="relative h-[50vh] knowledge-md:h-[30vh] w-full">
+              <div className="relative h-[50vh] w-full knowledge-md:h-[30vh]">
                 <Image
                   alt=""
                   blurDataURL={gifBlur}
@@ -236,59 +242,59 @@ const Friction: NextPage = ({ gifBlur, blogPosts }: any) => {
               </div>
             </section>
             <section className="mb-10 text-justify">
-              <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-6">
+              <h3 className="mb-6 text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                 {t('measurement:measurementWhatToRemember')}
               </h3>
               <div className="mb-6">
-                <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('measurement:measurementWhatToRememberHow')}
                 </p>
-                <span className="font-semibold text-base about-md:text-sm text-amber400">
+                <span className="text-base font-semibold text-amber400 about-md:text-sm">
                   {t('measurement:more')}
                 </span>
               </div>
               <AccordionMeasurement />
             </section>
             <section className="mb-10 text-justify">
-              <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-3">
+              <p className="mb-3 text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                 {t('measurement:measurementWorthTo')}
               </p>
-              <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+              <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                 {t('measurement:measurementWorthToDescriptionTop')}
               </p>
-              <span className="font-semibold text-base about-md:text-sm text-amber400">
+              <span className="text-base font-semibold text-amber400 about-md:text-sm">
                 {t('measurement:measurementDevices')}
               </span>
-              <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+              <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                 {t('measurement:measurementWorthToDescriptionMid')}
               </p>
-              <span className="font-semibold text-base about-md:text-sm text-amber400">
+              <span className="text-base font-semibold text-amber400 about-md:text-sm">
                 {t('measurement:realiableMeasurement')}
               </span>
-              <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+              <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                 {t('measurement:measurementWorthToDescriptionBottom')}
               </p>
             </section>
             <section className="mb-10">
-              <h3 className="font-semibold inline text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-6">
+              <h3 className="mb-6 inline text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                 {t('measurement:measurementContactUsDescription')}
               </h3>
               <Link href="/contact">
-                <a className="font-semibold text-left text-xl about-md:text-base text-amber400 duration-300 hover:opacity-75">
+                <a className="text-left text-xl font-semibold text-amber400 duration-300 hover:opacity-75 about-md:text-base">
                   {t('measurement:measurementContactUs')}
                 </a>
               </Link>
             </section>
             <section>
-              <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-6">
+              <h3 className="mb-6 text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                 {t('measurement:measurementWorthRemember')}
               </h3>
               <Link href="/knowledge">
                 <a>
-                  <div className="flex items-center gap-6 duration-300 hover:opacity-75 hover:translate-x-2">
-                    <div className="p-3 about-md:p-2 bg-amber600 rounded-full text-neutral50">
+                  <div className="flex items-center gap-6 duration-300 hover:translate-x-2 hover:opacity-75">
+                    <div className="rounded-full bg-amber600 p-3 text-neutral50 about-md:p-2">
                       <svg
-                        className="w-8 h-8 about-md:w-6 about-md:h-6"
+                        className="h-8 w-8 about-md:h-6 about-md:w-6"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth={3}
@@ -303,10 +309,10 @@ const Friction: NextPage = ({ gifBlur, blogPosts }: any) => {
                       </svg>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <span className="text-base font-semibold about-md:text-sm text-neutral800 dark:text-neutral50">
+                      <span className="text-base font-semibold text-neutral800 dark:text-neutral50 about-md:text-sm">
                         {t('measurement:regulation')}
                       </span>
-                      <span className="text-base about-md:text-sm font-normal text-amber600">
+                      <span className="text-base font-normal text-amber600 about-md:text-sm">
                         {t('measurement:readMoreButton')}
                       </span>
                     </div>
@@ -315,34 +321,7 @@ const Friction: NextPage = ({ gifBlur, blogPosts }: any) => {
               </Link>
             </section>
           </div>
-
-          <div className="sticky h-fit w-1/4 about-md:static about-md:w-full top-[15%] flex flex-col gap-20 about-md:gap-8">
-            <span className="hidden text-xl font-semibold about-md:block">
-              {t('measurement:readMore')}
-            </span>
-            {blogPosts.data?.slice(-2).map((post: any) => (
-              <Link
-                href={`/blog/${post.attributes.slug}`}
-                key={post.id}
-              >
-                <a>
-                  <div className="flex flex-col gap-4 duration-300 hover:opacity-70 hover:translate-y-[2px]">
-                    <div className="relative h-[153px] about-md:h-[20vh] w-full">
-                      <Image
-                        alt=""
-                        layout="fill"
-                        objectFit="cover"
-                        src={`${post.attributes.postImage.data.attributes.formats.small.url}`}
-                      />
-                    </div>
-                    <h5 className="text-sm font-semibold about-md:font-normal text-neutral800 dark:text-neutral50">
-                      {post.attributes.title}
-                    </h5>
-                  </div>
-                </a>
-              </Link>
-            ))}
-          </div>
+          <BlogPostsSticky blogPosts={blogPostsAll} />
         </div>
       </section>
       <Recommendations />
@@ -352,26 +331,26 @@ const Friction: NextPage = ({ gifBlur, blogPosts }: any) => {
 }
 
 export async function getStaticProps({ locale }: { locale: string }) {
-  const {
-    base64,
-  } = await getPlaiceholder('/images/pendulum-knowledge.gif')
+  const { base64 } = await getPlaiceholder('/images/pendulum-knowledge.gif')
   const localization = locale === 'pl' ? 'pl-PL' : 'en'
-  const res = await fetchAllBlogPosts(localization)
+
+  const blogPostsAll = await getAllBlogPosts(localization)
 
   return {
     props: {
       ...(await serverSideTranslations(locale, [
         'navbar',
         'footer',
+        'common',
         'measurement',
         'recommendations',
         'card-switcher',
         'contact',
         'seo',
-        'cookies'
+        'cookies',
       ])),
       gifBlur: base64,
-      blogPosts: await res.json()
+      blogPostsAll,
     },
   }
 }

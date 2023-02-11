@@ -1,16 +1,27 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { ContactShort, HeroPages, PageLayout, Recommendations, Seo } from '@components'
+import {
+  BlogPostsSticky,
+  ContactShort,
+  HeroPages,
+  PageLayout,
+  Recommendations,
+  Seo,
+} from '@components'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { fetchAllBlogPosts } from 'src/utils/api/service'
+import { BlogPostsQuery } from 'src/graphql/generated/graphql'
+import { getAllBlogPosts } from 'src/utils/requests/requests'
 
 import antiSlipHero from '../../public/images/antislip-hero.jpg'
 import antiSlipHero2 from '../../public/images/antislip-hero-2.jpg'
 
-const Antislip: NextPage = ({ blogPosts }: any) => {
+interface IAntislipPageProps {
+  blogPostsAll: BlogPostsQuery
+}
+
+const Antislip: NextPage<IAntislipPageProps> = ({ blogPostsAll }) => {
   const { t } = useTranslation()
 
   const attributesItems = [
@@ -56,39 +67,39 @@ const Antislip: NextPage = ({ blogPosts }: any) => {
         title={t('antislip:antislipDescription')}
         titleIcon="/icons/slip.png"
       />
-      <section className="px-24 max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
-        <div className="flex justify-between gap-32 relative about-md:flex-wrap about-md:gap-14">
+      <section className="mx-auto mb-20 h-fit max-w-screen-2xl px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+        <div className="relative flex justify-between gap-32 about-md:flex-wrap about-md:gap-14">
           <div className="w-[75%] about-md:w-full">
-            <div className="flex flex-col gap-8 mb-14">
+            <div className="mb-14 flex flex-col gap-8">
               {attributesItems.map((item, index) => (
                 <div
                   className="flex flex-col gap-3 text-justify"
                   key={index}
                 >
-                  <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50">
+                  <h3 className="text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                     {item.title}
                   </h3>
-                  <p className="font-normal text-base about-md:text-sm text-neutral700 dark:text-neutral200">
+                  <p className="text-base font-normal text-neutral700 dark:text-neutral200 about-md:text-sm">
                     {item.description}
                   </p>
                 </div>
               ))}
             </div>
             <section className="mb-14">
-              <div className="bg-neutral50 dark:bg-neutral700 p-8 flex flex-col gap-4">
-                <h4 className="text-3xl about-md:text-xl font-semibold text-neutral800 dark:text-neutral50">
+              <div className="flex flex-col gap-4 bg-neutral50 p-8 dark:bg-neutral700">
+                <h4 className="text-3xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-xl">
                   {t('antislip:zapTechnology')}
                 </h4>
                 <h5 className="text-base font-normal text-neutral700 dark:text-neutral200">
                   {t('antislip:zapDetails')}
                 </h5>
-                <h5 className="text-base about-md:text-sm font-normal text-neutral700 dark:text-neutral200">
+                <h5 className="text-base font-normal text-neutral700 dark:text-neutral200 about-md:text-sm">
                   {t('antislip:zapCheck')}
                 </h5>
               </div>
             </section>
             <section className="mb-10">
-              <h3 className="font-semibold text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-6">
+              <h3 className="mb-6 text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                 {t('antislip:security')}
               </h3>
               <div className="flex flex-col gap-4">
@@ -97,9 +108,9 @@ const Antislip: NextPage = ({ blogPosts }: any) => {
                     className="flex items-center gap-4"
                     key={index}
                   >
-                    <div className="w-6 h-6">
+                    <div className="h-6 w-6">
                       <svg
-                        className="w-6 h-6"
+                        className="h-6 w-6"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth={1.5}
@@ -113,14 +124,14 @@ const Antislip: NextPage = ({ blogPosts }: any) => {
                         />
                       </svg>
                     </div>
-                    <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                    <p className="text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                       {item}
                     </p>
                   </div>
                 ))}
               </div>
             </section>
-            <div className="relative h-[50vh] about-md:h-[30vh] w-full mb-10">
+            <div className="relative mb-10 h-[50vh] w-full about-md:h-[30vh]">
               <Image
                 alt=""
                 layout="fill"
@@ -131,25 +142,25 @@ const Antislip: NextPage = ({ blogPosts }: any) => {
             </div>
             <section className="mb-10 text-justify">
               <div className="mb-10">
-                <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-3">
+                <h3 className="mb-3 text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                   {t('antislip:measurement')}
                 </h3>
-                <p className="text-base font-normal about-md:text-sm text-neutral800 dark:text-neutral50">
+                <p className="text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('antislip:measurementDescription')}
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold text-left about-md:text-base text-xl text-neutral800 dark:text-neutral50 mb-3">
+                <h3 className="mb-3 text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                   {t('antislip:measurementHow')}
                 </h3>
-                <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-3">
+                <p className="mb-3 text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('antislip:measurementHowDescription')}
                 </p>
-                <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 inline">
+                <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('antislip:measurementLink')}
                 </p>
                 <Link href="/friction-measurement">
-                  <a className="font-semibold text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75">
+                  <a className="text-base font-semibold text-amber400 duration-300 hover:opacity-75 about-md:text-sm">
                     {t('antislip:here')}
                   </a>
                 </Link>
@@ -157,54 +168,27 @@ const Antislip: NextPage = ({ blogPosts }: any) => {
             </section>
             <section>
               <div className="text-justify">
-                <h3 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50 mb-3">
+                <h3 className="mb-3 text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                   {t('antislip:antislipWhen')}
                 </h3>
-                <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-2">
+                <p className="mb-2 text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('antislip:antislipWhenDescription')}
                 </p>
-                <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-2">
+                <p className="mb-2 text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('antislip:antislipWhenDescriptionBottom')}
                 </p>
-                <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 inline">
+                <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('antislip:antislipWhenLink')}
                 </p>
                 <Link href="/knowledge">
-                  <a className="font-semibold text-base about-md:text-sm text-amber400 duration-300 hover:opacity-75">
+                  <a className="text-base font-semibold text-amber400 duration-300 hover:opacity-75 about-md:text-sm">
                     {t('antislip:here')}
                   </a>
                 </Link>
               </div>
             </section>
           </div>
-
-          <div className="sticky h-fit w-1/4 about-md:static about-md:w-full top-[15%] flex flex-col gap-20 about-md:gap-8">
-            <span className="hidden text-xl about-md:text-base font-semibold about-md:block">
-              {t('antislip:readMore')}
-            </span>
-            {blogPosts.data?.slice(-2).map((post: any) => (
-              <Link
-                href={`/blog/${post.attributes.slug}`}
-                key={post.id}
-              >
-                <a>
-                  <div className="flex flex-col gap-4 duration-300 hover:opacity-70 hover:translate-y-[2px]">
-                    <div className="relative h-[153px] about-md:h-[20vh] w-full">
-                      <Image
-                        alt=""
-                        layout="fill"
-                        objectFit="cover"
-                        src={`${post.attributes.postImage.data.attributes.formats.small.url}`}
-                      />
-                    </div>
-                    <h5 className="text-sm font-semibold about-md:font-normal text-neutral800 dark:text-neutral50">
-                      {post.attributes.title}
-                    </h5>
-                  </div>
-                </a>
-              </Link>
-            ))}
-          </div>
+          <BlogPostsSticky blogPosts={blogPostsAll} />
         </div>
       </section>
       <Recommendations />
@@ -215,20 +199,22 @@ const Antislip: NextPage = ({ blogPosts }: any) => {
 
 export async function getStaticProps({ locale }: { locale: string }) {
   const localization = locale === 'pl' ? 'pl-PL' : 'en'
-  const res = await fetchAllBlogPosts(localization)
+
+  const blogPostsAll = await getAllBlogPosts(localization)
 
   return {
     props: {
       ...(await serverSideTranslations(locale, [
         'navbar',
         'footer',
+        'common',
         'antislip',
         'recommendations',
         'contact',
         'seo',
-        'cookies'
+        'cookies',
       ])),
-      blogPosts: await res.json()
+      blogPostsAll,
     },
   }
 }
