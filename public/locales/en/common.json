@@ -1,5 +1,6 @@
 {
   "testNamespace": "description in english",
   "changeTheme": "change theme",
-  "trustedBy": "They trusted the ZAP method"
+  "trustedBy": "They trusted the ZAP method",
+  "readMore": "Read more on our blog."
 }

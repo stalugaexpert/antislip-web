@@ -14,10 +14,24 @@ import {
 import type { NextPage } from 'next'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { fetchAllBlogPosts, fetchAllRealizations } from 'src/utils/api/service'
+import {
+  BlogPostsQuery,
+  OurRealizationsQuery,
+} from 'src/graphql/generated/graphql'
+import {
+  getAllBlogPosts,
+  getAllRealizations,
+} from 'src/utils/requests/requests'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Home: NextPage = ({ blogPostsAll, ourRealizationsAll }: any) => {
+interface IHomePageProps {
+  blogPostsAll: BlogPostsQuery
+  ourRealizationsAll: OurRealizationsQuery
+}
+
+const Home: NextPage<IHomePageProps> = ({
+  blogPostsAll,
+  ourRealizationsAll,
+}) => {
   const { t } = useTranslation()
 
   return (
@@ -30,11 +44,11 @@ const Home: NextPage = ({ blogPostsAll, ourRealizationsAll }: any) => {
         <HeroSection />
         <OurServices />
         <AboutUs />
-        {ourRealizationsAll.data && (
+        {ourRealizationsAll.ourRealizations?.data && (
           <OurRealizationsHero ourRealizationsAll={ourRealizationsAll} />
         )}
         <OurMission />
-        {blogPostsAll.data && (
+        {blogPostsAll.blogs?.data && (
           <BlogSection
             blogPostsAll={blogPostsAll}
             subtitle={t('blog:checkOurBlog')}
@@ -51,8 +65,10 @@ const Home: NextPage = ({ blogPostsAll, ourRealizationsAll }: any) => {
 
 export async function getStaticProps({ locale }: { locale: string }) {
   const localization = locale === 'pl' ? 'pl-PL' : 'en'
-  const resBlogPostsAll = await fetchAllBlogPosts(localization)
-  const resOurRealizationsAll = await fetchAllRealizations(localization)
+
+  const blogPostsAll = await getAllBlogPosts(localization)
+
+  const ourRealizationsAll = await getAllRealizations(localization)
 
   return {
     props: {
@@ -71,8 +87,8 @@ export async function getStaticProps({ locale }: { locale: string }) {
         'seo',
         'cookies',
       ])),
-      blogPostsAll: await resBlogPostsAll.json(),
-      ourRealizationsAll: await resOurRealizationsAll.json(),
+      blogPostsAll,
+      ourRealizationsAll,
     },
   }
 }

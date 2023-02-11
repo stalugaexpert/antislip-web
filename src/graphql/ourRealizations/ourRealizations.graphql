@@ -1,0 +1,28 @@
+query OurRealizations($locale: I18NLocaleCode!) {
+  ourRealizations(locale: $locale) {
+    data {
+      id
+      attributes {
+        objectName
+        job
+        material
+        space
+        area
+        mainImage {
+          data {
+            attributes {
+              formats
+            }
+          }
+        }
+        photos {
+          data {
+            attributes {
+              formats
+            }
+          }
+        }
+      }
+    }
+  }
+}

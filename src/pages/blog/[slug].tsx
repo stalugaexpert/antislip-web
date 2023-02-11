@@ -1,5 +1,3 @@
-/* eslint-disable react/no-children-prop */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import 'moment/locale/pl'
 
 import { BlogSection, PageLayout } from '@components'
@@ -11,31 +9,36 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { STRAPI_API_KEY, STRAPI_URL } from 'src/config/config'
-import { fetchAllBlogPosts, fetchSingleBlogPost } from 'src/utils/api/service'
+import { BlogPostQuery, BlogPostsQuery } from 'src/graphql/generated/graphql'
 import { getCorrectImageLargest } from 'src/utils/helpers/getCorrectImage'
+import { getAllBlogPosts, getSingleBlogPost } from 'src/utils/requests/requests'
 
 interface IStaticBlogPostProps {
-  locale: string,
+  locale: string
   params: {
-    slug: string,
+    slug: string
   }
 }
 
-const BlogPost: NextPage = ({ blogPost, blogPostsAll }: any) => {
+interface IBlogPostPageProps {
+  blogPost: BlogPostQuery
+  blogPostsAll: BlogPostsQuery
+}
+
+const BlogPost: NextPage<IBlogPostPageProps> = ({ blogPost, blogPostsAll }) => {
   const { t } = useTranslation()
   moment().localeData()
 
   return (
     <PageLayout>
       <Head>
-        <title>{blogPost.data[0].attributes.SEO.metaTitle}</title>
+        <title>{blogPost.blogs?.data[0].attributes?.SEO.metaTitle}</title>
         <meta
-          content={blogPost.data[0].attributes.SEO.metaDescription}
+          content={blogPost.blogs?.data[0].attributes?.SEO.metaDescription}
           name="description"
         />
         <meta
-          content={blogPost.data[0].attributes.SEO.metaTitle}
+          content={blogPost.blogs?.data[0].attributes?.SEO.metaTitle}
           key="title"
           property="og:title"
         />
@@ -44,7 +47,10 @@ const BlogPost: NextPage = ({ blogPost, blogPostsAll }: any) => {
           property="og:type"
         />
         <meta
-          content={getCorrectImageLargest(blogPost.data[0].attributes.postImage.data.attributes.formats)}
+          content={getCorrectImageLargest(
+            blogPost.blogs?.data[0].attributes?.postImage.data?.attributes
+              ?.formats
+          )}
           property="og:image"
         />
         <meta
@@ -52,17 +58,17 @@ const BlogPost: NextPage = ({ blogPost, blogPostsAll }: any) => {
           property="og:site_name"
         />
         <meta
-          content={blogPost.data[0].attributes.author}
+          content={blogPost.blogs?.data[0].attributes?.author}
           property="article:author"
         />
       </Head>
-      <section className="px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+      <section className="mx-auto mb-12 max-w-screen-2xl px-24 pt-32 navbar-md:pt-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
         <Link href="/blog">
           <a>
-            <div className="flex items-center gap-4 mb-8 about-xsm:mb-6 duration-300 hover:opacity-70 hover:-translate-x-[2px]">
-              <div className="p-2 bg-neutral100 dark:bg-neutral900">
+            <div className="mb-8 flex items-center gap-4 duration-300 hover:-translate-x-[2px] hover:opacity-70 about-xsm:mb-6">
+              <div className="bg-neutral100 p-2 dark:bg-neutral900">
                 <svg
-                  className="w-6 h-6 about-xsm:w-4 about-xsm:h-4"
+                  className="h-6 w-6 about-xsm:h-4 about-xsm:w-4"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth={1.5}
@@ -76,47 +82,66 @@ const BlogPost: NextPage = ({ blogPost, blogPostsAll }: any) => {
                   />
                 </svg>
               </div>
-              <span className="text-sm text-neutral800 dark:text-neutral300 about-xsm:hidden">{t('blog:previousPage')}</span>
-              <span className="hidden text-sm text-neutral800 dark:text-neutral300 about-xsm:block">{t('blog:back')}</span>
+              <span className="text-sm text-neutral800 dark:text-neutral300 about-xsm:hidden">
+                {t('blog:previousPage')}
+              </span>
+              <span className="hidden text-sm text-neutral800 dark:text-neutral300 about-xsm:block">
+                {t('blog:back')}
+              </span>
             </div>
           </a>
         </Link>
-        <div className="flex justify-between mb-8">
+        <div className="mb-8 flex justify-between">
           <div className="w-3/4 recommendations-ds:w-[85%]">
-            <h5 className="text-base uppercase about-md:text-sm font-semibold text-amber400 mb-4">
+            <h5 className="mb-4 text-base font-semibold uppercase text-amber400 about-md:text-sm">
               {t('blog:blog')}
             </h5>
-            <h1 className="text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
-              {blogPost.data[0].attributes.title}
+            <h1 className="text-4xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-3xl about-xsm:text-2xl">
+              {blogPost.blogs?.data[0].attributes?.title}
             </h1>
           </div>
         </div>
-        <div className="relative mb-4 h-[31.2rem] about-md:h-[30vh] w-full before:content-[''] before:absolute before:h-48 before:w-48 before:bg-amber400 before:z-10 before:top-0 before:left-full before:-translate-x-full before:-translate-y-2/4 before:blur-[100px] before:opacity-50 dark:before:opacity-30">
+        <div className="relative mb-4 h-[31.2rem] w-full before:absolute before:top-0 before:left-full before:z-10 before:h-48 before:w-48 before:-translate-x-full before:-translate-y-2/4 before:bg-amber400 before:opacity-50 before:blur-[100px] before:content-[''] dark:before:opacity-30 about-md:h-[30vh]">
           <Image
             alt=""
             layout="fill"
             objectFit="cover"
-            src={getCorrectImageLargest(blogPost.data[0].attributes.postImage.data.attributes.formats)}
+            src={getCorrectImageLargest(
+              blogPost.blogs?.data[0].attributes?.postImage.data?.attributes
+                ?.formats
+            )}
           />
         </div>
         <div className="flex items-center justify-between about-xsm:text-sm">
           <div>
-            <span className="inline font-normal text-neutral600 dark:text-neutral300">{t('blog:author')}</span>
-            <span className="inline italic font-normal text-neutral600 dark:text-neutral300">{blogPost.data[0].attributes.author}</span>
+            <span className="inline font-normal text-neutral600 dark:text-neutral300">
+              {t('blog:author')}
+            </span>
+            <span className="inline font-normal italic text-neutral600 dark:text-neutral300">
+              {blogPost.blogs?.data[0].attributes?.author}
+            </span>
           </div>
-          <span className="font-normal text-neutral600 dark:text-neutral300">{moment(blogPost.data[0].attributes.publishedAt).format('D MMMM YYYY')}</span>
+          <span className="font-normal text-neutral600 dark:text-neutral300">
+            {moment(blogPost.blogs?.data[0].attributes?.publishedAt).format(
+              'D MMMM YYYY'
+            )}
+          </span>
         </div>
       </section>
-      <section className="px-56 max-w-screen-2xl mx-auto mb-12 h-fit services-xs:mb-12 services-sm:px-36 about-sm:px-24 about-xsm:px-6">
+      <section className="mx-auto mb-12 h-fit max-w-screen-2xl px-56 services-sm:px-36 services-xs:mb-12 about-sm:px-24 about-xsm:px-6">
         <div
           className="ck-content"
-          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blogPost.data[0].attributes.content) }}
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(
+              blogPost.blogs?.data[0].attributes?.content as string
+            ),
+          }}
         />
       </section>
-      <section className="px-[11rem] max-w-screen-2xl mx-auto mb-20 h-fit services-xs:mb-12 recommendations-md:px-32 recommendations-ds:px-16 recommendations-sm:px-10 about-sm:px-6">
-        {blogPost.data[0].attributes.isFromSmartFloor && (
+      <section className="mx-auto mb-20 h-fit max-w-screen-2xl px-[11rem] recommendations-md:px-32 recommendations-ds:px-16 recommendations-sm:px-10 services-xs:mb-12 about-sm:px-6">
+        {blogPost.blogs?.data[0].attributes?.isFromSmartFloor && (
           <div>
-            <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-3">
+            <p className="mb-3 text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
               {t('blog:authorSmartfloor')}
             </p>
             <a
@@ -124,7 +149,7 @@ const BlogPost: NextPage = ({ blogPost, blogPostsAll }: any) => {
               rel="noreferrer"
               target="_blank"
             >
-              <div className="p-2 w-fit pl-3 bg-neutral500 dark:bg-transparent">
+              <div className="w-fit bg-neutral500 p-2 pl-3 dark:bg-transparent">
                 <div className="relative h-16 w-72 footer-md:h-12 footer-md:w-56">
                   <Image
                     alt={t('blog:authorSmartfloor')}
@@ -149,58 +174,40 @@ const BlogPost: NextPage = ({ blogPost, blogPostsAll }: any) => {
 }
 
 export async function getStaticPaths({ locales }: { locales: string[] }) {
-  //version 1
-  const pathsPrototype = await Promise.all(locales.map( async (locale) => {
-    const isDefault = locale === 'pl'
-    try {
-      const res = await fetch(`${STRAPI_URL}/api/blogs${isDefault ? '' : `?locale=${locale}` }`, {
-        headers: { Authorization: `Bearer ${STRAPI_API_KEY}` }
-      })
-      const data = await res.json()
-      return data.data.map((post: any) => {
-        return { params: { slug: post.attributes.slug }, locale: locale }
-      })
-    }
-    catch(error: any) {
-      throw new Error(error)
-    }
-  }))
+  const pathsPrototype = await Promise.all(
+    locales.map(async (locale) => {
+      const isDefault = locale === 'pl'
+      try {
+        const blogPostsAll = await getAllBlogPosts(isDefault ? 'pl-PL' : locale)
+
+        return blogPostsAll.blogs?.data.map((post) => {
+          return { params: { slug: post.attributes?.slug }, locale: locale }
+        })
+      } catch (error) {
+        throw new Error(error as string)
+      }
+    })
+  )
   const paths = Array.prototype.concat.apply([], pathsPrototype)
-
-  //version 2
-  // const resPl = await fetch(`${STRAPI_URL}/api/blogs`)
-  // const dataPl = await resPl.json()
-  // const dataDonePl = dataPl.data.map((post: any) => {
-  //   return { params: { slug: post.attributes.slug }, locale: 'pl' }
-  // })
-
-  // const resEn = await fetch(`${STRAPI_URL}/api/blogs?locale=en`)
-  // const dataEn = await resEn.json()
-  // const dataDoneEn = dataEn.data.map((post: any) => {
-  //   return { params: { slug: post.attributes.slug }, locale: 'en' }
-  // })
-  // const paths = [...dataDonePl, ...dataDoneEn]
 
   return {
     paths,
-    fallback: false
+    fallback: false,
   }
 }
 
-export async function getStaticProps({ locale, params }: IStaticBlogPostProps ) {
+export async function getStaticProps({ locale, params }: IStaticBlogPostProps) {
   const localization = locale === 'pl' ? 'pl-PL' : 'en'
-  const res = await fetchSingleBlogPost(localization, params.slug)
-  const resAll = await fetchAllBlogPosts(localization)
+
+  const blogPostsAll = await getAllBlogPosts(localization)
+
+  const blogPost = await getSingleBlogPost(localization, params.slug)
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, [
-        'navbar',
-        'footer',
-        'blog',
-      ])),
-      blogPost: await res.json(),
-      blogPostsAll : await resAll.json()
+      ...(await serverSideTranslations(locale, ['navbar', 'footer', 'blog'])),
+      blogPost,
+      blogPostsAll,
     },
   }
 }

@@ -3,7 +3,7 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 import { getCookie } from 'cookies-next'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import Script from 'next/script'
@@ -58,7 +58,7 @@ import { G_TAG_KEY, SITE_KEY } from '../config/config'
 //   },
 // }
 
-function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
+function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const consent = getCookie('localConsent')
 
   return (
@@ -104,7 +104,7 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
             })(window,document,'script','dataLayer','${G_TAG_KEY}');
         `}
             </Script>
-            { consent === true && (
+            {consent === true && (
               <Script
                 id="consupd"
                 strategy="afterInteractive"
@@ -174,6 +174,7 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
         </div>
       </AnimatePresence>
     </GoogleReCaptchaProvider>
-  )}
+  )
+}
 
 export default appWithTranslation(MyApp)
