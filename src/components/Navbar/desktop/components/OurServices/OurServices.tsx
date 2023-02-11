@@ -33,7 +33,6 @@ export const OurServices = ({ text, icon, alt, url }: IOurServicesProps) => {
             <Image
               alt={alt}
               height="20"
-              loading="eager"
               src={icon}
               width="24"
             />
