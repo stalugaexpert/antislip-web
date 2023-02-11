@@ -1,15 +1,11 @@
 import { HeroPages, PageLayout, Seo } from '@components'
-import request from 'graphql-request'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { STRAPI_URL_GRAPHQL } from 'src/config/config'
-import {
-  OurRealizationsDocument,
-  OurRealizationsQuery,
-} from 'src/graphql/generated/graphql'
+import { OurRealizationsQuery } from 'src/graphql/generated/graphql'
 import { getCorrectImageLargest } from 'src/utils/helpers/getCorrectImage'
+import { getAllRealizations } from 'src/utils/requests/requests'
 
 import realizationsHero from '../../public/images/realizations-hero-1.jpg'
 import realizationsHero2 from '../../public/images/realizations-hero-2.jpg'
@@ -110,11 +106,7 @@ const Realizations: NextPage<IOurRealizationsPageProps> = ({
 export async function getStaticProps({ locale }: { locale: string }) {
   const localization = locale === 'pl' ? 'pl-PL' : 'en'
 
-  const ourRealizationsAll = await request(
-    STRAPI_URL_GRAPHQL as string,
-    OurRealizationsDocument,
-    { locale: localization }
-  )
+  const ourRealizationsAll = await getAllRealizations(localization)
 
   return {
     props: {
