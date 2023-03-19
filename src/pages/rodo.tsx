@@ -15,10 +15,12 @@ const Rodo: NextPage = ({ content }: any) => {
         description={t('seo:rodo.metaDescription')}
         title={t('seo:rodo.title')}
       />
-      <section className="px-24 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-12 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
+      <section className="mx-auto mb-12 max-w-screen-2xl px-24 pt-32 navbar-md:pt-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 about-xsm:px-6">
         <div
           className="ck-content"
-          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content.data.attributes.content) }}
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(content.data.attributes.content),
+          }}
         />
       </section>
     </PageLayout>
@@ -35,9 +37,9 @@ export async function getStaticProps({ locale }: { locale: string }) {
         'navbar',
         'footer',
         'seo',
-        'cookies'
+        'cookies',
       ])),
-      content: await res.json()
+      content: await res.json(),
     },
   }
 }

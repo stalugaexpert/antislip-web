@@ -8,9 +8,10 @@ type Data = {
   message: string
 }
 
-export default function handler (req: NextApiRequest,
-  res: NextApiResponse<Data>): void {
-
+export default function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<Data>
+): void {
   if (req.method === 'POST') {
     try {
       fetch('https://www.google.com/recaptcha/api/siteverify', {
@@ -48,4 +49,4 @@ export default function handler (req: NextApiRequest,
     res.status(405)
     res.end()
   }
-};
+}

@@ -6,8 +6,8 @@ interface IMenuItemProps {
   text: string
   url: string
   highlightItem?: boolean
-  bold?: string,
-  isExternal?: boolean,
+  bold?: string
+  isExternal?: boolean
   toggle(): void
 }
 
@@ -30,11 +30,16 @@ const menuItemVariants = {
   },
 }
 
-export const MenuItem = ({ text, url, highlightItem = false, bold = '', isExternal = false, toggle }: IMenuItemProps) => {
+export const MenuItem = ({
+  text,
+  url,
+  highlightItem = false,
+  bold = '',
+  isExternal = false,
+  toggle,
+}: IMenuItemProps) => {
   return (
-    <Link
-      href={url}
-    >
+    <Link href={url}>
       <a
         href={url}
         rel={isExternal ? 'noreferrer' : ''}
@@ -45,10 +50,12 @@ export const MenuItem = ({ text, url, highlightItem = false, bold = '', isExtern
           variants={menuItemVariants}
           onClick={toggle}
         >
-          <span className={`text-lg font-normal text-neutral700 duration-300 dark:text-neutral200 ${bold} hover:text-neutral800 hover:font-bold`}>
+          <span
+            className={`text-lg font-normal text-neutral700 duration-300 dark:text-neutral200 ${bold} hover:font-bold hover:text-neutral800`}
+          >
             {text}
             {highlightItem && (
-              <div className="absolute left-2/4 -translate-x-1/2 right-0 bottom-2 w-3/5 h-1 bg-amber400" />
+              <div className="absolute left-2/4 right-0 bottom-2 h-1 w-3/5 -translate-x-1/2 bg-amber400" />
             )}
           </span>
         </motion.li>

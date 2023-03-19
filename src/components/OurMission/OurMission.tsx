@@ -5,7 +5,7 @@ export const OurMission = () => {
   const { t } = useTranslation()
 
   return (
-    <section className="px-[11rem] mb-20 services-xs:mb-12 recommendations-md:px-32 recommendations-ds:px-16 recommendations-sm:px-10 about-sm:px-6 max-w-screen-2xl mx-auto">
+    <section className="mx-auto mb-20 max-w-screen-2xl px-[11rem] recommendations-md:px-32 recommendations-ds:px-16 recommendations-sm:px-10 services-xs:mb-12 about-sm:px-6">
       <AnimatePresence>
         <motion.div
           initial={{ x: -300, opacity: 0 }}
@@ -13,10 +13,10 @@ export const OurMission = () => {
           viewport={{ once: true }}
           whileInView={{ x: 0, opacity: 1 }}
         >
-          <h2 className="font-semibold text-3xl text-neutral800 dark:text-neutral50 mb-8 about-xsm:text-2xl">
+          <h2 className="mb-8 text-3xl font-semibold text-neutral800 dark:text-neutral50 about-xsm:text-2xl">
             {t('mission:about')}
           </h2>
-          <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50 mb-10">
+          <p className="mb-10 text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
             {t('mission:aboutDescription')}
           </p>
         </motion.div>
@@ -31,7 +31,7 @@ export const OurMission = () => {
             whileInView={{ opacity: 1 }}
           >
             <div className="h-28 w-28 mission-sm:hidden">
-              <div className="relative h-28 w-28 p-6 bg-neutral200 dark:bg-neutral900 rounded-full">
+              <div className="relative h-28 w-28 rounded-full bg-neutral200 p-6 dark:bg-neutral900">
                 <svg
                   className="w-18 h-18"
                   fill="none"
@@ -49,13 +49,13 @@ export const OurMission = () => {
               </div>
             </div>
             <div className="w-[90%] mission-sm:w-full">
-              <div className="flex items-center justify-between mb-4">
-                <h5 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50">
+              <div className="mb-4 flex items-center justify-between">
+                <h5 className="text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                   {t('mission:ourMissionItems.first.title')}
                 </h5>
-                <div className="hidden items-center justify-center mission-sm:flex h-12 w-12 p-2 bg-neutral200 dark:bg-neutral900 rounded-full">
+                <div className="hidden h-12 w-12 items-center justify-center rounded-full bg-neutral200 p-2 dark:bg-neutral900 mission-sm:flex">
                   <svg
-                    className="w-8 h-8"
+                    className="h-8 w-8"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth={1.5}
@@ -71,17 +71,17 @@ export const OurMission = () => {
                 </div>
               </div>
               <div className="mb-3">
-                <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('mission:ourMissionItems.first.descriptionTop')}
                 </p>
-                <span className="text-base about-md:text-sm font-semibold  text-amber400">
+                <span className="text-base font-semibold text-amber400  about-md:text-sm">
                   {t('mission:ourMissionItems.first.descriptionMiddle')}
                 </span>
-                <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('mission:ourMissionItems.first.descriptionBottom')}
                 </p>
               </div>
-              <p className="text-base about-md:text-sm font-semibold text-neutral800 dark:text-neutral50">
+              <p className="text-base font-semibold text-neutral800 dark:text-neutral50 about-md:text-sm">
                 {t('mission:ourMissionItems.first.descriptionAdd')}
               </p>
             </div>
@@ -96,8 +96,8 @@ export const OurMission = () => {
             viewport={{ once: true, amount: 0.7 }}
             whileInView={{ opacity: 1 }}
           >
-            <div className="h-28 w-28 mission-sm:hidden order-2">
-              <div className="relative text-neutral50 h-28 w-28 p-6 bg-amber600 rounded-full">
+            <div className="order-2 h-28 w-28 mission-sm:hidden">
+              <div className="relative h-28 w-28 rounded-full bg-amber600 p-6 text-neutral50">
                 <svg
                   className="w-18 h-18"
                   fill="none"
@@ -115,13 +115,13 @@ export const OurMission = () => {
               </div>
             </div>
             <div className="w-[90%] mission-sm:w-full">
-              <div className="flex items-center justify-between mb-4">
-                <h5 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50">
+              <div className="mb-4 flex items-center justify-between">
+                <h5 className="text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                   {t('mission:ourMissionItems.second.title')}
                 </h5>
-                <div className="hidden bg-amber600 text-neutral50 items-center justify-center mission-sm:flex h-12 w-12 p-2 rounded-full">
+                <div className="hidden h-12 w-12 items-center justify-center rounded-full bg-amber600 p-2 text-neutral50 mission-sm:flex">
                   <svg
-                    className="w-8 h-8"
+                    className="h-8 w-8"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth={1.5}
@@ -137,17 +137,17 @@ export const OurMission = () => {
                 </div>
               </div>
               <div className="mb-3">
-                <p className="text-base about-md:text-sm font-normal">
+                <p className="text-base font-normal about-md:text-sm">
                   {t('mission:ourMissionItems.second.descriptionTop')}
                 </p>
-                <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                <p className="text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('mission:ourMissionItems.second.descriptionMiddle')}
                 </p>
-                <p className="text-base about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                <p className="text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('mission:ourMissionItems.second.descriptionBottom')}
                 </p>
               </div>
-              <p className="text-base about-md:text-sm font-semibold text-neutral800 dark:text-neutral50">
+              <p className="text-base font-semibold text-neutral800 dark:text-neutral50 about-md:text-sm">
                 {t('mission:ourMissionItems.second.descriptionAdd')}
               </p>
             </div>
@@ -163,7 +163,7 @@ export const OurMission = () => {
             whileInView={{ opacity: 1 }}
           >
             <div className="h-28 w-28 mission-sm:hidden">
-              <div className="relative h-28 w-28 p-6 bg-neutral200 dark:bg-neutral900 rounded-full">
+              <div className="relative h-28 w-28 rounded-full bg-neutral200 p-6 dark:bg-neutral900">
                 <svg
                   className="w-18 h-18"
                   fill="none"
@@ -181,13 +181,13 @@ export const OurMission = () => {
               </div>
             </div>
             <div className="w-[90%] mission-sm:w-full">
-              <div className="flex items-center justify-between mb-4">
-                <h5 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50">
+              <div className="mb-4 flex items-center justify-between">
+                <h5 className="text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                   {t('mission:ourMissionItems.third.title')}
                 </h5>
-                <div className="hidden items-center justify-center mission-sm:flex h-12 w-12 p-2 bg-neutral200 dark:bg-neutral900 rounded-full">
+                <div className="hidden h-12 w-12 items-center justify-center rounded-full bg-neutral200 p-2 dark:bg-neutral900 mission-sm:flex">
                   <svg
-                    className="w-8 h-8"
+                    className="h-8 w-8"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth={1.5}
@@ -203,17 +203,17 @@ export const OurMission = () => {
                 </div>
               </div>
               <div className="mb-3">
-                <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('mission:ourMissionItems.third.descriptionTop')}
                 </p>
-                <span className="text-base about-md:text-sm font-semibold  text-amber400">
+                <span className="text-base font-semibold text-amber400  about-md:text-sm">
                   {t('mission:ourMissionItems.third.descriptionMiddle')}
                 </span>
-                <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('mission:ourMissionItems.third.descriptionBottom')}
                 </p>
               </div>
-              <p className="text-base about-md:text-sm font-semibold text-neutral800 dark:text-neutral50">
+              <p className="text-base font-semibold text-neutral800 dark:text-neutral50 about-md:text-sm">
                 {t('mission:ourMissionItems.third.descriptionAdd')}
               </p>
             </div>
@@ -228,8 +228,8 @@ export const OurMission = () => {
             viewport={{ once: true, amount: 0.7 }}
             whileInView={{ opacity: 1 }}
           >
-            <div className="h-28 w-28 mission-sm:hidden order-2">
-              <div className="relative text-neutral50 h-28 w-28 p-6 bg-amber600 rounded-full">
+            <div className="order-2 h-28 w-28 mission-sm:hidden">
+              <div className="relative h-28 w-28 rounded-full bg-amber600 p-6 text-neutral50">
                 <svg
                   className="w-18 h-18"
                   fill="none"
@@ -247,13 +247,13 @@ export const OurMission = () => {
               </div>
             </div>
             <div className="w-[90%] mission-sm:w-full">
-              <div className="flex items-center justify-between mb-4">
-                <h5 className="font-semibold text-left text-xl about-md:text-base text-neutral800 dark:text-neutral50">
+              <div className="mb-4 flex items-center justify-between">
+                <h5 className="text-left text-xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-base">
                   {t('mission:ourMissionItems.fourth.title')}
                 </h5>
-                <div className="hidden bg-amber600 text-neutral50 items-center justify-center mission-sm:flex h-12 w-12 p-2 rounded-full">
+                <div className="hidden h-12 w-12 items-center justify-center rounded-full bg-amber600 p-2 text-neutral50 mission-sm:flex">
                   <svg
-                    className="w-8 h-8"
+                    className="h-8 w-8"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth={1.5}
@@ -269,14 +269,14 @@ export const OurMission = () => {
                 </div>
               </div>
               <div className="mb-3">
-                <p className="text-base inline about-md:text-sm font-normal text-neutral800 dark:text-neutral50">
+                <p className="inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
                   {t('mission:ourMissionItems.fourth.descriptionTop')}
                 </p>
-                <span className="text-base about-md:text-sm font-semibold text-amber400">
+                <span className="text-base font-semibold text-amber400 about-md:text-sm">
                   {t('mission:ourMissionItems.fourth.descriptionMiddle')}
                 </span>
               </div>
-              <p className="text-base about-md:text-sm font-semibold text-neutral800 dark:text-neutral50">
+              <p className="text-base font-semibold text-neutral800 dark:text-neutral50 about-md:text-sm">
                 {t('mission:ourMissionItems.fourth.descriptionAdd')}
               </p>
             </div>

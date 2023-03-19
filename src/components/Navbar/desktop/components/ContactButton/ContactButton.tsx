@@ -6,13 +6,11 @@ interface IContactButtonProps {
 
 export const ContactButton = ({ text }: IContactButtonProps) => {
   return (
-    <Link
-      href="/contact"
-    >
+    <Link href="/contact">
       <a>
-        <div className="flex justify-center items-center gap-3 bg-teal600 px-4 py-2.5 rounded-lg text-neutral50 duration-300 hover:opacity-80 hover:translate-y-1">
+        <div className="flex items-center justify-center gap-3 rounded-lg bg-teal600 px-4 py-2.5 text-neutral50 duration-300 hover:translate-y-1 hover:opacity-80">
           <svg
-            className="w-5 h-5"
+            className="h-5 w-5"
             fill="none"
             stroke="currentColor"
             strokeWidth={1.5}
