@@ -29,7 +29,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
         'contact',
         'contact-page',
         'seo',
-        'cookies'
+        'cookies',
       ])),
     },
   }

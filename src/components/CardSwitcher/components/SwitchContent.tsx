@@ -20,26 +20,26 @@ export const SwitchContent = ({
 }: ISwitchContentProps) => {
   const { t } = useTranslation('card-switcher')
   return (
-    <div className="flex flex-col-reverse w-full md:flex-row overflow-hidden rounded-2xl">
-      <div className="bg-neutral100 dark:bg-neutral900 px-6 py-6 flex flex-col justify-between md:w-1/2">
-        <span className="text-2xl text-neutral800 dark:text-neutral50 mission-sm:text-base mb-3 text-left font-bold">
+    <div className="flex w-full flex-col-reverse overflow-hidden rounded-2xl md:flex-row">
+      <div className="flex flex-col justify-between bg-neutral100 px-6 py-6 dark:bg-neutral900 md:w-1/2">
+        <span className="mb-3 text-left text-2xl font-bold text-neutral800 dark:text-neutral50 mission-sm:text-base">
           {t(contentTitle)}
         </span>
-        <span className="whitespace-pre-line text-neutral700 dark:text-neutral200 mb-3 mission-sm:text-sm">
+        <span className="mb-3 whitespace-pre-line text-neutral700 dark:text-neutral200 mission-sm:text-sm">
           {t(contentText)}
         </span>
-        <span className="mb-3 mission-sm:text-sm text-neutral700 dark:text-neutral200">
+        <span className="mb-3 text-neutral700 dark:text-neutral200 mission-sm:text-sm">
           {t('researchCarry')}
         </span>
         <ul className="mb-3 mission-sm:text-sm">
           {testInfo.map((item, index) => (
             <li
-              className="flex mb-3 text-left text-neutral700 dark:text-neutral200"
+              className="mb-3 flex text-left text-neutral700 dark:text-neutral200"
               key={index}
             >
-              <div className="w-6 h-6 mr-4">
+              <div className="mr-4 h-6 w-6">
                 <Checkmark
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                   fillColor="var(--amber-600)"
                 />
               </div>
@@ -49,9 +49,9 @@ export const SwitchContent = ({
         </ul>
         <Link href="/contact">
           <a>
-            <div className="flex justify-center items-center gap-3 bg-amber600 px-4 py-2.5 mission-sm:p-2 rounded-lg text-neutral50 duration-300 hover:opacity-80 hover:translate-y-1">
+            <div className="flex items-center justify-center gap-3 rounded-lg bg-amber600 px-4 py-2.5 text-neutral50 duration-300 hover:translate-y-1 hover:opacity-80 mission-sm:p-2">
               <svg
-                className="w-5 h-5"
+                className="h-5 w-5"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={1.5}

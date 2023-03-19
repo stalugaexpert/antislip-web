@@ -11,7 +11,13 @@ interface IAccordionBaseProps {
   title: string
 }
 
-const AccordionBase = ({ i, expanded, setExpanded, children, title }: IAccordionBaseProps) => {
+const AccordionBase = ({
+  i,
+  expanded,
+  setExpanded,
+  children,
+  title,
+}: IAccordionBaseProps) => {
   const isOpen = i === expanded
   const { systemTheme, theme } = useTheme()
   const [currentTheme, setCurrentTheme] = useState('light')
@@ -25,16 +31,27 @@ const AccordionBase = ({ i, expanded, setExpanded, children, title }: IAccordion
   return (
     <>
       <motion.header
-        animate={{ backgroundColor: isOpen && currentTheme === 'dark' ? '#374151' : !isOpen && currentTheme === 'dark' ? '#111827' : isOpen && currentTheme !== 'dark' ? '#cbd5e1' : '#f3f4f6' }}
-        className="w-full p-4 mb-4 cursor-pointer last:mb-0"
+        animate={{
+          backgroundColor:
+            isOpen && currentTheme === 'dark'
+              ? '#374151'
+              : !isOpen && currentTheme === 'dark'
+              ? '#111827'
+              : isOpen && currentTheme !== 'dark'
+              ? '#cbd5e1'
+              : '#f3f4f6',
+        }}
+        className="mb-4 w-full cursor-pointer p-4 last:mb-0"
         initial={false}
         onClick={() => setExpanded(isOpen ? false : i)}
       >
-        <div className="flex justify-between items-center">
-          <span className="text-neutral800 dark:text-neutral50 text-base about-xsm:text-sm">{title}</span>
+        <div className="flex items-center justify-between">
+          <span className="text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+            {title}
+          </span>
           <div className="ml-4">
             <svg
-              className="w-8 h-8 about-xsm:w-6 about-xsm:h-6"
+              className="h-8 w-8 about-xsm:h-6 about-xsm:w-6"
               fill="none"
               stroke="currentColor"
               strokeWidth={1.5}
@@ -60,7 +77,7 @@ const AccordionBase = ({ i, expanded, setExpanded, children, title }: IAccordion
             transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
             variants={{
               open: { opacity: 1, height: 'fit-content' },
-              collapsed: { opacity: 0, height: 0 }
+              collapsed: { opacity: 0, height: 0 },
             }}
           >
             {children}
@@ -76,38 +93,70 @@ export const Accordion = () => {
   // You can set the key number of item to be default open or 'false' for hide all by default.
   const [expanded, setExpanded] = useState<false | number>(false)
   const accordionItems = [
-    { key: 0,
+    {
+      key: 0,
       title: t('knowledge:actsFirst.title'),
-      component: <div className="p-4 text-justify text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
-        <p className="mb-2.5">{t('knowledge:actsFirst.firstParagraph')}</p>
-        <p className="mb-2.5 italic ">{t('knowledge:actsFirst.secondParagraph')}</p>
-        <p className="mb-2.5 italic ">{t('knowledge:actsFirst.thirdParagraph')}</p>
-        <p className="italic ">{t('knowledge:actsFirst.fourthParagraph')}</p>
-      </div>
+      component: (
+        <div className="p-4 text-justify text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+          <p className="mb-2.5">{t('knowledge:actsFirst.firstParagraph')}</p>
+          <p className="mb-2.5 italic ">
+            {t('knowledge:actsFirst.secondParagraph')}
+          </p>
+          <p className="mb-2.5 italic ">
+            {t('knowledge:actsFirst.thirdParagraph')}
+          </p>
+          <p className="italic ">{t('knowledge:actsFirst.fourthParagraph')}</p>
+        </div>
+      ),
     },
-    { key: 1,
+    {
+      key: 1,
       title: t('knowledge:actsSecond.title'),
-      component: <div className="p-4 text-justify text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
-        <p className="mb-2.5 italic ">{t('knowledge:actsSecond.firstParagraph')}</p>
-        <p className="mb-2.5 italic ">{t('knowledge:actsSecond.secondParagraph')}</p>
-        <p className="mb-2.5 italic ">{t('knowledge:actsSecond.thirdParagraph')}</p>
-        <p className="">{t('knowledge:actsSecond.fourthParagraph')}</p>
-      </div>
+      component: (
+        <div className="p-4 text-justify text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+          <p className="mb-2.5 italic ">
+            {t('knowledge:actsSecond.firstParagraph')}
+          </p>
+          <p className="mb-2.5 italic ">
+            {t('knowledge:actsSecond.secondParagraph')}
+          </p>
+          <p className="mb-2.5 italic ">
+            {t('knowledge:actsSecond.thirdParagraph')}
+          </p>
+          <p className="">{t('knowledge:actsSecond.fourthParagraph')}</p>
+        </div>
+      ),
     },
-    { key: 2,
+    {
+      key: 2,
       title: t('knowledge:actsThird.title'),
-      component: <div className="p-4 text-justify text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
-        <p className="mb-2.5 italic ">{t('knowledge:actsThird.firstParagraph')}</p>
-        <p className="mb-2.5 italic ">{t('knowledge:actsThird.secondParagraph')}</p>
-      </div>
+      component: (
+        <div className="p-4 text-justify text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+          <p className="mb-2.5 italic ">
+            {t('knowledge:actsThird.firstParagraph')}
+          </p>
+          <p className="mb-2.5 italic ">
+            {t('knowledge:actsThird.secondParagraph')}
+          </p>
+        </div>
+      ),
     },
-    { key: 3,
+    {
+      key: 3,
       title: t('knowledge:actsFourth.title'),
-      component: <div className="p-4 text-justify text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
-        <p className="mb-2.5 italic ">{t('knowledge:actsFourth.firstParagraph')}</p>
-        <p className="mb-2.5 italic ">{t('knowledge:actsFourth.secondParagraph')}</p>
-        <p className="mb-2.5 italic ">{t('knowledge:actsFourth.thirdParagraph')}</p>
-      </div>
+      component: (
+        <div className="p-4 text-justify text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+          <p className="mb-2.5 italic ">
+            {t('knowledge:actsFourth.firstParagraph')}
+          </p>
+          <p className="mb-2.5 italic ">
+            {t('knowledge:actsFourth.secondParagraph')}
+          </p>
+          <p className="mb-2.5 italic ">
+            {t('knowledge:actsFourth.thirdParagraph')}
+          </p>
+        </div>
+      ),
     },
   ]
 

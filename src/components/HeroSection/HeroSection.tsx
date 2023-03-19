@@ -9,7 +9,7 @@ export const HeroSection = () => {
   const { t } = useTranslation()
 
   return (
-    <section className="px-36 pt-32 navbar-md:pt-24 max-w-screen-2xl mx-auto mb-16 services-xs:mb-12 services-sm:pl-24 services-sm:pr-[8rem] services-xs:pl-14 about-md:pr-14 about-sm:px-10 about-xsm:px-6">
+    <section className="mx-auto mb-16 max-w-screen-2xl px-36 pt-32 navbar-md:pt-24 services-sm:pl-24 services-sm:pr-[8rem] services-xs:mb-12 services-xs:pl-14 about-md:pr-14 about-sm:px-10 about-xsm:px-6">
       <AnimatePresence>
         <motion.div
           initial={{ x: -300, opacity: 0 }}
@@ -17,14 +17,14 @@ export const HeroSection = () => {
           viewport={{ once: true }}
           whileInView={{ x: 0, opacity: 1 }}
         >
-          <h5 className="text-base about-md:text-sm font-semibold text-amber400 mb-6">
+          <h5 className="mb-6 text-base font-semibold text-amber400 about-md:text-sm">
             {t('hero:technology')}
           </h5>
           <div className="mb-8">
-            <h2 className="text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
+            <h2 className="text-4xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-3xl about-xsm:text-2xl">
               {t('hero:description')}
             </h2>
-            <h2 className="text-4xl about-md:text-3xl about-xsm:text-2xl font-semibold text-neutral800 dark:text-neutral50">
+            <h2 className="text-4xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-3xl about-xsm:text-2xl">
               {t('hero:descriptionBottom')}
             </h2>
           </div>
@@ -37,7 +37,7 @@ export const HeroSection = () => {
           viewport={{ once: true }}
           whileInView={{ opacity: 1 }}
         >
-          <div className="relative h-[31.2rem] about-md:h-[30vh] w-full">
+          <div className="relative h-[31.2rem] w-full about-md:h-[30vh]">
             <Image
               alt={t('hero:imageAlt')}
               layout="fill"
@@ -45,15 +45,15 @@ export const HeroSection = () => {
               placeholder="blur"
               src={heroImage}
             />
-            <div className="absolute about-md:hidden p-10 bg-neutral50 dark:bg-neutral700 max-w-[25rem] -right-24 top-2/4 -translate-y-2/4">
-              <p className="text-sm font-normal text-neutral700 dark:text-neutral200 mb-4">
+            <div className="absolute -right-24 top-2/4 max-w-[25rem] -translate-y-2/4 bg-neutral50 p-10 dark:bg-neutral700 about-md:hidden">
+              <p className="mb-4 text-sm font-normal text-neutral700 dark:text-neutral200">
                 {t('hero:stats')}
               </p>
               <Link href="/blog">
                 <a>
-                  <div className="flex items-center gap-2 text-neutral700 dark:text-neutral100 duration-300 hover:opacity-70 hover:translate-x-1">
+                  <div className="flex items-center gap-2 text-neutral700 duration-300 hover:translate-x-1 hover:opacity-70 dark:text-neutral100">
                     <svg
-                      className="w-3 h-3"
+                      className="h-3 w-3"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth={1.5}
@@ -74,15 +74,15 @@ export const HeroSection = () => {
               </Link>
             </div>
           </div>
-          <div className="hidden about-md:block p-6 bg-neutral50 dark:bg-neutral700 max-w-full">
-            <p className="text-sm font-normal text-neutral700 dark:text-neutral200 mb-4">
+          <div className="hidden max-w-full bg-neutral50 p-6 dark:bg-neutral700 about-md:block">
+            <p className="mb-4 text-sm font-normal text-neutral700 dark:text-neutral200">
               {t('hero:stats')}
             </p>
             <Link href="/blog">
               <a>
-                <div className="flex items-center gap-2 text-neutral700 dark:text-neutral100 duration-300 hover:opacity-70 hover:translate-x-1">
+                <div className="flex items-center gap-2 text-neutral700 duration-300 hover:translate-x-1 hover:opacity-70 dark:text-neutral100">
                   <svg
-                    className="w-3 h-3"
+                    className="h-3 w-3"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth={1.5}

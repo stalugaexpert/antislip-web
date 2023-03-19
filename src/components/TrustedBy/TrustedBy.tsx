@@ -40,48 +40,48 @@ const settings = {
 const companiesLogoList = [
   {
     image: 'halfprice-logo.png',
-    alt: 'halfprice logo'
+    alt: 'halfprice logo',
   },
   {
     image: 'ikea-logo.png',
-    alt: 'ikea logo'
+    alt: 'ikea logo',
   },
   {
     image: 'katowice-logo.png',
-    alt: 'katowice airport logo'
+    alt: 'katowice airport logo',
   },
   {
     image: 'leroy-logo.png',
-    alt: 'leroy merlin logo'
+    alt: 'leroy merlin logo',
   },
   {
     image: 'modlin-logo.png',
-    alt: 'modlin airport logo'
+    alt: 'modlin airport logo',
   },
   {
     image: 'logo-arlamow.png',
-    alt: 'arlamow hotel logo'
+    alt: 'arlamow hotel logo',
   },
   {
     image: 'lot-logo.png',
-    alt: 'lot airlines logo'
+    alt: 'lot airlines logo',
   },
   {
     image: 'obi-logo.png',
-    alt: 'obi logo'
+    alt: 'obi logo',
   },
   {
     image: 'polin-logo.png',
-    alt: 'polin museum logo'
+    alt: 'polin museum logo',
   },
   {
     image: 'tubadzin-logo.png',
-    alt: 'tubadzin logo'
+    alt: 'tubadzin logo',
   },
   {
     image: 'waveresort-logo.png',
-    alt: 'wave resort Międzyzdroje logo'
-  }
+    alt: 'wave resort Międzyzdroje logo',
+  },
 ]
 
 export const TrustedBy = () => {
@@ -90,13 +90,15 @@ export const TrustedBy = () => {
   return (
     <AnimatePresence>
       <motion.section
-        className="px-24 recommendations-sm:px-16 about-sm:px-10 services-xs:mb-12 max-w-screen-2xl mx-auto mb-36"
+        className="mx-auto mb-36 max-w-screen-2xl px-24 recommendations-sm:px-16 services-xs:mb-12 about-sm:px-10"
         initial={{ opacity: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true, amount: 0.7 }}
         whileInView={{ opacity: 1 }}
       >
-        <h5 className="text-xl font-semibold text-neutral800 dark:text-neutral50 mb-9 text-center">{t('common:trustedBy')}</h5>
+        <h5 className="mb-9 text-center text-xl font-semibold text-neutral800 dark:text-neutral50">
+          {t('common:trustedBy')}
+        </h5>
         <Slider {...settings}>
           {companiesLogoList.map((item, index) => (
             <div

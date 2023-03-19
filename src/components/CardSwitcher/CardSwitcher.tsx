@@ -47,9 +47,9 @@ export const CardSwitcher = () => {
   ]
 
   return (
-    <section className="w-full h-full">
+    <section className="h-full w-full">
       <div>
-        <div className="flex justify-between mb-2 gap-2">
+        <div className="mb-2 flex justify-between gap-2">
           {content.map((item) => (
             <SwitchButton
               isActive={active === item.id}

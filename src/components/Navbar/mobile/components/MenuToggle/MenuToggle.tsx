@@ -17,8 +17,8 @@ const Path = ({ openPath, closedPath, ...rest }: IPathProps) => {
       strokeLinecap="round"
       strokeWidth="2"
       variants={{
-        open: { d: openPath, transition: { duration: 0.3 }},
-        closed: { d: closedPath, transition: { duration: 0.3 }},
+        open: { d: openPath, transition: { duration: 0.3 } },
+        closed: { d: closedPath, transition: { duration: 0.3 } },
       }}
       {...rest}
     ></motion.path>
@@ -28,7 +28,7 @@ const Path = ({ openPath, closedPath, ...rest }: IPathProps) => {
 export const MenuToggle = ({ toggle }: IMenuToggleProps) => {
   return (
     <button
-      className="border-0 outline-none z-50 text-neutral700 dark:text-neutral200 p-3"
+      className="z-50 border-0 p-3 text-neutral700 outline-none dark:text-neutral200"
       onClick={toggle}
     >
       <svg

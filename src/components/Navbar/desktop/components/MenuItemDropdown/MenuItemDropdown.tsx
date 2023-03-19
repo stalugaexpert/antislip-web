@@ -19,21 +19,26 @@ const MenuItemVariants = {
   },
 }
 
-export const MenuItemDropdown = ({ text, children }: IMenuItemDropdownProps) => {
+export const MenuItemDropdown = ({
+  text,
+  children,
+}: IMenuItemDropdownProps) => {
   const [isBeingHovered, setIsBeingHovered] = useState(false)
 
   return (
     <motion.div
-      className={'relative py-7 px-4 text-base text-neutral700 dark:text-neutral100 duration-300 hover:text-neutral800 hover:font-bold w-40'}
+      className={
+        'relative w-40 py-7 px-4 text-base text-neutral700 duration-300 hover:font-bold hover:text-neutral800 dark:text-neutral100'
+      }
       onHoverEnd={() => setIsBeingHovered(false)}
       onHoverStart={() => setIsBeingHovered(true)}
     >
-      <div className="flex justify-center items-center gap-3">
+      <div className="flex items-center justify-center gap-3">
         <span>
           {text}
           {isBeingHovered && (
             <motion.div
-              className="absolute left-0 right-0 bottom-0 w-full h-1 bg-amber400"
+              className="absolute left-0 right-0 bottom-0 h-1 w-full bg-amber400"
               layoutId="underline"
               layout
             />
@@ -41,7 +46,7 @@ export const MenuItemDropdown = ({ text, children }: IMenuItemDropdownProps) => 
         </span>
         {isBeingHovered ? (
           <svg
-            className="w-4 h-4"
+            className="h-4 w-4"
             fill="none"
             stroke="currentColor"
             strokeWidth={2.5}
@@ -56,7 +61,7 @@ export const MenuItemDropdown = ({ text, children }: IMenuItemDropdownProps) => 
           </svg>
         ) : (
           <svg
-            className="w-4 h-4"
+            className="h-4 w-4"
             fill="none"
             stroke="currentColor"
             strokeWidth={2.5}
@@ -74,7 +79,7 @@ export const MenuItemDropdown = ({ text, children }: IMenuItemDropdownProps) => 
       {isBeingHovered && (
         <motion.div
           animate="visible"
-          className="absolute shadow-md rounded-lg top-20 -left-1 p-2 bg-neutral50 dark:bg-neutral900 min-w-max"
+          className="absolute top-20 -left-1 min-w-max rounded-lg bg-neutral50 p-2 shadow-md dark:bg-neutral900"
           initial="hidden"
           layoutId="menu"
           variants={MenuItemVariants}

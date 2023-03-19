@@ -21,7 +21,12 @@ const navigationVariants = {
 export const Navigation = ({ toggle }: INavigationProps) => {
   const { t } = useTranslation()
   const navigationProps = [
-    { text: t('navbar:home'), url: '/', highlightItem: true, bold: 'font-bold' },
+    {
+      text: t('navbar:home'),
+      url: '/',
+      highlightItem: true,
+      bold: 'font-bold',
+    },
     { text: t('navbar:servicesList.antislip'), url: '/antislip' },
     { text: t('navbar:servicesList.pendulum'), url: '/friction-measurement' },
     { text: t('navbar:servicesList.sealers'), url: '/sealing' },
@@ -33,7 +38,7 @@ export const Navigation = ({ toggle }: INavigationProps) => {
 
   return (
     <motion.ul
-      className="absolute flex flex-col items-start justify-center gap-1.5 top-28 w-full z-50"
+      className="absolute top-28 z-50 flex w-full flex-col items-start justify-center gap-1.5"
       variants={navigationVariants}
     >
       {navigationProps.map((item) => (
