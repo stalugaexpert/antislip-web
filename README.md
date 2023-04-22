@@ -1,6 +1,6 @@
 This is Antislip site project (client-side) bootstrapped with [`create-next-app`]. Page features include CRUD functionality (blog) with ensuring e2e type safety using graphQL, graphQL codegen & apollo client, localization and multilanguage support, contact form with saving data into database and sending owner a notification mail using Nodemailer (backend side), secured with Google reCaptcha. You can check the deployment of the page using this link: 
 
-https://anti-slip.io/
+https://anti-slip.io
 
 ## Getting Started
 
