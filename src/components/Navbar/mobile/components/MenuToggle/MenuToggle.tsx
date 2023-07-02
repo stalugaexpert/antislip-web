@@ -42,7 +42,7 @@ export const MenuToggle = ({ toggle }: IMenuToggleProps) => {
         />
         <Path
           closedPath="M 2 9.423 L 20 9.423"
-          openPath=""
+          openPath="M 150 150"
         />
         <Path
           closedPath="M 2 16.346 L 20 16.346"
