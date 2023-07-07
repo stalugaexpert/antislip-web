@@ -5,6 +5,7 @@ import { useTranslation } from 'next-i18next'
 import { useState } from 'react'
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { Balancer } from 'react-wrap-balancer'
 import { sendMail, verifyCaptcha } from 'src/utils/api/service'
 
 interface IShortFormValues {
@@ -62,30 +63,32 @@ export const ContactShort = () => {
       className="mx-auto mb-20 h-fit max-w-screen-2xl overflow-hidden px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 mission-sm:mb-0 mission-sm:px-0"
       id="contact"
     >
-      <div className="flex h-[75vh] items-center gap-24 about-md:gap-16 mission-sm:h-full mission-sm:flex-wrap mission-sm:gap-0">
+      <div className="grid grid-cols-2 items-center gap-24 about-md:gap-16 mission-sm:h-full mission-sm:grid-cols-1 mission-sm:gap-0">
         <AnimatePresence>
           <motion.div
-            className="w-2/4 mission-sm:mb-8 mission-sm:w-full mission-sm:px-6"
+            className="mission-sm:mb-8 mission-sm:w-full mission-sm:px-6"
             initial={{ opacity: 0, x: -200 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true, amount: 0.4 }}
             whileInView={{ opacity: 1, x: 0 }}
           >
             <h5 className="mb-3 text-3xl font-semibold text-neutral900 dark:text-neutral50 about-md:text-xl">
-              {t('contact:contactTitle')}
+              <Balancer>{t('contact:contactTitle')}</Balancer>
             </h5>
             <h5 className="mb-4 text-3xl font-semibold text-amber400 about-md:text-xl">
-              {t('contact:contactTalk')}
+              <Balancer>{t('contact:contactTalk')}</Balancer>
             </h5>
-            <div className="mb-8 text-justify">
-              <p className="inline text-base font-normal text-neutral700 dark:text-neutral200 about-md:text-sm">
-                {t('contact:contactDescription')}
-              </p>
-              <Link href="/contact">
-                <a className="inline text-base font-semibold text-amber400 duration-300 hover:opacity-75 about-md:text-sm">
-                  {t('contact:contactDescriptionMessage')}
-                </a>
-              </Link>
+            <div className="mb-8">
+              <Balancer>
+                <p className="inline text-base font-normal text-neutral700 dark:text-neutral200 about-md:text-sm">
+                  {t('contact:contactDescription')}
+                </p>
+                <Link href="/contact">
+                  <a className="inline text-base font-semibold text-amber400 duration-300 hover:opacity-75 about-md:text-sm">
+                    {t('contact:contactDescriptionMessage')}
+                  </a>
+                </Link>
+              </Balancer>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="relative mb-8 h-11 w-full max-w-[75%] recommendations-ds:max-w-full">
@@ -350,7 +353,7 @@ export const ContactShort = () => {
         </AnimatePresence>
         <AnimatePresence>
           <motion.div
-            className="h-full w-2/4 overflow-hidden rounded-lg mission-sm:h-[30vh] mission-sm:w-full mission-sm:rounded-none"
+            className="h-full overflow-hidden rounded-lg mission-sm:h-[30vh] mission-sm:w-full mission-sm:rounded-none"
             initial={{ opacity: 0, x: 200 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true, amount: 0.4 }}
