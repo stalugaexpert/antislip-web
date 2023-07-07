@@ -12,7 +12,7 @@ const Contact: NextPage = () => {
         description={t('seo:contact.metaDescription')}
         title={t('seo:contact.title')}
       />
-      <section className="pt-40 navbar-md:pt-24">
+      <section className="pt-32 navbar-md:pt-24">
         <ContactLong />
       </section>
       <ContactBottom />

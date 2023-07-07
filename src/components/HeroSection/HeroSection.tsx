@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
+import { Balancer } from 'react-wrap-balancer'
 
 import heroImage from '../../../public/images/hero-image.jpg'
 
@@ -22,10 +23,10 @@ export const HeroSection = () => {
           </h5>
           <div className="mb-8">
             <h2 className="text-4xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-3xl about-xsm:text-2xl">
-              {t('hero:description')}
+              <Balancer>{t('hero:description')}</Balancer>
             </h2>
             <h2 className="text-4xl font-semibold text-neutral800 dark:text-neutral50 about-md:text-3xl about-xsm:text-2xl">
-              {t('hero:descriptionBottom')}
+              <Balancer>{t('hero:descriptionBottom')}</Balancer>
             </h2>
           </div>
         </motion.div>

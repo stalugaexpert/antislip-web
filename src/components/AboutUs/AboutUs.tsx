@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
+import { Balancer } from 'react-wrap-balancer'
 
 import aboutImage from '../../../public/images/about-image.jpg'
 
@@ -36,7 +37,7 @@ export const AboutUs = () => {
               {t('about:aboutUs')}
             </h5>
             <h2 className="mb-9 text-3xl font-semibold text-neutral800 dark:text-neutral50 about-xsm:text-2xl">
-              {t('about:leader')}
+              <Balancer>{t('about:leader')}</Balancer>
             </h2>
           </motion.div>
         </AnimatePresence>
@@ -52,10 +53,10 @@ export const AboutUs = () => {
                   whileInView={{ opacity: 1 }}
                 >
                   <h4 className="text-xl font-semibold text-neutral800 dark:text-neutral50 about-xsm:text-base">
-                    {section.title}
+                    <Balancer>{section.title}</Balancer>
                   </h4>
                   <p className="text-base font-normal text-neutral600 dark:text-neutral200 about-xsm:text-sm">
-                    {section.description}
+                    <Balancer>{section.description}</Balancer>
                   </p>
                 </motion.div>
               </AnimatePresence>
