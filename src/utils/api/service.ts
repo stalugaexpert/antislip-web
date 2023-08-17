@@ -4,7 +4,7 @@ export const fetchSingleContentData = async (
   localization: string,
   endpoint: string
 ) => {
-  if (STRAPI_URL?.includes('localhost')) {
+  if (STRAPI_URL?.includes('127.0.0.1:1337')) {
     return await fetch(`${STRAPI_URL}/api/${endpoint}?locale=${localization}`)
   }
   return await fetch(`${STRAPI_URL}/api/${endpoint}?locale=${localization}`, {
@@ -32,7 +32,7 @@ export const sendMail = async (
   phone: string,
   message: string
 ) => {
-  if (STRAPI_URL?.includes('localhost')) {
+  if (STRAPI_URL?.includes('127.0.0.1:1337')) {
     return await fetch(`${STRAPI_URL}/api/mail/${endpoint}`, {
       method: 'post',
       body: JSON.stringify({

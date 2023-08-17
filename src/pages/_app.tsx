@@ -10,6 +10,7 @@ import Script from 'next/script'
 import { appWithTranslation } from 'next-i18next'
 import { ThemeProvider } from 'next-themes'
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3'
+import { Toaster } from 'src/components/ui/toaster'
 
 import { G_TAG_KEY, SITE_KEY } from '../config/config'
 
@@ -170,6 +171,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
               />
             </Head>
             <Component {...pageProps} />
+            <Toaster />
           </ThemeProvider>
         </div>
       </AnimatePresence>

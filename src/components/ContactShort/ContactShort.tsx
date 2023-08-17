@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { Balancer } from 'react-wrap-balancer'
+import { toast } from 'src/hooks/use-toast'
 import { sendMail, verifyCaptcha } from 'src/utils/api/service'
 
 interface IShortFormValues {
@@ -45,11 +46,19 @@ export const ContactShort = () => {
                 if (res.ok) {
                   setIsLoading(false)
                   reset()
+                  toast({
+                    className: 'bg-white dark:bg-neutral700',
+                    title: t('contact:sendSuccessTitle'),
+                    description: t('contact:sendSuccessDescription'),
+                  })
                 } else {
                   reset()
                   setIsLoading(false)
-                  // eslint-disable-next-line no-console
-                  console.log('Problem when sending email occurred')
+                  toast({
+                    title: t('contact:sendErrorTitle'),
+                    description: t('contact:sendErrorDescription'),
+                    variant: 'destructive',
+                  })
                 }
               }
             )

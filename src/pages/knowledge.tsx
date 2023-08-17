@@ -1,16 +1,17 @@
-import {
-  Accordion,
-  ContactShort,
-  HeroPages,
-  PageLayout,
-  Seo,
-} from '@components'
+import { ContactShort, HeroPages, PageLayout, Seo } from '@components'
 import type { InferGetStaticPropsType, NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getPlaiceholder } from 'plaiceholder'
+import Balancer from 'react-wrap-balancer'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from 'src/components/ui/Accordion'
 
 import antiSlipPTV from '../../public/images/antislip-ptv.png'
 import knowledgeHero from '../../public/images/knowledge-hero.jpg'
@@ -148,13 +149,134 @@ const Knowledge: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         </h5>
         <div className="flex justify-between gap-12 knowledge-md:flex-wrap knowledge-md:gap-8">
           <div className="w-[60%] knowledge-md:order-2 knowledge-md:w-full">
-            <Accordion />
+            <Accordion
+              defaultValue="item-3"
+              type="single"
+              collapsible
+            >
+              <AccordionItem
+                className="dark:border-neutral400"
+                value="item-1"
+              >
+                <AccordionTrigger className="gap-4 text-left font-normal">
+                  {t('knowledge:actsFirst.title')}
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="p-2 text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+                    <p className="mb-2.5">
+                      <Balancer>
+                        {t('knowledge:actsFirst.firstParagraph')}
+                      </Balancer>
+                    </p>
+                    <p className="mb-2.5 italic">
+                      <Balancer>
+                        {t('knowledge:actsFirst.secondParagraph')}
+                      </Balancer>
+                    </p>
+                    <p className="mb-2.5 italic">
+                      <Balancer>
+                        {t('knowledge:actsFirst.thirdParagraph')}
+                      </Balancer>
+                    </p>
+                    <p className="italic">
+                      <Balancer>
+                        {t('knowledge:actsFirst.fourthParagraph')}
+                      </Balancer>
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                className="dark:border-neutral400"
+                value="item-2"
+              >
+                <AccordionTrigger className="gap-4 text-left font-normal">
+                  {t('knowledge:actsSecond.title')}
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="p-2 text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+                    <p className="mb-2.5 italic">
+                      <Balancer>
+                        {t('knowledge:actsSecond.firstParagraph')}
+                      </Balancer>
+                    </p>
+                    <p className="mb-2.5 italic">
+                      <Balancer>
+                        {t('knowledge:actsSecond.secondParagraph')}
+                      </Balancer>
+                    </p>
+                    <p className="mb-2.5 italic">
+                      <Balancer>
+                        {t('knowledge:actsSecond.thirdParagraph')}
+                      </Balancer>
+                    </p>
+                    <p>
+                      <Balancer>
+                        {t('knowledge:actsSecond.fourthParagraph')}
+                      </Balancer>
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                className="dark:border-neutral400"
+                value="item-3"
+              >
+                <AccordionTrigger className="gap-4 text-left font-normal">
+                  {t('knowledge:actsThird.title')}
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="p-2 text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+                    <p className="mb-2.5 italic">
+                      <Balancer>
+                        {t('knowledge:actsThird.firstParagraph')}
+                      </Balancer>
+                    </p>
+                    <p className="mb-2.5 italic">
+                      <Balancer>
+                        {t('knowledge:actsThird.secondParagraph')}
+                      </Balancer>
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                className="dark:border-neutral400"
+                value="item-4"
+              >
+                <AccordionTrigger className="gap-4 text-left font-normal">
+                  {t('knowledge:actsFourth.title')}
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="p-2 text-base text-neutral800 dark:text-neutral50 about-xsm:text-sm">
+                    <p className="mb-2.5 italic">
+                      <Balancer>
+                        {t('knowledge:actsFourth.firstParagraph')}
+                      </Balancer>
+                    </p>
+                    <p className="mb-2.5 italic">
+                      <Balancer>
+                        {t('knowledge:actsFourth.secondParagraph')}
+                      </Balancer>
+                    </p>
+                    <p className="mb-2.5 italic">
+                      <Balancer>
+                        {t('knowledge:actsFourth.thirdParagraph')}
+                      </Balancer>
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
           <div className="relative w-[40%] knowledge-md:h-[30vh] knowledge-md:w-full">
             <Image
               alt=""
               layout="fill"
-              objectFit="cover"
+              objectFit="contain"
               src="/images/knowledge-image-1.svg"
             />
           </div>

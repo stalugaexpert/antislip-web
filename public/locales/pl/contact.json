@@ -16,5 +16,9 @@
   "message": "Wiadomość",
   "fieldRequired": "To pole jest wymagane.",
   "fieldTooLong": "Podana wartość jest zbyt długa.",
-  "mapsTitle": "Ramka Google Maps z zaznaczoną lokalizacją"
+  "mapsTitle": "Ramka Google Maps z zaznaczoną lokalizacją",
+  "sendSuccessTitle": "Sukces",
+  "sendSuccessDescription": "Dziękujemy za wysłanie wiadomości - skontaktujemy się najszybicej jak to możliwe.",
+  "sendErrorTitle": "Coś poszło nie tak",
+  "sendErrorDescription": "Spróbuj ponownie później."
 }

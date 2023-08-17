@@ -16,5 +16,9 @@
   "message": "Message",
   "fieldRequired": "This field is required.",
   "fieldTooLong": "The specified value is too long.",
-  "mapsTitle": "Google Maps iFrame with location"
+  "mapsTitle": "Google Maps iFrame with location",
+  "sendSuccessTitle": "Success",
+  "sendSuccessDescription": "Thank you for sending your message - we will contact you as soon as possible.",
+  "sendErrorTitle": "Something went wrong",
+  "sendErrorDescription": "Please try again later."
 }
