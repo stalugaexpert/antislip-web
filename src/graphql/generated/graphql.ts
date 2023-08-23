@@ -1893,6 +1893,11 @@ export const OurRealizationsDocument = {
                   name: { kind: 'Name', value: 'locale' },
                 },
               },
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'sort' },
+                value: { kind: 'StringValue', value: 'id:desc', block: false },
+              },
             ],
             selectionSet: {
               kind: 'SelectionSet',
