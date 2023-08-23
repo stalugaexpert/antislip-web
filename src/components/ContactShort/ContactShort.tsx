@@ -69,7 +69,7 @@ export const ContactShort = () => {
 
   return (
     <section
-      className="mx-auto mb-20 h-fit max-w-screen-2xl overflow-x-hidden px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 mission-sm:mb-0 mission-sm:px-0"
+      className="mx-auto mb-20 h-fit max-w-screen-2xl px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 mission-sm:mb-0 mission-sm:px-0"
       id="contact"
     >
       <div className="grid grid-cols-2 items-center gap-24 about-md:gap-16 mission-sm:h-full mission-sm:grid-cols-1 mission-sm:gap-0">
@@ -360,27 +360,25 @@ export const ContactShort = () => {
             </form>
           </motion.div>
         </AnimatePresence>
-        <AnimatePresence>
-          <motion.div
-            className="h-full overflow-hidden rounded-lg mission-sm:h-[30vh] mission-sm:w-full mission-sm:rounded-none"
-            initial={{ opacity: 0, x: 200 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true, amount: 0.4 }}
-            whileInView={{ opacity: 1, x: 0 }}
-          >
-            <div className="h-full w-full">
-              <iframe
-                allowFullScreen={true}
-                height="100%"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2392.3876800768903!2d16.66101631600878!3d53.15708297993975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4703e335c2dd1da3%3A0x2d18af77d1cdf187!2se-nubes%20impregnaty!5e0!3m2!1spl!2spl!4v1667830314623!5m2!1spl!2spl"
-                title={t('contact:mapsTitle')}
-                width="100%"
-              ></iframe>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+        <div
+          className="h-full overflow-hidden rounded-lg mission-sm:h-[30vh] mission-sm:w-full mission-sm:rounded-none"
+          // initial={{ opacity: 0, x: 200 }}
+          // transition={{ duration: 0.7 }}
+          // viewport={{ once: true, amount: 0.4 }}
+          // whileInView={{ opacity: 1, x: 0 }}
+        >
+          <div className="h-full w-full">
+            <iframe
+              allowFullScreen={true}
+              height="100%"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2392.3876800768903!2d16.66101631600878!3d53.15708297993975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4703e335c2dd1da3%3A0x2d18af77d1cdf187!2se-nubes%20impregnaty!5e0!3m2!1spl!2spl!4v1667830314623!5m2!1spl!2spl"
+              title={t('contact:mapsTitle')}
+              width="100%"
+            ></iframe>
+          </div>
+        </div>
       </div>
     </section>
   )

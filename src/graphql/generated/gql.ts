@@ -17,7 +17,7 @@ const documents = {
     types.BlogPostDocument,
   'query BlogPosts($locale: I18NLocaleCode!) {\n  blogs(locale: $locale) {\n    data {\n      id\n      attributes {\n        title\n        slug\n        postImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n      }\n    }\n  }\n}':
     types.BlogPostsDocument,
-  'query OurRealizations($locale: I18NLocaleCode!) {\n  ourRealizations(locale: $locale) {\n    data {\n      id\n      attributes {\n        objectName\n        job\n        material\n        space\n        area\n        mainImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n        photos {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n      }\n    }\n  }\n}':
+  'query OurRealizations($locale: I18NLocaleCode!) {\n  ourRealizations(locale: $locale, sort: "id:desc") {\n    data {\n      id\n      attributes {\n        objectName\n        job\n        material\n        space\n        area\n        mainImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n        photos {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n      }\n    }\n  }\n}':
     types.OurRealizationsDocument,
 }
 
@@ -51,8 +51,8 @@ export function graphql(
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(
-  source: 'query OurRealizations($locale: I18NLocaleCode!) {\n  ourRealizations(locale: $locale) {\n    data {\n      id\n      attributes {\n        objectName\n        job\n        material\n        space\n        area\n        mainImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n        photos {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n      }\n    }\n  }\n}'
-): (typeof documents)['query OurRealizations($locale: I18NLocaleCode!) {\n  ourRealizations(locale: $locale) {\n    data {\n      id\n      attributes {\n        objectName\n        job\n        material\n        space\n        area\n        mainImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n        photos {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n      }\n    }\n  }\n}']
+  source: 'query OurRealizations($locale: I18NLocaleCode!) {\n  ourRealizations(locale: $locale, sort: "id:desc") {\n    data {\n      id\n      attributes {\n        objectName\n        job\n        material\n        space\n        area\n        mainImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n        photos {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n      }\n    }\n  }\n}'
+): (typeof documents)['query OurRealizations($locale: I18NLocaleCode!) {\n  ourRealizations(locale: $locale, sort: "id:desc") {\n    data {\n      id\n      attributes {\n        objectName\n        job\n        material\n        space\n        area\n        mainImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n        photos {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n      }\n    }\n  }\n}']
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {}

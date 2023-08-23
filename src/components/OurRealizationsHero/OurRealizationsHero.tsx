@@ -34,7 +34,7 @@ export const OurRealizationsHero = ({
       <div>
         <div className="grid grid-cols-3 gap-12 knowledge-md:grid-cols-2 blog-sm:grid-cols-1 blog-sm:gap-6">
           {ourRealizationsAll?.ourRealizations?.data
-            .slice(-2)
+            .slice(0, 2)
             .map((realization) => (
               <AnimatePresence key={realization.id}>
                 <motion.div

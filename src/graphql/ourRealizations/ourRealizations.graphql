@@ -1,5 +1,5 @@
 query OurRealizations($locale: I18NLocaleCode!) {
-  ourRealizations(locale: $locale) {
+  ourRealizations(locale: $locale, sort: "id:desc") {
     data {
       id
       attributes {
