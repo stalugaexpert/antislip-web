@@ -69,7 +69,7 @@ export const ContactShort = () => {
 
   return (
     <section
-      className="mx-auto mb-20 h-fit max-w-screen-2xl px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 mission-sm:mb-0 mission-sm:px-0"
+      className="mx-auto mb-20 h-fit max-w-screen-2xl overflow-x-hidden px-24 services-xs:mb-12 services-xs:px-14 about-sm:px-10 mission-sm:mb-0 mission-sm:px-0"
       id="contact"
     >
       <div className="grid grid-cols-2 items-center gap-24 about-md:gap-16 mission-sm:h-full mission-sm:grid-cols-1 mission-sm:gap-0">
