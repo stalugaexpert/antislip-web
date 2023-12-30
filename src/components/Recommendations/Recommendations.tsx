@@ -103,7 +103,7 @@ export const Recommendations = ({
               >
                 <div className="mx-4 flex flex-col items-center justify-center bg-neutral50 p-6 dark:bg-neutral700 recommendations-xsm:mx-2">
                   <p className="font-base mb-6 font-normal italic text-neutral800 line-clamp-8 dark:text-neutral200 recommendations-xsm:text-sm recommendations-xsm:line-clamp-10">
-                    {recommendation.attributes?.content}
+                    „{recommendation.attributes?.content}”
                   </p>
                   <span className="font-base font-semibold text-neutral800 dark:text-neutral400 recommendations-xsm:text-sm">
                     {recommendation.attributes?.companyName}
