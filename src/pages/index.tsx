@@ -17,20 +17,24 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import {
   BlogPostsQuery,
   OurRealizationsQuery,
+  RecommendationsQuery,
 } from 'src/graphql/generated/graphql'
 import {
   getAllBlogPosts,
   getAllRealizations,
+  getAllRecommendations,
 } from 'src/utils/requests/requests'
 
 interface IHomePageProps {
   blogPostsAll: BlogPostsQuery
   ourRealizationsAll: OurRealizationsQuery
+  recommendationsAll: RecommendationsQuery
 }
 
 const Home: NextPage<IHomePageProps> = ({
   blogPostsAll,
   ourRealizationsAll,
+  recommendationsAll,
 }) => {
   const { t } = useTranslation()
 
@@ -55,7 +59,9 @@ const Home: NextPage<IHomePageProps> = ({
             title={t('blog:wantMore')}
           />
         )}
-        <Recommendations />
+        {recommendationsAll.recommendations?.data && (
+          <Recommendations recommendationsAll={recommendationsAll} />
+        )}
         <TrustedBy />
         <ContactShort />
       </PageLayout>
@@ -69,6 +75,8 @@ export async function getStaticProps({ locale }: { locale: string }) {
   const blogPostsAll = await getAllBlogPosts(localization)
 
   const ourRealizationsAll = await getAllRealizations(localization)
+
+  const recommendationsAll = await getAllRecommendations(localization)
 
   return {
     props: {
@@ -89,6 +97,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
       ])),
       blogPostsAll,
       ourRealizationsAll,
+      recommendationsAll,
     },
   }
 }

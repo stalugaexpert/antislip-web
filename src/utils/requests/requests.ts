@@ -4,6 +4,7 @@ import {
   BlogPostDocument,
   BlogPostsDocument,
   OurRealizationsDocument,
+  RecommendationsDocument,
 } from 'src/graphql/generated/graphql'
 
 const isProduction = STRAPI_URL_GRAPHQL?.includes('1337') ? false : true
@@ -36,4 +37,14 @@ export const getAllRealizations = async (localization: string) => {
     isProduction ? { Authorization: `Bearer ${STRAPI_API_KEY}` } : {}
   )
   return realizations
+}
+
+export const getAllRecommendations = async (localization: string) => {
+  const recommendations = await request(
+    STRAPI_URL_GRAPHQL as string,
+    RecommendationsDocument,
+    { locale: localization },
+    isProduction ? { Authorization: `Bearer ${STRAPI_API_KEY}` } : {}
+  )
+  return recommendations
 }

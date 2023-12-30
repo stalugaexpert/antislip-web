@@ -1,0 +1,11 @@
+query Recommendations($locale: I18NLocaleCode!) {
+  recommendations(locale: $locale) {
+    data {
+      id
+      attributes {
+        content
+        companyName
+      }
+    }
+  }
+}
