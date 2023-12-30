@@ -1,6 +1,6 @@
 /* eslint-disable */
-import * as types from './graphql'
-import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core'
+import * as types from './graphql';
+import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
 
 /**
  * Map of all GraphQL operations in the project.
@@ -13,13 +13,11 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel-plugin for production.
  */
 const documents = {
-  'query BlogPost($locale: I18NLocaleCode!, $slug: String!) {\n  blogs(filters: {slug: {eq: $slug}}, locale: $locale) {\n    data {\n      id\n      attributes {\n        title\n        content\n        author\n        slug\n        isFromSmartFloor\n        publishedAt\n        postImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n        SEO {\n          metaTitle\n          metaDescription\n        }\n      }\n    }\n  }\n}':
-    types.BlogPostDocument,
-  'query BlogPosts($locale: I18NLocaleCode!) {\n  blogs(locale: $locale) {\n    data {\n      id\n      attributes {\n        title\n        slug\n        postImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n      }\n    }\n  }\n}':
-    types.BlogPostsDocument,
-  'query OurRealizations($locale: I18NLocaleCode!) {\n  ourRealizations(locale: $locale, sort: "id:desc") {\n    data {\n      id\n      attributes {\n        objectName\n        job\n        material\n        space\n        area\n        mainImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n        photos {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n      }\n    }\n  }\n}':
-    types.OurRealizationsDocument,
-}
+    "query BlogPost($locale: I18NLocaleCode!, $slug: String!) {\n  blogs(filters: {slug: {eq: $slug}}, locale: $locale) {\n    data {\n      id\n      attributes {\n        title\n        content\n        author\n        slug\n        isFromSmartFloor\n        publishedAt\n        postImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n        SEO {\n          metaTitle\n          metaDescription\n        }\n      }\n    }\n  }\n}": types.BlogPostDocument,
+    "query BlogPosts($locale: I18NLocaleCode!) {\n  blogs(locale: $locale) {\n    data {\n      id\n      attributes {\n        title\n        slug\n        postImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n      }\n    }\n  }\n}": types.BlogPostsDocument,
+    "query OurRealizations($locale: I18NLocaleCode!) {\n  ourRealizations(locale: $locale, sort: \"id:desc\") {\n    data {\n      id\n      attributes {\n        objectName\n        job\n        material\n        space\n        area\n        mainImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n        photos {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n      }\n    }\n  }\n}": types.OurRealizationsDocument,
+    "query Recommendations($locale: I18NLocaleCode!) {\n  recommendations(locale: $locale) {\n    data {\n      id\n      attributes {\n        content\n        companyName\n      }\n    }\n  }\n}": types.RecommendationsDocument,
+};
 
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
@@ -33,30 +31,27 @@ const documents = {
  * The query argument is unknown!
  * Please regenerate the types.
  */
-export function graphql(source: string): unknown
+export function graphql(source: string): unknown;
 
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(
-  source: 'query BlogPost($locale: I18NLocaleCode!, $slug: String!) {\n  blogs(filters: {slug: {eq: $slug}}, locale: $locale) {\n    data {\n      id\n      attributes {\n        title\n        content\n        author\n        slug\n        isFromSmartFloor\n        publishedAt\n        postImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n        SEO {\n          metaTitle\n          metaDescription\n        }\n      }\n    }\n  }\n}'
-): (typeof documents)['query BlogPost($locale: I18NLocaleCode!, $slug: String!) {\n  blogs(filters: {slug: {eq: $slug}}, locale: $locale) {\n    data {\n      id\n      attributes {\n        title\n        content\n        author\n        slug\n        isFromSmartFloor\n        publishedAt\n        postImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n        SEO {\n          metaTitle\n          metaDescription\n        }\n      }\n    }\n  }\n}']
+export function graphql(source: "query BlogPost($locale: I18NLocaleCode!, $slug: String!) {\n  blogs(filters: {slug: {eq: $slug}}, locale: $locale) {\n    data {\n      id\n      attributes {\n        title\n        content\n        author\n        slug\n        isFromSmartFloor\n        publishedAt\n        postImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n        SEO {\n          metaTitle\n          metaDescription\n        }\n      }\n    }\n  }\n}"): (typeof documents)["query BlogPost($locale: I18NLocaleCode!, $slug: String!) {\n  blogs(filters: {slug: {eq: $slug}}, locale: $locale) {\n    data {\n      id\n      attributes {\n        title\n        content\n        author\n        slug\n        isFromSmartFloor\n        publishedAt\n        postImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n        SEO {\n          metaTitle\n          metaDescription\n        }\n      }\n    }\n  }\n}"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(
-  source: 'query BlogPosts($locale: I18NLocaleCode!) {\n  blogs(locale: $locale) {\n    data {\n      id\n      attributes {\n        title\n        slug\n        postImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n      }\n    }\n  }\n}'
-): (typeof documents)['query BlogPosts($locale: I18NLocaleCode!) {\n  blogs(locale: $locale) {\n    data {\n      id\n      attributes {\n        title\n        slug\n        postImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n      }\n    }\n  }\n}']
+export function graphql(source: "query BlogPosts($locale: I18NLocaleCode!) {\n  blogs(locale: $locale) {\n    data {\n      id\n      attributes {\n        title\n        slug\n        postImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n      }\n    }\n  }\n}"): (typeof documents)["query BlogPosts($locale: I18NLocaleCode!) {\n  blogs(locale: $locale) {\n    data {\n      id\n      attributes {\n        title\n        slug\n        postImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n      }\n    }\n  }\n}"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(
-  source: 'query OurRealizations($locale: I18NLocaleCode!) {\n  ourRealizations(locale: $locale, sort: "id:desc") {\n    data {\n      id\n      attributes {\n        objectName\n        job\n        material\n        space\n        area\n        mainImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n        photos {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n      }\n    }\n  }\n}'
-): (typeof documents)['query OurRealizations($locale: I18NLocaleCode!) {\n  ourRealizations(locale: $locale, sort: "id:desc") {\n    data {\n      id\n      attributes {\n        objectName\n        job\n        material\n        space\n        area\n        mainImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n        photos {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n      }\n    }\n  }\n}']
+export function graphql(source: "query OurRealizations($locale: I18NLocaleCode!) {\n  ourRealizations(locale: $locale, sort: \"id:desc\") {\n    data {\n      id\n      attributes {\n        objectName\n        job\n        material\n        space\n        area\n        mainImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n        photos {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n      }\n    }\n  }\n}"): (typeof documents)["query OurRealizations($locale: I18NLocaleCode!) {\n  ourRealizations(locale: $locale, sort: \"id:desc\") {\n    data {\n      id\n      attributes {\n        objectName\n        job\n        material\n        space\n        area\n        mainImage {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n        photos {\n          data {\n            attributes {\n              formats\n            }\n          }\n        }\n      }\n    }\n  }\n}"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "query Recommendations($locale: I18NLocaleCode!) {\n  recommendations(locale: $locale) {\n    data {\n      id\n      attributes {\n        content\n        companyName\n      }\n    }\n  }\n}"): (typeof documents)["query Recommendations($locale: I18NLocaleCode!) {\n  recommendations(locale: $locale) {\n    data {\n      id\n      attributes {\n        content\n        companyName\n      }\n    }\n  }\n}"];
 
 export function graphql(source: string) {
-  return (documents as any)[source] ?? {}
+  return (documents as any)[source] ?? {};
 }
 
-export type DocumentType<TDocumentNode extends DocumentNode<any, any>> =
-  TDocumentNode extends DocumentNode<infer TType, any> ? TType : never
+export type DocumentType<TDocumentNode extends DocumentNode<any, any>> = TDocumentNode extends DocumentNode<  infer TType,  any>  ? TType  : never;

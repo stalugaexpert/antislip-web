@@ -1,11 +1,16 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTranslation } from 'next-i18next'
 import Slider from 'react-slick'
+import { RecommendationsQuery } from 'src/graphql/generated/graphql'
 
 import {
   IArrowProps,
   SliderHideArrow,
 } from '../SliderHideArrow/SliderHideArrow'
+
+interface IRecommendationsProps {
+  recommendationsAll?: RecommendationsQuery
+}
 
 const NextArrow = ({ onClick }: IArrowProps) => {
   return (
@@ -62,39 +67,10 @@ const settings = {
   ],
 }
 
-export const Recommendations = () => {
+export const Recommendations = ({
+  recommendationsAll,
+}: IRecommendationsProps) => {
   const { t } = useTranslation()
-
-  const recommendationsList = [
-    {
-      description: t('recommendations:recommendations.test1'),
-      name: 'Company name',
-    },
-    {
-      description: t('recommendations:recommendations.test2'),
-      name: 'Company name',
-    },
-    {
-      description: t('recommendations:recommendations.test3'),
-      name: 'Company name',
-    },
-    {
-      description: t('recommendations:recommendations.test4'),
-      name: 'Company name',
-    },
-    {
-      description: t('recommendations:recommendations.test5'),
-      name: 'Company name',
-    },
-    {
-      description: t('recommendations:recommendations.test6'),
-      name: 'Company name',
-    },
-    {
-      description: t('recommendations:recommendations.test1'),
-      name: 'Company name',
-    },
-  ]
 
   return (
     <AnimatePresence>
@@ -120,17 +96,17 @@ export const Recommendations = () => {
             </h5>
           </div>
           <Slider {...settings}>
-            {recommendationsList.map((item, index) => (
+            {recommendationsAll?.recommendations?.data.map((recommendation) => (
               <div
                 className="w-full"
-                key={index}
+                key={recommendation.id}
               >
                 <div className="mx-4 flex flex-col items-center justify-center bg-neutral50 p-6 dark:bg-neutral700 recommendations-xsm:mx-2">
-                  <p className="font-base mb-6 font-normal italic text-neutral800 dark:text-neutral200 recommendations-xsm:text-sm">
-                    {item.description}
+                  <p className="font-base mb-6 font-normal italic text-neutral800 line-clamp-8 dark:text-neutral200 recommendations-xsm:text-sm recommendations-xsm:line-clamp-10">
+                    „{recommendation.attributes?.content}”
                   </p>
                   <span className="font-base font-semibold text-neutral800 dark:text-neutral400 recommendations-xsm:text-sm">
-                    {item.name}
+                    {recommendation.attributes?.companyName}
                   </span>
                 </div>
               </div>

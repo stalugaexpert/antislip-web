@@ -36,6 +36,10 @@ module.exports = {
           to: { height: 0 },
         },
       },
+      lineClamp: {
+        8: '8',
+        10: '10',
+      },
       colors: {
         neutral900: 'var(--neutral-900)',
         neutral800: 'var(--neutral-800)',
