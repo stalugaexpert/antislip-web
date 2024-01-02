@@ -1,7 +1,7 @@
 {
   "pendulumButton": "Pendulum Test\n(British Pendulum).",
   "pendulumTitle": "Pendulum Test",
-  "pendulumContent": "SMARTFLOOR company performs professional tests of slip resistance - testing by the British pendulum method (PTV).\n\nWe conduct tests in accordance with the guidelines: Building Research Institute, Ministry of Development and Technology and PN-EN 13036-4.\n\nWe use a certified and regularly calibrated Matest A113 pendulum to measure the coefficient of friction.",
+  "pendulumContent": "We perform professional tests of slip resistance - testing by the British pendulum method (PTV).\n\nWe conduct tests in accordance with the guidelines: Building Research Institute, Ministry of Development and Technology and PN-EN 13036-4.\n\nWe use a certified and regularly calibrated Munro 2371 pendulum to measure the coefficient of friction.",
   "testInfo1": "On the laid floor",
   "testInfo2": "Under laboratory conditions, after submitting a sample",
   "slipButton": "SlipAlert",

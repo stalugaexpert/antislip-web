@@ -58,7 +58,7 @@
   },
   "measurementWorthTo": "It is worth remembering that when ordering a slip measurement service for your floor, always look for an experienced company with an established track record.",
   "measurementWorthToDescriptionTop": "The company should have suitable and calibrated ",
-    "measurementDevices": "measurement devices ",
+  "measurementDevices": "measurement devices ",
   "measurementWorthToDescriptionMid": "guaranteeing ",
   "realiableMeasurement": "reliable measurement",
   "measurementWorthToDescriptionBottom": ", conforming to the applicable standards.",
@@ -67,7 +67,5 @@
   "measurementWorthRemember": "Remember that the obligation to measure the coefficient of friction requires from certain acts. You will read more about it here:",
   "regulation": "Laws and regulations",
   "measurementWhat": "What PTV slip resistance values are correct?",
-  "smartfloor": "Through cooperation with the company ",
-  "smartfloorCompany": "Smartfloor",
-  "smartfloorDescription": " we have access to the most modern and accurate measuring equipment. After testing, we provide a report and an anti-slip certificate confirming compliance with the guidelines of the Building Research Institute."
+  "measurementDeviceDescription": "We have the most modern and accurate measuring equipment. After the tests, we provide a report and an anti-slip certificate confirming compliance with the guidelines of the Building Research Institute."
 }
