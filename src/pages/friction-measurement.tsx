@@ -54,18 +54,7 @@ const Friction: NextPage<IFrictionPageProps> = ({ gifBlur, blogPostsAll }) => {
         </h3>
         <div className="mb-6 w-3/4 text-justify mission-sm:w-full">
           <p className="mb-6 inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
-            {t('measurement:smartfloor')}
-          </p>
-          <a
-            className="text-base font-semibold text-amber400 duration-300 hover:opacity-75 about-md:text-sm"
-            href="https://antyposlizg.pl/"
-            rel="noreferrer"
-            target="_blank"
-          >
-            {t('measurement:smartfloorCompany')}
-          </a>
-          <p className="mb-6 inline text-base font-normal text-neutral800 dark:text-neutral50 about-md:text-sm">
-            {t('measurement:smartfloorDescription')}
+            {t('measurement:measurementDeviceDescription')}
           </p>
         </div>
         <CardSwitcher />
